@@ -1,0 +1,12 @@
+{
+  "id": "d125534a4ff9ecf6",
+  "slug": "Neurelo",
+  "name": "Neurelo",
+  "description": "Neurelo هي منصة شاملة لواجهات برمجة تطبيقات البيانات، تدعم PostgreSQL وMySQL وMongoDB، مما يُمكّن المطورين من تبسيط مهام برمجة قواعد البيانات. تتيح هذه المنصة ا",
+  "category": "التطوير والبرمجة",
+  "price": "تجربة مجانية",
+  "externalUrl": "https://www.neurelo.com/",
+  "sourceUrl": "https://aitoolsbot.com/tool/Neurelo",
+  "image": "/tool-images/d125534a4ff9ecf6.webp",
+  "contentHtml": "Neurelo هي منصة شاملة لواجهات برمجة تطبيقات البيانات، تدعم PostgreSQL وMySQL وMongoDB، مما يُمكّن المطورين من تبسيط مهام برمجة قواعد البيانات. تتيح هذه المنصة الموحدة تحويل قواعد البيانات فورًا إلى واجهات برمجة تطبيقات REST وGraphQL، مما يُبسط التواصل بين التطبيقات وقواعد البيانات.<br><br>تتميز Neurelo بطبقة تجريد تُسهّل دمج قواعد البيانات في التطبيقات، مما يُسرّع سير عمل التطوير. كما تُدمج Neurelo العديد من المهام المتعلقة بقواعد البيانات، مثل نمذجة البيانات، وترحيل المخططات، وتوليد البيانات التجريبية، في أداة واحدة، مما يُعزز إنتاجية فرق التطوير.<br><br>تُمكّن واجهة المستخدم سهلة الاستخدام على الويب المستخدمين من إدارة استعلامات البيانات المعقدة بسهولة، مما يُغني عن التعامل مع الشيفرة البرمجية الخام. كما تدعم بنية Neurelo الخالية من الخوادم بناء تطبيقات قابلة للتطوير بسرعة، مما يجعلها مناسبة للشركات والمطورين الأفراد على حد سواء. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://www.neurelo.com/\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

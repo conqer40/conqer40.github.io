@@ -1,0 +1,12 @@
+{
+  "id": "82d96a20a2c5650e",
+  "slug": "Replicate",
+  "name": "Replicate",
+  "description": "Replicate هي منصة ذكاء اصطناعي للمطورين تُسهّل تشغيل نماذج التعلم الآلي في السحابة. تحتوي على مكتبة مليئة بنماذج الذكاء الاصطناعي التوليدية التي يمكن تشغيلها با",
+  "category": "التطوير والبرمجة",
+  "price": "مجاني + مدفوع",
+  "externalUrl": "https://replicate.com/",
+  "sourceUrl": "https://aitoolsbot.com/tool/Replicate",
+  "image": "/tool-images/82d96a20a2c5650e.webp",
+  "contentHtml": "Replicate هي منصة ذكاء اصطناعي للمطورين تُسهّل تشغيل نماذج التعلم الآلي في السحابة. تحتوي على مكتبة مليئة بنماذج الذكاء الاصطناعي التوليدية التي يمكن تشغيلها باستخدام بضعة أسطر فقط من شفرة بايثون. تتوفر آلاف النماذج مفتوحة المصدر للاستخدام الجاهز، ويمكن لـ Replicate إنشاء خادم واجهة برمجة تطبيقات (API) قابل للتطوير تلقائيًا لنماذجك المخصصة. صُممت المنصة للتعامل مع جميع مراحل النشر الصعبة، مثل وحدات معالجة الرسومات (GPUs) والتوسع، ولن تدفع إلا مقابل قوة الحوسبة التي تستخدمها. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://replicate.com/\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

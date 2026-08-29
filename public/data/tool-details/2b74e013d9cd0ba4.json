@@ -1,0 +1,12 @@
+{
+  "id": "2b74e013d9cd0ba4",
+  "slug": "GPT-Engineer",
+  "name": "GPT-Engineer",
+  "description": "GPT-Engineer هو وكيل مفتوح المصدر يُساعد في بناء الشيفرة البرمجية. ما عليك سوى وصف ما تريد بناءه، وسيطرح الذكاء الاصطناعي أسئلة توضيحية قبل إنشاء قاعدة شيفرة كا",
+  "category": "التطوير والبرمجة",
+  "price": "غير محدد",
+  "externalUrl": "https://lovable.dev/",
+  "sourceUrl": "https://aitoolsbot.com/tool/GPT-Engineer",
+  "image": "/tool-images/2b74e013d9cd0ba4.png",
+  "contentHtml": "GPT-Engineer هو وكيل مفتوح المصدر يُساعد في بناء الشيفرة البرمجية. ما عليك سوى وصف ما تريد بناءه، وسيطرح الذكاء الاصطناعي أسئلة توضيحية قبل إنشاء قاعدة شيفرة كاملة. تشمل الميزات الرئيسية إمكانية تخصيص أسلوب برمجة الذكاء الاصطناعي، وتحسين الشيفرة المُولّدة من خلال الملاحظات، وحفظ المشاريع للاستخدام لاحقًا. قد يكون تثبيت GTP-Engineer وإعداده مُربكًا بعض الشيء إذا لم تكن مُلِمًا بلغة بايثون، لذا نوصي باتباع تعليمات التثبيت الموجودة في مستودع GitHub بعناية. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://lovable.dev/\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

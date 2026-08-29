@@ -1,0 +1,12 @@
+{
+  "id": "9212ff3f9b292a72",
+  "slug": "OpenAI-Text-Classifier",
+  "name": "OpenAI Text Classifier",
+  "description": "الغرض من مُصنِّف النصوص بالذكاء الاصطناعي هو تعزيز الحوار حول الفرق بين المحتوى المكتوب بشريًا والمحتوى المُولَّد بواسطة الذكاء الاصطناعي. قد تُساعد النتائج،",
+  "category": "الادوات التعليمية",
+  "price": "OpenAI Text Classifier",
+  "externalUrl": "https://platform.openai.com/ai-text-classifier",
+  "sourceUrl": "https://aitoolsbot.com/tool/OpenAI-Text-Classifier",
+  "image": "/tool-images/9212ff3f9b292a72.png",
+  "contentHtml": "<p>الغرض من مُصنِّف النصوص بالذكاء الاصطناعي هو تعزيز الحوار حول الفرق بين المحتوى المكتوب بشريًا والمحتوى المُولَّد بواسطة الذكاء الاصطناعي. قد تُساعد النتائج، ولكن لا ينبغي أن تكون الدليل الوحيد، عند تحديد ما إذا كان المستند مُولَّدًا بواسطة الذكاء الاصطناعي. يُدرَّب النموذج على نصوص مكتوبة بشريًا من مصادر مُتنوعة، والتي قد لا تُمثِّل جميع أنواع النصوص المكتوبة بشريًا.</p> <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://platform.openai.com/ai-text-classifier\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

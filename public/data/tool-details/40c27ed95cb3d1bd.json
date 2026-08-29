@@ -1,0 +1,12 @@
+{
+  "id": "40c27ed95cb3d1bd",
+  "slug": "AgentRunner",
+  "name": "AgentRunner",
+  "description": "يُمكّن AgentRunner المستخدمين غير التقنيين من إنشاء وتدريب وكلاء ذكاء اصطناعي مستقلين باستخدام GPT-4. يُمكنهم تحديد أهداف لوكلاءهم ومراقبة سلوكهم من خلال سجلات",
+  "category": "التطوير والبرمجة",
+  "price": "غير محدد",
+  "externalUrl": "https://www.agentrunner.ai/",
+  "sourceUrl": "https://aitoolsbot.com/tool/AgentRunner",
+  "image": "/tool-images/40c27ed95cb3d1bd.webp",
+  "contentHtml": "يُمكّن AgentRunner المستخدمين غير التقنيين من إنشاء وتدريب وكلاء ذكاء اصطناعي مستقلين باستخدام GPT-4. يُمكنهم تحديد أهداف لوكلاءهم ومراقبة سلوكهم من خلال سجلات مُفصّلة وذاكرة مُتراكمة. تُتيح الأداة التكامل مع حسابات OpenAI أو Google Cloud، وتتيح للمستخدمين تحديد الإجراءات التي يُمكن لوكلاءهم اتخاذها. بخلاف AutoGPT، يعمل AgentRunner في السحابة ويُقدّم تجربة استخدام أبسط. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://www.agentrunner.ai/\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

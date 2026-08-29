@@ -1,0 +1,12 @@
+{
+  "id": "2471843dd4c42013",
+  "slug": "Whisper",
+  "name": "Whisper",
+  "description": "ويسبر أداة فعّالة للتعرف على الكلام، مدعومة بالذكاء الاصطناعي، وتستخدم نطاقًا واسعًا من الإشراف الضعيف. وهو نموذج متعدد الأغراض، يُمكّن من التعرف على الكلام",
+  "category": "تحويل النص الى كلام",
+  "price": "مجاني",
+  "externalUrl": "https://github.com/openai/whisper/",
+  "sourceUrl": "https://aitoolsbot.com/tool/Whisper",
+  "image": "/tool-images/2471843dd4c42013.webp",
+  "contentHtml": "<p>ويسبر أداة فعّالة للتعرف على الكلام، مدعومة بالذكاء الاصطناعي، وتستخدم نطاقًا واسعًا من الإشراف الضعيف. وهو نموذج متعدد الأغراض، يُمكّن من التعرف على الكلام متعدد اللغات، وترجمته، وتحديد اللغة المنطوقة. يعتمد على نموذج تسلسلي يسمح بالتمثيل المشترك لرموز التسلسل وفك تشفير التنبؤ. يوفر خمسة أحجام نماذج متاحة، مع تفاوت في السرعة والدقة. وهو مفتوح المصدر بموجب ترخيص معهد ماساتشوستس للتكنولوجيا.<br><br>⭐ الميزات الرئيسية<br>تشمل ميزات وفوائد ويسبر الأساسية ما يلي:<br><br>✔️ التعرف على الكلام.<br>✔️ ترجمة الكلام.<br>✔️ تحديد اللغة المنطوقة.<br>✔️ نموذج تسلسلي.<br>✔️ التمثيل المشترك لرموز التسلسل وفك تشفير التنبؤ.</p><p><br>⚙️ حالات الاستخدام والتطبيقات<br>✔️ نسخ التسجيلات الصوتية.<br>✔️ ترجمة الكلام في الوقت الفعلي.<br>✔️ تحديد اللغة المنطوقة في البيانات الصوتية.</p><p><br>🙋‍♂️ لمن هذا؟<br>يمكن أن يكون Whisper مفيدًا لمجموعات المستخدمين التالية:<br><br>المطورون<br>المترجمون<br>عشاق اللغة<br>منشئو المحتوى</p> <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://github.com/openai/whisper/\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

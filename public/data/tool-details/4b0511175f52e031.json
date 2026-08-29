@@ -1,0 +1,12 @@
+{
+  "id": "4b0511175f52e031",
+  "slug": "OpenAI-GPT-3",
+  "name": "OpenAI GPT-3",
+  "description": "GPT-3 من OpenAI هو الجيل الثالث من أداة توليد النصوص المتقدمة بتقنية التعلم العميق من OpenAI. استُخدم GPT-3 لإنشاء المقالات والشعر والقصص والتقارير الإخبارية وا",
+  "category": "انشاء النصوص",
+  "price": "مجاني",
+  "externalUrl": "https://beta.openai.com/playground",
+  "sourceUrl": "https://aitoolsbot.com/tool/OpenAI-GPT-3",
+  "image": "/tool-images/4b0511175f52e031.jpg",
+  "contentHtml": "GPT-3 من OpenAI هو الجيل الثالث من أداة توليد النصوص المتقدمة بتقنية التعلم العميق من OpenAI. استُخدم GPT-3 لإنشاء المقالات والشعر والقصص والتقارير الإخبارية والحوارات باستخدام كمية صغيرة من النصوص المدخلة، مما يُمكّن من إنتاج كميات كبيرة من النصوص عالية الجودة. GPT-3 ليس مفتوح المصدر، بل يعمل على واجهة برمجة تطبيقات OpenAI، وهي مكلفة للغاية. مع ذلك، فهو مجاني للاستخدام الشخصي على منصة OpenAI. عند إنشاء حساب جديد، سيتم إضافة 18.00 دولارًا أمريكيًا إلى رصيدك لاستخدامه في قسم منصة OpenAI، وهو صالح للشهر الأول فقط، وبعد ذلك، للأسف، سيتعين عليك الدفع مقابل المزيد من الاستخدام. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://beta.openai.com/playground\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

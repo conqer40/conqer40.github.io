@@ -1,0 +1,12 @@
+{
+  "id": "e8c8c54641339ce9",
+  "slug": "Stable-Artisan",
+  "name": "Stable Artisan",
+  "description": "يجمع Stable Artisan بين قوة نماذج توليد الذكاء الاصطناعي المستقر، مثل Stable Diffusion 3.0 وStable Video Diffusion. يتوفر كلا النموذجين الآن على خادم Stable Dif",
+  "category": "إنشاء الفيديو",
+  "price": "غير محدد",
+  "externalUrl": "https://stability.ai/stable-artisan",
+  "sourceUrl": "https://aitoolsbot.com/tool/Stable-Artisan",
+  "image": "/tool-images/e8c8c54641339ce9.webp",
+  "contentHtml": "يجمع Stable Artisan بين قوة نماذج توليد الذكاء الاصطناعي المستقر، مثل Stable Diffusion 3.0 وStable Video Diffusion. يتوفر كلا النموذجين الآن على خادم Stable Diffusion Discord الرسمي، ويمكن التفاعل معهما باستخدام الأوامر والموجهات، تمامًا مثل Midjourney. كما يوفر Stable Artisan مجموعة من أدوات التحرير، مثل إزالة الخلفية، والتحسين الإبداعي، والتحكم في البنية، لتحسين مخرجات صورك. لإنشاء صورة، استخدم الأمر \"dream/\" متبوعًا بموجه الصورة. يتطلب Stable Artisan حاليًا اشتراكًا للوصول، مع توفر نسخة تجريبية مجانية لمدة 3 أيام لتجربته. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://stability.ai/stable-artisan\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

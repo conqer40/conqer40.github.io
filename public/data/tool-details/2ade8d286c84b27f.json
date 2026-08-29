@@ -1,0 +1,12 @@
+{
+  "id": "2ade8d286c84b27f",
+  "slug": "Questgen",
+  "name": "Questgen",
+  "description": "Questgen أداةٌ مدعومةٌ بالذكاء الاصطناعي، تُنشئ تقييماتٍ متنوعة، مثل أسئلة الاختيار من متعدد، وأسئلة الصواب والخطأ، وأسئلة الدرجات العليا، واختبارات تصنيف بلوم،",
+  "category": "انشاء الاختبارات",
+  "price": "مجاني + مدفوع",
+  "externalUrl": "https://www.questgen.ai/",
+  "sourceUrl": "https://aitoolsbot.com/tool/Questgen",
+  "image": "/tool-images/2ade8d286c84b27f.webp",
+  "contentHtml": "Questgen أداةٌ مدعومةٌ بالذكاء الاصطناعي، تُنشئ تقييماتٍ متنوعة، مثل أسئلة الاختيار من متعدد، وأسئلة الصواب والخطأ، وأسئلة الدرجات العليا، واختبارات تصنيف بلوم، وغيرها. تتيح للمستخدم تحرير وتعديل ورقة العمل المُولّدة وتصديرها بصيغة نص عادي أو JSON. يستخدم المعلمون والمدارس وفرق الموارد البشرية وشركات نشر الكتب المدرسية Questgen لتوفير الوقت والتكلفة في إنشاء التقييمات. تعتمد تقنية Questgen على أبحاث الذكاء الاصطناعي، ومكتبتها مفتوحة المصدر متاحةٌ على GitHub. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://www.questgen.ai/\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

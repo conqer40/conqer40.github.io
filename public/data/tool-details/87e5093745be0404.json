@@ -1,0 +1,12 @@
+{
+  "id": "87e5093745be0404",
+  "slug": "DocumentPro",
+  "name": "DocumentPro",
+  "description": "DocumentPro هي منصة ذكاء اصطناعي مدعومة بمحللات GPT، تُؤتمت استخراج البيانات من مستندات متنوعة، مثل الفواتير وملفات PDF. صُممت محللاتها المُعدّة مسبقًا خصيصً",
+  "category": "تحليل البيانات",
+  "price": "مجاني + مدفوع",
+  "externalUrl": "https://www.documentpro.ai/",
+  "sourceUrl": "https://aitoolsbot.com/tool/DocumentPro",
+  "image": "/tool-images/87e5093745be0404.webp",
+  "contentHtml": "<p>DocumentPro هي منصة ذكاء اصطناعي مدعومة بمحللات GPT، تُؤتمت استخراج البيانات من مستندات متنوعة، مثل الفواتير وملفات PDF. صُممت محللاتها المُعدّة مسبقًا خصيصًا للمستندات المالية واللوجستية ومستندات الهوية الشائعة، كما يُمكن للمستخدمين تعديل أو إنشاء محللات مخصصة لتلبية احتياجات استخراج بيانات مُحددة.</p><p> تضمن الأداة التقاطًا دقيقًا للبيانات بتنسيق JSON، وتُتحقق تلقائيًا من صحة البيانات المُستخرجة، مع الإشارة إلى أي مشاكل لتصحيحها. يتيح التكامل مع أدوات شائعة مثل Zapier وGoogle Sheets وREST API تكاملًا سلسًا لسير العمل. تعتمد خطط تسعير DocumentPro البسيطة على الاعتمادات المُستخدمة لتحليل المستندات، دون الحاجة إلى إعداد مسبق، مع تحسينات مُستمرة في الميزات والتكاملات. هل تحتاج إلى استخراج بيانات مستندات موثوق؟ دع DocumentPro يُبسط العملية لك.</p> <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://www.documentpro.ai/\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

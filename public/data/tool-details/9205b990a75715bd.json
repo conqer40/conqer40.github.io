@@ -1,0 +1,12 @@
+{
+  "id": "9205b990a75715bd",
+  "slug": "GPT-Pilot",
+  "name": "GPT Pilot",
+  "description": "GPT Pilot هو رفيق لمطوري الذكاء الاصطناعي، يُمكّنهم من كتابة تطبيقات كاملة من الصفر، بينما يُشرف مطور بشري على عملية التنفيذ ويوجهها. تشمل ميزاته الرئيسية توليد",
+  "category": "التطوير والبرمجة",
+  "price": "غير محدد",
+  "externalUrl": "https://github.com/Pythagora-io/gpt-pilot",
+  "sourceUrl": "https://aitoolsbot.com/tool/GPT-Pilot",
+  "image": "/tool-images/9205b990a75715bd.webp",
+  "contentHtml": "GPT Pilot هو رفيق لمطوري الذكاء الاصطناعي، يُمكّنهم من كتابة تطبيقات كاملة من الصفر، بينما يُشرف مطور بشري على عملية التنفيذ ويوجهها. تشمل ميزاته الرئيسية توليد أكواد قابلة للتطوير وجاهزة للإنتاج تلقائيًا، وتطويرًا تدريجيًا مع إمكانية تصحيح الأخطاء أثناء التطوير، وتعاونًا وثيقًا مع المطور من خلال واجهة سطر أوامر سهلة الاستخدام.<br><br>يهدف GPT Pilot إلى أن يكون ليس مجرد أداة إكمال تلقائي أو مُساعدًا لرسائل العلاقات العامة، بل مُطور ذكاء اصطناعي حقيقي يُمكنه كتابة ميزات كاملة، وتصحيح أخطائها، والتحدث معك بشأن المشاكل، وطلب المراجعة، وما إلى ذلك. يُمكنك الاطلاع على تعليمات التثبيت على صفحة GitHub. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://github.com/Pythagora-io/gpt-pilot\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

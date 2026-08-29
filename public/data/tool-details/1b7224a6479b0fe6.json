@@ -1,0 +1,12 @@
+{
+  "id": "1b7224a6479b0fe6",
+  "slug": "OpenAI-Codex",
+  "name": "OpenAI Codex",
+  "description": "OpenAI Codex هو نموذج متوفر في بيئة OpenAI لمساعدة المستخدمين على كتابة الأكواد البرمجية. وهو مشتق من GPT-3، وهو أكثر دقة في البرمجة من GPT-3، مما يجعله مساعدًا",
+  "category": "البرمجيات والاكواد",
+  "price": "Client Name",
+  "externalUrl": "https://beta.openai.com/playground",
+  "sourceUrl": "https://aitoolsbot.com/tool/OpenAI-Codex",
+  "image": "/tool-images/1b7224a6479b0fe6.jpg",
+  "contentHtml": "OpenAI Codex هو نموذج متوفر في بيئة OpenAI لمساعدة المستخدمين على كتابة الأكواد البرمجية. وهو مشتق من GPT-3، وهو أكثر دقة في البرمجة من GPT-3، مما يجعله مساعدًا برمجيًا متميزًا. يتميز OpenAI Codex بإتقانه لعدة لغات برمجة، ويمكن استخدامه في مهام مثل الترجمة، وشرح الأكواد، وإعادة هيكلتها. وهو متوفر حاليًا في نسخة تجريبية خاصة عبر واجهة برمجة التطبيقات (API) وفي قسم \"بيئة اللعب\" على موقع OpenAI الإلكتروني. للوصول إليه، سجّل دخولك إلى حساب OpenAI الخاص بك، ثم توجه إلى بيئة اللعب. من خلال إعدادات النموذج، ستتمكن من التبديل إلى أحد نماذج Codex. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://beta.openai.com/playground\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

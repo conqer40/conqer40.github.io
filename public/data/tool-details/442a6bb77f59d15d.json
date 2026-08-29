@@ -1,0 +1,12 @@
+{
+  "id": "442a6bb77f59d15d",
+  "slug": "SEC-Insights-AI",
+  "name": "SEC Insights AI",
+  "description": "يساعدك SEC Insights AI على تحليل المستندات المالية المعقدة بسرعة، مثل نماذج 10-K و10-Q. ما عليك سوى اختيار المستندات التي ترغب في استكشافها حسب اسم الشركة أو رم",
+  "category": "المالية",
+  "price": "غير محدد",
+  "externalUrl": "https://www.secinsights.ai/",
+  "sourceUrl": "https://aitoolsbot.com/tool/SEC-Insights-AI",
+  "image": "/tool-images/442a6bb77f59d15d.webp",
+  "contentHtml": "يساعدك SEC Insights AI على تحليل المستندات المالية المعقدة بسرعة، مثل نماذج 10-K و10-Q. ما عليك سوى اختيار المستندات التي ترغب في استكشافها حسب اسم الشركة أو رمزها، واختيار نوع المستند والسنة، وسيبدأ SEC Insights العمل. يمكنه مسح مستندات متعددة في آنٍ واحد لاستخلاص رؤى ومقارنات مفيدة. يرشدك الأداة إلى فقرات واقتباسات محددة، لتتمكن من التعمق في التفاصيل المالية بدقة ووضوح. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://www.secinsights.ai/\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

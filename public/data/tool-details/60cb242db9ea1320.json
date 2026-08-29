@@ -1,0 +1,12 @@
+{
+  "id": "60cb242db9ea1320",
+  "slug": "Vicuna",
+  "name": "Vicuna",
+  "description": "Vicuna فيكونا هو روبوت دردشة مفتوح المصدر مُدرّب على محادثات المستخدمين المُشتركة من ShareGPT، ويمكن تشغيله محليًا على جهازك باستخدام وحدة المعالجة المركزية",
+  "category": "انشاء النصوص",
+  "price": "غير محدد",
+  "externalUrl": "https://github.com/lm-sys/FastChat",
+  "sourceUrl": "https://aitoolsbot.com/tool/Vicuna",
+  "image": "/tool-images/60cb242db9ea1320.jpeg",
+  "contentHtml": "Vicuna فيكونا هو روبوت دردشة مفتوح المصدر مُدرّب على محادثات المستخدمين\nالمُشتركة من ShareGPT، ويمكن تشغيله محليًا على جهازك باستخدام وحدة\nالمعالجة المركزية (CPU) أو وحدة معالجة الرسومات (GPU). يُحقق جودةً\nتتجاوز 90% مُقارنةً بـ OpenAI ChatGPT وGoogle Bard، ويتفوق في الأداء على نماذج أخرى مثل LLaMA وStanford Alpaca في معظم الحالات. يتوفر كود\nالتدريب والتقديم، بالإضافة إلى عرض توضيحي عبر الإنترنت، للاستخدام غير\nالتجاري. يُمكنك العثور على العرض التوضيحي عبر الإنترنت هنا:\nhttps://chat.lmsys.org/. لتثبيت فيكونا على جهازك، اتبع خطوات التثبيت في\nمستودع GitHub. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://github.com/lm-sys/FastChat\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

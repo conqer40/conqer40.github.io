@@ -1,0 +1,12 @@
+{
+  "id": "f8943b5aeac33606",
+  "slug": "Piper-TTS",
+  "name": "Piper TTS",
+  "description": "بايبر نظام تحويل نص إلى كلام سريع ومحلي، مُحسّن لنظامي لينكس وراسبيري باي (يمكن تشغيله أيضًا على ويندوز عبر بايثون). يتميز بأصوات مُدرّبة مسبقًا بأكثر من 30 لغة",
+  "category": "تحويل النص الى كلام",
+  "price": "غير محدد",
+  "externalUrl": "https://github.com/rhasspy/piper",
+  "sourceUrl": "https://aitoolsbot.com/tool/Piper-TTS",
+  "image": "/tool-images/f8943b5aeac33606.webp",
+  "contentHtml": "بايبر نظام تحويل نص إلى كلام سريع ومحلي، مُحسّن لنظامي لينكس وراسبيري باي (يمكن تشغيله أيضًا على ويندوز عبر بايثون). يتميز بأصوات مُدرّبة مسبقًا بأكثر من 30 لغة، ويقبل إدخال النصوص أو JSON لتوليف صوت عالي الجودة. بايبر مفتوح المصدر ومكتوب بلغة C++ و بايثون، مع ملفات ثنائية متوفرة لأنظمة لينكس المكتبية وراسبيري باي وغيرها. لتوليد الكلام من النص، ستحتاج إلى نموذج onnx وملف تكوين؛ تتوفر بعض الأمثلة للاستخدامات. الكود والوثائق والعينات متوفرة على GitHub بموجب ترخيص MIT. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://github.com/rhasspy/piper\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

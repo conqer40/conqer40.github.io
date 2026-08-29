@@ -1,0 +1,12 @@
+{
+  "id": "4f29d0ad836e0f43",
+  "slug": "iAsk",
+  "name": "iAsk",
+  "description": "iAsk هو محرك بحث مجاني يعمل بالذكاء الاصطناعي، يتيح لك الحصول على إجابات لأسئلتك، والعثور على مصادر عبر الإنترنت، ومقاطع فيديو تعليمية، وغيرها. ما عليك سوى كتاب",
+  "category": "البحث",
+  "price": "غير محدد",
+  "externalUrl": "https://iask.ai/",
+  "sourceUrl": "https://aitoolsbot.com/tool/iAsk",
+  "image": "/tool-images/4f29d0ad836e0f43.png",
+  "contentHtml": "iAsk هو محرك بحث مجاني يعمل بالذكاء الاصطناعي، يتيح لك الحصول على إجابات لأسئلتك، والعثور على مصادر عبر الإنترنت، ومقاطع فيديو تعليمية، وغيرها. ما عليك سوى كتابة سؤالك أو التحدث به في محرك البحث للبدء. يمكنك استخدام إعدادات الفلترة لتضييق نطاق النتائج إلى مصادر محددة (مثل المصادر الأكاديمية، والمنتديات، وويكي، إلخ). كما تتوفر إعدادات مفيدة أخرى، مثل طول الإجابة، والتي قد تكون مفيدة إذا كنت تبحث عن ملخص سريع بدلاً من مقال كامل. سيعرض iAsk أهم ثلاثة مصادر تم استخدامها لإنشاء إجابة. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://iask.ai/\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

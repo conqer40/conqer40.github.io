@@ -1,0 +1,12 @@
+{
+  "id": "06bc11929fb1bb4f",
+  "slug": "Pika-Labs",
+  "name": "Pika Labs",
+  "description": "Pika Labs هي أداة جديدة لتحويل النصوص إلى فيديو بالذكاء الاصطناعي، تتيح لك إنشاء مقاطع فيديو ورسوم متحركة من خلال أوامر نصية بسيطة. الأداة متاحة حاليًا بنسخة تج",
+  "category": "إنشاء الفيديو",
+  "price": "غير محدد",
+  "externalUrl": "https://www.pika.art/",
+  "sourceUrl": "https://aitoolsbot.com/tool/Pika-Labs",
+  "image": "/tool-images/06bc11929fb1bb4f.webp",
+  "contentHtml": "Pika Labs هي أداة جديدة لتحويل النصوص إلى فيديو بالذكاء الاصطناعي، تتيح لك إنشاء مقاطع فيديو ورسوم متحركة من خلال أوامر نصية بسيطة. الأداة متاحة حاليًا بنسخة تجريبية عبر خادم Discord الخاص بهم. بعد الوصول، يمكنك إنشاء مقاطع فيديو بالانتقال إلى إحدى قنوات \"#generate\" على خادم Pika Labs Discord. يمكنك إدخال الأمر المطلوب باستخدام أمر \"/create\"، متبوعًا بوصف الفيديو. نوصي بشدة بالاطلاع على قناة \"#getting-started\" أولًا، فهي تحتوي على نصائح مفيدة للغاية لاستخدام الأداة، بما في ذلك المعلمات التي يمكنك استخدامها لضبط نسبة العرض إلى الارتفاع لمقاطع الفيديو. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://www.pika.art/\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

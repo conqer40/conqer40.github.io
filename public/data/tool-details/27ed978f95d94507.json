@@ -1,0 +1,12 @@
+{
+  "id": "27ed978f95d94507",
+  "slug": "Dreambooth",
+  "name": "Dreambooth",
+  "description": "Dreambooth هي طريقة لضبط نماذج انتشار النص إلى صورة الخاصة بك بدقة، والتي يمكن استخدامها لاحقًا مع الانتشار المستقر. عند تدريب نموذجك الخاص، سيُطلب منك تحميل عد",
+  "category": "تعديل الصور",
+  "price": "مجاني",
+  "externalUrl": "https://getimg.ai/tools/dreambooth",
+  "sourceUrl": "https://aitoolsbot.com/tool/Dreambooth",
+  "image": "/tool-images/27ed978f95d94507.png",
+  "contentHtml": "Dreambooth هي طريقة لضبط نماذج انتشار النص إلى صورة الخاصة بك بدقة، والتي يمكن استخدامها لاحقًا مع الانتشار المستقر. عند تدريب نموذجك الخاص، سيُطلب منك تحميل عدة صور إدخال، والتي ستكون أساسًا لنموذجك. على سبيل المثال، إذا كنت ترغب في إنشاء نموذج لحيوانك الأليف، فستحمل من 5 إلى 20 صورة له من زوايا مختلفة. يمكنك قراءة البحث الكامل عن Dreambooth على هذه الصفحة. لحسن الحظ، يوفر موقع \"getimg.ai\" طريقة سهلة للوصول إلى Dreambooth واستخدامه، وهو أسهل استخدامًا وأكثر بساطة. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://getimg.ai/tools/dreambooth\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

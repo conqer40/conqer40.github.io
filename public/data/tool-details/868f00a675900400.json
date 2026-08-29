@@ -1,0 +1,12 @@
+{
+  "id": "868f00a675900400",
+  "slug": "DeepFaceLive",
+  "name": "DeepFaceLive",
+  "description": "DeepFaceLive هو نموذج ذكاء اصطناعي متوفر على GitHub، يتيح لك تبديل الوجوه آنيًا باستخدام نماذج وجوه مُدرّبة. يتضمن المستودع بالفعل قائمة بنماذج وجوه عامة جاهزة",
+  "category": "الفيديو",
+  "price": "غير محدد",
+  "externalUrl": "https://github.com/iperov/DeepFaceLive",
+  "sourceUrl": "https://aitoolsbot.com/tool/DeepFaceLive",
+  "image": "/tool-images/868f00a675900400.webp",
+  "contentHtml": "DeepFaceLive هو نموذج ذكاء اصطناعي متوفر على GitHub، يتيح لك تبديل الوجوه آنيًا باستخدام نماذج وجوه مُدرّبة. يتضمن المستودع بالفعل قائمة بنماذج وجوه عامة جاهزة للاستخدام، بما في ذلك نماذج كيانو ريفز ومستر بين! يمكن للمستخدمين أيضًا تدريب نماذج وجوههم الخاصة باستخدام DeepFaceLab لتحسين جودة أو مطابقة الوجوه. يتضمن التطبيق أيضًا وحدة Face Animator التي تتيح لك التحكم في صورة وجه ثابتة باستخدام الفيديو أو وجهك من الكاميرا. يتطلب DeepFaceLive بطاقة رسومات متوافقة مع DirectX12، ومعالجًا حديثًا مزودًا بتعليمات AVX، وذاكرة وصول عشوائي (RAM) سعة 4 جيجابايت، ونظام تشغيل Windows 10. يمكنك الاطلاع على متطلبات النظام الكاملة على صفحة GitHub. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://github.com/iperov/DeepFaceLive\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

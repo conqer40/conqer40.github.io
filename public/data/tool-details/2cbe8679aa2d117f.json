@@ -1,0 +1,12 @@
+{
+  "id": "2cbe8679aa2d117f",
+  "slug": "Gmail-Signature-Parser",
+  "name": "Gmail Signature Parser",
+  "description": "محلل توقيعات البريد الإلكتروني هو إضافة مجانية لمتصفح كروم تقدمها parsio.io. يستخدم هذا الملحق chatgpt لاستخراج بيانات الاتصال من توقيعات البريد الإلكتروني في G",
+  "category": "اضافات للمتصفح الكروم",
+  "price": "مجاني",
+  "externalUrl": "https://parsio.io/chrome-signature-parser/",
+  "sourceUrl": "https://aitoolsbot.com/tool/Gmail-Signature-Parser",
+  "image": "/tool-images/2cbe8679aa2d117f.webp",
+  "contentHtml": "محلل توقيعات البريد الإلكتروني هو إضافة مجانية لمتصفح كروم تقدمها parsio.io. يستخدم هذا الملحق chatgpt لاستخراج بيانات الاتصال من توقيعات البريد الإلكتروني في Gmail، ويمكنه إرسالها إلى تطبيقات متنوعة مثل جداول بيانات Google، وWebhooks، وAirtable، وZapier. تتوفر ميزات متقدمة، مثل الإرسال التلقائي للبيانات المحللة وإزالة البيانات المكررة، عند شراء مفتاح ترخيص مدى الحياة. يستخرج الملحق الاسم الأول، واسم العائلة، والبريد الإلكتروني، والمسمى الوظيفي، والشركة، ورقم الهاتف، والموقع الإلكتروني. يتطلب استخدام الملحق مفتاح OpenAI API مجاني. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://parsio.io/chrome-signature-parser/\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "932863b9012e3b24",
+  "slug": "Moonvalley",
+  "name": "Moonvalley",
+  "description": "Moonvalley هي أداة ذكاء اصطناعي لتوليد النصوص إلى مقاطع فيديو، تتيح لك إنشاء مقاطع فيديو قصيرة من خلال توجيهات نصية. تعمل الأداة حاليًا على Discord، وستحتاج إلى",
+  "category": "إنشاء الفيديو",
+  "price": "غير محدد",
+  "externalUrl": "https://moonvalley.ai/",
+  "sourceUrl": "https://aitoolsbot.com/tool/Moonvalley",
+  "image": "/tool-images/932863b9012e3b24.webp",
+  "contentHtml": "Moonvalley هي أداة ذكاء اصطناعي لتوليد النصوص إلى مقاطع فيديو، تتيح لك إنشاء مقاطع فيديو قصيرة من خلال توجيهات نصية. تعمل الأداة حاليًا على Discord، وستحتاج إلى الانضمام إلى خادم Moonvalley Discord لإنشاء مقاطع الفيديو الخاصة بك. بعد الانضمام إلى الخادم وقبول القواعد، نوصي بالاطلاع على قناتي #welcome و#guide - حيث تقدمان بعض النصائح حول كيفية التفاعل مع بوت الذكاء الاصطناعي وإنشاء مقاطع الفيديو. لبدء الإنشاء، يمكنك استخدام أمر /create في أي من قنوات \"#new-moon\". عند كتابة التوجيه، يمكنك أيضًا تحديد نمط الفيديو ومدته (تذكر: كلما كان الفيديو أطول، زادت مدة إنشائه). <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://moonvalley.ai/\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

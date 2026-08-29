@@ -1,0 +1,12 @@
+{
+  "id": "ee7b8a08a2c49d75",
+  "slug": "dbsensei",
+  "name": "dbsensei",
+  "description": "db sensei أداة مدعومة بالذكاء الاصطناعي تُبسّط عملية إنشاء استعلامات قواعد البيانات المعقدة من خلال الاستغناء عن كتابة أكواد SQL يدويًا. تتميز الأداة بواجهة مست",
+  "category": "قواعد بيانات",
+  "price": "تجربة مجانية",
+  "externalUrl": "https://dbsensei.com/",
+  "sourceUrl": "https://aitoolsbot.com/tool/dbsensei",
+  "image": "/tool-images/ee7b8a08a2c49d75.webp",
+  "contentHtml": "db sensei أداة مدعومة بالذكاء الاصطناعي تُبسّط عملية إنشاء استعلامات قواعد البيانات المعقدة من خلال الاستغناء عن كتابة أكواد SQL يدويًا. تتميز الأداة بواجهة مستخدم سهلة الاستخدام تُمكّن المستخدمين من استيراد بنية قاعدة البيانات وإنشاء الاستعلامات بسهولة ويسر. كما تحتوي على مُصحّح استعلامات يُحدّد الأخطاء ويُصحّحها، وشرح استعلامات يُساعد المستخدمين على فهم منطق الاستعلام ونتائجه، ومنسّق استعلامات يُسهّل قراءتها. الأداة مُحسّنة لـ MySQL و Eloquent، وتُقدّم أيضًا نتائج جيدة لـ PostgreSQL و SQL Server. تتوفر نسخة تجريبية مجانية لمدة 7 أيام، وهناك خصم خاص للطلاب. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://dbsensei.com/\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

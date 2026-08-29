@@ -1,0 +1,12 @@
+{
+  "id": "5377d1d713b44626",
+  "slug": "Omost",
+  "name": "Omost",
+  "description": "يُدمج Omost قوة برامج LLM في خاصية Stable Diffusion، مما يُتيح لك إنشاء صور مثالية بمساعدة الذكاء الاصطناعي. تُحوّل هذه الأداة عملية إنشاء الصور بأكملها إلى واج",
+  "category": "أوامر",
+  "price": "غير محدد",
+  "externalUrl": "https://github.com/lllyasviel/Omost",
+  "sourceUrl": "https://aitoolsbot.com/tool/Omost",
+  "image": "/tool-images/5377d1d713b44626.webp",
+  "contentHtml": "يُدمج Omost قوة برامج LLM في خاصية Stable Diffusion، مما يُتيح لك إنشاء صور مثالية بمساعدة الذكاء الاصطناعي. تُحوّل هذه الأداة عملية إنشاء الصور بأكملها إلى واجهة دردشة أكثر انسيابية وسهولة في الاستخدام. ما عليك سوى بدء الدردشة مع الذكاء الاصطناعي وإخباره بنوع الصورة التي ترغب في إنشائها. لستَ مُلزمًا بتحديد مُحدد، فهدف LLM الأساسي هو أخذ رسالتك الأولية ثم توسيعها وتصميمها لك. بعد إنشاء صورتك، يُمكنك مُتابعة الدردشة مع الذكاء الاصطناعي وطلب أي تغييرات منه (مثل تغيير الخلفية، أو الشخصيات الرئيسية، أو نمط الرسم، إلخ).<br><br>Omost مجاني للاستخدام في مساحة Hugging Face، ويُمكن تشغيله أيضًا على جهاز الكمبيوتر. يُنصح باستخدام وحدة معالجة رسومات (GPU) بسعة 8 جيجابايت فأكثر من ذاكرة الوصول العشوائي (VRAM)، وذاكرة وصول عشوائي (RAM) بسعة 16 جيجابايت على الأقل (يستفيد Omost كثيرًا من سعة الذاكرة العشوائية الأكبر). <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://github.com/lllyasviel/Omost\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "7697734c413bca3a",
+  "slug": "AUTOMATIC1111",
+  "name": "AUTOMATIC1111",
+  "description": "AUTOMATIC1111 هي إحدى أشهر واجهات الويب لتشغيل Stable Diffusion. تعتمد على مكتبة Gradio، ويمكن تثبيتها بسهولة على نظامي التشغيل Windows وLinux، مع أنها تتطلب مع",
+  "category": "تركيب الصور Stable Diffusion",
+  "price": "غير محدد",
+  "externalUrl": "https://github.com/AUTOMATIC1111/stable-diffusion-webui",
+  "sourceUrl": "https://aitoolsbot.com/tool/AUTOMATIC1111",
+  "image": "",
+  "contentHtml": "AUTOMATIC1111 هي إحدى أشهر واجهات الويب لتشغيل Stable Diffusion. تعتمد على مكتبة Gradio، ويمكن تثبيتها بسهولة على نظامي التشغيل Windows وLinux، مع أنها تتطلب معرفة بسيطة بلغة Python وGitHub. تُعدّ AUTOMATIC1111 واجهة Stable Diffusion المفضلة لدى الكثيرين، ورغم أن عدد الإعدادات قد يكون كبيرًا، إلا أنها تتيح لك التحكم في إنشاء الصور بدقة متناهية. كما تتوفر إضافات يمكن إضافتها لمزيد من التخصيص والميزات، مثل Dynamic Prompts أو Deforum، وهي أداة لإنشاء الرسوم المتحركة ومقاطع الفيديو مباشرةً من Stable Diffusion. أسهل طريقة لتثبيت AUTOMATIC1111 هي اتباع دليل التثبيت الخاص بنا. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://github.com/AUTOMATIC1111/stable-diffusion-webui\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

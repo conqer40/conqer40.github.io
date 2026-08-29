@@ -1,0 +1,12 @@
+{
+  "id": "8e22341a4215bd2c",
+  "slug": "TileMaker",
+  "name": "TileMaker",
+  "description": "TileMaker مشروع مفتوح المصدر يُمكّنك من إنشاء صور قابلة للتبليط وقوام متجانس بسهولة. تعمل الأداة بواسطة Material Diffusion، وتستخدم واجهة برمجة تطبيقات سحابية م",
+  "category": "3D",
+  "price": "غير محدد",
+  "externalUrl": "https://tilemaker.app/",
+  "sourceUrl": "https://aitoolsbot.com/tool/TileMaker",
+  "image": "/tool-images/8e22341a4215bd2c.webp",
+  "contentHtml": "TileMaker مشروع مفتوح المصدر يُمكّنك من إنشاء صور قابلة للتبليط وقوام متجانس بسهولة. تعمل الأداة بواسطة Material Diffusion، وتستخدم واجهة برمجة تطبيقات سحابية من Replicate لتشغيل التنبؤات. يُعد هذا موردًا مفيدًا لمطوري الألعاب الذين يبحثون عن قوام سهل النسخ واللصق لأصول ألعابهم. يتوفر الكود المصدري للمشروع على GitHub للتعاون، ويمكن للمطورين حتى استنساخه لإنشاء تطبيقاتهم الخاصة المدعومة بالذكاء الاصطناعي. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://tilemaker.app/\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

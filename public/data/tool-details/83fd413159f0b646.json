@@ -1,0 +1,12 @@
+{
+  "id": "83fd413159f0b646",
+  "slug": "Riku",
+  "name": "Riku",
+  "description": "Riku منصة مركزية لبناء نماذج ومطالبات الذكاء الاصطناعي باستخدام تقنيات من OpenAI وCohere وAI21 وGPT-J. تتيح لك التنقل بسهولة بين نماذج اللغات المختلفة وتصدير ال",
+  "category": "ادوات API",
+  "price": "تجربة مجانية",
+  "externalUrl": "https://www.riku.ai/",
+  "sourceUrl": "https://aitoolsbot.com/tool/Riku",
+  "image": "/tool-images/83fd413159f0b646.png",
+  "contentHtml": "Riku منصة مركزية لبناء نماذج ومطالبات الذكاء الاصطناعي باستخدام تقنيات من OpenAI وCohere وAI21 وGPT-J. تتيح لك التنقل بسهولة بين نماذج اللغات المختلفة وتصدير الشيفرة البرمجية إلى جهازك محليًا عند الانتهاء. كما تتميز المنصة بواجهة عرض مجتمعية تتيح لك مشاركة وتعديل المطالبات. تُمكّن Riku المستخدمين من بناء نماذج الذكاء الاصطناعي بدون الحاجة إلى شفرة برمجية، مما يجعل الذكاء الاصطناعي في متناول الجميع. كما يمكن دمجها مع الأدوات والأتمتة الحالية من خلال واجهة برمجة التطبيقات (API). <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://www.riku.ai/\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

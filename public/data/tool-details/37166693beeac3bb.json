@@ -1,0 +1,12 @@
+{
+  "id": "37166693beeac3bb",
+  "slug": "HuggingChat",
+  "name": "HuggingChat",
+  "description": "HuggingChat هو بديل مجاني ومفتوح المصدر لبرنامج ChatGPT، أصدرته Hugging Face. وكما هو الحال مع ChatGPT، يمكنك التفاعل مع الذكاء الاصطناعي عبر واجهة دردشة بسيطة.",
+  "category": "الشات بوت",
+  "price": "مجاني",
+  "externalUrl": "https://huggingface.co/chat/",
+  "sourceUrl": "https://aitoolsbot.com/tool/HuggingChat",
+  "image": "/tool-images/37166693beeac3bb.png",
+  "contentHtml": "HuggingChat هو بديل مجاني ومفتوح المصدر لبرنامج ChatGPT، أصدرته Hugging Face. وكما هو الحال مع ChatGPT، يمكنك التفاعل مع الذكاء الاصطناعي عبر واجهة دردشة بسيطة. يمكن استخدام HuggingChat لطرح الأسئلة، والمساعدة في إنجاز المهام، والبرمجة، وغيرها الكثير. على الرغم من أن الأداة لا تزال في مراحلها الأولى، إلا أن نموذج الذكاء الاصطناعي الذي يعتمد عليه قوي جدًا، بفضل مجموعة Hugging Face الواسعة من نماذج لغة الذكاء الاصطناعي في قاعدة بياناتها. يستخدم HuggingChat حاليًا برنامج OpenAssistant/oasst-sft-6-llama-30b LLM. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://huggingface.co/chat/\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

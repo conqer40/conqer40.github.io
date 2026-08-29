@@ -1,0 +1,12 @@
+{
+  "id": "ebf68ac31051a731",
+  "slug": "IBM-watsonx",
+  "name": "IBM watsonx",
+  "description": "واتسون إكس من آي بي إم هي منصة لإدارة بيانات الذكاء الاصطناعي، تُساعد الشركات على تعزيز تأثير الذكاء الاصطناعي في جميع أنحاء مؤسساتها. تتكون من ثلاثة مكونات رئي",
+  "category": "ادارة البيانات",
+  "price": "غير محدد",
+  "externalUrl": "https://www.ibm.com/watsonx",
+  "sourceUrl": "https://aitoolsbot.com/tool/IBM-watsonx",
+  "image": "/tool-images/ebf68ac31051a731.webp",
+  "contentHtml": "واتسون إكس من آي بي إم هي منصة لإدارة بيانات الذكاء الاصطناعي، تُساعد الشركات على تعزيز تأثير الذكاء الاصطناعي في جميع أنحاء مؤسساتها. تتكون من ثلاثة مكونات رئيسية:<br><br>واتسون إكس. آي - استوديو لبناء ونشر نماذج الذكاء الاصطناعي، مثل النماذج الأساسية، والذكاء الاصطناعي التوليدي، والتعلم الآلي. يُسهّل هذا الاستوديو تدريب النماذج والتحقق من صحتها ونشرها.<br>واتسون إكس. داتا - مخزن بيانات هجين يُمكّنك من توسيع نطاق أحمال عمل التحليلات والذكاء الاصطناعي عبر جميع بياناتك، بغض النظر عن مكان وجودها.<br>واتسون إكس. غوفرنانس - مجموعة أدوات لتسريع سير عمل الذكاء الاصطناعي المسؤول والشفاف والقابل للتفسير. يُساعدك على مراقبة وتوجيه أنشطة الذكاء الاصطناعي في مؤسستك.<br><br>من أفضل ما في واتسون إكس هو مرونته، حيث يُمكنك استخدام مكون واحد أو اثنين أو جميع المكونات الثلاثة حسب احتياجاتك. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://www.ibm.com/watsonx\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

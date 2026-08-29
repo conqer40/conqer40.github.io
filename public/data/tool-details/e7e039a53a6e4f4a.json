@@ -1,0 +1,12 @@
+{
+  "id": "e7e039a53a6e4f4a",
+  "slug": "Typebar",
+  "name": "Typebar",
+  "description": "Typebar (المعروف سابقًا باسم TweetGPT) هو امتداد متصفح مُدعّم بالذكاء الاصطناعي، يُساعدك على إنشاء منشورات تفاعلية على منصات التواصل الاجتماعي. يستخدم نماذج لغو",
+  "category": "اضافات للمتصفح الكروم",
+  "price": "غير محدد",
+  "externalUrl": "https://typebar.app/",
+  "sourceUrl": "https://aitoolsbot.com/tool/Typebar",
+  "image": "/tool-images/e7e039a53a6e4f4a.webp",
+  "contentHtml": "Typebar (المعروف سابقًا باسم TweetGPT) هو امتداد متصفح مُدعّم بالذكاء الاصطناعي، يُساعدك على إنشاء منشورات تفاعلية على منصات التواصل الاجتماعي. يستخدم نماذج لغوية متقدمة مثل GPT لتوليد أفكار للمنشورات وردود مُصممة خصيصًا للسياق. كما يتضمن مُولّد صور لإضافة عناصر مرئية ذات صلة إلى منشوراتك باستخدام DALL·E 2 وDALL·E 3. يعمل Typebar حاليًا على Twitter/X وLinkedIn وInstagram وFacebook. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://typebar.app/\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

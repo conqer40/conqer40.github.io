@@ -1,0 +1,77 @@
+{
+  "total": 5748,
+  "imported": 5748,
+  "available": 5731,
+  "unavailable": 17,
+  "failures": [
+    {
+      "sourceUrl": "https://aitoolsbot.com/tool/a2a-Protocol",
+      "error": "404 Not Found"
+    },
+    {
+      "sourceUrl": "https://aitoolsbot.com/tool/0gpt",
+      "error": "404 Not Found"
+    },
+    {
+      "sourceUrl": "https://aitoolsbot.com/tool/Concise",
+      "error": "404 Not Found"
+    },
+    {
+      "sourceUrl": "https://aitoolsbot.com/tool/Recrooit",
+      "error": "404 Not Found"
+    },
+    {
+      "sourceUrl": "https://aitoolsbot.com/tool/Akadimia-Ai",
+      "error": "404 Not Found"
+    },
+    {
+      "sourceUrl": "https://aitoolsbot.com/tool/Zoo-by-Replicate",
+      "error": "404 Not Found"
+    },
+    {
+      "sourceUrl": "https://aitoolsbot.com/tool/100+-AI-Prompts",
+      "error": "404 Not Found"
+    },
+    {
+      "sourceUrl": "https://aitoolsbot.com/tool/Zeroscope",
+      "error": "404 Not Found"
+    },
+    {
+      "sourceUrl": "https://aitoolsbot.com/tool/Agency-Swarm",
+      "error": "404 Not Found"
+    },
+    {
+      "sourceUrl": "https://aitoolsbot.com/tool/UX-Brain",
+      "error": "404 Not Found"
+    },
+    {
+      "sourceUrl": "https://aitoolsbot.com/tool/AI-Diary",
+      "error": "404 Not Found"
+    },
+    {
+      "sourceUrl": "https://aitoolsbot.com/tool/2Vid",
+      "error": "404 Not Found"
+    },
+    {
+      "sourceUrl": "https://aitoolsbot.com/tool/Bark",
+      "error": "404 Not Found"
+    },
+    {
+      "sourceUrl": "https://aitoolsbot.com/tool/Samplette",
+      "error": "404 Not Found"
+    },
+    {
+      "sourceUrl": "https://aitoolsbot.com/tool/MaxArtAI",
+      "error": "404 Not Found"
+    },
+    {
+      "sourceUrl": "https://aitoolsbot.com/tool/Hotjar-AI",
+      "error": "404 Not Found"
+    },
+    {
+      "sourceUrl": "https://aitoolsbot.com/tool/Earkind",
+      "error": "404 Not Found"
+    }
+  ],
+  "updatedAt": "2026-08-24T11:40:49.825Z"
+}

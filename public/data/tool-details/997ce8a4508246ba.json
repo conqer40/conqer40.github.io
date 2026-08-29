@@ -1,0 +1,12 @@
+{
+  "id": "997ce8a4508246ba",
+  "slug": "Hey,-GitHub!",
+  "name": "Hey, GitHub!",
+  "description": "مرحبًا، GitHub! هي أداة برمجة تُدار صوتيًا وتعمل مع GitHub Copilot. صُممت لتسهيل عملية البرمجة، وتتيح لك كتابة وتحرير الشيفرة البرمجية، والتنقل في قاعدة الشيفرة",
+  "category": "المساعد الصوتي",
+  "price": "غير محدد",
+  "externalUrl": "https://githubnext.com/projects/hey-github/",
+  "sourceUrl": "https://aitoolsbot.com/tool/Hey,-GitHub!",
+  "image": "/tool-images/997ce8a4508246ba.png",
+  "contentHtml": "مرحبًا، GitHub! هي أداة برمجة تُدار صوتيًا وتعمل مع GitHub Copilot. صُممت لتسهيل عملية البرمجة، وتتيح لك كتابة وتحرير الشيفرة البرمجية، والتنقل في قاعدة الشيفرة، والتحكم في Visual Studio Code دون الحاجة إلى لوحة مفاتيح. تستخدم معالجة اللغة الطبيعية لفهم غرضك، وتقترح مقتطفات شيفرة. يمكنك استخدام أوامر صوتية مثل \"انتقل إلى السطر 34\" و\"شغّل البرنامج\" للتحكم في بيئة التطوير المتكاملة (IDE). كما يمكنك استخدامها لشرح أسطر الشيفرة وتوفير ملخص لها لفهم أفضل. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://githubnext.com/projects/hey-github/\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

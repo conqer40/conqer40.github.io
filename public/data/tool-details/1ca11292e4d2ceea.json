@@ -1,0 +1,12 @@
+{
+  "id": "1ca11292e4d2ceea",
+  "slug": "ChatGPT",
+  "name": "ChatGPT",
+  "description": "ChatGPT هي أداة لغة محادثة تعتمد على الذكاء الاصطناعي، قادرة على فهم الرسائل النصية وإجراء محادثات بلغات متعددة. تعتمد الأداة على نموذج OpenAI GPT-3.5، وهو نسخة",
+  "category": "مساعد ذكاء اصطناعي",
+  "price": "غير محدد",
+  "externalUrl": "https://chat.openai.com/chat",
+  "sourceUrl": "https://aitoolsbot.com/tool/ChatGPT",
+  "image": "/tool-images/1ca11292e4d2ceea.png",
+  "contentHtml": "ChatGPT هي أداة لغة محادثة تعتمد على الذكاء الاصطناعي، قادرة على فهم الرسائل النصية وإجراء محادثات بلغات متعددة. تعتمد الأداة على نموذج OpenAI GPT-3.5، وهو نسخة مُحسّنة من GPT-3. إنها متاحة للجميع، ذاتية التطوير، ومن المؤكد أنها ستتجاوز توقعاتك فيما يتعلق بالنصوص والإجابات المُولّدة بواسطة الذكاء الاصطناعي. ChatGPT متوفر الآن أيضًا كتطبيق جوال!<br><br>ChatGPT<br><br>ومن المثير للدهشة أن ChatGPT يفهم بالفعل لغات برمجة مختلفة بشكل جيد، بما في ذلك على سبيل المثال لا الحصر HTML وJavaScript وCSS وPython وغيرها. يمكنك أن تطلب من ChatGPT إصلاح أو تعديل أو حتى تحسين شفرتك البرمجية، والنتائج مذهلة حقًا! في الواقع، حدثت مؤخرًا حالة قام فيها شخص ما بإدخال نص PHP كامل لموقع ويب، وطلب من ChatGPT تحويله إلى موقع ويب .JS، ونجح في ذلك!<br><br>هل ChatGPT مجاني؟<br>ChatGPT مجاني حاليًا للاستخدام. أعلن مديرو البرنامج علنًا عدم وجود خطط لديهم للربح، ولكن هذا قد يتغير في المستقبل. أتوقع أن تكون نماذج الذكاء الاصطناعي الأقوى التي يطورونها قائمة على الاشتراك، بينما يأملون في ترك ChatGPT مجانيًا للمستخدم العادي. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://chat.openai.com/chat\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

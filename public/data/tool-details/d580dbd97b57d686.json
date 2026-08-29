@@ -1,0 +1,12 @@
+{
+  "id": "d580dbd97b57d686",
+  "slug": "LearnAnything",
+  "name": "LearnAnything",
+  "description": "يتيح لك LearnAnything إنشاء خارطة طريق تعليمية لأي موضوع أو مهارة. ما عليك سوى إخبار الذكاء الاصطناعي بما ترغب في تعلمه، على سبيل المثال \"كيفية البرمجة\" أو \"كيف",
+  "category": "الادوات التعليمية",
+  "price": "غير محدد",
+  "externalUrl": "https://www.learn-anything.ca/",
+  "sourceUrl": "https://aitoolsbot.com/tool/LearnAnything",
+  "image": "/tool-images/d580dbd97b57d686.png",
+  "contentHtml": "يتيح لك LearnAnything إنشاء خارطة طريق تعليمية لأي موضوع أو مهارة. ما عليك سوى إخبار الذكاء الاصطناعي بما ترغب في تعلمه، على سبيل المثال \"كيفية البرمجة\" أو \"كيفية إنشاء موقع ويب\"، وستتلقى خارطة طريق كاملة لكيفية تعلمها، بما في ذلك المهارات التي تبدأ بها. تتضمن خارطة الطريق عادةً ثلاث مجموعات من نقاط التعلم، واحدة لكل مستوى، وواحدة للمبتدئين، وواحدة للمتوسطين، وواحدة للمتقدمين. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://www.learn-anything.ca/\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

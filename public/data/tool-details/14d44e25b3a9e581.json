@@ -1,0 +1,12 @@
+{
+  "id": "14d44e25b3a9e581",
+  "slug": "Buildt",
+  "name": "Buildt",
+  "description": "Buildt هو مساعد برمجة بالذكاء الاصطناعي في مرحلة التطوير الأولى. تتيح لك الأداة البحث عن مقتطفات برمجية بسرعة وسهولة. ما عليك سوى سؤال الذكاء الاصطناعي عما تبحث",
+  "category": "البرمجيات والاكواد",
+  "price": "غير محدد",
+  "externalUrl": "https://www.buildt.ai/",
+  "sourceUrl": "https://aitoolsbot.com/tool/Buildt",
+  "image": "/tool-images/14d44e25b3a9e581.png",
+  "contentHtml": "Buildt هو مساعد برمجة بالذكاء الاصطناعي في مرحلة التطوير الأولى. تتيح لك الأداة البحث عن مقتطفات برمجية بسرعة وسهولة. ما عليك سوى سؤال الذكاء الاصطناعي عما تبحث عنه في الكود (على سبيل المثال: ماذا يحدث بعد تسجيل دخول المستخدم؟) وسيعرض لك مقتطف الكود الدقيق الذي توجد فيه الوظيفة. هناك العديد من الميزات الأخرى المخطط لها في Buildt، يمكنك الاطلاع على خريطة الطريق القادمة <a href=\"https://marketplace.visualstudio.com/items?itemName=BuildtAI.buildt-vscode\" target=\"_blank\">هنا</a>. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://www.buildt.ai/\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

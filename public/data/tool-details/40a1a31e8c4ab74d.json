@@ -1,0 +1,12 @@
+{
+  "id": "40a1a31e8c4ab74d",
+  "slug": "OpenAI-Whisper",
+  "name": "OpenAI Whisper",
+  "description": "OpenAI Whisper ويسبر أداة مفتوحة المصدر للتعرف على الكلام، من تطوير OpenAI. يمكنها نسخ الصوت بلغات متعددة، بالإضافة إلى ترجمة الكلام. يمكن استخدام ويسبر وتنفيذه",
+  "category": "مصادر",
+  "price": "غير محدد",
+  "externalUrl": "https://github.com/openai/whisper",
+  "sourceUrl": "https://aitoolsbot.com/tool/OpenAI-Whisper",
+  "image": "/tool-images/40a1a31e8c4ab74d.webp",
+  "contentHtml": "OpenAI Whisper ويسبر أداة مفتوحة المصدر للتعرف على الكلام، من تطوير OpenAI. يمكنها نسخ الصوت بلغات متعددة، بالإضافة إلى ترجمة الكلام. يمكن استخدام ويسبر وتنفيذه باستخدام بايثون، ويستخدم التعلم العميق للتعرف على الكلام. إعداده واستخدامه سهل نسبيًا من سطر الأوامر أو باستخدام شفرة بايثون، ويوفر أحجام نماذج مختلفة لتحقيق التوازن بين السرعة والدقة. كما يمكنه معالجة كل من ملفات الصوت ومدخلات الميكروفون المباشرة. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://github.com/openai/whisper\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

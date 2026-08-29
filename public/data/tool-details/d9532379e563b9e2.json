@@ -1,0 +1,12 @@
+{
+  "id": "d9532379e563b9e2",
+  "slug": "Hackercast",
+  "name": "Hackercast",
+  "description": "Hackercast أداة مدعومة بالذكاء الاصطناعي تُنشئ ملخصات بودكاست من حلقات Hacker News. تُقدم Hackercast ملخصات لأحدث الحلقات، مما يُتيح للمستخدمين مُتابعة المحتوى",
+  "category": "التلخيص",
+  "price": "مجاني + مدفوع",
+  "externalUrl": "https://camrobjones.com/hackercast/",
+  "sourceUrl": "https://aitoolsbot.com/tool/Hackercast",
+  "image": "/tool-images/d9532379e563b9e2.webp",
+  "contentHtml": "Hackercast أداة مدعومة بالذكاء الاصطناعي تُنشئ ملخصات بودكاست من حلقات Hacker News. تُقدم Hackercast ملخصات لأحدث الحلقات، مما يُتيح للمستخدمين مُتابعة المحتوى بسهولة. بفضل دعم المتصفح وإمكانية تنزيل الحلقات بصيغة MP3، تُوفر Hackercast طريقة مُريحة للوصول إلى محتوى البودكاست. تعمل الأداة عن طريق استخراج Hacker News، وتلخيص المقالات باستخدام Langchain GPT-4، وتحويل النص إلى كلام باستخدام AWS Polly. على الرغم من جودة الملخصات الرائعة، إلا أنه قد تظهر أحيانًا مشاكل تتعلق بالتحليلات المُكررة والملخصات الغريبة على صفحات GitHub. Hackercast مشروع جانبي يهدف إلى تلخيص مقالات النشرة الإخبارية Hacker، وهو مُرتبط بـ Hacker News وCombinator وHacker Newsletter. يُمكن للمستخدمين تقديم ملاحظاتهم واقتراحاتهم لمزيد من التحسينات. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://camrobjones.com/hackercast/\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

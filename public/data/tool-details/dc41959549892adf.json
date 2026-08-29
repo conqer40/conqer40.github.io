@@ -1,0 +1,12 @@
+{
+  "id": "dc41959549892adf",
+  "slug": "LM-Studio",
+  "name": "LM Studio",
+  "description": "LM Studio هو تطبيق سطح مكتب مجاني يُسهّل تشغيل نماذج الذكاء الاصطناعي مفتوحة المصدر محليًا على جهازك. للبدء، ما عليك سوى زيارة موقع LM Studio الإلكتروني وتنزيل",
+  "category": "مصادر",
+  "price": "غير محدد",
+  "externalUrl": "https://lmstudio.ai/",
+  "sourceUrl": "https://aitoolsbot.com/tool/LM-Studio",
+  "image": "/tool-images/dc41959549892adf.webp",
+  "contentHtml": "LM Studio هو تطبيق سطح مكتب مجاني يُسهّل تشغيل نماذج الذكاء الاصطناعي مفتوحة المصدر محليًا على جهازك. للبدء، ما عليك سوى زيارة موقع LM Studio الإلكتروني وتنزيل أحدث إصدار لجهاز ماك (M1/M2/M3 كحد أدنى) أو جهاز كمبيوتر يعمل بنظام ويندوز (يُنصح بوحدة معالجة رسومات (GPU) بسعة 6 جيجابايت فأكثر من ذاكرة الوصول العشوائي (VRAM) و16 جيجابايت فأكثر من ذاكرة الوصول العشوائي (RAM)). بعد التثبيت، تتيح لك لوحة التحكم تصفح وتنزيل النماذج المتوافقة المُستضافة على Hugging Face، مثل LLaMA وFalcon وغيرها. يتولى LM Studio إعداد النماذج وتشغيلها، مُوفرًا واجهة دردشة للتفاعل معها. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://lmstudio.ai/\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

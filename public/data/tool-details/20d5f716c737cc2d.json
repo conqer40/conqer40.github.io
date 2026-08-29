@@ -1,0 +1,12 @@
+{
+  "id": "20d5f716c737cc2d",
+  "slug": "ImageTwin",
+  "name": "ImageTwin",
+  "description": "ImageTwin هو برنامج قائم على الذكاء الاصطناعي، مُصمم للكشف عن مشاكل سلامة الصور في مخطوطات علوم الحياة. تتخصص هذه الأداة في كشف التلاعب والتكرار في مختلف أنواع",
+  "category": "فحص الصور",
+  "price": "اشتراك",
+  "externalUrl": "https://imagetwin.ai/",
+  "sourceUrl": "https://aitoolsbot.com/tool/ImageTwin",
+  "image": "/tool-images/20d5f716c737cc2d.webp",
+  "contentHtml": "ImageTwin هو برنامج قائم على الذكاء الاصطناعي، مُصمم للكشف عن مشاكل سلامة الصور في مخطوطات علوم الحياة. تتخصص هذه الأداة في كشف التلاعب والتكرار في مختلف أنواع الأشكال، بما في ذلك بقع ويسترن والصور المجهرية. يُحسّن ImageTwin عملية مراجعة الأقران من خلال مسح الصور المُرسلة عبر قاعدة بيانات تضم 75 مليون صورة للكشف عن أي انتحال أو تزييف محتمل للبيانات.<br><br>يمكن للمستخدمين بسهولة اختيار ملفات صور متعددة بتنسيقات مختلفة، وبدء مسح ضوئي مُدار بالذكاء الاصطناعي بضغطة زر واحدة، والحصول على النتائج في غضون ثوانٍ عبر واجهة ويب سهلة الاستخدام. يضمن البرنامج خصوصية البيانات وأمن الاتصالات عبر خوادم مُشفرة. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://imagetwin.ai/\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

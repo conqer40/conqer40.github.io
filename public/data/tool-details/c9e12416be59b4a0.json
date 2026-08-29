@@ -1,0 +1,12 @@
+{
+  "id": "c9e12416be59b4a0",
+  "slug": "Bolt.diy",
+  "name": "Bolt.diy",
+  "description": "Bolt.diy منصة مفتوحة المصدر، مدعومة بالذكاء الاصطناعي، لتطوير وتشغيل ونشر تطبيقات ويب متكاملة باستخدام مختلف برامج إدارة التعلم (LLM). تدعم المنصة نماذج ذكاء اص",
+  "category": "التطوير والبرمجة",
+  "price": "غير محدد",
+  "externalUrl": "https://github.com/stackblitz-labs/bolt.diy",
+  "sourceUrl": "https://aitoolsbot.com/tool/Bolt.diy",
+  "image": "/tool-images/c9e12416be59b4a0.webp",
+  "contentHtml": "Bolt.diy منصة مفتوحة المصدر، مدعومة بالذكاء الاصطناعي، لتطوير وتشغيل ونشر تطبيقات ويب متكاملة باستخدام مختلف برامج إدارة التعلم (LLM). تدعم المنصة نماذج ذكاء اصطناعي متعددة، بما في ذلك OpenAI وAnthropic وMistral وHuggingFace، وتتيح التكامل السلس لنماذج إضافية.<br><br>تشمل الميزات الرئيسية محطة طرفية متكاملة لتنفيذ التعليمات البرمجية المُولّدة بالذكاء الاصطناعي، والتحكم في الإصدارات لعكس التغييرات، وإمكانية إرفاق الصور بالمطالبات لفهم سياقها بشكل أفضل. يمكن للمطورين تنزيل المشاريع كملفات ZIP، ومزامنة الملفات محليًا، والنشر مباشرةً عبر Docker.<br><br>كما توفر الأداة التخزين المؤقت الفوري، والكشف التلقائي عن الأخطاء، والتكامل مع منصات مثل GitHub وVercel. صُممت Bolt.diy لضمان المرونة، وهي مورد قوي لتطوير البرمجيات بمساعدة الذكاء الاصطناعي. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://github.com/stackblitz-labs/bolt.diy\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

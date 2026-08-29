@@ -1,0 +1,12 @@
+{
+  "id": "c1477d330b09c321",
+  "slug": "Stable-Diffusion-WebUI-Forge",
+  "name": "Stable Diffusion WebUI Forge",
+  "description": "واجهة ويب فورج Stable Diffusion WebUI هي منصة مُحسّنة مبنية على واجهة AUTOMATIC1111 الخاصة بـ Stable Diffusion، والتي تُحسّن إدارة الموارد وتُسرّع الاستدلال. كم",
+  "category": "تركيب الصور Stable Diffusion",
+  "price": "غير محدد",
+  "externalUrl": "https://github.com/lllyasviel/stable-diffusion-webui-forge",
+  "sourceUrl": "https://aitoolsbot.com/tool/Stable-Diffusion-WebUI-Forge",
+  "image": "/tool-images/c1477d330b09c321.webp",
+  "contentHtml": "واجهة ويب فورج Stable Diffusion WebUI هي منصة مُحسّنة مبنية على واجهة AUTOMATIC1111 الخاصة بـ Stable Diffusion، والتي تُحسّن إدارة الموارد وتُسرّع الاستدلال. كما تُدير بذكاء استخدام ذاكرة وحدة معالجة الرسومات (GPU) لزيادة الدقة القصوى بمقدار 2-3 أضعاف وحجم الدفعة بمقدار 4-6 أضعاف على وحدات معالجة الرسومات متوسطة الأداء. كما تُقدم فورج أداة \"UNet Patcher\" المبتكرة التي تُبسط تنفيذ ملحقات مثل video diffusion وZero123 في 100 سطر فقط من التعليمات البرمجية. تُقدم فورج ميزات إضافية مثل شبكات التحكم المُقنعة وأجهزة أخذ العينات غير الموجودة في واجهة ويب فورج الأصلية. وهي مفتوحة المصدر بالكامل وتحتفظ بواجهة Automatic1111 المألوفة.<br><br>تُقدم فورج حزمة تثبيت بنقرة واحدة على مستودع GitHub، تجمع بين Git وPython لإعداد سريع وسهل. يُمكنك أيضًا التثبيت من المصدر عن طريق استنساخ مستودع GitHub، وتثبيت المتطلبات الأساسية مثل Git وPython، وتشغيل سكربت التشغيل. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://github.com/lllyasviel/stable-diffusion-webui-forge\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

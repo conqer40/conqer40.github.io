@@ -1,0 +1,12 @@
+{
+  "id": "db141e6fb5d559e5",
+  "slug": "MIDIGEN",
+  "name": "MIDIGEN",
+  "description": "MIDIGEN هو مُولّد MIDI مجاني بالذكاء الاصطناعي، يُمكّنك من إنشاء ألحان MIDI قصيرة ومقاطع صوتية بسهولة. تُولّد هذه الأداة ألحانًا أصلية بناءً على المعلمات القابل",
+  "category": "الصوتيات",
+  "price": "غير محدد",
+  "externalUrl": "https://midigen.app/",
+  "sourceUrl": "https://aitoolsbot.com/tool/MIDIGEN",
+  "image": "/tool-images/db141e6fb5d559e5.png",
+  "contentHtml": "MIDIGEN هو مُولّد MIDI مجاني بالذكاء الاصطناعي، يُمكّنك من إنشاء ألحان MIDI قصيرة ومقاطع صوتية بسهولة. تُولّد هذه الأداة ألحانًا أصلية بناءً على المعلمات القابلة للتخصيص التي تُحدّدها، بما في ذلك السلم الموسيقي، والمفتاح، والإيقاع، ومدة النوتة. كما يُتيح MIDIGEN إمكانية إضافة فترات راحة، وأوتار، وأربيجات لزيادة تعقيد وعمق الألحان المُولّدة. بشكل افتراضي، تستخدم الأداة صوت بيانو MIDI قياسي لكل نوتة، ولكن يُمكن أيضًا تغيير ذلك إلى صوت آلة سينث في الأسفل. للحصول على أفضل صوت، يُنصح باستيراد مسارات MIDI إلى برنامج DAW الخاص بك، ثم استخدام مُلحق VST. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://midigen.app/\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

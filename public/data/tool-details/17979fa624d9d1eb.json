@@ -1,0 +1,12 @@
+{
+  "id": "17979fa624d9d1eb",
+  "slug": "Deep-Researcher",
+  "name": "Deep Researcher",
+  "description": "Deep Research هو تطبيق مفتوح المصدر لوكيل البحث من OpenAI، مصمم لتسهيل البحث المتكرر والمتعمق في مواضيع مختلفة. تتيح هذه الأداة للمستخدمين تعزيز قدرات البحث من",
+  "category": "البحث",
+  "price": "مجاني",
+  "externalUrl": "https://github.com/dzhng/deep-research",
+  "sourceUrl": "https://aitoolsbot.com/tool/Deep-Researcher",
+  "image": "/tool-images/17979fa624d9d1eb.webp",
+  "contentHtml": "Deep Research هو تطبيق مفتوح المصدر لوكيل البحث من OpenAI، مصمم لتسهيل البحث المتكرر والمتعمق في مواضيع مختلفة. تتيح هذه الأداة للمستخدمين تعزيز قدرات البحث من خلال توليد استعلامات بحث مُستهدفة ومعالجة النتائج من خلال توليد استعلامات ذكي.<br><br>يمكن للمستخدمين تخصيص نطاق وعمق استعلاماتهم، مما يجعلها قابلة للتكيف مع احتياجات بحثية محددة. بفضل إمكانية إنتاج تقارير Markdown مفصلة، ​​يُدمج Deep Research النتائج والمصادر بكفاءة، مما يُساعد المطورين والباحثين في مختلف المجالات. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://github.com/dzhng/deep-research\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

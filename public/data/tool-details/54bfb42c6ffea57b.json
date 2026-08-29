@@ -1,0 +1,12 @@
+{
+  "id": "54bfb42c6ffea57b",
+  "slug": "MusicGen",
+  "name": "MusicGen",
+  "description": "MusicGen هي أداة لتوليد الموسيقى بالذكاء الاصطناعي، طورتها شركة Meta، وتُمكّن من توليد عينات موسيقية عالية الجودة من خلال رسائل نصية بسيطة، مع إمكانية تحميل مقا",
+  "category": "الصوتيات",
+  "price": "مجاني",
+  "externalUrl": "https://huggingface.co/spaces/facebook/MusicGen",
+  "sourceUrl": "https://aitoolsbot.com/tool/MusicGen",
+  "image": "/tool-images/54bfb42c6ffea57b.webp",
+  "contentHtml": "MusicGen هي أداة لتوليد الموسيقى بالذكاء الاصطناعي، طورتها شركة Meta، وتُمكّن من توليد عينات موسيقية عالية الجودة من خلال رسائل نصية بسيطة، مع إمكانية تحميل مقاطع صوتية لمزيد من التوجيه. تُعدّ MusicGen أداةً متطورةً مقارنةً بمولدات الموسيقى السابقة بالذكاء الاصطناعي بفضل نهجها المبتكر، مثل استخدام مُحوّل LM أحادي المرحلة، بدلاً من دمج نماذج متعددة. يمكنك تثبيت الأداة محليًا على جهازك، أو الاطلاع على النسخة التجريبية على HuggingFace. لتثبيت MusicGen على جهازك، اتبع دليل التثبيت الموجود في مستودع GitHub. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://huggingface.co/spaces/facebook/MusicGen\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

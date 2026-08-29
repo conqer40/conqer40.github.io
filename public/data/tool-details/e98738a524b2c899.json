@@ -1,0 +1,12 @@
+{
+  "id": "e98738a524b2c899",
+  "slug": "Basic-Pitch",
+  "name": "Basic Pitch",
+  "description": "Basic Pitch هو برنامج تحويل صوتي إلى MIDI مجاني ومفتوح المصدر، من تطوير Spotify. يتيح لك البرنامج تسجيل أو سحب وإفلات ملف صوتي لآلة موسيقية واحدة، وسيقوم البرنا",
+  "category": "الصوتيات",
+  "price": "مجاني",
+  "externalUrl": "https://basicpitch.spotify.com/",
+  "sourceUrl": "https://aitoolsbot.com/tool/Basic-Pitch",
+  "image": "/tool-images/e98738a524b2c899.png",
+  "contentHtml": "Basic Pitch هو برنامج تحويل صوتي إلى MIDI مجاني ومفتوح المصدر، من تطوير Spotify. يتيح لك البرنامج تسجيل أو سحب وإفلات ملف صوتي لآلة موسيقية واحدة، وسيقوم البرنامج تلقائيًا بإنشاء نسخة MIDI. يمكنك بعد ذلك فتح ملف MIDI باستخدام برنامج DAW أو برنامج تحرير الصوت المفضل لديك. كما أنه وسيلة سهلة للغاية لعازفي البيانو لاستخراج ملفات MIDI من مقطوعاتهم المفضلة، ليتمكنوا من تعلمها في برامج تصوير MIDI مثل Synthesia! <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://basicpitch.spotify.com/\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

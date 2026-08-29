@@ -1,0 +1,12 @@
+{
+  "id": "176c6dcb696947cf",
+  "slug": "HeyGPT",
+  "name": "HeyGPT",
+  "description": "HeyGPT تطبيق محلي يعمل في المتصفح باستخدام مفتاح API مُخزّن محليًا. سيساعدك هذا على تحقيق أقصى استفادة من ChatGPT. لا حاجة لتسجيل الدخول. يمكنك الوصول إلى ChatG",
+  "category": "الشات بوت",
+  "price": "حسب الاستخدام",
+  "externalUrl": "https://heygpt.chat/",
+  "sourceUrl": "https://aitoolsbot.com/tool/HeyGPT",
+  "image": "/tool-images/176c6dcb696947cf.webp",
+  "contentHtml": "HeyGPT تطبيق محلي يعمل في المتصفح باستخدام مفتاح API مُخزّن محليًا. سيساعدك هذا على تحقيق أقصى استفادة من ChatGPT. لا حاجة لتسجيل الدخول. يمكنك الوصول إلى ChatGPT في أي وقت، بما في ذلك أوقات الذروة. وقت استجابة أسرع. تمتع بوظائف متقدمة مثل الدردشة مع ملفات PDF متعددة في آنٍ واحد، واستخدام ChatGPT مع تحويل النص إلى كلام، والتعرف على الكلام، والبحث في الدردشات، ووضع علامات على محادثاتك، والمزيد. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://heygpt.chat/\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

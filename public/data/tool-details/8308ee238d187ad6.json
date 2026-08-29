@@ -1,0 +1,12 @@
+{
+  "id": "8308ee238d187ad6",
+  "slug": "WAAS",
+  "name": "WAAS",
+  "description": "تُسمى الأداة \"خدمة ويسبر\"، وهي واجهة برمجة تطبيقات رسومية لبرنامج ويسبر من OpenAI. تتيح للمستخدمين نسخ ملفات الصوت والفيديو عن طريق تحميلها على المنصة، ثم استلا",
+  "category": "تحويل الكلام الى نص",
+  "price": "اشتراك",
+  "externalUrl": "https://github.com/schibsted/WAAS",
+  "sourceUrl": "https://aitoolsbot.com/tool/WAAS",
+  "image": "/tool-images/8308ee238d187ad6.webp",
+  "contentHtml": "تُسمى الأداة \"خدمة ويسبر\"، وهي واجهة برمجة تطبيقات رسومية لبرنامج ويسبر من OpenAI. تتيح للمستخدمين نسخ ملفات الصوت والفيديو عن طريق تحميلها على المنصة، ثم استلام النصوص عبر البريد الإلكتروني أو روابط التنزيل. كما توفر محررًا لتصحيح أخطاء النصوص بسهولة، ويمكن للمستخدمين حفظ الملفات المصححة على سطح المكتب. تأتي الأداة بخيارات قابلة للتخصيص، مثل اللغة والطراز واسم الملف وصيغة الإخراج. كما توفر ميزة استجابة خطاف الويب لإرسال إشعارات إلى عناوين URL المحددة. تم نشر الكود على Github بموجب ترخيص Apache-2.0. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://github.com/schibsted/WAAS\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

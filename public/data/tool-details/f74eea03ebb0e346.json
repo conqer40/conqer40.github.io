@@ -1,0 +1,12 @@
+{
+  "id": "f74eea03ebb0e346",
+  "slug": "Db-pilot",
+  "name": "Db pilot",
+  "description": "DB Pilot هو عميل واجهة مستخدم رسومية لقواعد البيانات، مصمم لتبسيط إدارة استعلامات SQL لـ PostgreSQL وMySQL وSQLite، بالإضافة إلى الدعم المرتقب لـ DuckDB وCockro",
+  "category": "قواعد بيانات",
+  "price": "مجاني + مدفوع",
+  "externalUrl": "https://www.dbpilot.io/",
+  "sourceUrl": "https://aitoolsbot.com/tool/Db-pilot",
+  "image": "/tool-images/f74eea03ebb0e346.webp",
+  "contentHtml": "DB Pilot هو عميل واجهة مستخدم رسومية لقواعد البيانات، مصمم لتبسيط إدارة استعلامات SQL لـ PostgreSQL وMySQL وSQLite، بالإضافة إلى الدعم المرتقب لـ DuckDB وCockroachDB. يتميز بمساعد ذكاء اصطناعي يعمل بنظامي GPT-3.5 Turbo وGPT-4 Turbo، مما يساعد المستخدمين على كتابة استعلامات SQL وتصحيح أخطائها وفهمها بسهولة، حتى مع قواعد البيانات التي تحتوي على أكثر من 10,000 جدول.<br><br>يمكن للمستخدمين استيراد البيانات من أكثر من 250 مصدرًا، مثل Intercom وMixpanel، مما يُسهّل دمج البيانات. توفر الأداة ميزة الإكمال التلقائي الذكي للاقتراحات المتوافقة مع السياق، مما يُسهّل التنقل بين الجداول والأعمدة. بفضل وظائف تحرير البيانات والبحث عنها وتصفيتها، المشابهة لجداول البيانات، يُحسّن DB Pilot الإنتاجية دون الحاجة إلى كتابة أوامر SQL مُطولة. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://www.dbpilot.io/\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

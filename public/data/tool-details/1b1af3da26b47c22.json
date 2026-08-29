@@ -1,0 +1,12 @@
+{
+  "id": "1b1af3da26b47c22",
+  "slug": "ShortGPT",
+  "name": "ShortGPT",
+  "description": "ShortGPT هو إطار عمل مفتوح المصدر للذكاء الاصطناعي، مصمم لأتمتة إنشاء محتوى الفيديو القصير. يُبسّط ShortGPT عملية إنشاء الفيديو باستخدام لغة تحرير فيديو مُصممة",
+  "category": "إنشاء الفيديو",
+  "price": "غير محدد",
+  "externalUrl": "https://github.com/RayVentura/ShortGPT",
+  "sourceUrl": "https://aitoolsbot.com/tool/ShortGPT",
+  "image": "/tool-images/1b1af3da26b47c22.webp",
+  "contentHtml": "ShortGPT هو إطار عمل مفتوح المصدر للذكاء الاصطناعي، مصمم لأتمتة إنشاء محتوى الفيديو القصير. يُبسّط ShortGPT عملية إنشاء الفيديو باستخدام لغة تحرير فيديو مُصممة خصيصًا لطلاب الماجستير في القانون، ويتيح إنشاء مقاطع فيديو قصيرة، وتركيب التعليق الصوتي، وإنشاء التسميات التوضيحية. يدعم ShortGPT لغات متعددة لإنشاء التعليق الصوتي، ويستمد الصور ومقاطع الفيديو من الويب وواجهة برمجة تطبيقات Pexels. الأداة متاحة على مستودع GitHub، والذي يتضمن أيضًا تعليمات التثبيت الكاملة لتشغيله باستخدام بايثون. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://github.com/RayVentura/ShortGPT\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

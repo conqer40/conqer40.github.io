@@ -1,0 +1,12 @@
+{
+  "id": "476bedcfe0ed6565",
+  "slug": "Tortoise-TTS",
+  "name": "Tortoise TTS",
+  "description": "Tortoise TTS هو برنامج مفتوح المصدر لتحويل النصوص إلى كلام، يُولّد كلامًا واقعيًا للغاية. يوفر البرنامج إمكانيات متعددة للأصوات مع إمكانية تخصيصها، كما يُتيح تح",
+  "category": "تحويل النص الى كلام",
+  "price": "غير محدد",
+  "externalUrl": "https://github.com/neonbjb/tortoise-tts",
+  "sourceUrl": "https://aitoolsbot.com/tool/Tortoise-TTS",
+  "image": "/tool-images/476bedcfe0ed6565.webp",
+  "contentHtml": "Tortoise TTS هو برنامج مفتوح المصدر لتحويل النصوص إلى كلام، يُولّد كلامًا واقعيًا للغاية. يوفر البرنامج إمكانيات متعددة للأصوات مع إمكانية تخصيصها، كما يُتيح تحكمًا دقيقًا في النبرات الصوتية والتجويد. لاستخدام Tortoise TTS، ستحتاج إلى وحدة معالجة رسومات NVIDIA، ثم يمكنك تثبيته عبر pip أو Docker. يُرجى اتباع تعليمات التثبيت على صفحة GitHub حسب إعدادات جهازك. يوفر البرنامج واجهات متعددة، من نصوص سطر الأوامر إلى الوصول إلى واجهة برمجة التطبيقات (API) للاستخدام البرمجي. يتوفر أيضًا عرض توضيحي لـ Hugging Face، حيث يمكنك اختبار بعض الأصوات بحرية. Tortoise TTS مرخص بموجب Apache 2.0، وهو مجاني تمامًا للاستخدام. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://github.com/neonbjb/tortoise-tts\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

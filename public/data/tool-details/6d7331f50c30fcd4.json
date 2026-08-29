@@ -1,0 +1,12 @@
+{
+  "id": "6d7331f50c30fcd4",
+  "slug": "TensorFlow",
+  "name": "TensorFlow",
+  "description": "TensorFlow منصة تعلّم آلي مفتوحة المصدر وشاملة ورائجة. توفر أدوات لإعداد البيانات، وبناء النماذج، ونشرها في بيئة الإنتاج. يمكن للمطورين استخدام نماذج مُدرّبة مس",
+  "category": "مصادر",
+  "price": "غير محدد",
+  "externalUrl": "https://www.tensorflow.org/",
+  "sourceUrl": "https://aitoolsbot.com/tool/TensorFlow",
+  "image": "/tool-images/6d7331f50c30fcd4.png",
+  "contentHtml": "TensorFlow منصة تعلّم آلي مفتوحة المصدر وشاملة ورائجة. توفر أدوات لإعداد البيانات، وبناء النماذج، ونشرها في بيئة الإنتاج. يمكن للمطورين استخدام نماذج مُدرّبة مسبقًا أو إنشاء نماذج مخصصة. تدعم TensorFlow النشر على الجهاز، والمتصفح، والخادم، والسحابة. كما تضم ​​منتدى مجتمعيًا نشطًا يتيح لك التواصل والتعلم والتعاون مع مطوري تعلّم آلي آخرين. تتوفر العديد من الدروس التعليمية والأمثلة والموارد على موقع TensorFlow الإلكتروني لمساعدة مطوري تعلّم الآلة بشكل أكبر. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://www.tensorflow.org/\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

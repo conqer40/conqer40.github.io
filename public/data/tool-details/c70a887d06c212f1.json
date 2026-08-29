@@ -1,0 +1,12 @@
+{
+  "id": "c70a887d06c212f1",
+  "slug": "Chat2DB",
+  "name": "Chat2DB",
+  "description": "Chat2DB هي أداة تحويل نص إلى SQL، مدعومة بالذكاء الاصطناعي، مصممة لإدارة قواعد البيانات بكفاءة عبر منصات متنوعة. تتصل بسلاسة بقواعد البيانات العلائقية وغير العل",
+  "category": "قواعد بيانات",
+  "price": "اشتراك",
+  "externalUrl": "https://chat2db.ai/",
+  "sourceUrl": "https://aitoolsbot.com/tool/Chat2DB",
+  "image": "/tool-images/c70a887d06c212f1.webp",
+  "contentHtml": "Chat2DB هي أداة تحويل نص إلى SQL، مدعومة بالذكاء الاصطناعي، مصممة لإدارة قواعد البيانات بكفاءة عبر منصات متنوعة. تتصل بسلاسة بقواعد البيانات العلائقية وغير العلائقية، مما يُمكّن المستخدمين من إنشاء استعلامات SQL مُحسّنة باستخدام اللغة الطبيعية.<br><br>بفضل دعمها لقواعد البيانات الشائعة مثل MySQL وMongoDB وPostgreSQL، تُمكّن Chat2DB المستخدمين التقنيين وغير التقنيين من اكتساب رؤى عملية بسرعة. تتضمن الأداة ميزات لاستيراد وتصدير البيانات بتنسيقات متعددة، وإنشاء لوحات معلومات مخصصة، وإجراء تحليلات متقدمة للبيانات دون الحاجة إلى معرفة متعمقة بلغة SQL.<br><br>تضمن إجراءات الأمان المُحسّنة، مثل تشفير البيانات والمصادقة الثنائية، خصوصية البيانات، بينما تُسهّل خيارات التعاون مشاركة الرؤى بسهولة بين أعضاء الفريق. تُعدّ Chat2DB مثالية للمستخدمين في مجالات التحليلات والمالية وإدارة البيانات، حيث تُبسّط تفاعلات البيانات المُعقدة وتُسرّع عمليات اتخاذ القرار. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://chat2db.ai/\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

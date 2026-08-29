@@ -1,0 +1,12 @@
+{
+  "id": "edd253498382fd82",
+  "slug": "Ollama",
+  "name": "Ollama",
+  "description": "Ollama هي حزمة برامج تُسهّل تشغيل نماذج لغات كبيرة محليًا على جهاز الكمبيوتر. تتوفر إصدارات من البرنامج لأنظمة MacOS وLinux وWindows. لاستخدام Ollama، ما عليك س",
+  "category": "مصادر",
+  "price": "غير محدد",
+  "externalUrl": "https://ollama.com/",
+  "sourceUrl": "https://aitoolsbot.com/tool/Ollama",
+  "image": "/tool-images/edd253498382fd82.webp",
+  "contentHtml": "Ollama هي حزمة برامج تُسهّل تشغيل نماذج لغات كبيرة محليًا على جهاز الكمبيوتر. تتوفر إصدارات من البرنامج لأنظمة MacOS وLinux وWindows. لاستخدام Ollama، ما عليك سوى تنزيله وتثبيته، ثم تشغيل الأوامر لاستخراج النماذج من المكتبة أو من ملف تكوين النموذج. يدعم البرنامج العديد من النماذج المجانية مفتوحة المصدر، والتي يُمكن الاطلاع عليها في قسم المكتبة بموقع Ollama الإلكتروني. ستحتاج إلى جهاز كمبيوتر قوي لتشغيل نماذج لغات كبيرة باستخدام Ollama. بشكل عام، يجب أن يكون لديك ذاكرة وصول عشوائي (RAM) بسعة 8 جيجابايت على الأقل لنماذج 7B، و16 جيجابايت لنماذج 13B، و32 جيجابايت لنماذج 33B. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://ollama.com/\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

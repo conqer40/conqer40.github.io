@@ -1,0 +1,12 @@
+{
+  "id": "288b6c117896d9fc",
+  "slug": "SuperExpert-AI",
+  "name": "SuperExpert AI",
+  "description": "Superexpert.ai هي منصة ذكاء اصطناعي مفتوحة المصدر تُمكّن المطورين من بناء ونشر وكلاء ذكاء اصطناعي متعددي المهام دون الحاجة لكتابة أكواد برمجية. تدعم المنصة تقني",
+  "category": "خدمة العملاء",
+  "price": "مجاني",
+  "externalUrl": "https://superexpert.ai/",
+  "sourceUrl": "https://aitoolsbot.com/tool/SuperExpert-AI",
+  "image": "/tool-images/288b6c117896d9fc.webp",
+  "contentHtml": "Superexpert.ai هي منصة ذكاء اصطناعي مفتوحة المصدر تُمكّن المطورين من بناء ونشر وكلاء ذكاء اصطناعي متعددي المهام دون الحاجة لكتابة أكواد برمجية. تدعم المنصة تقنية التوليد المعزز بالاسترجاع (RAG) لاسترجاع المستندات، وتتكامل مع أدوات مخصصة.<br><br>تعمل المنصة مع Vercel وAWS وGCP وAzure، وتستخدم Next.js وTypeScript وPostgreSQL لتوسيع نطاقها. تُمكّن المنصة من بناء تطبيقات، من روبوتات الدردشة إلى حلول الأتمتة، مع ملكية كاملة ودعم مجتمعي. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://superexpert.ai/\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

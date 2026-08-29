@@ -1,0 +1,12 @@
+{
+  "id": "f4e2cbd8a22f3ee0",
+  "slug": "AI-photo-sorter",
+  "name": "AI photo sorter",
+  "description": "مُفرز الصور بالذكاء الاصطناعي هو تطبيق ويب يستخدم الشبكات العصبية لمساعدة المستخدمين على تنظيم مجموعات صورهم بكفاءة وأمان. يتيح التطبيق للمستخدمين إنشاء فئات مخ",
+  "category": "صور",
+  "price": "مجاني + مدفوع",
+  "externalUrl": "https://ai-photo-sorter.vercel.app/",
+  "sourceUrl": "https://aitoolsbot.com/tool/AI-photo-sorter",
+  "image": "/tool-images/f4e2cbd8a22f3ee0.webp",
+  "contentHtml": "مُفرز الصور بالذكاء الاصطناعي هو تطبيق ويب يستخدم الشبكات العصبية لمساعدة المستخدمين على تنظيم مجموعات صورهم بكفاءة وأمان. يتيح التطبيق للمستخدمين إنشاء فئات مخصصة، وفرز الصور، وإزالة الصور المكررة، والحفاظ على بياناتهم آمنة على أجهزة الكمبيوتر.<br><br>يوفر التطبيق تجربة إدارة صور بسيطة وسلسة. يمكن للمستخدمين استيراد الصور عن طريق سحبها وإفلاتها في المربع أو تحميلها من أي مكان على جهاز الكمبيوتر. يعالج الذكاء الاصطناعي الصور ويفرزها إلى فئات، بل ويعثر على الصور المكررة.<br><br>يمكن للمستخدمين بعد ذلك مراجعة النتائج وتحديد الصور التي لا يريدونها، وإعادة تسمية فئات الفئات أو حذفها، وإنشاء برنامج نصي لحذف الصور غير المرغوب فيها تلقائيًا أو نقلها إلى المجلدات المناسبة. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://ai-photo-sorter.vercel.app/\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

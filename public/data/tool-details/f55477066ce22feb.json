@@ -1,0 +1,12 @@
+{
+  "id": "f55477066ce22feb",
+  "slug": "Rubbrband",
+  "name": "Rubbrband",
+  "description": "Rubbrband هو مُولّد صور مجاني بالذكاء الاصطناعي، يُتيح لك إنشاء صور بأنماط فريدة باستمرار. تُوفّر المنصة ميزات سهلة التحكم، وتدعم نماذج مُختلفة، وتتيح لك تعديل",
+  "category": "إنشاء الصور",
+  "price": "مجاني",
+  "externalUrl": "https://www.rubbrband.com/home",
+  "sourceUrl": "https://aitoolsbot.com/tool/Rubbrband",
+  "image": "/tool-images/f55477066ce22feb.webp",
+  "contentHtml": "Rubbrband هو مُولّد صور مجاني بالذكاء الاصطناعي، يُتيح لك إنشاء صور بأنماط فريدة باستمرار. تُوفّر المنصة ميزات سهلة التحكم، وتدعم نماذج مُختلفة، وتتيح لك تعديل جوانب مثل لوحة الألوان والمحاذاة السريعة. مع Rubbrband، يُمكنك إنشاء سير عمل مُخصصة تُولّد صورًا بأنماط مُحددة، مثل لوحات مُستوحاة من مونيه بمخطط ألوان أحمر وأزرق. يُمكنك استيراد النماذج وLoRAs مُباشرةً من Civitai بنسخ رابط النموذج ولصقه. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://www.rubbrband.com/home\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

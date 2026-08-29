@@ -1,0 +1,12 @@
+{
+  "id": "6787cc64d7344521",
+  "slug": "RunDiffusion",
+  "name": "RunDiffusion",
+  "description": "يوفر RunDiffusion وصولاً سهلاً إلى إنشاء رسومات الذكاء الاصطناعي بتقنية Stable Diffusion في السحابة، باستخدام AUTOMATIC1111 وواجهات مستخدم Stable Diffusion الشا",
+  "category": "تركيب الصور Stable Diffusion",
+  "price": "مدفوع",
+  "externalUrl": "https://rundiffusion.com/",
+  "sourceUrl": "https://aitoolsbot.com/tool/RunDiffusion",
+  "image": "/tool-images/6787cc64d7344521.png",
+  "contentHtml": "يوفر RunDiffusion وصولاً سهلاً إلى إنشاء رسومات الذكاء الاصطناعي بتقنية Stable Diffusion في السحابة، باستخدام AUTOMATIC1111 وواجهات مستخدم Stable Diffusion الشائعة الأخرى. لا يتطلب الأمر أي برمجة أو تثبيت - يمكنك الآن تشغيل جلسات Stable Diffusion جاهزة للاستخدام على وحدات معالجة رسومات سريعة بنقرة واحدة. يتضمن RunDiffusion العديد من النماذج الشائعة للاختيار من بينها؛ حتى أنه يحتوي على متصفح ملفات مدمج، ومؤقت ذكي، ومقاطع فيديو قابلة للتشويه، والمزيد. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://rundiffusion.com/\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

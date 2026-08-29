@@ -1,0 +1,12 @@
+{
+  "id": "dd04d6000087ab75",
+  "slug": "Innic-data",
+  "name": "Innic data",
+  "description": "Innic هي أداة لإدارة قواعد البيانات مصممة للتعامل بكفاءة مع قواعد بيانات متعددة مثل MySQL وPostgreSQL وSQLite وDuckDB. يمكن للمستخدمين إجراء تعديلات مباشرة داخل",
+  "category": "قواعد بيانات",
+  "price": "مجاني + مدفوع",
+  "externalUrl": "https://innicdata.com/",
+  "sourceUrl": "https://aitoolsbot.com/tool/Innic-data",
+  "image": "/tool-images/dd04d6000087ab75.webp",
+  "contentHtml": "Innic هي أداة لإدارة قواعد البيانات مصممة للتعامل بكفاءة مع قواعد بيانات متعددة مثل MySQL وPostgreSQL وSQLite وDuckDB. يمكن للمستخدمين إجراء تعديلات مباشرة داخل الجداول والاستفادة من مساعدة الذكاء الاصطناعي المدمجة لكتابة استعلامات SQL، مما يُبسط عملية الصياغة من خلال ميزات مثل الإكمال التلقائي لـ SQL وتظليل بناء الجملة.<br><br>تتيح Innic التكامل السلس مع DuckDB، مما يُمكّن المستخدمين من تحديد وتحرير البيانات بسهولة بتنسيقات CSV أو JSON أو Excel. تدعم هذه الأداة وظائف متنوعة، بما في ذلك معاينة التغييرات، وتصدير جداول متعددة أو قواعد بيانات كاملة بتنسيقات CSV وSQL، وتوفر وضعًا داكنًا سهل الاستخدام لمزيد من الراحة البصرية. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://innicdata.com/\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

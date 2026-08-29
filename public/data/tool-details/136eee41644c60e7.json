@@ -1,0 +1,12 @@
+{
+  "id": "136eee41644c60e7",
+  "slug": "BallonTranslator",
+  "name": "BallonTranslator",
+  "description": "BallonTranslator أداة متقدمة لترجمة القصص المصورة/المانغا، تعتمد على التعلم العميق. توفر هذه الأداة عملية ترجمة آلية بالكامل، تشمل اكتشاف النصوص والتعرف عليها و",
+  "category": "الترجمه",
+  "price": "غير محدد",
+  "externalUrl": "https://github.com/dmMaze/BallonsTranslator/blob/master/README_EN.md",
+  "sourceUrl": "https://aitoolsbot.com/tool/BallonTranslator",
+  "image": "/tool-images/136eee41644c60e7.webp",
+  "contentHtml": "BallonTranslator أداة متقدمة لترجمة القصص المصورة/المانغا، تعتمد على التعلم العميق. توفر هذه الأداة عملية ترجمة آلية بالكامل، تشمل اكتشاف النصوص والتعرف عليها وإزالتها وترجمتها. تعمل بكفاءة مع المانغا والقصص المصورة، محسّنةً تنسيق المانغا-&gt;الإنجليزية والإنجليزية-&gt;الصينية. BallonTranslator متوفر على GitHub، ولتثبيته، ما عليك سوى تنزيل وتشغيل ملف \"Ballonstranslator-x.x.x-core.7z\" - تجده في قسم \"الاستخدام\" في مستودع GitHub. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://github.com/dmMaze/BallonsTranslator/blob/master/README_EN.md\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

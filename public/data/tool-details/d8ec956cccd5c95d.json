@@ -1,0 +1,12 @@
+{
+  "id": "d8ec956cccd5c95d",
+  "slug": "Stable-Diffusion",
+  "name": "Stable Diffusion",
+  "description": "Stable Diffusion هو مُولِّد صور ذكاء اصطناعي مفتوح المصدر، يُتيح للمستخدمين تشغيل الأداة محليًا على وحدة معالجة الرسومات الخاصة بهم، بالإضافة إلى تدريب نماذجهم",
+  "category": "إنشاء الصور",
+  "price": "مجاني",
+  "externalUrl": "https://stablediffusionweb.com/#demo",
+  "sourceUrl": "https://aitoolsbot.com/tool/Stable-Diffusion",
+  "image": "/tool-images/d8ec956cccd5c95d.webp",
+  "contentHtml": "Stable Diffusion هو مُولِّد صور ذكاء اصطناعي مفتوح المصدر، يُتيح للمستخدمين تشغيل الأداة محليًا على وحدة معالجة الرسومات الخاصة بهم، بالإضافة إلى تدريب نماذجهم (أنماطهم). يُعد Stable Diffusion أصعب قليلًا في التعلم والإعداد مقارنةً بمعظم مُولِّدات صور الذكاء الاصطناعي الأخرى، ولكنه يُقدم العديد من المزايا أيضًا. يُمكنك أيضًا تجربة Stable Diffusion مجانًا على هذا الموقع الإلكتروني، وإذا كنت ترغب في تثبيته وتشغيله محليًا، يُرجى الاطلاع على دليل التثبيت هنا. تتوفر الآن أيضًا طريقة لتثبيت Stable Diffusion على نظام iOS باستخدام AI Photo. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://stablediffusionweb.com/#demo\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

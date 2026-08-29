@@ -1,0 +1,12 @@
+{
+  "id": "6b61c1fe2bdf6a50",
+  "slug": "Krita-AI-Diffusion",
+  "name": "Krita AI Diffusion",
+  "description": "تُضيف إضافة Krita AI Diffusion إمكانيات إنشاء الصور بتقنية الذكاء الاصطناعي إلى برنامج الرسم الرقمي Krita مفتوح المصدر. تتيح لك هذه الإضافة الاستفادة من توجيهات",
+  "category": "تركيب الصور Stable Diffusion",
+  "price": "غير محدد",
+  "externalUrl": "https://github.com/Acly/krita-ai-diffusion",
+  "sourceUrl": "https://aitoolsbot.com/tool/Krita-AI-Diffusion",
+  "image": "/tool-images/6b61c1fe2bdf6a50.webp",
+  "contentHtml": "تُضيف إضافة Krita AI Diffusion إمكانيات إنشاء الصور بتقنية الذكاء الاصطناعي إلى برنامج الرسم الرقمي Krita مفتوح المصدر. تتيح لك هذه الإضافة الاستفادة من توجيهات النص وتحديد مناطق الصورة للرسم عليها، ورسمها، وتحسينها، وإنشاء أعمال فنية جديدة، كل ذلك داخل Krita. تُدار تقنية إنشاء الصور بواسطة Stable Diffusion، والتي تُمكّنك أيضًا من القيام بمهام مفيدة أخرى مثل تحسين جودة الصور بأكملها أو أجزاء منها. تُدير الإضافة تثبيت نماذج Stable Diffusion نيابةً عنك، وتعمل محليًا أو في السحابة. مع ذلك، ستحتاج إلى ذاكرة VRAM بسعة 8 جيجابايت أو أكثر للتثبيت المحلي.<br><br>لسهولة التثبيت، يُرجى اتباع تعليمات التثبيت الموجودة في مستودع GitHub. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://github.com/Acly/krita-ai-diffusion\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

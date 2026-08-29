@@ -1,0 +1,12 @@
+{
+  "id": "d1fe80157d2ebe3d",
+  "slug": "WindChat",
+  "name": "WindChat",
+  "description": "WindChat هو مساعد تطوير واجهة أمامية مصمم خصيصًا للعمل مع Tailwind CSS وReact.js. بخبرة تزيد عن 10 سنوات في React.js، تساعد هذه الأداة في تصميم صفحات ومكونات جذ",
+  "category": "التطوير والبرمجة",
+  "price": "مجاني + مدفوع",
+  "externalUrl": "https://www.windchat.link/",
+  "sourceUrl": "https://aitoolsbot.com/tool/WindChat",
+  "image": "/tool-images/d1fe80157d2ebe3d.webp",
+  "contentHtml": "WindChat هو مساعد تطوير واجهة أمامية مصمم خصيصًا للعمل مع Tailwind CSS وReact.js. بخبرة تزيد عن 10 سنوات في React.js، تساعد هذه الأداة في تصميم صفحات ومكونات جذابة من خلال تقديم توصيات سريعة. يمكن للمستخدمين بسهولة استخدام أنماط Tailwind CSS لواجهة المستخدم، واستيراد ملفات CSS متنوعة، وتقسيم الشيفرة البرمجية بكفاءة إلى مكونات متعددة. يُبسط WindChat عملية دمج الأيقونات والصور وبيانات العرض التوضيحي، مما يسمح بدمج سلس لمكتبات واجهة المستخدم الشائعة، مثل مكونات MUI. من خلال توفير قالب لإعداد المكونات وعرضها بسرعة، يُبسط WindChat عملية التطوير ويُحسّن سير عمل التصميم بشكل عام. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://www.windchat.link/\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

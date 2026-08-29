@@ -1,0 +1,12 @@
+{
+  "id": "edbfdcdedda29bae",
+  "slug": "Auto-GPT",
+  "name": "Auto-GPT",
+  "description": "يُعدّ Auto-GPT رائدًا للغاية، ويُمثّل إحدى أولى اللمحات عن الشكل الفعلي للذكاء الاصطناعي العام. Auto-GPT تطبيق مفتوح المصدر يستخدم نموذج لغة GPT-4 لتطوير وإدارة",
+  "category": "انشاء النصوص",
+  "price": "غير محدد",
+  "externalUrl": "https://github.com/Torantulino/Auto-GPT",
+  "sourceUrl": "https://aitoolsbot.com/tool/Auto-GPT",
+  "image": "/tool-images/edbfdcdedda29bae.webp",
+  "contentHtml": "يُعدّ Auto-GPT رائدًا للغاية، ويُمثّل إحدى أولى اللمحات عن الشكل الفعلي للذكاء الاصطناعي العام. Auto-GPT تطبيق مفتوح المصدر يستخدم نموذج لغة GPT-4 لتطوير وإدارة الشركات بشكل مستقل لزيادة صافي ثرواتها. ومع ذلك، فإنّ تطبيقاته الفعلية لا حصر لها، وليست مقتصرة على الأعمال التجارية فقط. يتيح Auto-GPT حاليًا الوصول إلى الإنترنت، وإدارة الذاكرة طويلة وقصيرة المدى، وإنشاء النصوص، والوصول إلى مواقع الويب الشهيرة، وتخزين الملفات وتلخيصها باستخدام GPT-3.5. يتطلب Auto-GPT إصدار Python 3.7 أو أحدث، ومفتاح واجهة برمجة تطبيقات OpenAI للتثبيت والإعداد. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://github.com/Torantulino/Auto-GPT\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

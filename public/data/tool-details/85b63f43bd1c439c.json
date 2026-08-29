@@ -1,0 +1,12 @@
+{
+  "id": "85b63f43bd1c439c",
+  "slug": "ComfyUI",
+  "name": "ComfyUI",
+  "description": "ComfyUI هي واجهة مستخدم رسومية معيارية لنشر الصور مستقرة وغير متصلة بالإنترنت، مع واجهة رسومية/عقد. تتيح لك تصميم وتنفيذ خطوط أنابيب نشر متقدمة ومستقرة دون الحا",
+  "category": "تركيب الصور Stable Diffusion",
+  "price": "مجاني",
+  "externalUrl": "https://github.com/comfyanonymous/ComfyUI",
+  "sourceUrl": "https://aitoolsbot.com/tool/ComfyUI",
+  "image": "/tool-images/85b63f43bd1c439c.webp",
+  "contentHtml": "ComfyUI هي واجهة مستخدم رسومية معيارية لنشر الصور مستقرة وغير متصلة بالإنترنت، مع واجهة رسومية/عقد. تتيح لك تصميم وتنفيذ خطوط أنابيب نشر متقدمة ومستقرة دون الحاجة إلى برمجة باستخدام واجهة رسومية سهلة الاستخدام. يدعم ComfyUI إصدارات SD1.x وSD2.x وSDXL، ويتميز بنظام انتظار غير متزامن وتحسينات ذكية لتوليد صور بكفاءة. يمكن تهيئته للعمل على وحدات معالجة الرسومات (GPU) أو وحدة المعالجة المركزية (CPU) فقط، ويسمح لك بتحميل وحفظ النماذج والتضمينات وسير العمل السابقة. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://github.com/comfyanonymous/ComfyUI\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

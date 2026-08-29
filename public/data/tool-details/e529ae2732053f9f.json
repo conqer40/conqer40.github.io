@@ -1,0 +1,12 @@
+{
+  "id": "e529ae2732053f9f",
+  "slug": "MusicLM",
+  "name": "MusicLM",
+  "description": "MusicLM هي أداة ذكاء اصطناعي تُولّد نصوصًا موسيقية عالية الدقة بناءً على توجيهات ومجموعات بيانات مُقدّمة. تستخدم الأداة نموذجًا هرميًا من تسلسل إلى تسلسل لتو",
+  "category": "إنشاء الموسيقى",
+  "price": "مجاني",
+  "externalUrl": "https://google-research.github.io/seanet/musiclm/examples/",
+  "sourceUrl": "https://aitoolsbot.com/tool/MusicLM",
+  "image": "/tool-images/e529ae2732053f9f.webp",
+  "contentHtml": "<p>MusicLM هي أداة ذكاء اصطناعي تُولّد نصوصًا موسيقية عالية الدقة بناءً على توجيهات ومجموعات بيانات مُقدّمة. تستخدم الأداة نموذجًا هرميًا من تسلسل إلى تسلسل لتوليد موسيقى تبقى متسقة لعدة دقائق، وتتفوق على الأنظمة السابقة من حيث جودة الصوت. كما تتمتع بالقدرة على تحويل الألحان بناءً على توجيهات نصية، ويمكنها توليد الصوت بناءً على اختبارات وعينات متنوعة. بالإضافة إلى ذلك، توفر MusicLM مجموعة بيانات تتألف من 5.5 ألف زوج من النصوص الموسيقية، مع أوصاف نصية غنية يقدمها خبراء بشريون.<br><br>&nbsp;الميزات الرئيسية<br>تشمل ميزات وفوائد MusicLM الأساسية ما يلي:<br><br>✔️ توليد نصوص موسيقية عالية الدقة.<br>✔️ الحفاظ على الاتساق لعدة دقائق.<br>✔️ التفوق على الأنظمة السابقة من حيث جودة الصوت.<br>✔️ تحويل الألحان بناءً على توجيهات نصية.<br>✔️ توليد الصوت بناءً على اختبارات وعينات متنوعة.</p><p><br>&nbsp;حالات الاستخدام والتطبيقات<br>✔️ إنشاء موسيقى خلفية للفيديوهات.<br>✔️ إنشاء موسيقى مخصصة للألعاب.<br>✔️ إنتاج موسيقى أصلية للبودكاست.</p><p><br>&nbsp;لمن هذا المنتج؟<br>ملحنو الموسيقى<br>الموسيقيون<br>مؤلفو الأغاني<br>مهندسو الصوت<br>باحثو الذكاء الاصطناعي<br>مُحبو الذكاء الاصطناعي</p> <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://google-research.github.io/seanet/musiclm/examples/\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

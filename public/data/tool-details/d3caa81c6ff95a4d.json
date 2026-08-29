@@ -1,0 +1,12 @@
+{
+  "id": "d3caa81c6ff95a4d",
+  "slug": "Census-GPT",
+  "name": "Census GPT",
+  "description": "يحل CensusGPT مشكلة صعوبة الوصول إلى بيانات التعداد السكاني - ما عليك سوى طرح سؤال، وسيقدم لك CensusGPT إجابةً على شكل بيانات جدولية وتصورات مرئية. هذه الأداة م",
+  "category": "تحليل البيانات",
+  "price": "مجاني",
+  "externalUrl": "https://censusgpt.com/",
+  "sourceUrl": "https://aitoolsbot.com/tool/Census-GPT",
+  "image": "/tool-images/d3caa81c6ff95a4d.webp",
+  "contentHtml": "يحل CensusGPT مشكلة صعوبة الوصول إلى بيانات التعداد السكاني - ما عليك سوى طرح سؤال، وسيقدم لك CensusGPT إجابةً على شكل بيانات جدولية وتصورات مرئية. هذه الأداة مثالية للباحثين والاقتصاديين وأي شخص آخر مهتم بالإجابة على أسئلتهم باستخدام بيانات التعداد السكاني المتاحة للعامة، والتي تغطي مواضيع مثل التركيبة السكانية والعرق والدخل. يعتمد CensusGPT على مشروع TextSQL مفتوح المصدر، والذي يُمكّن المستخدمين من \"التواصل\" مع أي مجموعة بيانات بلغة طبيعية من خلال استخدام الذكاء الاصطناعي لتحويل الاستعلام إلى SQL. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://censusgpt.com/\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

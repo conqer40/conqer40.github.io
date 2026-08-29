@@ -1,0 +1,12 @@
+{
+  "id": "395d7b71fd8e7cba",
+  "slug": "Oobabooga",
+  "name": "Oobabooga",
+  "description": "Oobabooga هي واجهة مستخدم ويب مفتوحة المصدر من Gradio لنماذج اللغات الكبيرة، وتوفر ثلاثة أوضاع سهلة الاستخدام للدردشة مع خبراء التعلم العميق: عرض افتراضي بعمودي",
+  "category": "مصادر",
+  "price": "غير محدد",
+  "externalUrl": "https://github.com/oobabooga/text-generation-webui",
+  "sourceUrl": "https://aitoolsbot.com/tool/Oobabooga",
+  "image": "/tool-images/395d7b71fd8e7cba.webp",
+  "contentHtml": "Oobabooga هي واجهة مستخدم ويب مفتوحة المصدر من Gradio لنماذج اللغات الكبيرة، وتوفر ثلاثة أوضاع سهلة الاستخدام للدردشة مع خبراء التعلم العميق: عرض افتراضي بعمودين، وواجهة تشبه دفتر الملاحظات، وواجهة دردشة. تتيح لك هذه المرونة التفاعل مع نماذج الذكاء الاصطناعي بالطريقة الأنسب لاحتياجاتك، سواءً كانت الكتابة أو التحليل أو الإجابة على الأسئلة أو مهام البرمجة.<br><br>من أبرز ميزات واجهة التعلم العميق هذه مجموعتها الواسعة من الإضافات المدمجة والمُقدمة من المستخدم. تُعزز هذه الإضافات قدرات الأداة بوظائف مثل تحويل النص إلى كلام (TTS)، وتحويل الكلام إلى نص (STT)، والترجمة، وخطوط الأنابيب متعددة الوسائط، وقواعد بيانات المتجهات، وحتى التكامل مع Stable Diffusion لتوليد الصور من المطالبات النصية. نوصي باتباع دليل تثبيت GitHub لإرشادات الإعداد. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://github.com/oobabooga/text-generation-webui\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

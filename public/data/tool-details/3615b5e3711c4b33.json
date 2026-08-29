@@ -1,0 +1,12 @@
+{
+  "id": "3615b5e3711c4b33",
+  "slug": "Roop",
+  "name": "Roop",
+  "description": "Roop هي أداة لتزييف الوجوه بنقرة واحدة، متوفرة على GitHub وكامتداد Stable Diffusion. تتيح لك استبدال الوجوه في الفيديوهات بأي وجه آخر باستخدام صورة واحدة فقط. ت",
+  "category": "الفيديو",
+  "price": "غير محدد",
+  "externalUrl": "https://github.com/s0md3v/roop",
+  "sourceUrl": "https://aitoolsbot.com/tool/Roop",
+  "image": "/tool-images/3615b5e3711c4b33.png",
+  "contentHtml": "Roop هي أداة لتزييف الوجوه بنقرة واحدة، متوفرة على GitHub وكامتداد Stable Diffusion. تتيح لك استبدال الوجوه في الفيديوهات بأي وجه آخر باستخدام صورة واحدة فقط. تتوفر تعليمات التثبيت في مستودع GitHub للإعدادات الأساسية والمسرّعة بواسطة وحدة معالجة الرسومات. عند تشغيل البرنامج، ستظهر نافذة سهلة الاستخدام، حيث يمكنك تحديد الصور/الفيديوهات المصدرية والهدفية، وبدء عملية تبديل الوجوه. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://github.com/s0md3v/roop\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

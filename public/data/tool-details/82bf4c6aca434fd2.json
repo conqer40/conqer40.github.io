@@ -1,0 +1,12 @@
+{
+  "id": "82bf4c6aca434fd2",
+  "slug": "ToonCrafter",
+  "name": "ToonCrafter",
+  "description": "ToonCrafter هو نموذج استيفاء فيديو مفتوح المصدر، مُعدّل بدقة لإنتاج مقاطع فيديو متحركة للرسوم المتحركة والأنيمي. يتطلب صورتين - بداية ونهاية للفيديو أو الرسوم ا",
+  "category": "الفيديو",
+  "price": "تجربة مجانية",
+  "externalUrl": "https://github.com/ToonCrafter/ToonCrafter",
+  "sourceUrl": "https://aitoolsbot.com/tool/ToonCrafter",
+  "image": "/tool-images/82bf4c6aca434fd2.webp",
+  "contentHtml": "ToonCrafter هو نموذج استيفاء فيديو مفتوح المصدر، مُعدّل بدقة لإنتاج مقاطع فيديو متحركة للرسوم المتحركة والأنيمي. يتطلب صورتين - بداية ونهاية للفيديو أو الرسوم المتحركة (المعروفة أيضًا باسم الإطارات الرئيسية). ثم يستخدم الذكاء الاصطناعي هاتين الصورتين لتوليد حركة سلسة واستيفائها بين الإطارات. هذا يوفر وقتًا ثمينًا للرسامين الذين يعملون على الرسوم المتحركة، إذ لم يعودوا بحاجة إلى رسم كل إطار على حدة. يتوفر كود ToonCrafter على صفحة GitHub، كما تتوفر أوزان النماذج على Hugging Face. كما يتوفر عرض توضيحي مفيد على Hugging Face حيث يمكنك تجربة الأداة مع رسوم متحركة مدتها ثانيتان.<br><br>يرجى ملاحظة أن نموذج ToonCrafter يتطلب حاليًا وحدة معالجة رسومات قوية مع ذاكرة وصول عشوائي (VRAM) كبيرة للعمل بشكل صحيح. أفاد بعض المستخدمين أنه يمكنه استخدام ذاكرة وصول عشوائي (VRAM) ضخمة بسعة 26 جيجابايت (معذرةً، يا أصحاب 4090!). <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://github.com/ToonCrafter/ToonCrafter\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

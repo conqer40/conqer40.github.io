@@ -1,0 +1,12 @@
+{
+  "id": "b95c7893bb498ffd",
+  "slug": "GPT-Researcher",
+  "name": "GPT Researcher",
+  "description": "GPT Researcher هو وكيل مستقل مصمم لإجراء بحث شامل عبر الإنترنت حول مجموعة متنوعة من المهام. يستخدم نماذج لغة GPT-4 لإنشاء أسئلة بحثية، وتشغيل وكيل زاح",
+  "category": "البحث",
+  "price": "مجاني + مدفوع",
+  "externalUrl": "https://github.com/assafelovic/gpt-researcher",
+  "sourceUrl": "https://aitoolsbot.com/tool/GPT-Researcher",
+  "image": "/tool-images/b95c7893bb498ffd.png",
+  "contentHtml": "<p>GPT Researcher هو وكيل مستقل مصمم لإجراء بحث شامل عبر الإنترنت حول مجموعة متنوعة من المهام. </p><p>يستخدم نماذج لغة GPT-4 لإنشاء أسئلة بحثية، وتشغيل وكيل زاحف للبحث عن المعلومات في الموارد الإلكترونية،</p><p> وتلخيصها بناءً على المعلومات ذات الصلة، وتصفيتها وتجميعها، وإنشاء تقرير بحثي. يتضمن واجهة ويب سهلة الاستخدام، ويمكنه تصدير تقارير البحث إلى ملفات PDF.</p> <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://github.com/assafelovic/gpt-researcher\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

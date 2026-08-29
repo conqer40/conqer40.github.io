@@ -1,0 +1,12 @@
+{
+  "id": "e2f2fffeab04363f",
+  "slug": "Hugging-Face",
+  "name": "Hugging Face",
+  "description": "يُعد Hugging Face أحد أكبر مستودعات نماذج الذكاء الاصطناعي التوليدية، ويوفر منصة آمنة لبناء نماذج الذكاء الاصطناعي الخاصة بك وتدريبها ونشرها. تضم المنصة بالفعل",
+  "category": "مصادر",
+  "price": "غير محدد",
+  "externalUrl": "https://huggingface.co/",
+  "sourceUrl": "https://aitoolsbot.com/tool/Hugging-Face",
+  "image": "/tool-images/e2f2fffeab04363f.png",
+  "contentHtml": "يُعد Hugging Face أحد أكبر مستودعات نماذج الذكاء الاصطناعي التوليدية، ويوفر منصة آمنة لبناء نماذج الذكاء الاصطناعي الخاصة بك وتدريبها ونشرها. تضم المنصة بالفعل مجموعة واسعة من النماذج ومجموعات البيانات لمهام مثل تصنيف الصوت والصور والإجابة على الأسئلة وتلخيص النصوص. تدعم مكتبة Transformers مفتوحة المصدر معالجة اللغة الطبيعية، وهي متوافقة مع مكتبات شائعة أخرى. كما يوفر Hugging Face واجهة برمجة تطبيقات استدلالية لتشغيل نماذج معالجة اللغة الطبيعية واسعة النطاق بسرعة وكفاءة. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://huggingface.co/\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

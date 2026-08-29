@@ -1,0 +1,12 @@
+{
+  "id": "357140d1a07c3171",
+  "slug": "Amazon-CodeWhisperer",
+  "name": "Amazon CodeWhisperer",
+  "description": "Amazon CodeWhisperer هو مساعد برمجة قائم على الذكاء الاصطناعي، يدعم التعلم الآلي، ويساعد المطورين على بناء التطبيقات بشكل أسرع من خلال تقديم توصيات برمجية آنية",
+  "category": "التطوير والبرمجة",
+  "price": "مجاني trail",
+  "externalUrl": "https://aws.amazon.com/q/developer/",
+  "sourceUrl": "https://aitoolsbot.com/tool/Amazon-CodeWhisperer",
+  "image": "/tool-images/357140d1a07c3171.png",
+  "contentHtml": "Amazon CodeWhisperer هو مساعد برمجة قائم على الذكاء الاصطناعي، يدعم\nالتعلم الآلي، ويساعد المطورين على بناء التطبيقات بشكل أسرع من خلال تقديم توصيات برمجية آنية في بيئة التطوير المتكاملة (IDE). يمكنه إنشاء وظائف\nكاملة وكتل برمجية منطقية، ويقدم توصيات لواجهات برمجة تطبيقات AWS عبر\nخدمات شائعة مثل EC2 وLambda وS3. كما يساعد CodeWhisperer في إنشاء\nاختبارات الوحدات، ويُمكّن المطورين من استخدام التعلم الآلي في تطبيقاتهم. وهو متوفر حاليًا لمشاريع Java وPython وJavaScript. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://aws.amazon.com/q/developer/\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

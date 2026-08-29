@@ -1,0 +1,12 @@
+{
+  "id": "79f5b26ed9e4d78e",
+  "slug": "QR-Diffusion",
+  "name": "QR Diffusion",
+  "description": "QR Diffusion هو مُولّد رموز QR مُدعّم بالذكاء الاصطناعي، يُحوّل رموز QR العادية إلى أعمال فنية رائعة. يستخدم نماذج ذكاء اصطناعي توليدية متطورة مثل Stable Di",
+  "category": "تجارة الكترونيه",
+  "price": "مجاني + مدفوع",
+  "externalUrl": "https://qrdiffusion.com/",
+  "sourceUrl": "https://aitoolsbot.com/tool/QR-Diffusion",
+  "image": "/tool-images/79f5b26ed9e4d78e.webp",
+  "contentHtml": "QR Diffusion هو مُولّد رموز QR مُدعّم بالذكاء الاصطناعي، يُحوّل رموز QR\nالعادية إلى أعمال فنية رائعة. يستخدم نماذج ذكاء اصطناعي توليدية متطورة\nمثل Stable Diffusion وControlNet لتحويل الرموز العادية بالأبيض والأسود\nإلى تصاميم رائعة، عملية وجذابة بصريًا. مع QR Diffusion، يُمكنك تخصيص\nمظهر رمز QR الخاص بك بكتابة نصوص إرشادية، حيث يُولّد أربعة خيارات فنية\nللاختيار من بينها مع كل تلميح. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://qrdiffusion.com/\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

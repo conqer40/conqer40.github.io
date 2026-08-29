@@ -1,0 +1,12 @@
+{
+  "id": "ba136c0c19417348",
+  "slug": "Easy-Diffusion",
+  "name": "Easy Diffusion",
+  "description": "Easy Diffusion هي واجهة سهلة الاستخدام لـ Stable Diffusion، مزودة ببرنامج تثبيت سهل بنقرة واحدة لأنظمة Windows وMac وLinux. تأتي الواجهة مُثبّتة مسبقًا بجميع أح",
+  "category": "تركيب الصور Stable Diffusion",
+  "price": "غير محدد",
+  "externalUrl": "https://easydiffusion.github.io/",
+  "sourceUrl": "https://aitoolsbot.com/tool/Easy-Diffusion",
+  "image": "",
+  "contentHtml": "Easy Diffusion هي واجهة سهلة الاستخدام لـ Stable Diffusion، مزودة ببرنامج تثبيت سهل بنقرة واحدة لأنظمة Windows وMac وLinux. تأتي الواجهة مُثبّتة مسبقًا بجميع أحدث طُرز Stable Diffusion، بما في ذلك طُرز SDXL! كما يُتيح لك Easy Diffusion الوصول إلى ملحقات مثل ControlNet، وLoRAs متعددة، والتضمينات، والرسم الداخلي، والتحسين، وغيرها. تُعد هذه الواجهة مثالية لمن ليس لديهم خبرة سابقة في Stable Diffusion بفضل برنامج التثبيت بنقرة واحدة. يُمكن إنشاء الصور من خلال واجهة الويب باستخدام وحدة معالجة الرسومات الخاصة بك.<br><br>للحصول على تعليمات تثبيت أكثر تفصيلًا، يُرجى الاطلاع على الوثائق الرسمية. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://easydiffusion.github.io/\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

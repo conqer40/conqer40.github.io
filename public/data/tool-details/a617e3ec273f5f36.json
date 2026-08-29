@@ -1,0 +1,12 @@
+{
+  "id": "a617e3ec273f5f36",
+  "slug": "Sourcegraph-Cody",
+  "name": "Sourcegraph Cody",
+  "description": "كودي هو مساعد برمجة بالذكاء الاصطناعي من Sourcegraph، مصمم لمساعدة المطورين على كتابة وفهم وإصلاح الأكواد البرمجية بشكل أسرع. كودي مفتوح المصدر ومدعوم بالذك",
+  "category": "التطوير والبرمجة",
+  "price": "غير محدد",
+  "externalUrl": "https://sourcegraph.com/cody",
+  "sourceUrl": "https://aitoolsbot.com/tool/Sourcegraph-Cody",
+  "image": "/tool-images/a617e3ec273f5f36.webp",
+  "contentHtml": "كودي هو مساعد برمجة بالذكاء الاصطناعي من Sourcegraph، مصمم لمساعدة\nالمطورين على كتابة وفهم وإصلاح الأكواد البرمجية بشكل أسرع. كودي مفتوح\nالمصدر ومدعوم بالذكاء الاصطناعي، ويوفر إكمالًا ذكيًا للأكواد البرمجية،\nوتوثيقًا، ودعمًا عبر الدردشة عبر لغات البرمجة وقواعد الأكواد. ببضع نقرات فقط، يستطيع كودي شرح مستودعات الأكواد البرمجية بالكامل، وإنشاء\nالاختبارات، وتحسين الأكواد البرمجية، وغير ذلك الكثير. يمكن دمجه بسلاسة\nفي معظم بيئات التطوير المتكاملة (IDEs) الشائعة مثل VS Code وJetBrains\nمجانًا، كما يتوفر إصدار \"Pro\" مجانًا لفترة مؤقتة. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://sourcegraph.com/cody\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

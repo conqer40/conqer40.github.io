@@ -1,0 +1,12 @@
+{
+  "id": "05d2f1173e0b0ee6",
+  "slug": "Lmql",
+  "name": "Lmql",
+  "description": "LMQL لغة برمجة قوية مصممة خصيصًا لنماذج اللغات الكبيرة (LLMs)، لتسهيل التفاعل مع هذه النماذج بفعالية. توفر إمكانيات توجيه نموذجية باستخدام الأنواع والقوالب والق",
+  "category": "التطوير والبرمجة",
+  "price": "غير محدد",
+  "externalUrl": "https://lmql.ai/",
+  "sourceUrl": "https://aitoolsbot.com/tool/Lmql",
+  "image": "/tool-images/05d2f1173e0b0ee6.webp",
+  "contentHtml": "LMQL لغة برمجة قوية مصممة خصيصًا لنماذج اللغات الكبيرة (LLMs)، لتسهيل التفاعل مع هذه النماذج بفعالية. توفر إمكانيات توجيه نموذجية باستخدام الأنواع والقوالب والقيود، بالإضافة إلى وقت تشغيل مُحسّن.<br><br>يمكن للمستخدمين استخدام LMQL لمجموعة واسعة من المهام، بدءًا من الاستعلامات البسيطة ووصولًا إلى مهام البرمجة الإجرائية المعقدة. بفضل دعم الاستعلامات المتداخلة، تُمكّن LMQL من إنشاء تعليمات محلية نموذجية، مما يُعزز إعادة استخدام مكونات التوجيه، ويُسهّل البرمجة الإجرائية داخل بيئة التوجيه.<br><br>بالإضافة إلى ذلك، تضمن LMQL قابلية النقل عبر مختلف الواجهات الخلفية، مما يسمح للمستخدمين بالتبديل بينها بسلاسة باستخدام سطر واحد من التعليمات البرمجية. يتم تنفيذ إنشاء التوجيهات وتوليدها في LMQL باستخدام تدفق تحكم بايثون التعبيري واستيفاء السلاسل، مما يوفر للمستخدمين أداة مرنة وفعالة للتفاعل مع نماذج اللغات الكبيرة. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://lmql.ai/\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

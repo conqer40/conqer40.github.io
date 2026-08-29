@@ -1,0 +1,12 @@
+{
+  "id": "876ab02ed73f1383",
+  "slug": "Vanna",
+  "name": "Vanna",
+  "description": "Vanna.ai هو وكيل ذكاء اصطناعي SQL مفتوح المصدر، قائم على بايثون، مصمم لكتابة استعلامات SQL معقدة في ثوانٍ. مع Vanna، يمكنك بسهولة تدريب وكيل الذكاء الاصطناعي عل",
+  "category": "قواعد بيانات",
+  "price": "مجاني + مدفوع",
+  "externalUrl": "https://vanna.ai/",
+  "sourceUrl": "https://aitoolsbot.com/tool/Vanna",
+  "image": "/tool-images/876ab02ed73f1383.webp",
+  "contentHtml": "Vanna.ai هو وكيل ذكاء اصطناعي SQL مفتوح المصدر، قائم على بايثون، مصمم لكتابة استعلامات SQL معقدة في ثوانٍ. مع Vanna، يمكنك بسهولة تدريب وكيل الذكاء الاصطناعي على مخطط قاعدة بياناتك المحدد، مما يضمن دقة عالية لمجموعات البيانات المعقدة.<br><br>تدعم الأداة مجموعة واسعة من قواعد البيانات، بما في ذلك Snowflake وBigQuery وPostgres، وتتيح لك الاتصال بسهولة بقاعدة البيانات التي تختارها. كما توفر Vanna نماذج مُدربة مسبقًا يمكن لأي شخص استخدامها، وتسعى باستمرار لتحسين أدائها من خلال تعزيز بيانات التدريب.<br><br>توفر خيارات تكامل متنوعة، بما في ذلك Slackbot، وتطبيق ويب، وتطبيق Streamlit، وملحق Excel، وحتى إمكانية عرضها على عملائك عبر تطبيق ويب. Vanna.ai هي أسرع طريقة للحصول على رؤى من قاعدة بياناتك بمجرد طرح الأسئلة. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://vanna.ai/\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

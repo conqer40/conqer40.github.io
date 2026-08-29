@@ -1,0 +1,12 @@
+{
+  "id": "a43a22602bd9db0b",
+  "slug": "LlamaChat",
+  "name": "LlamaChat",
+  "description": "llamachat هي أداة ذكاء اصطناعي تتيح للمستخدمين الدردشة مع نماذج اللاما والألبكة وGPT-4 محليًا على نظام ماك. مع خيارات تشغيل نماذج اللاما والألبكة وGPT-4 والفيكو",
+  "category": "الشات بوت",
+  "price": "مجاني",
+  "externalUrl": "https://llamachat.app/",
+  "sourceUrl": "https://aitoolsbot.com/tool/LlamaChat",
+  "image": "/tool-images/a43a22602bd9db0b.webp",
+  "contentHtml": "llamachat هي أداة ذكاء اصطناعي تتيح للمستخدمين الدردشة مع نماذج اللاما والألبكة وGPT-4 محليًا على نظام ماك. مع خيارات تشغيل نماذج اللاما والألبكة وGPT-4 والفيكونة، بما في ذلك نموذج اللاما المُحسّن بـ 7B معلمة، يمكن للمستخدمين الاستمتاع بتجربة شبيهة ببرامج الدردشة الآلية مقارنةً بالنماذج الأصلية. تدعم الأداة تحويل النماذج بسهولة، مما يسمح باستيراد نقاط تفتيش نماذج PyTorch الخام المنشورة مباشرةً أو ملفات نماذج .ggml المُحوّلة مسبقًا. llamachat مفتوح المصدر ومجاني بالكامل، ويعمل بمكتبات مفتوحة المصدر مثل llama.cpp وllama.swift. يمكن للمستخدمين المساهمة في تطوير الأداة على GitHub من خلال فتح طلبات السحب. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://llamachat.app/\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

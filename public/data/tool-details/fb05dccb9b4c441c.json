@@ -1,0 +1,12 @@
+{
+  "id": "fb05dccb9b4c441c",
+  "slug": "BlueWillow",
+  "name": "BlueWillow",
+  "description": "BlueWillow هو مُولِّد صور يُمكن الوصول إليه عبر خادم Discord الخاص بهم، وهو مُشابه لـ Midjourney. يُمكن استخدامه لإنشاء جميع أنواع الصور، بما في ذلك الشعارا",
+  "category": "صور",
+  "price": "مجاني",
+  "externalUrl": "https://www.bluewillow.ai/",
+  "sourceUrl": "https://aitoolsbot.com/tool/BlueWillow",
+  "image": "/tool-images/fb05dccb9b4c441c.webp",
+  "contentHtml": "BlueWillow هو مُولِّد صور يُمكن الوصول إليه عبر خادم Discord الخاص بهم،\nوهو مُشابه لـ Midjourney. يُمكن استخدامه لإنشاء جميع أنواع الصور، بما في ذلك الشعارات والرسومات والمشاهد الواقعية. يُمكنك الانضمام إلى مُجتمع\nDiscord الخاص بهم لاختبار المُطالبات، وإنشاء الصور، والتعرف على الآخرين، والحصول على الدعم. بعد انضمامك إلى Discord، توجّه إلى إحدى قنوات\n#newbies واستخدم أمر /imagine. يُولِّد BlueWillow أربع صور لكل مُطالبة،\nوهو حاليًا في مرحلة تجريبية، لذا من المُرجَّح إضافة المزيد من الميزات\nوالتحسينات في المُستقبل. يبدو أنه بديل رائع لميدجورني، وهو مجاني! <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://www.bluewillow.ai/\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

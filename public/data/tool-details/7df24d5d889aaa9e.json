@@ -1,0 +1,12 @@
+{
+  "id": "7df24d5d889aaa9e",
+  "slug": "Double",
+  "name": "Double",
+  "description": "Double هو مساعد برمجة بالذكاء الاصطناعي، وهو ملحق لبرنامج VS Code. يوفر مجموعة من الميزات لتعزيز إنتاجيتك، بما في ذلك وظيفة دردشة فعّالة مدعومة بأحدث نماذج GPT",
+  "category": "البرمجيات والاكواد",
+  "price": "مجاني + مدفوع",
+  "externalUrl": "https://docs.double.bot/introduction",
+  "sourceUrl": "https://aitoolsbot.com/tool/Double",
+  "image": "/tool-images/7df24d5d889aaa9e.png",
+  "contentHtml": "Double هو مساعد برمجة بالذكاء الاصطناعي، وهو ملحق لبرنامج VS Code. يوفر مجموعة من الميزات لتعزيز إنتاجيتك، بما في ذلك وظيفة دردشة فعّالة مدعومة بأحدث نماذج GPT أو Claude، واقتراحات ذكية للإكمال التلقائي، ومعاينة تحرير مضمنة لتعديلات الكود. يدعم Double ربطات مفاتيح قابلة للتخصيص ونماذج لغات مفتوحة المصدر مثل Meta's Llama 3.1 405B وMistral Large 2. يقدم Double فترة تجريبية مجانية لمدة 30 يومًا مع عدد غير محدود من عمليات الإكمال التلقائي والتحرير المضمن، مع وجود حد أقصى قدره 50 سؤالًا. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://docs.double.bot/introduction\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

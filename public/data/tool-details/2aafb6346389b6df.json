@@ -1,0 +1,12 @@
+{
+  "id": "2aafb6346389b6df",
+  "slug": "Falcon-180B",
+  "name": "Falcon 180B",
+  "description": "Falcon 180B هو نموذج لغة ذكاء اصطناعي قوي ومفتوح المصدر، من ابتكار TII، وتم تدريبه على 3500 مليار رمز لتطوير معالجة اللغة الطبيعية. هذا النموذج الضخم، الذي يحتو",
+  "category": "مصادر",
+  "price": "غير محدد",
+  "externalUrl": "https://huggingface.co/tiiuae/falcon-180B",
+  "sourceUrl": "https://aitoolsbot.com/tool/Falcon-180B",
+  "image": "/tool-images/2aafb6346389b6df.webp",
+  "contentHtml": "Falcon 180B هو نموذج لغة ذكاء اصطناعي قوي ومفتوح المصدر، من ابتكار TII، وتم تدريبه على 3500 مليار رمز لتطوير معالجة اللغة الطبيعية. هذا النموذج الضخم، الذي يحتوي على 180 مليار معلمة، قادر على توليد نصوص شبيهة بالنصوص البشرية، وتشغيل تطبيقات لغة طبيعية متقدمة. إذا كنت مهتمًا بتشغيل هذا النموذج، فننصحك بقراءة تدوينة HF Falcon 180b أولًا! يُظهر Falcon 180B أداءً متطورًا في المهام اللغوية، وهو متاح مجانًا بموجب ترخيص مُتساهل.<br><br>تأكد من الاطلاع على النسخة التجريبية المجانية المتوفرة على Hugging Face أيضًا، والموجودة في هذه الصفحة. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://huggingface.co/tiiuae/falcon-180B\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

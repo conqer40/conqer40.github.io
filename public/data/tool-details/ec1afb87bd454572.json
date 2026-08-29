@@ -1,0 +1,12 @@
+{
+  "id": "ec1afb87bd454572",
+  "slug": "Chat-with-RTX",
+  "name": "Chat with RTX",
+  "description": "Chat with RTX من NVIDIA هو روبوت دردشة ذكي مُخصص، يُتيح لك إنشاء نماذج لغات كبيرة (LLM) مُخصصة ومرتبطة بمحتواك الخاص، مثل المستندات والملاحظات ومقاطع الفيديو. ص",
+  "category": "انشاء النصوص",
+  "price": "غير محدد",
+  "externalUrl": "https://www.nvidia.com/en-us/ai-on-rtx/chat-with-rtx-generative-ai/",
+  "sourceUrl": "https://aitoolsbot.com/tool/Chat-with-RTX",
+  "image": "/tool-images/ec1afb87bd454572.webp",
+  "contentHtml": "Chat with RTX من NVIDIA هو روبوت دردشة ذكي مُخصص، يُتيح لك إنشاء نماذج لغات كبيرة (LLM) مُخصصة ومرتبطة بمحتواك الخاص، مثل المستندات والملاحظات ومقاطع الفيديو. صُمم Chat with RTX استنادًا إلى مشروع \"TensorRT-LLM RAG\"، وتُتيح أنوية Tensor القوية للذكاء الاصطناعي المُستخدمة في وحدات معالجة الرسومات من NVIDIA إمكانية توليد إجابات سريعة ومناسبة لأسئلتك.<br><br>تم تصميم Chat with RTX للعمل محليًا على أجهزة الكمبيوتر التي تعمل بنظام Windows والمُزودة ببطاقات رسومات GeForce أو Quadro RTX، وبالتالي سيتطلب وحدة معالجة رسومات من NVIDIA مزودة بأنوية Tensor. تُشير مُتطلبات النظام الرسمية إلى وحدة معالجة رسومات من سلسلة RTX 30 أو 40 على الأقل. يدعم البرنامج أنواعًا مُختلفة من الملفات، مثل النصوص وملفات PDF ومستندات Word ونصوص فيديوهات YouTube. يُمكنك بسهولة توجيهه إلى المُجلدات أو قوائم التشغيل لفهرسة المحتوى، مما يُسهّل إنشاء نماذج مُخصصة في ثوانٍ. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://www.nvidia.com/en-us/ai-on-rtx/chat-with-rtx-generative-ai/\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

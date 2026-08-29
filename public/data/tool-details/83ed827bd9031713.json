@@ -1,0 +1,12 @@
+{
+  "id": "83ed827bd9031713",
+  "slug": "Invoke-AI",
+  "name": "Invoke AI",
+  "description": "Invoke AI واجهة قوية لـ Stable Diffusion، تُمكّنك من إنشاء صور باستخدام العديد من نماذج SD المختلفة. من أفضل ميزات Invoke AI ميزة \"Unified Canvas\" التي تُتيح لك",
+  "category": "تركيب الصور Stable Diffusion",
+  "price": "مجاني",
+  "externalUrl": "https://invoke.ai/",
+  "sourceUrl": "https://aitoolsbot.com/tool/Invoke-AI",
+  "image": "/tool-images/83ed827bd9031713.webp",
+  "contentHtml": "Invoke AI واجهة قوية لـ Stable Diffusion، تُمكّنك من إنشاء صور باستخدام العديد من نماذج SD المختلفة. من أفضل ميزات Invoke AI ميزة \"Unified Canvas\" التي تُتيح لك التعديل داخل الصورة وحولها باستخدام أوامر نصية. باستخدام Unified Canvas، يُمكنك تحسين دقة الصورة بشكل ملحوظ، بل وإضافة تفاصيل دقيقة لعناصر مُحددة فيها. أصدرت Invoke AI دليل توثيق مُفيد لأداتها، مُزودًا بجميع المعلومات اللازمة لإعدادها والبدء في استخدامها. يُمكن تثبيتها بسهولة أكبر من مُعظم واجهات Stable Diffusion الأخرى، وذلك بفضل الإعداد بنقرة واحدة. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://invoke.ai/\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

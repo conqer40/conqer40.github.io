@@ -1,0 +1,12 @@
+{
+  "id": "464084e412638c44",
+  "slug": "MLC-LLM",
+  "name": "MLC LLM",
+  "description": "يتيح لك برنامج MLC LLM تشغيل نماذج لغات مثل Llama وRedPajama بشكل أصلي عبر مجموعة متنوعة من منصات الأجهزة، بما في ذلك الأجهزة المحمولة. تدعم هذه الأداة التشغيل",
+  "category": "انشاء النصوص",
+  "price": "غير محدد",
+  "externalUrl": "https://llm.mlc.ai/",
+  "sourceUrl": "https://aitoolsbot.com/tool/MLC-LLM",
+  "image": "/tool-images/464084e412638c44.webp",
+  "contentHtml": "يتيح لك برنامج MLC LLM تشغيل نماذج لغات مثل Llama وRedPajama بشكل أصلي عبر مجموعة متنوعة من منصات الأجهزة، بما في ذلك الأجهزة المحمولة. تدعم هذه الأداة التشغيل الأصلي على أنظمة iOS وAndroid وWindows وLinux وMac ومتصفحات الويب، مما يوفر توافقًا بين الأنظمة الأساسية. يمكن للمطورين الاستفادة من الوثائق المفصلة لبناء تطبيقات مخصصة متكاملة مع إمكانيات MLC LLM. بالنسبة للمستخدمين النهائيين، يوفر MLC LLM تطبيقات جاهزة للاستخدام تتيح استخدامات تفاعلية مثل الذكاء الاصطناعي للمحادثة، والمساعدة في الكتابة، والتحليل، وغيرها. تتوفر إصدارات تجريبية مجانية على الأجهزة المحمولة وأجهزة الكمبيوتر. يعمل MLC LLM بشكل أفضل على الأجهزة التي تحتوي على ذاكرة وصول عشوائي (RAM) بسعة 6 جيجابايت على الأقل.<br><br>لمن يستخدمون جهازًا محمولًا، يُطلق على التطبيق اسم MLCChat في متجري تطبيقات iOS وAndroid. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://llm.mlc.ai/\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

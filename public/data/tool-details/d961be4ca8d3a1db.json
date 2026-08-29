@@ -1,0 +1,12 @@
+{
+  "id": "d961be4ca8d3a1db",
+  "slug": "Dream-Textures",
+  "name": "Dream Textures",
+  "description": "Dream Textures هو إضافة مفتوحة المصدر لتوزيع مستقر لبرنامج Blender، ومتوفرة حاليًا على GitHub. تتيح لك هذه الإضافة إنشاء مجموعة واسعة من القوام، والفنون التشكيل",
+  "category": "3D",
+  "price": "غير محدد",
+  "externalUrl": "https://github.com/carson-katri/dream-textures",
+  "sourceUrl": "https://aitoolsbot.com/tool/Dream-Textures",
+  "image": "/tool-images/d961be4ca8d3a1db.webp",
+  "contentHtml": "Dream Textures هو إضافة مفتوحة المصدر لتوزيع مستقر لبرنامج Blender، ومتوفرة حاليًا على GitHub. تتيح لك هذه الإضافة إنشاء مجموعة واسعة من القوام، والفنون التشكيلية، وأصول الخلفية، وغيرها، بمجرد توجيه نصي بسيط. باستخدام خيار \"Seamless\"، يمكنك إنشاء قوام متناسق تمامًا دون أي تداخل مرئي. استخدم ميزة \"Project Dream Texture\" لإضافة عمق وقوام إلى المشاهد بأكملها. كما يتيح لك خيار \"Cycles Render Pass\" إعادة تصميم الرسوم المتحركة. تتيح لك Dream Textures تشغيل النماذج على جهازك، لتتمكن من تكرارها دون أي تباطؤ من الخادم أو مزود الخدمة. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://github.com/carson-katri/dream-textures\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "b1104751bb4ed24f",
+  "slug": "Palet-Design",
+  "name": "Palet Design",
+  "description": "Palet هو منشئ مواقع ويب يعتمد على تقنية الذكاء الاصطناعي لتبسيط وتسريع عملية إنشاء المواقع. تتيح واجهة المستخدم البديهية للمستخدمين إنشاء مواقع ويب بسرعة، بمساع",
+  "category": "المواقع الالكترونية",
+  "price": "مجاني",
+  "externalUrl": "https://www.palet.design/",
+  "sourceUrl": "https://aitoolsbot.com/tool/Palet-Design",
+  "image": "/tool-images/b1104751bb4ed24f.webp",
+  "contentHtml": "Palet هو منشئ مواقع ويب يعتمد على تقنية الذكاء الاصطناعي لتبسيط وتسريع عملية إنشاء المواقع. تتيح واجهة المستخدم البديهية للمستخدمين إنشاء مواقع ويب بسرعة، بمساعدة أوامر الذكاء الاصطناعي التي تُبسط مهام التصميم والترميز. يتيح محرر واجهة المستخدم المتقدم في Palet إنشاء رسوم متحركة ديناميكية لصفحات الويب دون الحاجة إلى ترميز، وذلك بفضل تكامله مع مكتبة الرسوم المتحركة GSAP.<br><br>يمكن للمستخدمين التبديل بسهولة بين محرر واجهة المستخدم ومحرر الأكواد البرمجية لمزيد من المرونة. كما يُسهّل Palet التخصيص من خلال إضافة أكواد مخصصة، ويوفر نشرًا سلسًا على Netlify بنقرة واحدة، وذلك من خلال إتاحة الوصول إلى مكتبات JavaScript مثل GSAP وThree. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://www.palet.design/\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

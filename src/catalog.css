@@ -1,0 +1,35 @@
+.catalog { padding: 68px 0 20px; border-top: 1px solid var(--line); }
+.catalog-heading { display: flex; justify-content: space-between; align-items: end; margin-bottom: 28px; }
+.catalog-heading span { color: var(--purple); font-size: 13px; }
+.catalog-heading h2 { font-size: 34px; margin: 8px 0; }
+.catalog-heading p { color: var(--muted); margin: 0; }
+.catalog-count { font: 700 35px Arial; color: var(--text); text-align: left; }
+.catalog-count small { display: block; color: var(--muted); font: 12px Tahoma; margin-top: 4px; }
+.catalog-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.catalog-card { min-width: 0; border: 1px solid var(--line); border-radius: 10px; padding: 0; overflow: hidden; background: var(--surface); color: var(--text); text-align: right; cursor: pointer; transition: transform .2s, border-color .2s; }
+.catalog-card:hover { transform: translateY(-3px); border-color: var(--purple); }
+.catalog-image { height: 150px; display: grid; place-items: center; overflow: hidden; background: var(--surface-2); color: var(--purple); font-size: 34px; }
+.catalog-image img { width: 100%; height: 100%; object-fit: cover; }
+.catalog-copy { padding: 16px; }
+.catalog-copy > span { color: var(--purple); font-size: 11px; }
+.catalog-copy h3 { direction: ltr; text-align: right; font: 700 18px Arial; margin: 7px 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.catalog-copy p { color: var(--muted); font-size: 12px; line-height: 1.7; height: 42px; overflow: hidden; margin: 0 0 14px; }
+.catalog-copy > div { border-top: 1px solid var(--line); padding-top: 12px; display: flex; justify-content: space-between; align-items: center; }
+.catalog-copy small { color: var(--muted); }
+.catalog-loading { min-height: 260px; display: flex; justify-content: center; align-items: center; gap: 12px; color: var(--muted); }
+.catalog-loading svg { animation: spin 1s linear infinite; }
+.load-more { display: block; margin: 30px auto 0; border: 1px solid var(--purple); color: var(--text); background: transparent; padding: 12px 28px; border-radius: 7px; cursor: pointer; }
+.tool-modal-backdrop { position: fixed; inset: 0; z-index: 100; background: rgba(0,0,0,.8); backdrop-filter: blur(8px); display: grid; place-items: center; padding: 24px; }
+.tool-modal { width: min(720px, 100%); max-height: min(820px, 92vh); overflow: auto; position: relative; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); padding: 28px; box-shadow: 0 30px 90px rgba(0,0,0,.55); }
+.modal-close { position: absolute; top: 14px; left: 14px; z-index: 2; width: 38px; height: 38px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 50%; background: var(--surface); color: var(--text); cursor: pointer; }
+.modal-hero { height: 250px; margin: -28px -28px 24px; overflow: hidden; background: var(--surface-2); display: grid; place-items: center; color: var(--purple); font-size: 42px; }
+.modal-hero img { width: 100%; height: 100%; object-fit: cover; }
+.tool-modal > span { color: var(--purple); font-size: 13px; }
+.tool-modal h2 { direction: ltr; text-align: right; font: 700 32px Arial; margin: 8px 0; }
+.modal-description { color: var(--muted); line-height: 1.8; }
+.modal-article { max-height: 230px; overflow: auto; white-space: pre-line; color: #b9bbc2; line-height: 1.9; border-block: 1px solid var(--line); padding-block: 18px; margin-block: 18px; }
+.modal-actions { display: flex; justify-content: space-between; align-items: center; }
+.modal-actions a { display: flex; align-items: center; gap: 8px; text-decoration: none; color: white; background: var(--purple); padding: 11px 18px; border-radius: 7px; }
+@keyframes spin { to { transform: rotate(360deg); } }
+@media (max-width: 1000px) { .catalog-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .catalog { padding-top: 45px; } .catalog-heading { align-items: start; } .catalog-heading h2 { font-size: 26px; } .catalog-count { font-size: 26px; } .catalog-grid { grid-template-columns: 1fr; } .catalog-card { display: grid; grid-template-columns: 112px 1fr; } .catalog-image { height: 100%; min-height: 150px; } .tool-modal-backdrop { padding: 10px; } .tool-modal { padding: 20px; } .modal-hero { margin: -20px -20px 20px; height: 190px; } }

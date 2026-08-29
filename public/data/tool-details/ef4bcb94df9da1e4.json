@@ -1,0 +1,12 @@
+{
+  "id": "ef4bcb94df9da1e4",
+  "slug": "FILM",
+  "name": "FILM",
+  "description": "Google-research/frame-interpol هي أداة واجهة برمجة تطبيقات عامة تتيح للمستخدمين تشغيل نماذج لاستيفاء الإطارات في مشاهد الحركة الكبيرة، بحد أدنى للإخراج 1 وحد",
+  "category": "الفيديو",
+  "price": "اشتراك",
+  "externalUrl": "https://replicate.com/google-research/frame-interpolation",
+  "sourceUrl": "https://aitoolsbot.com/tool/FILM",
+  "image": "/tool-images/ef4bcb94df9da1e4.webp",
+  "contentHtml": "<p>Google-research/frame-interpol هي أداة واجهة برمجة تطبيقات عامة تتيح للمستخدمين تشغيل نماذج لاستيفاء الإطارات في مشاهد الحركة الكبيرة، بحد أدنى للإخراج 1 وحد أقصى 8 عمليات استيفاء لكل فيديو، بمعدل إطار في الثانية 30 إطارًا في الثانية. تقدم الأداة نهجًا يعتمد على شبكة واحدة، مما يحقق نتائج متطورة دون استخدام شبكات إضافية مُدرَّبة مسبقًا، مثل عمق التدفق البصري. يتم تدريب النموذج باستخدام ثلاثية الإطارات فقط، ويكتمل عادةً في غضون 36 ثانية باستخدام وحدة معالجة الرسومات NVIDIA T4. تتوفر معلومات إضافية، مثل الاستشهادات والأمثلة، على صفحة الأداة على GitHub.<br><br>⭐ الميزات الرئيسية<br>تشمل ميزات وفوائد FILM الأساسية ما يلي:<br><br>✔️ استيفاء الإطارات في مشاهد الحركة الكبيرة.<br>✔️ نهج الشبكة الواحدة.<br>✔️ يحقق نتائج متطورة دون استخدام شبكات إضافية مُدرَّبة مسبقًا، مثل عمق التدفق البصري.<br>✔️ نموذج مُدرَّب باستخدام ثلاثية الإطارات فقط. ✔️ أُنجز في غضون 36 ثانية باستخدام معالج رسومات NVIDIA T4.<br></p><p>⚙️ حالات الاستخدام والتطبيقات<br>✔️ تحسين جودة الفيديو.<br>✔️ إنشاء تأثيرات الحركة البطيئة.<br>✔️ تحسين ضغط الفيديو.</p><p><br>🙋‍♂️ لمن هذا الاداه ؟<br>يُمكن استخدام FILM للفئات التالية من المستخدمين:<br><br>باحثو الذكاء الاصطناعي<br>مهندسو التعلم الآلي<br>محترفو الأفلام ومونتاج الفيديو<br>مُنشئو المؤثرات الخاصة</p> <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://replicate.com/google-research/frame-interpolation\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

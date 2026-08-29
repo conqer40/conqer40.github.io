@@ -1,0 +1,12 @@
+{
+  "id": "fa593f633c8a8945",
+  "slug": "ChartDB",
+  "name": "ChartDB",
+  "description": "ChartDB هي أداة متقدمة لعرض مخططات قواعد البيانات من خلال استعلام واحد، مصممة لتبسيط تصميم وإدارة قواعد البيانات. يمكن للمستخدمين إنشاء مخططات بسرعة في 15 ثانية",
+  "category": "قواعد بيانات",
+  "price": "مجاني + مدفوع",
+  "externalUrl": "https://chartdb.io/",
+  "sourceUrl": "https://aitoolsbot.com/tool/ChartDB",
+  "image": "/tool-images/fa593f633c8a8945.webp",
+  "contentHtml": "ChartDB هي أداة متقدمة لعرض مخططات قواعد البيانات من خلال استعلام واحد، مصممة لتبسيط تصميم وإدارة قواعد البيانات. يمكن للمستخدمين إنشاء مخططات بسرعة في 15 ثانية فقط دون الحاجة إلى الوصول المباشر إلى قاعدة البيانات، مما يجعلها مثالية لمسؤولي ومطوري قواعد البيانات.<br><br>تدعم الأداة استيراد وتصدير نصوص SQL، وتوفر محررًا قابلًا للتخصيص بالكامل، مما يسمح للمستخدمين بإنشاء الجداول وإدارتها وإقامة العلاقات بسلاسة. بفضل دعم أنظمة إدارة قواعد البيانات العلائقية الشائعة مثل MySQL وPostgreSQL وSQL Server، تُبسط ChartDB عملية عرض المخططات المعقدة.<br><br>توفر الأمثلة المصممة مسبقًا إلهامًا سريعًا للإعداد، بينما تعزز المخططات الجذابة بصريًا إمكانيات التعاون والمشاركة. يساهم محرر الاستعلامات المتقدم في سير عمل فعال من خلال تمكين ميزات مثل التراجع والإعادة، مما يُحسّن تجربة المستخدم الإجمالية في مهام قواعد البيانات. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://chartdb.io/\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "d5866b28c060a9b5",
+  "slug": "Monster-Mash",
+  "name": "Monster Mash",
+  "description": "Monster Mash هي أداة رسوم متحركة ثلاثية الأبعاد تعتمد على الرسومات، وتتيح رسم شخصيات سريعة، وتضخيمها وتحويلها إلى نماذج ثلاثية الأبعاد، وتحريكها. تتطلب الأداة م",
+  "category": "3D",
+  "price": "مجاني",
+  "externalUrl": "https://monstermash.zone/",
+  "sourceUrl": "https://aitoolsbot.com/tool/Monster-Mash",
+  "image": "/tool-images/d5866b28c060a9b5.webp",
+  "contentHtml": "Monster Mash هي أداة رسوم متحركة ثلاثية الأبعاد تعتمد على الرسومات، وتتيح رسم شخصيات سريعة، وتضخيمها وتحويلها إلى نماذج ثلاثية الأبعاد، وتحريكها. تتطلب الأداة متصفح ويب حديثًا يدعم WebAssembly وWebGL، ويمكن التحكم بها باستخدام الماوس أو اللمس أو القلم. توفر ثلاثة أوضاع إنشاء: الرسم، والتضخيم، والتحريك. كما تتيح الأداة إنشاء/فتح/حفظ/تصدير المشاريع، مع خيارات لاستيراد صور القوالب والخلفيات، وتصدير النماذج المزخرفة بتنسيقات متنوعة. كما تتوفر مفاتيح تشغيل سريعة وإعدادات مثل خياطة الإبط والتنعيم العادي. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://monstermash.zone/\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}

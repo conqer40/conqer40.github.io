@@ -1,0 +1,12 @@
+{
+  "id": "6598d1db7903af75",
+  "slug": "CodeRabbit",
+  "name": "CodeRabbit",
+  "description": "CodeRabbit هي أداة مراجعة أكواد برمجية تعتمد على الذكاء الاصطناعي، مصممة لمساعدة المطورين في عملية طلب السحب. توفر نماذجها اللغوية المتقدمة ملاحظات مدروسة، واقت",
+  "category": "التطوير والبرمجة",
+  "price": "تجربة مجانية",
+  "externalUrl": "https://www.coderabbit.ai/",
+  "sourceUrl": "https://aitoolsbot.com/tool/CodeRabbit",
+  "image": "/tool-images/6598d1db7903af75.webp",
+  "contentHtml": "CodeRabbit هي أداة مراجعة أكواد برمجية تعتمد على الذكاء الاصطناعي، مصممة لمساعدة المطورين في عملية طلب السحب. توفر نماذجها اللغوية المتقدمة ملاحظات مدروسة، واقتراحات أكواد برمجية سطرًا بسطر، وإمكانية الدردشة الفورية. تتكامل المنصة مباشرةً مع GitHub وGitLab، مما يُؤتمت مهام المراجعة الشاقة مثل تلخيص التغييرات، والتحقق من صحة المشكلات، وإنشاء ملاحظات الإصدار. كما يمكن للذكاء الاصطناعي في CodeRabbit التعلم من ملاحظات المستخدمين، مما يُمكّنه من تحسين جودة المراجعة بمرور الوقت. تُقدم CodeRabbit نسخة مجانية قوية، وحتى نسخة احترافية مجانية لمشاريع المصدر المفتوح. <ul class=\"list list-row gap-5 py-6 px-8 justify-content-center\"> <li class=\"fs-14 clr-neutral-80\"> <a href=\"https://www.coderabbit.ai/\" class=\"animated-border-btn link d-inline-flex justify-content-center rounded overflow-hidden position-relative z-1\" target=\"_blank\" rel=\"nofollow\"> <span class=\"d-inline-block transition bg-neutral-10 :bg-primary-key clr-white px-6 py-2 fw-bold text-center rounded\" > زيارة الموقع </span> </a> </li> </ul>"
+}
