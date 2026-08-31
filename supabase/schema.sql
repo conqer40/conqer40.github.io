@@ -70,3 +70,47 @@ create policy "Admin manages video categories" on public.video_categories for al
 create policy "Admin manages videos" on public.video_lessons for all to authenticated using((auth.jwt()->>'email')='01022104948@admin.elhawy.local') with check((auth.jwt()->>'email')='01022104948@admin.elhawy.local');
 grant select on public.video_categories,public.video_lessons to anon,authenticated;
 grant insert,update,delete on public.video_categories,public.video_lessons to authenticated;
+
+create table if not exists public.profiles (
+  id uuid primary key references auth.users(id) on delete cascade,
+  full_name text not null default '',
+  phone text not null unique,
+  role text not null default 'user' check (role in ('user','admin')),
+  active boolean not null default true,
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now()
+);
+alter table public.profiles enable row level security;
+create policy "Users read own profile" on public.profiles for select to authenticated using (id=auth.uid() or (auth.jwt()->>'email')='01022104948@admin.elhawy.local');
+create policy "Users update own profile" on public.profiles for update to authenticated using (id=auth.uid() or (auth.jwt()->>'email')='01022104948@admin.elhawy.local') with check (id=auth.uid() or (auth.jwt()->>'email')='01022104948@admin.elhawy.local');
+grant select,update on public.profiles to authenticated;
+
+create or replace function public.handle_new_user() returns trigger language plpgsql security definer set search_path=public as $$
+begin
+  insert into public.profiles(id,full_name,phone,role)
+  values(new.id,coalesce(new.raw_user_meta_data->>'full_name',''),coalesce(new.raw_user_meta_data->>'phone',split_part(new.email,'@',1)),case when new.email='01022104948@admin.elhawy.local' then 'admin' else 'user' end)
+  on conflict(id) do nothing;
+  return new;
+end; $$;
+drop trigger if exists on_auth_user_created on auth.users;
+create trigger on_auth_user_created after insert on auth.users for each row execute procedure public.handle_new_user();
+
+create or replace function public.protect_profile_admin_fields() returns trigger language plpgsql security definer set search_path=public as $$
+begin
+  if coalesce(auth.jwt()->>'email','') <> '01022104948@admin.elhawy.local' then
+    new.role := old.role;
+    new.active := old.active;
+    new.phone := old.phone;
+  end if;
+  return new;
+end; $$;
+drop trigger if exists protect_profile_admin_fields on public.profiles;
+create trigger protect_profile_admin_fields before update on public.profiles for each row execute procedure public.protect_profile_admin_fields();
+
+insert into storage.buckets(id,name,public,file_size_limit,allowed_mime_types)
+values('site-images','site-images',true,6291456,array['image/jpeg','image/png','image/webp','image/gif'])
+on conflict(id) do update set public=true,file_size_limit=6291456,allowed_mime_types=excluded.allowed_mime_types;
+create policy "Public reads site images" on storage.objects for select using(bucket_id='site-images');
+create policy "Admin uploads site images" on storage.objects for insert to authenticated with check(bucket_id='site-images' and (auth.jwt()->>'email')='01022104948@admin.elhawy.local');
+create policy "Admin updates site images" on storage.objects for update to authenticated using(bucket_id='site-images' and (auth.jwt()->>'email')='01022104948@admin.elhawy.local');
+create policy "Admin deletes site images" on storage.objects for delete to authenticated using(bucket_id='site-images' and (auth.jwt()->>'email')='01022104948@admin.elhawy.local');

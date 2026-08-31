@@ -4,35 +4,12 @@ import { FiArrowLeft, FiBookOpen, FiLoader } from "react-icons/fi";
 import { supabase, supabaseReady } from "./supabase.js";
 import { ShareButtons } from "./ShareButtons.jsx";
 
-const fallbacks = [
-  {
-    slug: "choose-ai-tool",
-    title: "كيف تختار أداة الذكاء الاصطناعي المناسبة؟",
-    summary: "دليل عملي يساعدك على المقارنة بعيدًا عن الضجيج.",
-    content:
-      "ابدأ بالمشكلة التي تريد حلها، وليس باسم الأداة الأكثر شهرة. حدّد المهمة والنتيجة التي تتوقعها.\n\nجرّب النسخة المجانية وقارن جودة النتيجة وسهولة الاستخدام والتكلفة.\n\nراجع سياسة الخصوصية وإمكانية تصدير بياناتك قبل الاعتماد على أي أداة.",
-  },
-  {
-    slug: "best-writing-tools",
-    title: "أفضل طريقة لمقارنة أدوات الكتابة",
-    summary: "اختبار موحّد يكشف الفروق الحقيقية بين الأدوات.",
-    content:
-      "استخدم نفس الطلب والنص المرجعي مع كل أداة، ثم قيّم الدقة والأسلوب والالتزام بالتعليمات.\n\nاختبر التلخيص وإعادة الصياغة والبحث والتحرير كلٌ على حدة.",
-  },
-  {
-    slug: "ai-workflow",
-    title: "ابنِ سير عمل ذكيًا دون تعقيد",
-    summary: "من مهمة واحدة إلى نظام يوفر ساعات أسبوعيًا.",
-    content:
-      "ابدأ بخطوة واحدة قابلة للقياس، ثم أضف الأتمتة تدريجيًا.\n\nاحتفظ بنقطة مراجعة بشرية للقرارات المهمة والبيانات الحساسة.",
-  },
-];
 function useArticles() {
   const [data, setData] = useState([]),
     [loading, setLoading] = useState(true);
   useEffect(() => {
     if (!supabaseReady) {
-      setData(fallbacks);
+      setData([]);
       setLoading(false);
       return;
     }
@@ -41,9 +18,7 @@ function useArticles() {
       .select("*")
       .eq("published", true)
       .order("published_at", { ascending: false })
-      .then(({ data, error }) =>
-        setData(!error && data?.length ? data : fallbacks),
-      )
+      .then(({ data, error }) => setData(!error && data ? data : []))
       .finally(() => setLoading(false));
   }, []);
   return { data, loading };
@@ -70,24 +45,32 @@ export function ManagedArticles() {
         </div>
       ) : (
         <section className="editorial-grid">
-          {data.map((a, i) => (
-            <Link to={`/articles/${a.slug}`} key={a.id || a.slug}>
-              <span>{String(i + 1).padStart(2, "0")}</span>
-              {a.cover_url ? (
-                <img src={a.cover_url} alt="" />
-              ) : (
-                <div className="editorial-cover">
-                  <FiBookOpen />
-                </div>
-              )}
-              <small>{a.category || "مقال محمد الحاوي"}</small>
-              <h2>{a.title}</h2>
-              <p>{a.summary}</p>
-              <b>
-                قراءة المقال <FiArrowLeft />
-              </b>
-            </Link>
-          ))}
+          {data.length ? (
+            data.map((a, i) => (
+              <Link to={`/articles/${a.slug}`} key={a.id || a.slug}>
+                <span>{String(i + 1).padStart(2, "0")}</span>
+                {a.cover_url ? (
+                  <img src={a.cover_url} alt="" />
+                ) : (
+                  <div className="editorial-cover">
+                    <FiBookOpen />
+                  </div>
+                )}
+                <small>{a.category || "مقال محمد الحاوي"}</small>
+                <h2>{a.title}</h2>
+                <p>{a.summary}</p>
+                <b>
+                  قراءة المقال <FiArrowLeft />
+                </b>
+              </Link>
+            ))
+          ) : (
+            <div className="articles-empty">
+              <FiBookOpen />
+              <h2>لا توجد مقالات منشورة حاليًا</h2>
+              <p>ستظهر المقالات الجديدة هنا بعد نشرها من لوحة التحكم.</p>
+            </div>
+          )}
         </section>
       )}
     </main>

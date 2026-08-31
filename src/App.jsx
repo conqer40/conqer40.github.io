@@ -44,6 +44,13 @@ import { VideoCategory, VideoLesson, VideoLessons } from "./VideoLessons.jsx";
 import { LibraryAdmin } from "./LibraryAdmin.jsx";
 import { ManagedArticle, ManagedArticles } from "./ManagedArticles.jsx";
 import { ShareButtons } from "./ShareButtons.jsx";
+import {
+  AccountNav,
+  AuthProvider,
+  ContactPage,
+  LoginPage,
+  ProfilePage,
+} from "./UserAccount.jsx";
 
 const C = createContext({ tools: [], loading: true });
 const topics = [
@@ -153,8 +160,10 @@ function Header({ dark, setDark, lang, setLang }) {
         <NavLink to="/videos">{ar ? "دروس فيديو" : "Video lessons"}</NavLink>
         <NavLink to="/articles">{ar ? "المقالات" : "Articles"}</NavLink>
         <NavLink to="/resume">{ar ? "السيرة الذاتية" : "CV"}</NavLink>
+        <NavLink to="/contact">{ar ? "تواصل" : "Contact"}</NavLink>
       </nav>
       <div className="header-actions">
+        <AccountNav />
         <div className="lang-switch" role="group" aria-label="Language">
           <button className={ar ? "active" : ""} onClick={() => setLang("ar")}>
             AR
@@ -938,42 +947,52 @@ export function App() {
     [lang, setLang] = useState("ar");
   return (
     <BrowserRouter>
-      <Provider>
-        <div
-          className={dark ? "app theme-dark" : "app theme-light"}
-          dir={lang === "ar" ? "rtl" : "ltr"}
-        >
-          <Header dark={dark} setDark={setDark} lang={lang} setLang={setLang} />
-          <Routes>
-            <Route path="/" element={<PersonalHome lang={lang} />} />
-            <Route path="/resume" element={<ResumePage lang={lang} />} />
-            <Route
-              path="/projects/jarvis"
-              element={<JarvisPage lang={lang} />}
+      <AuthProvider>
+        <Provider>
+          <div
+            className={dark ? "app theme-dark" : "app theme-light"}
+            dir={lang === "ar" ? "rtl" : "ltr"}
+          >
+            <Header
+              dark={dark}
+              setDark={setDark}
+              lang={lang}
+              setLang={setLang}
             />
-            <Route path="/ai" element={<Home />} />
-            <Route path="/tools" element={<Tools />} />
-            <Route path="/categories" element={<Categories />} />
-            <Route path="/category/:category" element={<Category />} />
-            <Route path="/tool/:id" element={<Tool />} />
-            <Route path="/library" element={<LibraryPage />} />
-            <Route
-              path="/library/category/:slug"
-              element={<LibraryCategory />}
-            />
-            <Route path="/library/item/:id" element={<LibraryItem />} />
-            <Route path="/videos" element={<VideoLessons />} />
-            <Route path="/videos/watch/:slug" element={<VideoLesson />} />
-            <Route path="/videos/:slug" element={<VideoCategory />} />
-            <Route path="/admin/library" element={<LibraryAdmin />} />
-            <Route path="/articles" element={<Articles />} />
-            <Route path="/articles/:slug" element={<Article />} />
-            <Route path="/developers" element={<Developers />} />
-            <Route path="/about" element={<About />} />
-            <Route path="*" element={<Missing />} />
-          </Routes>
-        </div>
-      </Provider>
+            <Routes>
+              <Route path="/" element={<PersonalHome lang={lang} />} />
+              <Route path="/resume" element={<ResumePage lang={lang} />} />
+              <Route
+                path="/projects/jarvis"
+                element={<JarvisPage lang={lang} />}
+              />
+              <Route path="/ai" element={<Home />} />
+              <Route path="/tools" element={<Tools />} />
+              <Route path="/categories" element={<Categories />} />
+              <Route path="/category/:category" element={<Category />} />
+              <Route path="/tool/:id" element={<Tool />} />
+              <Route path="/library" element={<LibraryPage />} />
+              <Route
+                path="/library/category/:slug"
+                element={<LibraryCategory />}
+              />
+              <Route path="/library/item/:id" element={<LibraryItem />} />
+              <Route path="/videos" element={<VideoLessons />} />
+              <Route path="/videos/watch/:slug" element={<VideoLesson />} />
+              <Route path="/videos/:slug" element={<VideoCategory />} />
+              <Route path="/admin/library" element={<LibraryAdmin />} />
+              <Route path="/login" element={<LoginPage />} />
+              <Route path="/profile" element={<ProfilePage />} />
+              <Route path="/contact" element={<ContactPage />} />
+              <Route path="/articles" element={<Articles />} />
+              <Route path="/articles/:slug" element={<Article />} />
+              <Route path="/developers" element={<Developers />} />
+              <Route path="/about" element={<About />} />
+              <Route path="*" element={<Missing />} />
+            </Routes>
+          </div>
+        </Provider>
+      </AuthProvider>
     </BrowserRouter>
   );
 }

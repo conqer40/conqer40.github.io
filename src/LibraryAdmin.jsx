@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Navigate } from "react-router-dom";
 import {
   FiBookOpen,
   FiCheckCircle,
@@ -12,7 +13,8 @@ import {
   FiTrash2,
 } from "react-icons/fi";
 import { adminEmailFromUsername, supabase, supabaseReady } from "./supabase.js";
-import { safeImage, slugify } from "./content-utils.js";
+import { slugify } from "./content-utils.js";
+import { ImageUpload } from "./ImageUpload.jsx";
 const blankItem = {
   category_id: "",
   title: "",
@@ -54,6 +56,7 @@ export function LibraryAdmin() {
     [articles, setArticles] = useState([]),
     [videoCategories, setVideoCategories] = useState([]),
     [videos, setVideos] = useState([]),
+    [users, setUsers] = useState([]),
     [login, setLogin] = useState({ username: "", password: "" }),
     [cat, setCat] = useState({ name: "", description: "", cover_url: "" }),
     [item, setItem] = useState(blankItem),
@@ -61,7 +64,7 @@ export function LibraryAdmin() {
     [videoCat, setVideoCat] = useState(blankVideoCategory),
     [video, setVideo] = useState(blankVideo);
   const load = async () => {
-    const [c, i, a, vc, v] = await Promise.all([
+    const [c, i, a, vc, v, u] = await Promise.all([
       supabase.from("library_categories").select("*").order("sort_order"),
       supabase
         .from("library_items")
@@ -76,12 +79,17 @@ export function LibraryAdmin() {
         .from("video_lessons")
         .select("*")
         .order("created_at", { ascending: false }),
+      supabase
+        .from("profiles")
+        .select("*")
+        .order("created_at", { ascending: false }),
     ]);
     setCategories(c.data || []);
     setItems(i.data || []);
     setArticles(a.data || []);
     setVideoCategories(vc.data || []);
     setVideos(v.data || []);
+    setUsers(u.data || []);
   };
   useEffect(() => {
     if (!supabaseReady) {
@@ -177,6 +185,14 @@ export function LibraryAdmin() {
     await supabase.from(table).delete().eq("id", id);
     load();
   };
+  const updateUser = async (id, changes) => {
+    const { error } = await supabase
+      .from("profiles")
+      .update(changes)
+      .eq("id", id);
+    setMessage(error ? "تعذر تعديل المستخدم" : "تم تحديث صلاحيات المستخدم");
+    if (!error) load();
+  };
   if (!supabaseReady)
     return (
       <main className="control-page">
@@ -195,35 +211,9 @@ export function LibraryAdmin() {
       </main>
     );
   if (!session)
-    return (
-      <main className="control-page">
-        <form className="control-login" onSubmit={signIn}>
-          <FiLock />
-          <span>ELHAWY CONTROL</span>
-          <h1>تسجيل دخول الإدارة</h1>
-          <p>إدارة المقالات والمكتبة من مكان واحد.</p>
-          <label>
-            اسم المستخدم
-            <input
-              required
-              value={login.username}
-              onChange={(e) => setLogin({ ...login, username: e.target.value })}
-            />
-          </label>
-          <label>
-            كلمة المرور
-            <input
-              required
-              type="password"
-              value={login.password}
-              onChange={(e) => setLogin({ ...login, password: e.target.value })}
-            />
-          </label>
-          {message && <div className="admin-message">{message}</div>}
-          <button>دخول آمن</button>
-        </form>
-      </main>
-    );
+    return <Navigate to="/login" replace state={{ from: "/admin/library" }} />;
+  if (session.user.email !== "01022104948@admin.elhawy.local")
+    return <Navigate to="/profile" replace />;
   return (
     <main className="control-page">
       <aside className="control-sidebar">
@@ -256,6 +246,12 @@ export function LibraryAdmin() {
           >
             دروس الفيديو
           </button>
+          <button
+            className={tab === "users" ? "active" : ""}
+            onClick={() => setTab("users")}
+          >
+            المستخدمون
+          </button>
         </nav>
         <button onClick={() => supabase.auth.signOut()}>
           <FiLogOut /> خروج
@@ -272,7 +268,9 @@ export function LibraryAdmin() {
                   ? "إدارة المكتبة"
                   : tab === "articles"
                     ? "إدارة المقالات"
-                    : "إدارة دروس الفيديو"}
+                    : tab === "videos"
+                      ? "إدارة دروس الفيديو"
+                      : "إدارة المستخدمين"}
             </h1>
           </div>
         </header>
@@ -304,6 +302,11 @@ export function LibraryAdmin() {
               <b>{videos.length}</b>
               <span>درس فيديو</span>
             </article>
+            <article>
+              <FiLock />
+              <b>{users.length}</b>
+              <span>مستخدم مسجل</span>
+            </article>
           </div>
         )}
         {tab === "library" && (
@@ -324,14 +327,11 @@ export function LibraryAdmin() {
                   value={cat.description}
                   set={(v) => setCat({ ...cat, description: v })}
                 />
-                <Field
-                  label="رابط صورة الغلاف"
+                <ImageUpload
                   value={cat.cover_url}
-                  set={(v) => setCat({ ...cat, cover_url: v })}
-                  type="url"
-                  optional
+                  onChange={(v) => setCat({ ...cat, cover_url: v })}
+                  folder="library-categories"
                 />
-                <ImagePreview url={cat.cover_url} />
               </Form>
               <Form
                 title="إضافة ملف أو مصدر"
@@ -376,14 +376,11 @@ export function LibraryAdmin() {
                   set={(v) => setItem({ ...item, download_url: v })}
                   type="url"
                 />
-                <Field
-                  label="رابط الغلاف"
+                <ImageUpload
                   value={item.cover_url}
-                  set={(v) => setItem({ ...item, cover_url: v })}
-                  type="url"
-                  optional
+                  onChange={(v) => setItem({ ...item, cover_url: v })}
+                  folder="library-items"
                 />
-                <ImagePreview url={item.cover_url} />
               </Form>
             </div>
             <List
@@ -419,7 +416,6 @@ export function LibraryAdmin() {
                 set={(v) => setArticle({ ...article, slug: v })}
                 optional
               />
-              <ImagePreview url={article.cover_url} />
               <Area
                 label="المقدمة المختصرة"
                 value={article.summary}
@@ -431,12 +427,10 @@ export function LibraryAdmin() {
                 set={(v) => setArticle({ ...article, content: v })}
                 large
               />
-              <Field
-                label="رابط صورة الغلاف"
+              <ImageUpload
                 value={article.cover_url}
-                set={(v) => setArticle({ ...article, cover_url: v })}
-                type="url"
-                optional
+                onChange={(v) => setArticle({ ...article, cover_url: v })}
+                folder="articles"
               />
             </Form>
             <List
@@ -464,14 +458,11 @@ export function LibraryAdmin() {
                   value={videoCat.description}
                   set={(v) => setVideoCat({ ...videoCat, description: v })}
                 />
-                <Field
-                  label="رابط صورة الغلاف"
+                <ImageUpload
                   value={videoCat.cover_url}
-                  set={(v) => setVideoCat({ ...videoCat, cover_url: v })}
-                  type="url"
-                  optional
+                  onChange={(v) => setVideoCat({ ...videoCat, cover_url: v })}
+                  folder="video-categories"
                 />
-                <ImagePreview url={videoCat.cover_url} />
               </Form>
               <Form
                 title="إضافة درس فيديو"
@@ -516,14 +507,11 @@ export function LibraryAdmin() {
                   set={(v) => setVideo({ ...video, youtube_url: v })}
                   type="url"
                 />
-                <Field
-                  label="رابط صورة الغلاف — اختياري"
+                <ImageUpload
                   value={video.cover_url}
-                  set={(v) => setVideo({ ...video, cover_url: v })}
-                  type="url"
-                  optional
+                  onChange={(v) => setVideo({ ...video, cover_url: v })}
+                  folder="video-lessons"
                 />
-                <ImagePreview url={video.cover_url} />
                 <label>
                   مرفق مرتبط من المكتبة — اختياري
                   <select
@@ -557,26 +545,49 @@ export function LibraryAdmin() {
             />
           </>
         )}
+        {tab === "users" && (
+          <section className="users-admin">
+            <header>
+              <div>
+                <span>{users.length}</span>
+                <h2>الحسابات المسجلة</h2>
+              </div>
+              <p>غيّر نوع الحساب أو أوقفه فورًا من استخدام الموقع.</p>
+            </header>
+            <div className="users-table">
+              {users.map((user) => (
+                <article key={user.id}>
+                  <div className="user-avatar">
+                    {(user.full_name || "م").charAt(0)}
+                  </div>
+                  <div className="user-identity">
+                    <b>{user.full_name || "بدون اسم"}</b>
+                    <span>{user.phone}</span>
+                  </div>
+                  <select
+                    value={user.role}
+                    onChange={(e) =>
+                      updateUser(user.id, { role: e.target.value })
+                    }
+                  >
+                    <option value="user">مستخدم</option>
+                    <option value="admin">مدير</option>
+                  </select>
+                  <button
+                    className={user.active ? "deactivate" : "activate"}
+                    onClick={() =>
+                      updateUser(user.id, { active: !user.active })
+                    }
+                  >
+                    {user.active ? "إيقاف الحساب" : "تفعيل الحساب"}
+                  </button>
+                </article>
+              ))}
+            </div>
+          </section>
+        )}
       </section>
     </main>
-  );
-}
-function ImagePreview({ url }) {
-  const [failed, setFailed] = useState(false);
-  useEffect(() => setFailed(false), [url]);
-  if (!url) return null;
-  return failed ? (
-    <small className="image-preview-error">
-      تعذر عرض الصورة. استخدم رابط صورة مباشر وثابت؛ روابط صور فيسبوك المؤقتة
-      تنتهي صلاحيتها.
-    </small>
-  ) : (
-    <img
-      className="control-image-preview"
-      src={safeImage(url)}
-      alt="معاينة الغلاف"
-      onError={() => setFailed(true)}
-    />
   );
 }
 function Form({ title, icon, submit, children, wide }) {
