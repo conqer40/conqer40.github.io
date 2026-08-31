@@ -2,8 +2,8 @@ node_modules/
 dist/
 .DS_Store
 *.log
+.env.local
 catalog-verification.png
 design-qa-comparison.png
 implementation-*.png
 reference.png
-

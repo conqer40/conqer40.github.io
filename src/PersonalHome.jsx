@@ -1,4 +1,258 @@
-import {Link} from 'react-router-dom';
-import {FiArrowLeft,FiArrowRight,FiBarChart2,FiCpu,FiExternalLink,FiGlobe,FiMail,FiPackage,FiSettings,FiTruck} from 'react-icons/fi';
-const copy={ar:{badge:'لوجستيات · عمليات · ذكاء اصطناعي',title:<><span>أربط اللوجستيات</span> بالبيانات<br/>وأحوّل <span>العمليات</span> إلى قيمة.</>,intro:'أساعد الشركات على تصميم وتشغيل سلاسل إمداد ذكية من خلال العمليات والتحليلات والتحول الرقمي والذكاء الاصطناعي.',contact:'تواصل معي',explore:'استكشف المشاريع',offer:'ما أقدمه',offerSub:'خبرة عملية تجمع التشغيل والتقنية',services:[['التحول الرقمي وسلاسل الإمداد','أقود مبادرات التحول الرقمي وأبني سلاسل إمداد مرنة تدعم النمو والتوسع.',FiGlobe],['العمليات والتشغيل','أصمم عمليات مرنة وفعالة تركز على الأداء والجودة والتحسين المستمر.',FiSettings],['الذكاء الاصطناعي والتحليلات','أستخدم الذكاء الاصطناعي والتحليلات لاكتشاف الفرص ودعم القرارات الذكية.',FiCpu]],projects:'أبرز المشاريع',projectsSub:'مشروعات رقمية وعملية تجمع الابتكار بالتنفيذ',discover:'اكتشف المشروع',more:'مشاريع اللوجستيات والبيانات',secondary:[['أتمتة العمليات','أتمتة المهام المتكررة وتقليل الأخطاء ورفع الإنتاجية.',FiPackage],['لوحات معلومات ذكية','تقارير تفاعلية تربط البيانات بالقرار التشغيلي.',FiBarChart2],['التحليلات والتنبؤ بالطلب','تحليل الاتجاهات وتوقع الاحتياجات لتحسين المخزون.',FiTruck]]},en:{badge:'Logistics · Operations · Artificial Intelligence',title:<>I connect <span>logistics</span> with data<br/>and turn <span>operations</span> into value.</>,intro:'I help businesses design and operate smarter supply chains through operations, analytics, digital transformation and artificial intelligence.',contact:'Contact me',explore:'Explore projects',offer:'What I do',offerSub:'Practical expertise connecting operations and technology',services:[['Digital Supply Chains','I lead digital transformation initiatives and build resilient supply chains that support growth.',FiGlobe],['Operations & Execution','I design flexible, efficient operations focused on performance, quality and continuous improvement.',FiSettings],['AI & Analytics','I use artificial intelligence and analytics to uncover opportunities and support smarter decisions.',FiCpu]],projects:'Featured projects',projectsSub:'Digital and operational projects where innovation meets execution',discover:'Explore project',more:'Logistics & data projects',secondary:[['Process Automation','Automating repetitive work, reducing errors and increasing productivity.',FiPackage],['Intelligent Dashboards','Interactive reporting that connects operational data to decisions.',FiBarChart2],['Demand Analytics','Trend analysis and demand forecasting for better inventory planning.',FiTruck]]}};
-export function PersonalHome({lang}){const c=copy[lang],Arrow=lang==='ar'?FiArrowLeft:FiArrowRight;return <main className="new-home"><section className="new-hero"><div className="new-hero-copy"><span className="new-badge">{c.badge}</span><h1>{c.title}</h1><p>{c.intro}</p><div className="new-actions"><a href="mailto:m.elhawy2023@gmail.com"><FiMail/>{c.contact}</a><a className="text-action" href="#featured-projects">{c.explore}<Arrow/></a></div></div><div className="new-portrait"><img src="/assets/mohamed-elhawy.png" alt="Mohamed Elhawy"/><div className="route-icons"><FiTruck/><FiPackage/><FiGlobe/></div></div></section><section className="new-section services"><header><span>{c.offer}</span><h2>{c.offerSub}</h2></header><div className="service-columns">{c.services.map(([title,text,Icon])=><article key={title}><Icon/><h3>{title}</h3><p>{text}</p></article>)}</div></section><section className="new-section" id="featured-projects"><header><span>{c.projects}</span><h2>{c.projectsSub}</h2></header><div className="flagship-projects"><article className="elhawy-project"><div><b>Elhawy <i>AI</i></b><h3>{lang==='ar'?'منصة عربية لاكتشاف أدوات الذكاء الاصطناعي':'Arabic AI tools discovery platform'}</h3><p>{lang==='ar'?'دليل شامل يضم آلاف الأدوات المصنفة مع صفحات مستقلة وبحث سريع ومحتوى عربي.':'A curated directory of thousands of categorized tools with dedicated pages, fast search and Arabic content.'}</p><Link to="/ai">{c.discover}<Arrow/></Link></div><div className="project-preview"><FiGlobe/><span>5,748</span><small>AI tools</small></div></article><article className="jarvis-project"><div><b>JARVIS</b><h3>{lang==='ar'?'وكيل ذكاء اصطناعي شخصي ينفّذ المهام عنك':'A personal AI agent that gets work done'}</h3><ul><li>{lang==='ar'?'ينفّذ مهام متعددة الخطوات':'Executes multi-step tasks'}</li><li>{lang==='ar'?'يتحكم في الكمبيوتر والتطبيقات':'Controls the computer and apps'}</li><li>{lang==='ar'?'يؤتمت الأعمال المتكررة':'Automates recurring workflows'}</li><li>{lang==='ar'?'يتكامل مع تجربة نظارة ذكية':'Connects to a smart-glasses experience'}</li></ul><Link to="/projects/jarvis">{c.discover}<Arrow/></Link></div><div className="jarvis-orb"><FiCpu/><span>AGENT</span></div></article></div></section><section className="new-section secondary-projects"><header><span>{c.more}</span></header><div>{c.secondary.map(([title,text,Icon])=><article key={title}><Icon/><h3>{title}</h3><p>{text}</p><a href="mailto:m.elhawy2023@gmail.com">{lang==='ar'?'ناقش المشروع':'Discuss project'} <FiExternalLink/></a></article>)}</div></section></main>}
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
+import {
+  FiArrowLeft,
+  FiArrowRight,
+  FiCpu,
+  FiExternalLink,
+  FiMail,
+  FiPackage,
+  FiTruck,
+} from "react-icons/fi";
+const C = {
+  ar: {
+    hello: "مرحبًا، أنا محمد",
+    role: "خبير لوجستيات وعمليات ومبتكر حلول ذكاء اصطناعي",
+    intro:
+      "أحوّل البيانات والعمليات المعقدة إلى أنظمة ذكية، واضحة وقابلة للنمو.",
+    contact: "تواصل معي",
+    about: "عنّي",
+    aboutText:
+      "أجمع بين الخبرة العملية في سلاسل الإمداد والتشغيل وبين بناء منتجات رقمية ووكلاء ذكاء اصطناعي ينفذون العمل الحقيقي.",
+    services: "ما الذي أقدمه",
+    projects: "مشروعات مختارة",
+    live: "اكتشف المشروع",
+    labels: ["استراتيجية العمليات", "التحول الرقمي", "الذكاء الاصطناعي"],
+    texts: [
+      "تصميم وتشغيل عمليات أكثر كفاءة، مع مؤشرات أداء واضحة وتحسين مستمر.",
+      "تحويل الإجراءات اليدوية إلى منصات ولوحات معلومات مترابطة.",
+      "بناء مساعدين ووكلاء أذكياء للأتمتة والتحليل واتخاذ القرار.",
+    ],
+  },
+  en: {
+    hello: "Hi, I'm Mohamed",
+    role: "Logistics, operations & AI solutions creator",
+    intro:
+      "I turn complex data and operations into intelligent, clear and scalable systems.",
+    contact: "Contact me",
+    about: "About me",
+    aboutText:
+      "I combine hands-on supply-chain and operations experience with building digital products and AI agents that execute real work.",
+    services: "What I do",
+    projects: "Selected projects",
+    live: "View project",
+    labels: [
+      "Operations Strategy",
+      "Digital Transformation",
+      "Artificial Intelligence",
+    ],
+    texts: [
+      "Designing efficient operations with clear KPIs and continuous improvement.",
+      "Turning manual processes into connected platforms and decision dashboards.",
+      "Building AI assistants and agents for automation, analysis and decision support.",
+    ],
+  },
+};
+const reel = [
+  "service-logistics.png",
+  "service-operations.png",
+  "service-ai-analytics.png",
+  "featured-workspace.png",
+  "astronaut-horse.png",
+];
+export function PersonalHome({ lang }) {
+  const c = C[lang],
+    Arrow = lang === "ar" ? FiArrowLeft : FiArrowRight;
+  useEffect(() => {
+    let raf = 0;
+    const update = () => {
+      raf = 0;
+      document.querySelectorAll(".stack-card").forEach((card, i) => {
+        const r = card.getBoundingClientRect(),
+          vh = innerHeight;
+        const enter = Math.max(0, Math.min(1, (vh - r.top) / (vh * 0.72)));
+        const passed = Math.max(0, Math.min(1, (125 - r.top) / 280));
+        card.style.setProperty("--enter", enter);
+        card.style.setProperty("--passed", passed);
+        card.style.setProperty("--i", i);
+      });
+    };
+    const onScroll = () => {
+      if (!raf) raf = requestAnimationFrame(update);
+    };
+    update();
+    addEventListener("scroll", onScroll, { passive: true });
+    addEventListener("resize", onScroll);
+    return () => {
+      removeEventListener("scroll", onScroll);
+      removeEventListener("resize", onScroll);
+      cancelAnimationFrame(raf);
+    };
+  }, []);
+  return (
+    <main className="creator-home">
+      <section className="creator-hero">
+        <nav className="creator-nav">
+          <Link to="/">{lang === "ar" ? "الرئيسية" : "Home"}</Link>
+          <Link to="/about">{lang === "ar" ? "عنّي" : "About"}</Link>
+          <a href="#featured-projects">
+            {lang === "ar" ? "المشاريع" : "Projects"}
+          </a>
+          <Link to="/ai">Elhawy AI</Link>
+          <Link to="/library">{lang === "ar" ? "المكتبة" : "Library"}</Link>
+          <Link to="/videos">{lang === "ar" ? "دروس فيديو" : "Videos"}</Link>
+          <Link to="/articles">{lang === "ar" ? "المقالات" : "Articles"}</Link>
+          <Link to="/resume">{lang === "ar" ? "السيرة" : "Resume"}</Link>
+          <a href="mailto:m.elhawy2023@gmail.com">
+            {lang === "ar" ? "تواصل" : "Contact"}
+          </a>
+        </nav>
+        <div className="creator-kicker">
+          <span>MOHAMED ELHAWY</span>
+          <span>OPERATIONS · LOGISTICS · AI</span>
+          <span>CAIRO · EGYPT</span>
+        </div>
+        <h1>{c.hello}</h1>
+        <div className="creator-outline">ELHAWY</div>
+        <div className="creator-portrait">
+          <div className="portrait-aura" />
+          <img
+            src="/assets/mohamed-elhawy-transparent.png"
+            alt="Mohamed Elhawy"
+          />
+        </div>
+        <div className="creator-bottom">
+          <p>
+            {c.role}
+            <b>{c.intro}</b>
+          </p>
+          <a href="mailto:m.elhawy2023@gmail.com">
+            {c.contact}
+            <FiMail />
+          </a>
+        </div>
+        <div className="scroll-cue">
+          SCROLL <i />
+        </div>
+      </section>
+      <section className="work-reel">
+        <div>
+          {[...reel, ...reel].map((x, i) => (
+            <img key={i} src={`/assets/${x}`} alt="" />
+          ))}
+        </div>
+      </section>
+      <section className="creator-about">
+        <span>01</span>
+        <h2>{c.about}</h2>
+        <p>{c.aboutText}</p>
+        <Link to="/about">
+          {c.about}
+          <Arrow />
+        </Link>
+      </section>
+      <section className="creator-services">
+        <header>
+          <span>02</span>
+          <h2>{c.services}</h2>
+        </header>
+        <div>
+          {c.labels.map((x, i) => (
+            <article key={x}>
+              <strong>0{i + 1}</strong>
+              <div>
+                {i === 0 ? <FiTruck /> : i === 1 ? <FiPackage /> : <FiCpu />}
+                <h3>{x}</h3>
+                <p>{c.texts[i]}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+      <section className="creator-projects" id="featured-projects">
+        <header>
+          <span>03</span>
+          <h2>{c.projects}</h2>
+        </header>
+        <Project
+          cls="project-ai"
+          n="01 · AI PLATFORM"
+          title={
+            <>
+              Elhawy <i>AI</i>
+            </>
+          }
+          text={
+            lang === "ar"
+              ? "منصة عربية لاكتشاف آلاف أدوات الذكاء الاصطناعي، بمحتوى منظم وبحث فعلي."
+              : "An Arabic platform for discovering thousands of AI tools with structured content and real search."
+          }
+          to="/ai"
+          c={c}
+          Arrow={Arrow}
+        >
+          <span>5,700+</span>
+          <b>AI TOOLS</b>
+        </Project>
+        <Project
+          cls="project-jarvis"
+          n="02 · PERSONAL AI AGENT"
+          title="JARVIS"
+          text={
+            lang === "ar"
+              ? "وكيل ذكاء اصطناعي يتحكم في الكمبيوتر وينفذ المهام ويتكامل مع النظارة الذكية."
+              : "A personal AI agent that controls the computer, executes tasks and connects to smart glasses."
+          }
+          to="/projects/jarvis"
+          c={c}
+          Arrow={Arrow}
+        >
+          <FiCpu />
+          <b>AGENT ONLINE</b>
+        </Project>
+        <Project
+          cls="project-library"
+          n="03 · KNOWLEDGE HUB"
+          title={lang === "ar" ? "المكتبة" : "THE LIBRARY"}
+          text={
+            lang === "ar"
+              ? "مكتبة متجددة للملفات والأدلة والقوالب المفيدة في أقسام واضحة."
+              : "A growing library of useful files, guides and templates."
+          }
+          to="/library"
+          c={c}
+          Arrow={Arrow}
+        >
+          <FiPackage />
+          <b>DOWNLOAD HUB</b>
+        </Project>
+      </section>
+      <section className="creator-cta">
+        <p>
+          {lang === "ar"
+            ? "لنبنِ شيئًا مؤثرًا معًا."
+            : "Let's build something meaningful."}
+        </p>
+        <a href="mailto:m.elhawy2023@gmail.com">
+          m.elhawy2023@gmail.com <FiExternalLink />
+        </a>
+      </section>
+    </main>
+  );
+}
+function Project({ cls, n, title, text, to, c, Arrow, children }) {
+  return (
+    <article className={`stack-card ${cls}`}>
+      <div className="project-copy">
+        <small>{n}</small>
+        <h3>{title}</h3>
+        <p>{text}</p>
+        <Link to={to}>
+          {c.live}
+          <Arrow />
+        </Link>
+      </div>
+      <div className="project-art">{children}</div>
+    </article>
+  );
+}
