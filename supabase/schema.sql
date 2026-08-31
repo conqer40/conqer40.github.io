@@ -48,6 +48,20 @@ create policy "Admin can manage articles" on public.site_articles for all to aut
 grant select on public.site_articles to anon, authenticated;
 grant insert, update, delete on public.site_articles to authenticated;
 
+create table if not exists public.ai_knowledge (
+ id uuid primary key default gen_random_uuid(),
+ title text not null,
+ category text not null default 'المنهج',
+ content text not null,
+ published boolean not null default true,
+ created_at timestamptz not null default now()
+);
+alter table public.ai_knowledge enable row level security;
+create policy "Public can read AI knowledge" on public.ai_knowledge for select using (published=true or auth.role()='authenticated');
+create policy "Admin can manage AI knowledge" on public.ai_knowledge for all to authenticated using ((auth.jwt()->>'email')='01022104948@admin.elhawy.local') with check ((auth.jwt()->>'email')='01022104948@admin.elhawy.local');
+grant select on public.ai_knowledge to anon, authenticated;
+grant insert, update, delete on public.ai_knowledge to authenticated;
+
 alter table public.library_items add column if not exists slug text;
 create unique index if not exists library_items_slug_key on public.library_items(slug) where slug is not null;
 
