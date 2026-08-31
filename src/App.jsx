@@ -31,6 +31,8 @@ import {
   FiPhone,
   FiSearch,
   FiSun,
+  FiTool,
+  FiPlus,
   FiTruck,
   FiVideo,
   FiVolume2,
@@ -44,6 +46,7 @@ import { VideoCategory, VideoLesson, VideoLessons } from "./VideoLessons.jsx";
 import { LibraryAdmin } from "./LibraryAdmin.jsx";
 import { ManagedArticle, ManagedArticles } from "./ManagedArticles.jsx";
 import { ShareButtons } from "./ShareButtons.jsx";
+import { FreeToolsPage, PdfToolPage, PdfToolsPage } from "./free-tools/FreeTools.jsx";
 import {
   AccountNav,
   AuthProvider,
@@ -157,6 +160,7 @@ function Header({ dark, setDark, lang, setLang }) {
         <a href="/#featured-projects">{ar ? "المشاريع" : "Projects"}</a>
         <NavLink to="/ai">Elhawy AI</NavLink>
         <NavLink to="/library">{ar ? "المكتبة" : "Library"}</NavLink>
+        <NavLink to="/free-tools"><FiTool /> {ar ? "أدوات مجانية" : "Free Tools"}</NavLink>
         <NavLink to="/videos">{ar ? "دروس فيديو" : "Video lessons"}</NavLink>
         <NavLink to="/articles">{ar ? "المقالات" : "Articles"}</NavLink>
         <NavLink to="/resume">{ar ? "السيرة الذاتية" : "CV"}</NavLink>
@@ -972,6 +976,9 @@ export function App() {
               <Route path="/category/:category" element={<Category />} />
               <Route path="/tool/:id" element={<Tool />} />
               <Route path="/library" element={<LibraryPage />} />
+              <Route path="/free-tools" element={<FreeToolsPage />} />
+              <Route path="/free-tools/pdf-tools" element={<PdfToolsPage />} />
+              <Route path="/free-tools/pdf-tools/:slug" element={<PdfToolPage />} />
               <Route
                 path="/library/category/:slug"
                 element={<LibraryCategory />}
