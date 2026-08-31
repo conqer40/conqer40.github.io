@@ -2,6 +2,7 @@ node_modules/
 dist/
 .DS_Store
 *.log
+supabase/.temp/
 .env.local
 catalog-verification.png
 design-qa-comparison.png
