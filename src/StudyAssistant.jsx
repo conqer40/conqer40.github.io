@@ -10,7 +10,7 @@ export function StudyAssistant() {
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const end = useRef(null);
-  useEffect(() => end.current?.scrollIntoView({ behavior: "smooth" }), [messages, loading]);
+  useEffect(() => end.current?.scrollIntoView?.({ behavior: "smooth" }), [messages, loading]);
 
   const send = async (e) => {
     e.preventDefault();
