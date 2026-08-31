@@ -11,6 +11,7 @@ import {
 import { supabase, supabaseReady } from "./supabase.js";
 import { safeImage } from "./content-utils.js";
 import { ShareButtons } from "./ShareButtons.jsx";
+import { usePageMeta } from "./usePageMeta.js";
 function useLib() {
   const [categories, setCategories] = useState([]),
     [items, setItems] = useState([]),
@@ -137,6 +138,7 @@ export function LibraryItem() {
     { categories, items, loading } = useLib(),
     i = items.find((x) => x.id === id || x.slug === id),
     c = categories.find((x) => x.id === i?.category_id);
+  usePageMeta(i, "article");
   if (loading) return <main className="page">جارٍ التحميل</main>;
   if (!i)
     return (

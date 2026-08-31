@@ -27,6 +27,7 @@ import {
   FiLayers,
   FiLoader,
   FiMail,
+  FiMenu,
   FiMessageCircle,
   FiMoon,
   FiPhone,
@@ -38,6 +39,7 @@ import {
   FiVideo,
   FiVolume2,
   FiZap,
+  FiX,
 } from "react-icons/fi";
 import { PersonalHome } from "./PersonalHome.jsx";
 import { ResumePage } from "./ResumePage.jsx";
@@ -144,8 +146,10 @@ function Provider({ children }) {
 const useTools = () => useContext(C);
 function Header({ dark, setDark, lang, setLang }) {
   const ar = lang === "ar";
+  const [menuOpen, setMenuOpen] = useState(false);
+  const closeMenu = () => setMenuOpen(false);
   return (
-    <header className="site-header personal-nav">
+    <header className={`site-header personal-nav nav-v3${menuOpen ? " menu-open" : ""}`}>
       <Link className="brand" to="/">
         <img
           src="/assets/mohamed-elhawy-brand.png"
@@ -154,7 +158,7 @@ function Header({ dark, setDark, lang, setLang }) {
           }
         />
       </Link>
-      <nav>
+      <nav id="primary-navigation" onClick={closeMenu}>
         <NavLink to="/" end>
           {ar ? "الرئيسية" : "Home"}
         </NavLink>
@@ -184,7 +188,17 @@ function Header({ dark, setDark, lang, setLang }) {
         >
           {dark ? <FiSun /> : <FiMoon />}
         </button>
+        <button
+          className="menu-button"
+          onClick={() => setMenuOpen((value) => !value)}
+          aria-expanded={menuOpen}
+          aria-controls="primary-navigation"
+          aria-label={ar ? "فتح القائمة الرئيسية" : "Open main menu"}
+        >
+          {menuOpen ? <FiX /> : <FiMenu />}
+        </button>
       </div>
+      {menuOpen && <button className="nav-backdrop" onClick={closeMenu} aria-label={ar ? "إغلاق القائمة" : "Close menu"} />}
     </header>
   );
 }

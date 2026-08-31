@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { FiArrowLeft, FiBookOpen, FiLoader } from "react-icons/fi";
 import { supabase, supabaseReady } from "./supabase.js";
 import { ShareButtons } from "./ShareButtons.jsx";
+import { usePageMeta } from "./usePageMeta.js";
 
 function ArticleBlock({ value, index }) {
   const image = value.trim().match(/^\[\[image:(https?:\/\/[^\]|]+)(?:\|([^\]]*))?\]\]$/i)
@@ -92,6 +93,7 @@ export function ManagedArticle() {
   const { slug } = useParams(),
     { data, loading } = useArticles(),
     a = data.find((x) => x.slug === slug);
+  usePageMeta(a, "article");
   if (loading)
     return (
       <main className="page">

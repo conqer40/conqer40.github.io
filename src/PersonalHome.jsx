@@ -94,18 +94,6 @@ export function PersonalHome({ lang }) {
   return (
     <main className="creator-home">
       <section className="creator-hero">
-        <nav className="creator-nav">
-          <Link to="/">{lang === "ar" ? "الرئيسية" : "Home"}</Link>
-          <Link to="/about">{lang === "ar" ? "عنّي" : "About"}</Link>
-          <Link to="/ai">Elhawy AI</Link>
-          <Link to="/library">{lang === "ar" ? "المكتبة" : "Library"}</Link>
-          <Link to="/study-ai">{lang === "ar" ? "المساعد AI" : "Study AI"}</Link>
-          <Link to="/videos">{lang === "ar" ? "دروس فيديو" : "Videos"}</Link>
-          <Link to="/articles">{lang === "ar" ? "المقالات" : "Articles"}</Link>
-          <a href="mailto:m.elhawy2023@gmail.com">
-            {lang === "ar" ? "تواصل" : "Contact"}
-          </a>
-        </nav>
         <div className="creator-kicker">
           <span>MOHAMED ELHAWY</span>
           <span>OPERATIONS · LOGISTICS · AI</span>

@@ -15,6 +15,7 @@ import "./creator-fix.css";
 import "./unified-premium.css";
 import "./experience-v2.css";
 import "./content-enhancements.css";
+import "./navigation-v3.css";
 
 createRoot(document.getElementById("root")).render(
   <React.StrictMode>
