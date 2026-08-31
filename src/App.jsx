@@ -3,6 +3,7 @@ import {
   BrowserRouter,
   Link,
   NavLink,
+  Navigate,
   Route,
   Routes,
   useNavigate,
@@ -47,6 +48,7 @@ import { LibraryAdmin } from "./LibraryAdmin.jsx";
 import { ManagedArticle, ManagedArticles } from "./ManagedArticles.jsx";
 import { ShareButtons } from "./ShareButtons.jsx";
 import { FreeToolsPage, PdfToolPage, PdfToolsPage } from "./free-tools/FreeTools.jsx";
+import { StudyAssistant } from "./StudyAssistant.jsx";
 import {
   AccountNav,
   AuthProvider,
@@ -157,13 +159,12 @@ function Header({ dark, setDark, lang, setLang }) {
           {ar ? "الرئيسية" : "Home"}
         </NavLink>
         <NavLink to="/about">{ar ? "من أنا" : "About"}</NavLink>
-        <a href="/#featured-projects">{ar ? "المشاريع" : "Projects"}</a>
         <NavLink to="/ai">Elhawy AI</NavLink>
         <NavLink to="/library">{ar ? "المكتبة" : "Library"}</NavLink>
         <NavLink to="/free-tools"><FiTool /> {ar ? "أدوات مجانية" : "Free Tools"}</NavLink>
+        <NavLink to="/study-ai">{ar ? "المساعد التعليمي" : "Study AI"}</NavLink>
         <NavLink to="/videos">{ar ? "دروس فيديو" : "Video lessons"}</NavLink>
         <NavLink to="/articles">{ar ? "المقالات" : "Articles"}</NavLink>
-        <NavLink to="/resume">{ar ? "السيرة الذاتية" : "CV"}</NavLink>
         <NavLink to="/contact">{ar ? "تواصل" : "Contact"}</NavLink>
       </nav>
       <div className="header-actions">
@@ -965,7 +966,7 @@ export function App() {
             />
             <Routes>
               <Route path="/" element={<PersonalHome lang={lang} />} />
-              <Route path="/resume" element={<ResumePage lang={lang} />} />
+              <Route path="/resume" element={<Navigate to="/about" replace />} />
               <Route
                 path="/projects/jarvis"
                 element={<JarvisPage lang={lang} />}
@@ -979,6 +980,7 @@ export function App() {
               <Route path="/free-tools" element={<FreeToolsPage />} />
               <Route path="/free-tools/pdf-tools" element={<PdfToolsPage />} />
               <Route path="/free-tools/pdf-tools/:slug" element={<PdfToolPage />} />
+              <Route path="/study-ai" element={<StudyAssistant />} />
               <Route
                 path="/library/category/:slug"
                 element={<LibraryCategory />}
@@ -994,7 +996,7 @@ export function App() {
               <Route path="/articles" element={<Articles />} />
               <Route path="/articles/:slug" element={<Article />} />
               <Route path="/developers" element={<Developers />} />
-              <Route path="/about" element={<About />} />
+              <Route path="/about" element={<ResumePage lang={lang} />} />
               <Route path="*" element={<Missing />} />
             </Routes>
           </div>

@@ -153,18 +153,28 @@ export function LibraryItem() {
         <FiArrowLeft /> {c?.name || "المكتبة"}
       </Link>
       <article className="library-detail">
-        <div className="library-detail-cover">
-          {i.cover_url ? (
-            <img
-              src={safeImage(i.cover_url)}
-              onError={(e) => {
-                e.currentTarget.style.display = "none";
-              }}
-              alt={i.title}
-            />
-          ) : (
-            <FiFile />
-          )}
+        <div className="library-detail-media">
+          <div className="library-detail-cover">
+            {i.cover_url ? (
+              <img
+                src={safeImage(i.cover_url)}
+                onError={(e) => {
+                  e.currentTarget.style.display = "none";
+                }}
+                alt={i.title}
+              />
+            ) : (
+              <FiFile />
+            )}
+          </div>
+          <a
+            className="library-download"
+            href={i.download_url}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FiDownload /> تحميل أو فتح الملف
+          </a>
         </div>
         <div className="library-detail-copy">
           <span>
@@ -177,14 +187,6 @@ export function LibraryItem() {
               <p key={n}>{p}</p>
             ))}
           </div>
-          <a
-            className="library-download"
-            href={i.download_url}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FiDownload /> تحميل أو فتح الملف
-          </a>
           <ShareButtons title={i.title} />
         </div>
       </article>

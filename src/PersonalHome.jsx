@@ -11,7 +11,8 @@ import {
 } from "react-icons/fi";
 const C = {
   ar: {
-    hello: "مرحبًا، أنا محمد",
+    greeting: "مرحبًا، أنا",
+    name: "محمد الحاوي",
     role: "خبير لوجستيات وعمليات ومبتكر حلول ذكاء اصطناعي",
     intro:
       "أحوّل البيانات والعمليات المعقدة إلى أنظمة ذكية، واضحة وقابلة للنمو.",
@@ -30,7 +31,8 @@ const C = {
     ],
   },
   en: {
-    hello: "Hi, I'm Mohamed",
+    greeting: "Hello, I'm",
+    name: "Mohamed Elhawy",
     role: "Logistics, operations & AI solutions creator",
     intro:
       "I turn complex data and operations into intelligent, clear and scalable systems.",
@@ -95,14 +97,11 @@ export function PersonalHome({ lang }) {
         <nav className="creator-nav">
           <Link to="/">{lang === "ar" ? "الرئيسية" : "Home"}</Link>
           <Link to="/about">{lang === "ar" ? "عنّي" : "About"}</Link>
-          <a href="#featured-projects">
-            {lang === "ar" ? "المشاريع" : "Projects"}
-          </a>
           <Link to="/ai">Elhawy AI</Link>
           <Link to="/library">{lang === "ar" ? "المكتبة" : "Library"}</Link>
+          <Link to="/study-ai">{lang === "ar" ? "المساعد AI" : "Study AI"}</Link>
           <Link to="/videos">{lang === "ar" ? "دروس فيديو" : "Videos"}</Link>
           <Link to="/articles">{lang === "ar" ? "المقالات" : "Articles"}</Link>
-          <Link to="/resume">{lang === "ar" ? "السيرة" : "Resume"}</Link>
           <a href="mailto:m.elhawy2023@gmail.com">
             {lang === "ar" ? "تواصل" : "Contact"}
           </a>
@@ -112,7 +111,11 @@ export function PersonalHome({ lang }) {
           <span>OPERATIONS · LOGISTICS · AI</span>
           <span>CAIRO · EGYPT</span>
         </div>
-        <h1>{c.hello}</h1>
+        <div className="creator-title-wrap">
+          <span>{c.greeting}</span>
+          <h1>{c.name}</h1>
+          <p>{c.role}</p>
+        </div>
         <div className="creator-outline">ELHAWY</div>
         <div className="creator-portrait">
           <div className="portrait-aura" />
@@ -122,10 +125,15 @@ export function PersonalHome({ lang }) {
           />
         </div>
         <div className="creator-bottom">
-          <p>
-            {c.role}
+          <div className="creator-summary-card">
+            <span>{lang === "ar" ? "خبرة تجمع بين" : "Experience across"}</span>
             <b>{c.intro}</b>
-          </p>
+            <div>
+              <i>{lang === "ar" ? "العمليات" : "Operations"}</i>
+              <i>{lang === "ar" ? "اللوجستيات" : "Logistics"}</i>
+              <i>AI</i>
+            </div>
+          </div>
           <a href="mailto:m.elhawy2023@gmail.com">
             {c.contact}
             <FiMail />

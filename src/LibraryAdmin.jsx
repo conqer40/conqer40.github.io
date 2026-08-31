@@ -36,6 +36,7 @@ const blankArticle = {
   published: true,
 };
 const blankVideoCategory = { name: "", description: "", cover_url: "" };
+const blankKnowledge = { title: "", category: "المنهج", content: "", published: true };
 const blankVideo = {
   category_id: "",
   title: "",
@@ -56,15 +57,18 @@ export function LibraryAdmin() {
     [articles, setArticles] = useState([]),
     [videoCategories, setVideoCategories] = useState([]),
     [videos, setVideos] = useState([]),
+    [knowledge, setKnowledge] = useState([]),
     [users, setUsers] = useState([]),
     [login, setLogin] = useState({ username: "", password: "" }),
     [cat, setCat] = useState({ name: "", description: "", cover_url: "" }),
     [item, setItem] = useState(blankItem),
     [article, setArticle] = useState(blankArticle),
+    [inlineArticleImage, setInlineArticleImage] = useState(""),
     [videoCat, setVideoCat] = useState(blankVideoCategory),
     [video, setVideo] = useState(blankVideo);
+  const [knowledgeItem, setKnowledgeItem] = useState(blankKnowledge);
   const load = async () => {
-    const [c, i, a, vc, v, u] = await Promise.all([
+    const [c, i, a, vc, v, u, k] = await Promise.all([
       supabase.from("library_categories").select("*").order("sort_order"),
       supabase
         .from("library_items")
@@ -83,6 +87,7 @@ export function LibraryAdmin() {
         .from("profiles")
         .select("*")
         .order("created_at", { ascending: false }),
+      supabase.from("ai_knowledge").select("*").order("created_at", { ascending: false }),
     ]);
     setCategories(c.data || []);
     setItems(i.data || []);
@@ -90,6 +95,7 @@ export function LibraryAdmin() {
     setVideoCategories(vc.data || []);
     setVideos(v.data || []);
     setUsers(u.data || []);
+    setKnowledge(k.data || []);
   };
   useEffect(() => {
     if (!supabaseReady) {
@@ -180,6 +186,12 @@ export function LibraryAdmin() {
       load();
     }
   };
+  const addKnowledge = async (e) => {
+    e.preventDefault();
+    const { error } = await supabase.from("ai_knowledge").insert(knowledgeItem);
+    setMessage(error ? "تعذر إضافة مادة المنهج؛ طبّق تحديث قاعدة البيانات أولًا" : "تمت إضافة المادة إلى معرفة المساعد");
+    if (!error) { setKnowledgeItem(blankKnowledge); load(); }
+  };
   const remove = async (table, id) => {
     if (!confirm("هل تريد الحذف نهائيًا؟")) return;
     await supabase.from(table).delete().eq("id", id);
@@ -252,6 +264,7 @@ export function LibraryAdmin() {
           >
             المستخدمون
           </button>
+          <button className={tab === "knowledge" ? "active" : ""} onClick={() => setTab("knowledge")}>معرفة المساعد AI</button>
         </nav>
         <button onClick={() => supabase.auth.signOut()}>
           <FiLogOut /> خروج
@@ -270,7 +283,7 @@ export function LibraryAdmin() {
                     ? "إدارة المقالات"
                     : tab === "videos"
                       ? "إدارة دروس الفيديو"
-                      : "إدارة المستخدمين"}
+                      : tab === "knowledge" ? "معرفة المساعد التعليمي" : "إدارة المستخدمين"}
             </h1>
           </div>
         </header>
@@ -427,6 +440,28 @@ export function LibraryAdmin() {
                 set={(v) => setArticle({ ...article, content: v })}
                 large
               />
+              <div className="inline-image-admin">
+                <label>صورة داخل المقال</label>
+                <p>ارفع الصورة ثم اضغط «إضافة داخل النص». ستُضاف في نهاية المحتوى ويمكنك نقل السطر إلى أي مكان بين الفقرات.</p>
+                <ImageUpload
+                  value={inlineArticleImage}
+                  onChange={setInlineArticleImage}
+                  folder="articles/content"
+                />
+                <button
+                  type="button"
+                  disabled={!inlineArticleImage}
+                  onClick={() => {
+                    setArticle({
+                      ...article,
+                      content: `${article.content}${article.content ? "\n\n" : ""}[[image:${inlineArticleImage}|صورة توضيحية]]`,
+                    });
+                    setInlineArticleImage("");
+                  }}
+                >
+                  <FiPlusCircle /> إضافة الصورة داخل النص
+                </button>
+              </div>
               <ImageUpload
                 value={article.cover_url}
                 onChange={(v) => setArticle({ ...article, cover_url: v })}
@@ -543,6 +578,18 @@ export function LibraryAdmin() {
               rows={videos}
               remove={(id) => remove("video_lessons", id)}
             />
+          </>
+        )}
+        {tab === "knowledge" && (
+          <>
+            <Form title="إضافة درس أو مادة للمساعد" icon={<FiBookOpen />} submit={addKnowledge} wide>
+              <div className="control-two">
+                <Field label="عنوان الدرس أو الموضوع" value={knowledgeItem.title} set={(v) => setKnowledgeItem({ ...knowledgeItem, title: v })} />
+                <Field label="القسم أو المادة" value={knowledgeItem.category} set={(v) => setKnowledgeItem({ ...knowledgeItem, category: v })} />
+              </div>
+              <Area label="محتوى المنهج بالتفصيل" value={knowledgeItem.content} set={(v) => setKnowledgeItem({ ...knowledgeItem, content: v })} large />
+            </Form>
+            <List title="مواد قاعدة المعرفة" rows={knowledge} remove={(id) => remove("ai_knowledge", id)} />
           </>
         )}
         {tab === "users" && (

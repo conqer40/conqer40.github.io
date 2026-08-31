@@ -4,6 +4,18 @@ import { FiArrowLeft, FiBookOpen, FiLoader } from "react-icons/fi";
 import { supabase, supabaseReady } from "./supabase.js";
 import { ShareButtons } from "./ShareButtons.jsx";
 
+function ArticleBlock({ value, index }) {
+  const image = value.trim().match(/^\[\[image:(https?:\/\/[^\]|]+)(?:\|([^\]]*))?\]\]$/i)
+    || value.trim().match(/^!\[([^\]]*)\]\((https?:\/\/[^)]+)\)$/);
+  if (image) {
+    const markdown = value.trim().startsWith("![");
+    const url = markdown ? image[2] : image[1];
+    const caption = markdown ? image[1] : image[2];
+    return <figure className="managed-inline-image"><img src={url} alt={caption || `صورة داخل المقال ${index + 1}`} loading="lazy" />{caption && <figcaption>{caption}</figcaption>}</figure>;
+  }
+  return <section><span>{String(index + 1).padStart(2, "0")}</span><p>{value}</p></section>;
+}
+
 function useArticles() {
   const [data, setData] = useState([]),
     [loading, setLoading] = useState(true);
@@ -126,12 +138,7 @@ export function ManagedArticle() {
           {String(a.content || "")
             .split(/\n\s*\n/)
             .filter(Boolean)
-            .map((p, i) => (
-              <section key={i}>
-                <span>{String(i + 1).padStart(2, "0")}</span>
-                <p>{p}</p>
-              </section>
-            ))}
+            .map((p, i) => <ArticleBlock key={i} value={p} index={i} />)}
         </div>
         <ShareButtons title={a.title} />
       </article>
