@@ -27,7 +27,7 @@ const meta = (html, item, route) => {
 };
 const fetchRows = async (table) => {
   if (!api || !key) return [];
-  const response = await fetch(`${api}/rest/v1/${table}?select=title,slug,summary,description,cover_url&published=eq.true`, { headers: { apikey: key, Authorization: `Bearer ${key}` } });
+  const response = await fetch(`${api}/rest/v1/${table}?select=*&published=eq.true`, { headers: { apikey: key, Authorization: `Bearer ${key}` } });
   if (!response.ok) throw new Error(`Unable to generate social pages for ${table}: ${response.status}`);
   return response.json();
 };
