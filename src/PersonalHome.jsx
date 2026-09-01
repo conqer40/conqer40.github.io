@@ -106,12 +106,7 @@ export function PersonalHome({ lang }) {
   return (
     <main className="creator-home">
       <section className="creator-hero">
-        <div className="creator-portrait">
-          <img
-            src="/assets/mohamed-elhawy-hero-composite.png"
-            alt="Mohamed Elhawy"
-          />
-        </div>
+        <div className="creator-portrait" role="img" aria-label="Mohamed Elhawy" />
         <div className="creator-hero-copy">
           <span>{c.greeting}</span>
           <h1>{c.name}</h1>

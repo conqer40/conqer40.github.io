@@ -5,9 +5,8 @@
 .creator-hero{min-height:calc(100vh - 82px)!important;display:grid!important;grid-template-columns:minmax(430px,1.08fr) minmax(440px,.92fr);grid-template-rows:1fr auto;gap:18px 54px;padding:24px clamp(24px,6vw,110px) 30px!important;background:radial-gradient(circle at 25% 48%,#063e70 0,#08284c 27%,#061326 59%,#040b17 100%)!important}
 .creator-hero{direction:ltr}
 .creator-hero:after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,#0ce2e40b,transparent 36%),radial-gradient(circle at 25% 52%,transparent 0 31%,#18cfea28 31.2% 31.4%,transparent 31.7%);z-index:-1;pointer-events:none}
-.creator-hero .creator-portrait{position:relative;left:auto;bottom:auto;transform:none;grid-column:1;grid-row:1;width:calc(100% + clamp(24px,6vw,110px));height:min(69vh,680px);margin-left:calc(clamp(24px,6vw,110px) * -1);align-self:end;overflow:hidden}
+.creator-hero .creator-portrait{position:relative;left:auto;bottom:auto;transform:none;grid-column:1;grid-row:1;width:calc(100% + clamp(24px,6vw,110px));height:min(69vh,680px);margin-left:calc(clamp(24px,6vw,110px) * -1);align-self:end;overflow:hidden;background:url('/assets/mohamed-elhawy-hero-composite.png') center/cover no-repeat}
 .creator-hero .creator-portrait:after{content:"";position:absolute;z-index:4;inset:0 0 0 auto;width:22%;background:linear-gradient(90deg,transparent,#061326);pointer-events:none}
-.creator-hero .creator-portrait img{height:100%;width:100%;max-width:none;object-fit:cover;object-position:center;filter:none}
 .creator-hero .portrait-aura{width:min(78%,600px);bottom:4%;background:radial-gradient(circle,transparent 0 38%,#12d8f03d 38.2% 38.5%,transparent 38.8% 54%,#12d8f021 54.2% 54.5%,transparent 54.8%);box-shadow:0 0 90px #0988cf42;animation:aura 20s linear infinite}
 .creator-hero-copy{grid-column:2;grid-row:1;align-self:center;max-width:660px;text-align:right;direction:rtl;position:relative;z-index:3}
 .creator-hero-copy>span{display:block;color:#d6e5ef;font-size:20px;margin-bottom:12px}
