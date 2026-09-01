@@ -151,12 +151,11 @@ function Header({ dark, setDark, lang, setLang }) {
   return (
     <header className={`site-header personal-nav nav-v3${menuOpen ? " menu-open" : ""}`}>
       <Link className="brand" to="/">
-        <img
-          src="/assets/mohamed-elhawy-brand.png"
-          alt={
-            ar ? "محمد الحاوي — Mohamed Elhawy" : "Mohamed Elhawy — محمد الحاوي"
-          }
-        />
+        <span className="brand-mark" aria-hidden="true">ME</span>
+        <span className="brand-copy">
+          <b>{ar ? "محمد الحاوي" : "Mohamed Elhawy"}</b>
+          <small>{ar ? "Mohamed Elhawy" : "محمد الحاوي"}</small>
+        </span>
       </Link>
       <nav id="primary-navigation" onClick={closeMenu}>
         <NavLink to="/" end>

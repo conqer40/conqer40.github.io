@@ -107,9 +107,8 @@ export function PersonalHome({ lang }) {
     <main className="creator-home">
       <section className="creator-hero">
         <div className="creator-portrait">
-          <div className="portrait-aura" />
           <img
-            src="/assets/mohamed-elhawy-transparent.png"
+            src="/assets/mohamed-elhawy-hero-composite.png"
             alt="Mohamed Elhawy"
           />
         </div>
