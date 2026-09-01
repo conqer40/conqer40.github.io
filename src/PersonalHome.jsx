@@ -3,10 +3,16 @@ import { Link } from "react-router-dom";
 import {
   FiArrowLeft,
   FiArrowRight,
+  FiBookOpen,
+  FiCode,
   FiCpu,
+  FiEdit3,
   FiExternalLink,
+  FiFileText,
+  FiGlobe,
   FiMail,
   FiPackage,
+  FiPlayCircle,
   FiTruck,
 } from "react-icons/fi";
 const C = {
@@ -14,6 +20,9 @@ const C = {
     greeting: "مرحبًا، أنا",
     name: "محمد الحاوي",
     role: "خبير لوجستيات وعمليات ومبتكر حلول ذكاء اصطناعي",
+    heroRole: "مبرمج ومطور ذكاء اصطناعي",
+    heroIntro: "أساعد المطورين والطلاب على فهم البرمجة والذكاء الاصطناعي من خلال محتوى تعليمي وأدوات ذكية.",
+    explore: "استكشف الموقع",
     intro:
       "أحوّل البيانات والعمليات المعقدة إلى أنظمة ذكية، واضحة وقابلة للنمو.",
     contact: "تواصل معي",
@@ -34,6 +43,9 @@ const C = {
     greeting: "Hello, I'm",
     name: "Mohamed Elhawy",
     role: "Logistics, operations & AI solutions creator",
+    heroRole: "Programmer & AI Developer",
+    heroIntro: "I help developers and students understand programming and artificial intelligence through educational content and smart tools.",
+    explore: "Explore the website",
     intro:
       "I turn complex data and operations into intelligent, clear and scalable systems.",
     contact: "Contact me",
@@ -94,17 +106,6 @@ export function PersonalHome({ lang }) {
   return (
     <main className="creator-home">
       <section className="creator-hero">
-        <div className="creator-kicker">
-          <span>MOHAMED ELHAWY</span>
-          <span>OPERATIONS · LOGISTICS · AI</span>
-          <span>CAIRO · EGYPT</span>
-        </div>
-        <div className="creator-title-wrap">
-          <span>{c.greeting}</span>
-          <h1>{c.name}</h1>
-          <p>{c.role}</p>
-        </div>
-        <div className="creator-outline">ELHAWY</div>
         <div className="creator-portrait">
           <div className="portrait-aura" />
           <img
@@ -112,23 +113,23 @@ export function PersonalHome({ lang }) {
             alt="Mohamed Elhawy"
           />
         </div>
-        <div className="creator-bottom">
-          <div className="creator-summary-card">
-            <span>{lang === "ar" ? "خبرة تجمع بين" : "Experience across"}</span>
-            <b>{c.intro}</b>
-            <div>
-              <i>{lang === "ar" ? "العمليات" : "Operations"}</i>
-              <i>{lang === "ar" ? "اللوجستيات" : "Logistics"}</i>
-              <i>AI</i>
-            </div>
+        <div className="creator-hero-copy">
+          <span>{c.greeting}</span>
+          <h1>{c.name}</h1>
+          <h2>{c.heroRole}</h2>
+          <p>{c.heroIntro}</p>
+          <div className="creator-hero-actions">
+            <a className="primary" href="#home-shortcuts">{c.explore}<FiGlobe /></a>
+            <a href="mailto:m.elhawy2023@gmail.com">{c.contact}<FiMail /></a>
           </div>
-          <a href="mailto:m.elhawy2023@gmail.com">
-            {c.contact}
-            <FiMail />
-          </a>
         </div>
-        <div className="scroll-cue">
-          SCROLL <i />
+        <div className="creator-shortcuts" id="home-shortcuts">
+          <HeroShortcut lang={lang} to="#featured-projects" icon={<FiCode />} ar="مشروعات" en="Projects" arText="مشروعات عملية تطبيقية" enText="Practical projects" />
+          <HeroShortcut lang={lang} to="/library" icon={<FiBookOpen />} ar="المكتبة" en="Library" arText="ملفات وموارد مفيدة" enText="Files and resources" />
+          <HeroShortcut lang={lang} to="/ai" icon={<FiCpu />} ar="Elhawy AI" en="Elhawy AI" arText="مساعد ذكي للتعلم" enText="AI learning assistant" />
+          <HeroShortcut lang={lang} to="/videos" icon={<FiPlayCircle />} ar="دروس الفيديو" en="Video lessons" arText="شروحات فيديو مبسطة" enText="Simple video lessons" />
+          <HeroShortcut lang={lang} to="/free-tools" icon={<FiFileText />} ar="أدوات PDF" en="PDF tools" arText="أدوات مجانية تعمل مباشرة" enText="Free instant tools" />
+          <HeroShortcut lang={lang} to="/articles" icon={<FiEdit3 />} ar="المقالات" en="Articles" arText="مقالات تعليمية مفيدة" enText="Useful learning articles" />
         </div>
       </section>
       <section className="work-reel">
@@ -235,6 +236,10 @@ export function PersonalHome({ lang }) {
       </section>
     </main>
   );
+}
+function HeroShortcut({ lang, to, icon, ar, en, arText, enText }) {
+  const content = <>{icon}<b>{lang === "ar" ? ar : en}</b><small>{lang === "ar" ? arText : enText}</small></>;
+  return to.startsWith("#") ? <a href={to}>{content}</a> : <Link to={to}>{content}</Link>;
 }
 function Project({ cls, n, title, text, to, c, Arrow, children }) {
   return (

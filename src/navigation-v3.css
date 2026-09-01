@@ -10,3 +10,10 @@
 @media(max-width:1120px){.app>.site-header.personal-nav.nav-v3{height:72px;grid-template-columns:1fr auto;padding:8px 18px}.nav-v3 .brand{height:48px}.nav-v3 .brand img{height:43px}.menu-button{display:grid!important}.nav-v3 nav{position:fixed;z-index:102;inset:72px 12px auto 12px;height:auto;max-height:calc(100vh - 92px);overflow:auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding:16px;border-radius:22px;background:#0b1727f7;border:1px solid #ffffff1a;box-shadow:0 28px 80px #0009;transform:translateY(-18px);opacity:0;visibility:hidden;pointer-events:none;transition:.24s}.nav-v3.menu-open nav{transform:none;opacity:1;visibility:visible;pointer-events:auto}.nav-v3 nav a{height:48px!important;justify-content:flex-start;padding-inline:16px;font-size:13px!important;background:#ffffff08}.nav-backdrop{position:fixed;display:block;z-index:101;inset:72px 0 0;border:0;background:#020812a8;backdrop-filter:blur(4px)}.nav-v3 .header-actions{grid-column:2}.nav-v3 .lang-switch,.nav-v3 .theme-button{display:flex}.nav-v3 .theme-button{display:grid}}
 @media(max-width:560px){.nav-v3 .account-nav{width:40px;padding:0;justify-content:center}.nav-v3 .lang-switch{display:none}.nav-v3 nav{grid-template-columns:1fr}.nav-v3 .brand img{max-width:158px}.app>.site-header.personal-nav.nav-v3{padding-inline:12px}}
 @media(prefers-reduced-motion:reduce){.nav-v3 nav,.nav-v3 nav a{transition:none}}
+
+/* High-contrast navigation across every page and theme. */
+.nav-v3 nav a{color:#f3f8fc!important;font-weight:800;text-shadow:0 1px 8px rgba(0,0,0,.48)}
+.nav-v3 nav a:hover{color:#fff!important;background:rgba(255,255,255,.12)}
+.nav-v3 .account-nav{color:#f1ffff!important;background:#ffffff14;border-color:#ffffff2b}
+.nav-v3 .lang-switch,.nav-v3 .theme-button,.nav-v3 .menu-button{background:#ffffff12;border-color:#ffffff2b}
+.nav-v3 .lang-switch button{color:#dce8ef}
