@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { FiArrowLeft, FiCheck, FiDownload, FiFile, FiSearch, FiTrash2, FiUploadCloud, FiX } from "react-icons/fi";
+import { FiArrowLeft, FiCheck, FiDownload, FiFile, FiGrid, FiImage, FiSearch, FiTrash2, FiUploadCloud, FiX } from "react-icons/fi";
 import { pdfTools, toolBySlug } from "./pdfTools.jsx";
 import { downloadBlob, getPageThumbnails, imagesToPdf, merge, pdfToJpg, splitToZip, transformPdf } from "./pdfEngine.js";
 import "./free-tools.css";
@@ -8,7 +8,7 @@ import "./free-tools.css";
 const bytes = (n) => n > 1048576 ? `${(n/1048576).toFixed(1)} MB` : `${Math.ceil(n/1024)} KB`;
 
 export function FreeToolsPage() {
-  return <main className="ft-page"><section className="ft-hero"><span>مجاني · خاص · داخل متصفحك</span><h1>Free Tools</h1><p>أدوات عملية تعمل محليًا بدون رفع ملفاتك إلى خدمات خارجية.</p></section><section className="ft-categories"><Link to="/free-tools/pdf-tools"><div className="ft-category-icon"><FiFile /></div><div><small>أول مجموعة متاحة</small><h2>PDF Tools</h2><p>{pdfTools.length} أداة لمعالجة ملفات PDF بالكامل داخل جهازك.</p></div><FiArrowLeft /></Link></section></main>;
+  return <main className="ft-page"><section className="ft-hero"><span>مجاني · خاص · داخل متصفحك</span><h1>Free Tools</h1><p>أدوات عملية تعمل محليًا بدون رفع ملفاتك إلى خدمات خارجية.</p></section><section className="ft-categories"><Link to="/free-tools/pdf-tools"><div className="ft-category-icon"><FiFile /></div><div><small>{pdfTools.length} أداة</small><h2>PDF Tools</h2><p>معالجة ملفات PDF بالكامل داخل جهازك.</p></div><FiArrowLeft /></Link><Link to="/free-tools/qr-tools"><div className="ft-category-icon"><FiGrid /></div><div><small>4 أدوات</small><h2>QR Code</h2><p>إنشاء QR للرابط وواتساب وWi‑Fi وقراءته من الصور.</p></div><FiArrowLeft /></Link><Link to="/free-tools/image-tools"><div className="ft-category-icon"><FiImage /></div><div><small>6 أدوات</small><h2>أدوات الصور</h2><p>ضغط وتحويل وتغيير مقاس وقص وتنظيف وعلامة مائية.</p></div><FiArrowLeft /></Link></section></main>;
 }
 
 export function PdfToolsPage() {
