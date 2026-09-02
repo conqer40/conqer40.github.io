@@ -30,10 +30,8 @@ import {
   FiMail,
   FiMenu,
   FiMessageCircle,
-  FiMoon,
   FiPhone,
   FiSearch,
-  FiSun,
   FiTool,
   FiPlus,
   FiTruck,
@@ -148,7 +146,7 @@ function Provider({ children }) {
   return <C.Provider value={{ tools, loading }}>{children}</C.Provider>;
 }
 const useTools = () => useContext(C);
-function Header({ dark, setDark, lang, setLang }) {
+function Header({ lang, setLang }) {
   const ar = lang === "ar";
   const [menuOpen, setMenuOpen] = useState(false);
   const closeMenu = () => setMenuOpen(false);
@@ -178,13 +176,6 @@ function Header({ dark, setDark, lang, setLang }) {
             EN
           </button>
         </div>
-        <button
-          className="theme-button"
-          onClick={() => setDark((v) => !v)}
-          aria-label={ar ? "تبديل المظهر" : "Toggle theme"}
-        >
-          {dark ? <FiSun /> : <FiMoon />}
-        </button>
         <button
           className="menu-button"
           onClick={() => setMenuOpen((value) => !value)}
@@ -975,19 +966,16 @@ function Missing() {
   );
 }
 export function App() {
-  const [dark, setDark] = useState(false),
-    [lang, setLang] = useState("ar");
+  const [lang, setLang] = useState("ar");
   return (
     <BrowserRouter>
       <AuthProvider>
         <Provider>
           <div
-            className={dark ? "app theme-dark" : "app theme-light"}
+            className="app theme-light fixed-theme"
             dir={lang === "ar" ? "rtl" : "ltr"}
           >
             <Header
-              dark={dark}
-              setDark={setDark}
               lang={lang}
               setLang={setLang}
             />

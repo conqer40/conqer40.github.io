@@ -25,8 +25,9 @@ function ArticleBlock({ value, index, resources = [] }) {
   if (/^https?:\/\//i.test(trimmed)) return <p className="managed-external-link"><a href={trimmed} target="_blank" rel="noopener noreferrer"><FiDownload /> فتح الرابط الخارجي</a></p>;
   const lines = trimmed.split("\n").map((line) => line.trim()).filter(Boolean);
   if (lines.length && lines.every((line) => line.startsWith("•"))) return <ul className="managed-list">{lines.map((line, i) => <li key={i}>{line.replace(/^•\s*/, "")}</li>)}</ul>;
+  if (lines.length > 1 && !lines[0].startsWith("•") && lines.slice(1).every((line) => line.startsWith("•"))) return <div className="managed-topic"><h2>{lines[0]}</h2><ul className="managed-list">{lines.slice(1).map((line, i) => <li key={i}>{line.replace(/^•\s*/, "")}</li>)}</ul></div>;
   if (lines.length === 1 && /^[\p{Extended_Pictographic}]/u.test(lines[0])) return <h2 className="managed-subheading">{lines[0]}</h2>;
-  return <section><span>{String(index + 1).padStart(2, "0")}</span><p>{value}</p></section>;
+  return <section><p>{value}</p></section>;
 }
 
 function useArticles() {
