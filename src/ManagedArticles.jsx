@@ -183,8 +183,9 @@ export function ManagedArticle() {
             .filter(Boolean)
             .map((p, i) => <ArticleBlock key={i} value={p} index={i} resources={resources} />)}
         </div>
+        {a.summary && <aside className="article-share-excerpt"><small>مختصر المقال للمشاركة</small><p>{a.summary}</p><span>للمزيد زور الرابط: {typeof location !== "undefined" ? location.href : `/articles/${a.slug}`}</span></aside>}
         {a.external_link && <a className="article-resource-button" href={a.external_link} target="_blank" rel="noopener noreferrer"><FiDownload /> فتح مكتبة Google Drive في تبويب جديد</a>}
-        <ShareButtons title={a.title} />
+        <ShareButtons title={a.title} summary={a.summary} />
       </article>
     </main>
   );

@@ -189,7 +189,7 @@ export function LibraryItem() {
               <p key={n}>{p}</p>
             ))}
           </div>
-          <ShareButtons title={i.title} />
+          <ShareButtons title={i.title} summary={i.summary || i.description} />
         </div>
       </article>
     </main>

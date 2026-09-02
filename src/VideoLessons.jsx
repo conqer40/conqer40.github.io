@@ -151,7 +151,7 @@ export function VideoLesson() {
               <FiBookOpen /> مرفقات الدرس: {attachment.title}
             </Link>
           )}
-          <ShareButtons title={v.title} />
+          <ShareButtons title={v.title} summary={v.summary || v.description} />
         </div>
       </article>
     </main>
