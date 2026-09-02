@@ -119,7 +119,7 @@ export function PersonalHome({ lang }) {
         </div>
         <div className="creator-shortcuts" id="home-shortcuts">
           <HeroShortcut lang={lang} to="#featured-projects" icon={<FiCode />} ar="مشروعات" en="Projects" arText="مشروعات عملية تطبيقية" enText="Practical projects" />
-          <HeroShortcut lang={lang} to="/articles#resources" icon={<FiBookOpen />} ar="الملفات" en="Resources" arText="مرفقات وموارد مفيدة" enText="Files and resources" />
+          <HeroShortcut lang={lang} to="/articles/category/kwrsat" icon={<FiBookOpen />} ar="كورسات" en="Courses" arText="مقالات ومصادر تعليمية" enText="Learning articles and resources" />
           <HeroShortcut lang={lang} to="/ai" icon={<FiCpu />} ar="Elhawy AI" en="Elhawy AI" arText="مساعد ذكي للتعلم" enText="AI learning assistant" />
           <HeroShortcut lang={lang} to="/videos" icon={<FiPlayCircle />} ar="دروس الفيديو" en="Video lessons" arText="شروحات فيديو مبسطة" enText="Simple video lessons" />
           <HeroShortcut lang={lang} to="/free-tools" icon={<FiFileText />} ar="أدوات PDF" en="PDF tools" arText="أدوات مجانية تعمل مباشرة" enText="Free instant tools" />
@@ -210,7 +210,7 @@ export function PersonalHome({ lang }) {
               ? "مكتبة متجددة للملفات والأدلة والقوالب المفيدة في أقسام واضحة."
               : "A growing library of useful files, guides and templates."
           }
-          to="/articles#resources"
+          to="/articles/category/kwrsat"
           c={c}
           Arrow={Arrow}
         >

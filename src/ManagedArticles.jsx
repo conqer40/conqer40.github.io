@@ -5,6 +5,7 @@ import { supabase, supabaseReady } from "./supabase.js";
 import { ShareButtons } from "./ShareButtons.jsx";
 import { usePageMeta } from "./usePageMeta.js";
 import { featuredArticles } from "./featuredArticles.js";
+import { slugify } from "./content-utils.js";
 
 function ArticleBlock({ value, index, resources = [] }) {
   const trimmed = value.trim();
@@ -55,19 +56,26 @@ function useArticles() {
 }
 
 function useResources() {
-  const [data, setData] = useState([]), [loading, setLoading] = useState(true);
+  const [data, setData] = useState([]), [categories, setCategories] = useState([]), [loading, setLoading] = useState(true);
   useEffect(() => {
     if (!supabaseReady) { setLoading(false); return; }
-    supabase.from("library_items").select("*").eq("published", true)
-      .order("created_at", { ascending: false })
-      .then(({ data, error }) => setData(!error && data ? data : []))
+    Promise.all([
+      supabase.from("library_items").select("*").eq("published", true).order("created_at", { ascending: false }),
+      supabase.from("library_categories").select("*").order("sort_order")
+    ]).then(([items, groups]) => { setData(!items.error && items.data ? items.data : []); setCategories(!groups.error && groups.data ? groups.data : []); })
       .finally(() => setLoading(false));
   }, []);
-  return { data, loading };
+  return { data, categories, loading };
 }
 export function ManagedArticles() {
+  const { categorySlug } = useParams();
   const { data, loading } = useArticles();
-  const { data: resources, loading: resourcesLoading } = useResources();
+  const { data: resources, categories: resourceCategories, loading: resourcesLoading } = useResources();
+  const resourceArticles = resources.map((item) => ({ ...item, kind: "resource", category: resourceCategories.find((group) => group.id === item.category_id)?.name || "كورسات" }));
+  const combined = [...data.map((item) => ({ ...item, kind: "article" })), ...resourceArticles];
+  const categoryNames = [...new Set(combined.map((item) => item.category || "عام"))];
+  const activeCategory = categoryNames.find((name) => slugify(name) === categorySlug);
+  const shown = activeCategory ? combined.filter((item) => (item.category || "عام") === activeCategory) : combined;
   return (
     <main className="page managed-articles">
       <section className="editorial-hero">
@@ -80,20 +88,20 @@ export function ManagedArticles() {
         <p>
           مقالات وشروحات وملفات عملية في مكان واحد، مرتبة حسب موضوعها وسهلة القراءة والتحميل.
         </p>
-        <nav className="content-switch" aria-label="أقسام صفحة المقالات">
-          <a href="#articles">المقالات</a><a href="#resources">الملفات والمرفقات</a>
+        <nav className="article-category-nav" aria-label="تصنيفات المقالات">
+          <Link className={!categorySlug ? "active" : ""} to="/articles">كل المقالات</Link>
+          {categoryNames.map((name) => <Link className={activeCategory === name ? "active" : ""} key={name} to={`/articles/category/${slugify(name)}`}>{name}</Link>)}
         </nav>
       </section>
-      {loading ? (
+      {loading || resourcesLoading ? (
         <div className="catalog-loading">
           <FiLoader /> جارٍ تحميل المقالات
         </div>
       ) : (
         <section className="editorial-grid" id="articles">
-          {data.length ? (
-            data.map((a, i) => (
-              <Link to={`/articles/${a.slug}`} key={a.id || a.slug}>
-                <span>{String(i + 1).padStart(2, "0")}</span>
+          {shown.length ? (
+            shown.map((a) => (
+              <Link to={a.kind === "resource" ? `/library/item/${a.slug || a.id}` : `/articles/${a.slug}`} key={`${a.kind}-${a.id || a.slug}`}>
                 {a.cover_url ? (
                   <img src={a.cover_url} alt="" />
                 ) : (
@@ -101,11 +109,11 @@ export function ManagedArticles() {
                     <FiBookOpen />
                   </div>
                 )}
-                <small>{a.category || "مقال محمد الحاوي"}</small>
+                <small>{a.category || "عام"}</small>
                 <h2>{a.title}</h2>
                 <p>{a.summary}</p>
                 <b>
-                  قراءة المقال <FiArrowLeft />
+                  {a.kind === "resource" ? "عرض المقال والمرفق" : "قراءة المقال"} <FiArrowLeft />
                 </b>
               </Link>
             ))
@@ -118,20 +126,6 @@ export function ManagedArticles() {
           )}
         </section>
       )}
-      <section className="resources-section" id="resources">
-        <header><span>مرفقات ومصادر</span><h2>ملفات تدعم محتوى المقالات</h2><p>قوالب وكتب وملفات قابلة للتحميل، مع وصف واضح وصورة وتصنيف لكل عنصر.</p></header>
-        {resourcesLoading ? <div className="catalog-loading"><FiLoader /> جارٍ تحميل الملفات</div> : (
-          <div className="resources-grid">
-            {resources.map((item) => (
-              <Link className="resource-item-card" to={`/library/item/${item.slug || item.id}`} key={item.id}>
-                <div className="resource-item-cover">{item.cover_url ? <img src={item.cover_url} alt={item.title} /> : <FiFileText />}</div>
-                <div className="resource-item-copy"><small>{item.file_type || "ملف ومرفق"}</small><h3>{item.title}</h3><p>{item.summary || item.description}</p><b>{item.download_url ? <><FiDownload /> عرض وتحميل الملف</> : <><FiBookOpen /> عرض التفاصيل</>}</b></div>
-              </Link>
-            ))}
-            {!resources.length && <div className="articles-empty"><FiFileText /><h2>لا توجد ملفات منشورة حاليًا</h2></div>}
-          </div>
-        )}
-      </section>
     </main>
   );
 }

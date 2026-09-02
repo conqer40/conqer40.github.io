@@ -32,7 +32,7 @@ const blankArticle = {
   summary: "",
   content: "",
   cover_url: "",
-  category: "ذكاء اصطناعي",
+  category: "كورسات",
   published: true,
 };
 const blankVideoCategory = { name: "", description: "", cover_url: "" };
@@ -410,6 +410,10 @@ export function LibraryAdmin() {
         )}
         {tab === "articles" && (
           <>
+            <Form title="إنشاء تصنيف مقالات" icon={<FiFolderPlus />} submit={addCategory}>
+              <Field label="اسم التصنيف" value={cat.name} set={(v) => setCat({ ...cat, name: v })} />
+              <Area label="وصف التصنيف" value={cat.description} set={(v) => setCat({ ...cat, description: v })} />
+            </Form>
             <Form
               title="كتابة مقال جديد"
               icon={<FiBookOpen />}
@@ -422,11 +426,7 @@ export function LibraryAdmin() {
                   value={article.title}
                   set={(v) => setArticle({ ...article, title: v })}
                 />
-                <Field
-                  label="التصنيف"
-                  value={article.category}
-                  set={(v) => setArticle({ ...article, category: v })}
-                />
+                <label>تصنيف المقال<select required value={article.category} onChange={(e) => setArticle({ ...article, category: e.target.value })}><option value="">اختر التصنيف</option><option value="كورسات">كورسات</option>{categories.filter((group) => group.name !== "كورسات").map((group) => <option key={group.id} value={group.name}>{group.name}</option>)}</select></label>
               </div>
               <Field
                 label="الرابط المختصر — يترك فارغًا للتوليد تلقائيًا"

@@ -991,7 +991,7 @@ export function App() {
               <Route path="/categories" element={<Categories />} />
               <Route path="/category/:category" element={<Category />} />
               <Route path="/tool/:id" element={<Tool />} />
-              <Route path="/library" element={<Navigate to="/articles#resources" replace />} />
+              <Route path="/library" element={<Navigate to="/articles" replace />} />
               <Route path="/free-tools" element={<FreeToolsPage />} />
               <Route path="/free-tools/pdf-tools" element={<PdfToolsPage />} />
               <Route path="/free-tools/pdf-tools/:slug" element={<PdfToolPage />} />
@@ -1009,6 +1009,7 @@ export function App() {
               <Route path="/profile" element={<ProfilePage />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/articles" element={<Articles />} />
+              <Route path="/articles/category/:categorySlug" element={<Articles />} />
               <Route path="/articles/:slug" element={<Article />} />
               <Route path="/developers" element={<Developers />} />
               <Route path="/about" element={<ResumePage lang={lang} />} />

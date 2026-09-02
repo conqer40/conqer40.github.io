@@ -2,7 +2,7 @@ export const featuredArticles = [
   {
     id: "editorial-data-science-ai-toolbox",
     title: "مكتبة ضخمة مجانية لتعلّم علوم البيانات والذكاء الاصطناعي وMachine Learning",
-    category: "الذكاء الاصطناعي وعلوم البيانات",
+    category: "كورسات",
     slug: "data-science-ai-toolbox",
     author: "محمد الحاوي",
     external_link: "https://drive.google.com/drive/u/0/folders/1CgN7DE3pNRNh_4BA_zrrMLqWz6KquwuD",
@@ -61,7 +61,7 @@ https://drive.google.com/drive/u/0/folders/1CgN7DE3pNRNh_4BA_zrrMLqWz6KquwuD
   {
     id: "editorial-business-analysis-library",
     title: "مكتبة مجانية شاملة لتعلّم Business Analysis وAgile وProject Management",
-    category: "تحليل الأعمال وإدارة المشاريع",
+    category: "كورسات",
     slug: "business-analysis-library",
     author: "محمد الحاوي",
     external_link: "https://drive.google.com/drive/folders/1k0Vsppxc3jzRdcX322WZb7AcDBWvFEbs",
@@ -136,7 +136,7 @@ https://drive.google.com/drive/folders/1k0Vsppxc3jzRdcX322WZb7AcDBWvFEbs
   {
     id: "editorial-ai-business-analyst-library",
     title: "مكتبة Business Analysis حديثة تضم AI Agents وPrompt Engineering وPower BI وSQL",
-    category: "تحليل الأعمال والذكاء الاصطناعي",
+    category: "كورسات",
     slug: "ai-business-analyst-library",
     author: "محمد الحاوي",
     external_link: "https://drive.google.com/drive/u/0/folders/1if09a9QyNfBRlAKey7If5preZ3BswudZ",
