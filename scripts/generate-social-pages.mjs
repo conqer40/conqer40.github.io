@@ -1,5 +1,6 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
+import { featuredArticles } from "../src/featuredArticles.js";
 
 const out = path.resolve(process.env.SOCIAL_OUT_DIR || "dist/client");
 const template = await readFile(path.join(out, "index.html"), "utf8");
@@ -41,3 +42,10 @@ for (const [table, prefix] of [["site_articles", "/articles/"], ["library_items"
   }
   console.log(`Generated ${rows.length} social preview pages for ${table}`);
 }
+for (const article of featuredArticles) {
+  const route = `/articles/${article.slug}`;
+  const directory = path.join(out, "articles", article.slug);
+  await mkdir(directory, { recursive: true });
+  await writeFile(path.join(directory, "index.html"), meta(template, article, route));
+}
+console.log(`Generated ${featuredArticles.length} bundled article preview pages`);

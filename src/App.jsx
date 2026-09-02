@@ -19,6 +19,7 @@ import {
   FiChevronLeft,
   FiChevronRight,
   FiCode,
+  FiCpu,
   FiDownload,
   FiExternalLink,
   FiFileText,
@@ -40,6 +41,9 @@ import {
   FiVolume2,
   FiZap,
   FiX,
+  FiGrid,
+  FiUser,
+  FiLogIn,
 } from "react-icons/fi";
 import { PersonalHome } from "./PersonalHome.jsx";
 import { ResumePage } from "./ResumePage.jsx";
@@ -149,26 +153,20 @@ function Header({ dark, setDark, lang, setLang }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const closeMenu = () => setMenuOpen(false);
   return (
-    <header className={`site-header personal-nav nav-v3${menuOpen ? " menu-open" : ""}`}>
+    <header className={`site-header personal-nav nav-v3 portal-nav${menuOpen ? " menu-open" : ""}`}>
       <Link className="brand" to="/">
-        <span className="brand-mark" aria-hidden="true">ME</span>
-        <span className="brand-copy">
-          <b>{ar ? "محمد الحاوي" : "Mohamed Elhawy"}</b>
-          <small>{ar ? "Mohamed Elhawy" : "محمد الحاوي"}</small>
-        </span>
+        <img className="brand-logo" src="/assets/mohamed-elhawy-logo.png" alt={ar ? "محمد الحاوي" : "Mohamed Elhawy"} />
       </Link>
       <nav id="primary-navigation" onClick={closeMenu}>
-        <NavLink to="/" end>
-          {ar ? "الرئيسية" : "Home"}
-        </NavLink>
-        <NavLink to="/about">{ar ? "من أنا" : "About"}</NavLink>
-        <NavLink to="/ai">Elhawy AI</NavLink>
-        <NavLink to="/library">{ar ? "المكتبة" : "Library"}</NavLink>
-        <NavLink to="/free-tools"><FiTool /> {ar ? "أدوات مجانية" : "Free Tools"}</NavLink>
-        <NavLink to="/study-ai">{ar ? "المساعد التعليمي" : "Study AI"}</NavLink>
-        <NavLink to="/videos">{ar ? "دروس فيديو" : "Video lessons"}</NavLink>
-        <NavLink to="/articles">{ar ? "المقالات" : "Articles"}</NavLink>
-        <NavLink to="/contact">{ar ? "تواصل" : "Contact"}</NavLink>
+        <div className="nav-primary">
+          <NavLink to="/" end>{ar ? "الرئيسية" : "Home"}</NavLink>
+          <NavLink to="/about">{ar ? "من أنا" : "About"}</NavLink>
+          <NavLink to="/ai">Elhawy AI</NavLink>
+          <NavLink to="/articles">{ar ? "المقالات" : "Articles"}</NavLink>
+          <NavLink to="/videos">{ar ? "دروس الفيديو" : "Videos"}</NavLink>
+          <NavLink to="/free-tools">{ar ? "أدوات مجانية" : "Free tools"}</NavLink>
+          <NavLink to="/contact">{ar ? "تواصل" : "Contact"}</NavLink>
+        </div>
       </nav>
       <div className="header-actions">
         <AccountNav />
@@ -200,6 +198,22 @@ function Header({ dark, setDark, lang, setLang }) {
       {menuOpen && <button className="nav-backdrop" onClick={closeMenu} aria-label={ar ? "إغلاق القائمة" : "Close menu"} />}
     </header>
   );
+}
+
+function Footer({ lang }) {
+  const ar = lang === "ar";
+  return <footer className="site-footer">
+    <div className="footer-lead">
+      <span className="brand-mark" aria-hidden="true">ME</span>
+      <div><h2>{ar ? "نتعلم، نبني، ونحوّل الأفكار إلى أدوات مفيدة." : "Learn, build, and turn ideas into useful tools."}</h2><p>{ar ? "منصة محمد الحاوي للمحتوى التقني والذكاء الاصطناعي والموارد العملية." : "Mohamed Elhawy's platform for AI, technical content and practical resources."}</p></div>
+    </div>
+    <div className="footer-links">
+      <div><b>{ar ? "المحتوى" : "Content"}</b><Link to="/articles">{ar ? "المقالات والملفات" : "Articles & resources"}</Link><Link to="/videos">{ar ? "دروس الفيديو" : "Videos"}</Link></div>
+      <div><b>{ar ? "الأدوات" : "Tools"}</b><Link to="/ai">Elhawy AI</Link><Link to="/study-ai">{ar ? "المساعد التعليمي" : "Study AI"}</Link><Link to="/free-tools">{ar ? "أدوات مجانية" : "Free tools"}</Link></div>
+      <div><b>{ar ? "محمد الحاوي" : "Mohamed"}</b><Link to="/about">{ar ? "من أنا" : "About"}</Link><Link to="/contact">{ar ? "تواصل معي" : "Contact"}</Link><Link to="/login">{ar ? "دخول الحساب" : "Sign in"}</Link></div>
+    </div>
+    <div className="footer-bottom"><span>© {new Date().getFullYear()} Mohamed Elhawy</span><a href="mailto:m.elhawy2023@gmail.com">m.elhawy2023@gmail.com</a></div>
+  </footer>;
 }
 
 function Grid({ items, loading }) {
@@ -989,7 +1003,7 @@ export function App() {
               <Route path="/categories" element={<Categories />} />
               <Route path="/category/:category" element={<Category />} />
               <Route path="/tool/:id" element={<Tool />} />
-              <Route path="/library" element={<LibraryPage />} />
+              <Route path="/library" element={<Navigate to="/articles#resources" replace />} />
               <Route path="/free-tools" element={<FreeToolsPage />} />
               <Route path="/free-tools/pdf-tools" element={<PdfToolsPage />} />
               <Route path="/free-tools/pdf-tools/:slug" element={<PdfToolPage />} />
@@ -1012,6 +1026,7 @@ export function App() {
               <Route path="/about" element={<ResumePage lang={lang} />} />
               <Route path="*" element={<Missing />} />
             </Routes>
+            <Footer lang={lang} />
           </div>
         </Provider>
       </AuthProvider>

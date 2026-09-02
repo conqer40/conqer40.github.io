@@ -249,7 +249,7 @@ export function ProfilePage() {
         <aside>
           <FiLock />
           <h2>اختصارات الحساب</h2>
-          {profile?.role === "admin" && (
+          {(profile?.role === "admin" || session.user.email === "01022104948@admin.elhawy.local") && (
             <Link to="/admin/library">
               فتح لوحة التحكم <FiArrowLeft />
             </Link>

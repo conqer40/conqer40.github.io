@@ -1,0 +1,67 @@
+/* Elhawy 2026 — unified high-contrast interface. The homepage hero is intentionally untouched. */
+:root{--eh-bg:#06101d;--eh-panel:#0c1b2d;--eh-panel-2:#10243a;--eh-text:#f7fbff;--eh-muted:#c1cfda;--eh-line:#29415a;--eh-cyan:#27ddd2;--eh-blue:#38a7ff;--eh-radius:24px}
+#root .app{background:var(--eh-bg)!important;color:var(--eh-text)!important;--bg:var(--eh-bg);--surface:var(--eh-panel);--surface-2:var(--eh-panel-2);--text:var(--eh-text);--muted:var(--eh-muted);--line:var(--eh-line);color-scheme:dark}
+#root .app>.site-header.nav-v3{background:#06101df2!important;border-bottom:1px solid #264058!important;box-shadow:0 12px 40px #0005!important}
+#root .app>.site-header.nav-v3 nav a{color:#f7fbff!important;font-weight:800!important;opacity:1!important}
+#root .app>.site-header.nav-v3 nav a:hover{color:var(--eh-cyan)!important}
+#root .app>.site-header.nav-v3 nav a.active{color:#fff!important}
+#root .app>.site-header.nav-v3 .brand-copy b,#root .app>.site-header.nav-v3 .brand-copy small{color:#fff!important}
+#root .app>.site-header.nav-v3 .account-nav{color:#fff!important}
+#root .app main:not(.creator-home){width:min(1380px,calc(100% - 40px))!important;max-width:1380px!important;margin:0 auto!important;padding:36px clamp(18px,4vw,58px) 90px!important;background:var(--eh-bg)!important;color:var(--eh-text)!important}
+#root .app main:not(.creator-home) :is(h1,h2,h3,h4,h5,strong,b){color:var(--eh-text)}
+#root .app main:not(.creator-home) :is(p,li,small,time,label){color:var(--eh-muted)}
+#root .app main:not(.creator-home) a{transition:color .2s,border-color .2s,background .2s,transform .2s}
+#root .app main:not(.creator-home) input,#root .app main:not(.creator-home) textarea,#root .app main:not(.creator-home) select{background:#071525!important;color:#fff!important;border:1px solid #36506a!important}
+#root .app main:not(.creator-home) input::placeholder,#root .app main:not(.creator-home) textarea::placeholder{color:#91a6b8!important}
+#root .app :is(.page-hero,.editorial-hero,.library-hero,.resume-hero,.video-hero,.contact-hero,.posts-hero,.ft-hero,.jarvis-hero){background:radial-gradient(circle at 12% 15%,#16486a 0,transparent 31%),linear-gradient(135deg,#0d3152,#071425 72%)!important;color:#fff!important;border:1px solid #2a506d!important;border-radius:32px!important;box-shadow:0 28px 80px #0004!important}
+#root .app :is(.page-hero,.editorial-hero,.library-hero,.resume-hero,.video-hero,.contact-hero,.posts-hero,.ft-hero,.jarvis-hero) :is(h1,h2,h3,b,strong){color:#fff!important}
+#root .app :is(.page-hero,.editorial-hero,.library-hero,.resume-hero,.video-hero,.contact-hero,.posts-hero,.ft-hero,.jarvis-hero) p{color:#d5e1e9!important;opacity:1!important}
+#root .app :is(.page-hero,.editorial-hero,.library-hero,.resume-hero,.video-hero,.contact-hero,.posts-hero,.ft-hero,.jarvis-hero)>span{color:var(--eh-cyan)!important}
+#root .app :is(.library-hero,.editorial-hero,.video-hero){min-height:430px;padding:clamp(45px,7vw,85px)!important}
+#root .app :is(.catalog-card,.editorial-grid>a,.library-categories>a,.library-items article,.post-card,.career-grid article,.portfolio-skills article,.portfolio-projects article,.video-categories>a,.video-grid article,.contact-pro-grid article,.profile-card,.profile-grid>*,.ft-card,.ft-categories>a,.jarvis-flow article,.capability-grid details){background:linear-gradient(145deg,#10243a,#0b192a)!important;color:var(--eh-text)!important;border:1px solid var(--eh-line)!important;border-radius:var(--eh-radius)!important;box-shadow:0 18px 50px #0003!important}
+#root .app :is(.catalog-card,.editorial-grid>a,.library-categories>a,.library-items article,.post-card,.video-categories>a,.video-grid article,.ft-card):hover{transform:translateY(-6px);border-color:#31dcd2!important;box-shadow:0 24px 60px #0005,0 0 0 1px #24d8cf22!important}
+#root .app :is(.catalog-card,.editorial-grid>a,.library-categories>a,.library-items article,.post-card,.video-categories>a,.video-grid article,.ft-card) :is(h2,h3,b){color:#fff!important}
+#root .app :is(.catalog-card,.editorial-grid>a,.library-categories>a,.library-items article,.post-card,.video-categories>a,.video-grid article,.ft-card) p{color:#bed0dc!important}
+#root .app :is(.library-section,.resume-section,.portfolio-section,.jarvis-flow,.jarvis-capabilities){padding-block:72px!important}
+#root .app :is(.library-section,.resume-section,.portfolio-section,.jarvis-flow,.jarvis-capabilities)>header{margin-bottom:32px}
+#root .app :is(.library-section,.resume-section,.portfolio-section,.jarvis-flow,.jarvis-capabilities)>header>span{color:var(--eh-cyan)!important}
+#root .app .library-hero-card{background:linear-gradient(145deg,#0f4360,#07939a)!important;color:#fff!important}
+#root .app .library-search{background:#071424!important;border-color:#38536c!important}
+#root .app .library-search input{border:0!important;background:transparent!important}
+#root .app .library-detail{padding:28px;border:1px solid var(--eh-line);border-radius:30px;background:var(--eh-panel)}
+#root .app .library-detail-cover{background:#0a2034!important}
+#root .app .library-info>div{background:var(--eh-panel-2)!important;border-color:var(--eh-line)!important;border-radius:14px}
+#root .app .library-description,#root .app .library-description p{color:#d4e0e8!important}
+#root .app .managed-article>article,#root .app .article-page>article,#root .app .video-detail,#root .app .tool-page article{background:var(--eh-panel)!important;color:var(--eh-text)!important;border:1px solid var(--eh-line)!important;box-shadow:0 28px 80px #0004!important}
+#root .app :is(.article-header,.managed-header){background:linear-gradient(135deg,#123756,#08182a)!important}
+#root .app :is(.article-header,.managed-header) p{color:#d5e1e9!important}
+#root .app :is(.article-body,.managed-body,.video-copy,.tool-details-section) p{color:#d4e0e8!important}
+#root .app :is(.article-body,.managed-body) section{border-color:var(--eh-line)!important}
+#root .app .resume-page{max-width:1380px!important}
+#root .app .resume-hero p{color:#d9e4eb!important;font-size:17px!important;line-height:2!important}
+#root .app .resume-jobs article,#root .app .resume-section.split>div{background:var(--eh-panel)!important;border:1px solid var(--eh-line)!important;border-radius:22px!important}
+#root .app .resume-jobs article p,#root .app .resume-jobs article li{color:#c6d5df!important}
+#root .app .skill-list span,#root .app .education-list li{background:var(--eh-panel-2)!important;color:#eef8ff!important;border-color:var(--eh-line)!important}
+#root .app .resume-cta{background:linear-gradient(135deg,#123756,#071526)!important;border:1px solid var(--eh-line)!important;border-radius:28px!important}
+#root .app .contact-panel,#root .app .contact-person,#root .app .contact-channels,#root .app .contact-group{background:var(--eh-panel)!important;color:#fff!important;border:1px solid var(--eh-line)!important}
+#root .app .contact-group a,#root .app .contact-channels a{color:#eef8ff!important}
+#root .app .contact-group a:hover,#root .app .contact-channels a:hover{color:var(--eh-cyan)!important}
+#root .app .video-thumb,#root .app .video-player{background:#020812!important;border-color:var(--eh-line)!important}
+#root .app .video-description,#root .app .video-description p{color:#d1dee7!important}
+#root .app .ft-page{color:var(--eh-text)!important}
+#root .app :is(.ft-workspace,.ft-result,.ft-tool header,.ft-drop,.ft-privacy){background:var(--eh-panel)!important;color:#fff!important;border-color:var(--eh-line)!important}
+#root .app :is(.ft-workspace,.ft-result,.ft-tool header,.ft-drop,.ft-privacy) p{color:#c7d7e1!important}
+#root .app .study-page{background:var(--eh-bg)!important}
+#root .app .study-chat{background:var(--eh-panel)!important;color:#fff!important;border-color:var(--eh-line)!important}
+#root .app .study-messages p{background:var(--eh-panel-2)!important;color:#eef8ff!important}
+#root .app .study-messages .user p{background:#078e96!important;color:#fff!important}
+#root .app .study-chat form{background:#071525!important;border-color:#36506a!important}
+#root .app .control-page,#root .app .account-page{background:var(--eh-bg)!important;color:#fff!important}
+#root .app :is(.control-panel,.control-card,.admin-login,.admin-forms>form,.account-card,.auth-card){background:var(--eh-panel)!important;color:#fff!important;border-color:var(--eh-line)!important}
+#root .app .creator-home>:not(.creator-hero){color:var(--eh-text)}
+#root .app .creator-about,#root .app .creator-services,#root .app .creator-projects,#root .app .creator-cta,#root .app .work-reel{background:var(--eh-bg)!important;color:var(--eh-text)!important}
+#root .app .creator-services article{border-color:var(--eh-line)!important}
+#root .app .creator-services p,#root .app .creator-about p{color:#c9d8e2!important}
+#root .app .creator-cta a{color:var(--eh-cyan)!important}
+@media(max-width:900px){#root .app main:not(.creator-home){width:100%!important;padding:22px 14px 70px!important}#root .app :is(.page-hero,.editorial-hero,.library-hero,.resume-hero,.video-hero,.contact-hero,.posts-hero,.ft-hero,.jarvis-hero){border-radius:22px!important;padding:35px 22px!important}#root .app :is(.library-detail,.resume-hero){grid-template-columns:1fr!important}}
+

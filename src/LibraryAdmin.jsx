@@ -64,6 +64,7 @@ export function LibraryAdmin() {
     [item, setItem] = useState(blankItem),
     [article, setArticle] = useState(blankArticle),
     [inlineArticleImage, setInlineArticleImage] = useState(""),
+    [articleAttachmentId, setArticleAttachmentId] = useState(""),
     [videoCat, setVideoCat] = useState(blankVideoCategory),
     [video, setVideo] = useState(blankVideo);
   const [knowledgeItem, setKnowledgeItem] = useState(blankKnowledge);
@@ -107,9 +108,11 @@ export function LibraryAdmin() {
       if (data.session) load();
       setLoading(false);
     });
-    const { sub } = supabase.auth.onAuthStateChange((_, s) => setSession(s))
-      .data.subscription;
-    return () => sub.unsubscribe();
+    const { data: listener } = supabase.auth.onAuthStateChange((_, s) => {
+      setSession(s);
+      if (s) load();
+    });
+    return () => listener.subscription.unsubscribe();
   }, []);
   const signIn = async (e) => {
     e.preventDefault();
@@ -224,7 +227,9 @@ export function LibraryAdmin() {
     );
   if (!session)
     return <Navigate to="/login" replace state={{ from: "/admin/library" }} />;
-  if (session.user.email !== "01022104948@admin.elhawy.local")
+  const adminPhone = String(session.user.user_metadata?.phone || "").replace(/\D/g, "");
+  const isAdmin = session.user.email === "01022104948@admin.elhawy.local" || adminPhone === "01022104948";
+  if (!isAdmin)
     return <Navigate to="/profile" replace />;
   return (
     <main className="control-page">
@@ -244,7 +249,7 @@ export function LibraryAdmin() {
             className={tab === "library" ? "active" : ""}
             onClick={() => setTab("library")}
           >
-            إدارة المكتبة
+            ملفات ومرفقات المقالات
           </button>
           <button
             className={tab === "articles" ? "active" : ""}
@@ -278,7 +283,7 @@ export function LibraryAdmin() {
               {tab === "overview"
                 ? "مرحبًا محمد"
                 : tab === "library"
-                  ? "إدارة المكتبة"
+                  ? "ملفات ومرفقات المقالات"
                   : tab === "articles"
                     ? "إدارة المقالات"
                     : tab === "videos"
@@ -326,7 +331,7 @@ export function LibraryAdmin() {
           <>
             <div className="control-grid">
               <Form
-                title="إضافة قسم"
+                title="إضافة تصنيف للمرفقات"
                 icon={<FiFolderPlus />}
                 submit={addCategory}
               >
@@ -347,7 +352,7 @@ export function LibraryAdmin() {
                 />
               </Form>
               <Form
-                title="إضافة ملف أو مصدر"
+                title="إضافة ملف أو مرفق للمقالات"
                 icon={<FiLink />}
                 submit={addItem}
               >
@@ -461,6 +466,20 @@ export function LibraryAdmin() {
                 >
                   <FiPlusCircle /> إضافة الصورة داخل النص
                 </button>
+              </div>
+              <div className="inline-image-admin">
+                <label>مرفق داخل المقال — اختياري</label>
+                <p>اختر ملفًا من مرفقات المقالات ليظهر للزائر داخل المقال مع زر العرض والتحميل.</p>
+                <select value={articleAttachmentId} onChange={(e) => setArticleAttachmentId(e.target.value)}>
+                  <option value="">اختر ملفًا أو مرفقًا</option>
+                  {items.map((resource) => <option key={resource.id} value={resource.id}>{resource.title}</option>)}
+                </select>
+                <button type="button" disabled={!articleAttachmentId} onClick={() => {
+                  const resource = items.find((entry) => entry.id === articleAttachmentId);
+                  if (!resource) return;
+                  setArticle({ ...article, content: `${article.content}${article.content ? "\n\n" : ""}[[attachment:${resource.id}|${resource.title}]]` });
+                  setArticleAttachmentId("");
+                }}><FiPlusCircle /> إضافة المرفق داخل المقال</button>
               </div>
               <ImageUpload
                 value={article.cover_url}
