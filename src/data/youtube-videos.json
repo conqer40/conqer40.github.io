@@ -1,0 +1,63 @@
+{
+  "channel": {
+    "id": "UCnJhK71kcD-hdxrqJEwfEnA",
+    "handle": "@ElhawyAI",
+    "name": "Elhawy AI – محمد الحاوي",
+    "url": "https://www.youtube.com/@ElhawyAI",
+    "subscribeUrl": "https://www.youtube.com/@ElhawyAI?sub_confirmation=1",
+    "whatsappUrl": "https://www.whatsapp.com/channel/0029VbDJ5sYKrWQt6ehcOp3G",
+    "facebookUrl": "https://www.facebook.com/ElhawyAi",
+    "syncedAt": "2026-09-15T10:56:50.141Z"
+  },
+  "playlists": [
+    {
+      "id": "pl-intro",
+      "slug": "channel-intro",
+      "name": "مقدمة ودليل Elhawy AI",
+      "description": "الفيديوهات التعريفية بالقناة وخارطة طريق التعلم في البرمجة والذكاء الاصطناعي والتكنولوجيا.",
+      "cover_url": "https://img.youtube.com/vi/VgFUjydXx1o/maxresdefault.jpg",
+      "videoIds": [
+        "VgFUjydXx1o"
+      ]
+    },
+    {
+      "id": "pl-ai-tools",
+      "slug": "ai-and-tools",
+      "name": "شروحات الذكاء الاصطناعي والأدوات",
+      "description": "دروس عملية لتطبيق أدوات وتقنيات الـ AI في العمل والدراسة والإنتاجية.",
+      "cover_url": "https://img.youtube.com/vi/VgFUjydXx1o/hqdefault.jpg",
+      "videoIds": []
+    },
+    {
+      "id": "pl-coding",
+      "slug": "programming",
+      "name": "البرمجة وتطوير البرمجيات",
+      "description": "مسارات تعليمية في البرمجة وتطوير التطبيقات والويب بطرق مبسطة وعملية.",
+      "cover_url": "https://img.youtube.com/vi/VgFUjydXx1o/hqdefault.jpg",
+      "videoIds": []
+    },
+    {
+      "id": "pl-secondary-education",
+      "slug": "secondary-education",
+      "name": "محتوى وتكنولوجيا الثانوية العامة",
+      "description": "شروحات مخصصة لطلاب الثانوية لمساعدتهم على فهم وتوظيف التكنولوجيا بذكاء.",
+      "cover_url": "https://img.youtube.com/vi/VgFUjydXx1o/hqdefault.jpg",
+      "videoIds": []
+    }
+  ],
+  "videos": [
+    {
+      "id": "VgFUjydXx1o",
+      "slug": "elhawy-ai-محمد-الحاوي-برمجة-وذكاء-اصطناعي-ببساطة",
+      "videoId": "VgFUjydXx1o",
+      "youtube_url": "https://www.youtube.com/watch?v=VgFUjydXx1o",
+      "title": "Elhawy AI – محمد الحاوي | برمجة وذكاء اصطناعي ببساطة 🚀",
+      "summary": "أهلاً بيكم في قناة Elhawy AI – محمد الحاوي 🤖💻 هنا هنتعلم البرمجة والذكاء الاصطناعي والتكنولوجيا بطريقة بسيطة وعملية، مع شروحات للثانوية ومحتوى يساعدك تفهم التكنولوجيا وتستخدمها صح.",
+      "description": "أهلاً بيكم في قناة Elhawy AI – محمد الحاوي 🤖💻\n\nهنا هنتعلم البرمجة والذكاء الاصطناعي والتكنولوجيا بطريقة بسيطة وعملية، مع شروحات للثانوية ومحتوى يساعدك تفهم التكنولوجيا وتستخدمها صح.\n\n📚 شروحات تعليمية\n💻 برمجة\n🤖 ذكاء اصطناعي\n🧠 أدوات وتقنيات AI\n🎓 محتوى للثانوية\n🚀 تكنولوجيا ومهارات المستقبل\n\nاشترك في القناة وفعّل الجرس علشان يوصلك كل جديد.\n\nElhawy AI – محمد الحاوي\nنفهمها... ونستخدمها صح.\n\n#ElhawyAI\n#محمد_الحاوي\n#الذكاء_الاصطناعي\n#البرمجة\n#الثانوية_العامة\n#تكنولوجيا",
+      "thumbnail": "https://i3.ytimg.com/vi/VgFUjydXx1o/maxresdefault.jpg",
+      "publishedAt": "2026-09-15T10:30:31+00:00",
+      "category_id": "pl-intro",
+      "category_name": "مقدمة ودليل Elhawy AI"
+    }
+  ]
+}

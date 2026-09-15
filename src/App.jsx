@@ -43,6 +43,7 @@ import {
   FiUser,
   FiLogIn,
 } from "react-icons/fi";
+import { FaYoutube, FaWhatsapp, FaFacebook } from "react-icons/fa";
 import { PersonalHome } from "./PersonalHome.jsx";
 import { ResumePage } from "./ResumePage.jsx";
 import { JarvisPage } from "./JarvisPage.jsx";
@@ -200,12 +201,32 @@ function Footer({ lang }) {
       <span className="brand-mark" aria-hidden="true">ME</span>
       <div><h2>{ar ? "نتعلم، نبني، ونحوّل الأفكار إلى أدوات مفيدة." : "Learn, build, and turn ideas into useful tools."}</h2><p>{ar ? "منصة محمد الحاوي للمحتوى التقني والذكاء الاصطناعي والموارد العملية." : "Mohamed Elhawy's platform for AI, technical content and practical resources."}</p></div>
     </div>
-    <div className="footer-links">
+    <div className="footer-links" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))" }}>
       <div><b>{ar ? "المحتوى" : "Content"}</b><Link to="/articles">{ar ? "المقالات والملفات" : "Articles & resources"}</Link><Link to="/videos">{ar ? "دروس الفيديو" : "Videos"}</Link></div>
       <div><b>{ar ? "الأدوات" : "Tools"}</b><Link to="/ai">Elhawy AI</Link><Link to="/study-ai">{ar ? "المساعد التعليمي" : "Study AI"}</Link><Link to="/free-tools">{ar ? "أدوات مجانية" : "Free tools"}</Link></div>
       <div><b>{ar ? "محمد الحاوي" : "Mohamed"}</b><Link to="/about">{ar ? "من أنا" : "About"}</Link><Link to="/contact">{ar ? "تواصل معي" : "Contact"}</Link><Link to="/login">{ar ? "دخول الحساب" : "Sign in"}</Link></div>
+      <div>
+        <b>{ar ? "قنوات ومجتمع Elhawy AI" : "Official Channels"}</b>
+        <a href="https://www.youtube.com/@ElhawyAI" target="_blank" rel="noreferrer" style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+          <FaYoutube style={{ color: "#ff0000" }} /> YouTube: @ElhawyAI
+        </a>
+        <a href="https://www.whatsapp.com/channel/0029VbDJ5sYKrWQt6ehcOp3G" target="_blank" rel="noreferrer" style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+          <FaWhatsapp style={{ color: "#25d366" }} /> {ar ? "قناة الواتساب الرسمية" : "WhatsApp Channel"}
+        </a>
+        <a href="https://www.facebook.com/ElhawyAi" target="_blank" rel="noreferrer" style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+          <FaFacebook style={{ color: "#1877f2" }} /> {ar ? "صفحة الفيسبوك" : "Facebook Page"}
+        </a>
+      </div>
     </div>
-    <div className="footer-bottom"><span>© {new Date().getFullYear()} Mohamed Elhawy</span><a href="mailto:m.elhawy2023@gmail.com">m.elhawy2023@gmail.com</a></div>
+    <div className="footer-bottom">
+      <span>© {new Date().getFullYear()} Mohamed Elhawy – Elhawy AI</span>
+      <div style={{ display: "flex", gap: "16px", alignItems: "center" }}>
+        <a href="https://www.youtube.com/@ElhawyAI" target="_blank" rel="noreferrer" title="YouTube" aria-label="YouTube"><FaYoutube size={16} /></a>
+        <a href="https://www.whatsapp.com/channel/0029VbDJ5sYKrWQt6ehcOp3G" target="_blank" rel="noreferrer" title="WhatsApp Channel" aria-label="WhatsApp Channel"><FaWhatsapp size={16} /></a>
+        <a href="https://www.facebook.com/ElhawyAi" target="_blank" rel="noreferrer" title="Facebook Page" aria-label="Facebook Page"><FaFacebook size={16} /></a>
+        <a href="mailto:m.elhawy2023@gmail.com">m.elhawy2023@gmail.com</a>
+      </div>
+    </div>
   </footer>;
 }
 

@@ -12,6 +12,7 @@ import {
   FiTwitter,
   FiUser,
 } from "react-icons/fi";
+import { FaYoutube, FaWhatsapp } from "react-icons/fa";
 import { supabase, supabaseReady } from "./supabase.js";
 
 const AuthContext = createContext({
@@ -288,29 +289,51 @@ export function ContactPage() {
           </div>
         </article>
         <div className="contact-channels">
+          <a
+            href="https://www.youtube.com/@ElhawyAI"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FaYoutube style={{ color: "#ff0000" }} />
+            <div>
+              <small>YouTube</small>
+              <b>قناة Elhawy AI</b>
+            </div>
+          </a>
+          <a
+            href="https://www.whatsapp.com/channel/0029VbDJ5sYKrWQt6ehcOp3G"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FaWhatsapp style={{ color: "#25d366" }} />
+            <div>
+              <small>WhatsApp</small>
+              <b>قناة الواتساب الرسمية</b>
+            </div>
+          </a>
+          <a
+            href="https://www.facebook.com/ElhawyAi"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FiFacebook style={{ color: "#1877f2" }} />
+            <div>
+              <small>Facebook</small>
+              <b>ElhawyAi (الصفحة الرسمية)</b>
+            </div>
+          </a>
+          <a href="https://wa.me/201022104948" target="_blank" rel="noreferrer">
+            <FaWhatsapp />
+            <div>
+              <small>محادثة شخصية</small>
+              <b>واتساب مباشر</b>
+            </div>
+          </a>
           <a href="tel:01022104948">
             <FiPhone />
             <div>
               <small>اتصال مباشر</small>
               <b>01022104948</b>
-            </div>
-          </a>
-          <a href="https://wa.me/201022104948" target="_blank" rel="noreferrer">
-            <FiPhone />
-            <div>
-              <small>واتساب</small>
-              <b>ابدأ محادثة</b>
-            </div>
-          </a>
-          <a
-            href="https://www.facebook.com/MohamedElhawy0"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FiFacebook />
-            <div>
-              <small>Facebook</small>
-              <b>MohamedElhawy0</b>
             </div>
           </a>
           <a href="https://x.com/elhawym" target="_blank" rel="noreferrer">

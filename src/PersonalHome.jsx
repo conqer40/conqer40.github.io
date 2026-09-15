@@ -22,6 +22,7 @@ import {
 import { supabase, supabaseReady } from "./supabase.js";
 import { safeImage, youtubeId } from "./content-utils.js";
 import { featuredArticles } from "./featuredArticles.js";
+import youtubeData from "./data/youtube-videos.json";
 const C = {
   ar: {
     greeting: "مرحبًا، أنا",
@@ -84,14 +85,23 @@ const reel = [
 export function PersonalHome({ lang }) {
   const c = C[lang],
     Arrow = lang === "ar" ? FiArrowLeft : FiArrowRight;
-  const [homeData, setHomeData] = useState({ articles: [], library: [], videos: [], loading: true });
+  const initialVideos = (youtubeData.videos || []).slice(0, 3);
+  const [homeData, setHomeData] = useState({ articles: [], library: [], videos: initialVideos, loading: true });
   useEffect(() => {
-    if (!supabaseReady) return setHomeData({ articles: [], library: [], videos: [], loading: false });
+    if (!supabaseReady) return setHomeData({ articles: [], library: [], videos: initialVideos, loading: false });
     Promise.all([
       supabase.from("site_articles").select("id,slug,title,summary,category,cover_url,published_at").eq("published", true).order("published_at", { ascending: false }).limit(3),
       supabase.from("library_items").select("id,slug,title,summary,file_type,cover_url,created_at").eq("published", true).order("created_at", { ascending: false }).limit(3),
       supabase.from("video_lessons").select("id,slug,title,summary,cover_url,youtube_url,created_at").eq("published", true).order("created_at", { ascending: false }).limit(3),
-    ]).then(([articles, library, videos]) => setHomeData({ articles: [...featuredArticles, ...(articles.data || [])].slice(0, 3), library: library.data || [], videos: videos.data || [], loading: false }));
+    ]).then(([articles, library, videos]) => {
+      const vList = (videos.data && videos.data.length > 0) ? videos.data : initialVideos;
+      setHomeData({
+        articles: [...featuredArticles, ...(articles.data || [])].slice(0, 3),
+        library: library.data || [],
+        videos: vList,
+        loading: false
+      });
+    });
   }, []);
   useEffect(() => {
     let raf = 0;
