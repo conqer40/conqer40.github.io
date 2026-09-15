@@ -11,7 +11,9 @@ import {
   FiPlusCircle,
   FiPlayCircle,
   FiTrash2,
+  FiExternalLink,
 } from "react-icons/fi";
+import { FaYoutube, FaSync } from "react-icons/fa";
 import { adminEmailFromUsername, supabase, supabaseReady } from "./supabase.js";
 import { slugify } from "./content-utils.js";
 import { ImageUpload } from "./ImageUpload.jsx";
@@ -68,6 +70,69 @@ export function LibraryAdmin() {
     [videoCat, setVideoCat] = useState(blankVideoCategory),
     [video, setVideo] = useState(blankVideo);
   const [knowledgeItem, setKnowledgeItem] = useState(blankKnowledge);
+  const [syncing, setSyncing] = useState(false);
+  const [ghToken, setGhToken] = useState(() => localStorage.getItem("gh_pat") || "");
+
+  const triggerYouTubeSync = async () => {
+    let token = ghToken.trim() || localStorage.getItem("gh_pat") || "";
+    if (!token) {
+      const input = window.prompt(
+        "لتشغيل التحديث مباشرة بنقرة واحدة، يمكنك لصق رمز GitHub Token هنا (اختياري)، أو اضغط Cancel لفتح صفحة GitHub Actions والضغط على Run workflow:"
+      );
+      if (input && input.trim()) {
+        token = input.trim();
+        localStorage.setItem("gh_pat", token);
+        setGhToken(token);
+      }
+    }
+
+    if (token) {
+      setSyncing(true);
+      setMessage("جارٍ إرسال أمر التحديث إلى سيرفرات GitHub Actions...");
+      try {
+        const res = await fetch(
+          "https://api.github.com/repos/conqer40/conqer40.github.io/actions/workflows/deploy-pages.yml/dispatches",
+          {
+            method: "POST",
+            headers: {
+              Authorization: `Bearer ${token}`,
+              Accept: "application/vnd.github+json",
+            },
+            body: JSON.stringify({ ref: "main" }),
+          }
+        );
+
+        if (res.status === 204 || res.ok) {
+          setMessage(
+            "🚀 تم إطلاق التحديث بنجاح! يقوم GitHub الآن بمزامنة يوتيوب وبناء الموقع ونشره خلال دقيقة واحدة."
+          );
+        } else {
+          setMessage(
+            "تعذر استخدام الرمز تلقائياً؛ تم فتح صفحة GitHub Actions لتشغيل التحديث."
+          );
+          window.open(
+            "https://github.com/conqer40/conqer40.github.io/actions/workflows/deploy-pages.yml",
+            "_blank"
+          );
+        }
+      } catch (err) {
+        console.error("Deploy trigger failed", err);
+        setMessage("جاري فتح صفحة GitHub Actions مباشرة لتشغيل التحديث.");
+        window.open(
+          "https://github.com/conqer40/conqer40.github.io/actions/workflows/deploy-pages.yml",
+          "_blank"
+        );
+      } finally {
+        setSyncing(false);
+      }
+    } else {
+      setMessage("جاري فتح صفحة GitHub Actions؛ اضغط على Run workflow لبدء المزامنة فوراً.");
+      window.open(
+        "https://github.com/conqer40/conqer40.github.io/actions/workflows/deploy-pages.yml",
+        "_blank"
+      );
+    }
+  };
   const load = async () => {
     const [c, i, a, vc, v, u, k] = await Promise.all([
       supabase.from("library_categories").select("*").order("sort_order"),
@@ -276,7 +341,7 @@ export function LibraryAdmin() {
         </button>
       </aside>
       <section className="control-content">
-        <header>
+        <header style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "16px" }}>
           <div>
             <span>لوحة التحكم</span>
             <h1>
@@ -291,6 +356,28 @@ export function LibraryAdmin() {
                       : tab === "knowledge" ? "معرفة المساعد التعليمي" : "إدارة المستخدمين"}
             </h1>
           </div>
+          <button
+            type="button"
+            onClick={triggerYouTubeSync}
+            disabled={syncing}
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "8px",
+              padding: "12px 20px",
+              borderRadius: "12px",
+              background: "linear-gradient(135deg, #ff0000, #c40000)",
+              color: "#fff",
+              border: "0",
+              fontWeight: "800",
+              fontSize: "14px",
+              cursor: syncing ? "wait" : "pointer",
+              boxShadow: "0 6px 20px rgba(255,0,0,0.3)"
+            }}
+          >
+            <FaYoutube size={18} />
+            {syncing ? "جارٍ إرسال أمر التحديث..." : "تحديث ومزامنة فيديوهات YouTube"}
+          </button>
         </header>
         {message && (
           <div className="control-message">
@@ -496,6 +583,71 @@ export function LibraryAdmin() {
         )}
         {tab === "videos" && (
           <>
+            <div
+              className="control-form wide"
+              style={{
+                marginBottom: "24px",
+                border: "1px solid #12cec4",
+                background: "linear-gradient(135deg, #07192d, #0b2848)",
+                color: "#fff",
+              }}
+            >
+              <header style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "16px" }}>
+                <FaYoutube style={{ color: "#ff0000", fontSize: "32px" }} />
+                <div>
+                  <h2 style={{ margin: 0, color: "#fff" }}>مزامنة وتحديث فيديوهات YouTube</h2>
+                  <small style={{ color: "#77e6ef" }}>قناة @ElhawyAI الرسمية</small>
+                </div>
+              </header>
+              <p style={{ color: "#c0ced8", lineHeight: "1.8", margin: "0 0 18px", fontSize: "14px" }}>
+                الموقع متصل بقناتك ومضبوط للمزامنة الآلية، ويمكنك في أي وقت الضغط على الزر أدناه لسحب أي فيديو أو قائمة تشغيل جديدة فوراً وبناء وتحديث الموقع الحي.
+              </p>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "12px", alignItems: "center" }}>
+                <button
+                  type="button"
+                  onClick={triggerYouTubeSync}
+                  disabled={syncing}
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "8px",
+                    padding: "12px 24px",
+                    borderRadius: "10px",
+                    background: "#ff0000",
+                    color: "#fff",
+                    border: "0",
+                    fontWeight: "800",
+                    fontSize: "14px",
+                    cursor: syncing ? "wait" : "pointer",
+                    boxShadow: "0 6px 18px rgba(255,0,0,0.35)",
+                  }}
+                >
+                  <FaYoutube size={20} />
+                  {syncing ? "جارٍ إرسال أمر التحديث..." : "تحديث ومزامنة فيديوهات القناة الآن"}
+                </button>
+                <a
+                  href="https://github.com/conqer40/conqer40.github.io/actions/workflows/deploy-pages.yml"
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "8px",
+                    padding: "12px 20px",
+                    borderRadius: "10px",
+                    background: "rgba(255,255,255,0.1)",
+                    color: "#fff",
+                    border: "1px solid rgba(255,255,255,0.2)",
+                    textDecoration: "none",
+                    fontSize: "13px",
+                    fontWeight: "700",
+                  }}
+                >
+                  سير البناء والنشر على GitHub Actions <FiExternalLink />
+                </a>
+              </div>
+            </div>
+
             <div className="control-grid">
               <Form
                 title="إضافة قسم فيديو"
