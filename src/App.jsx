@@ -53,6 +53,7 @@ import { LibraryAdmin } from "./LibraryAdmin.jsx";
 import { ManagedArticle, ManagedArticles } from "./ManagedArticles.jsx";
 import { ShareButtons } from "./ShareButtons.jsx";
 import { FreeToolsPage, PdfToolPage, PdfToolsPage } from "./free-tools/FreeTools.jsx";
+import { TranslationToolsPage } from "./free-tools/TranslationTools.jsx";
 import { QrToolPage, QrToolsPage } from "./free-tools/QrTools.jsx";
 import { ImageToolPage, ImageToolsPage } from "./free-tools/ImageTools.jsx";
 import { StudyAssistant } from "./StudyAssistant.jsx";
@@ -1016,6 +1017,7 @@ export function App() {
               <Route path="/tool/:id" element={<Tool />} />
               <Route path="/library" element={<Navigate to="/articles" replace />} />
               <Route path="/free-tools" element={<FreeToolsPage />} />
+              <Route path="/free-tools/translation-tools" element={<TranslationToolsPage />} />
               <Route path="/free-tools/pdf-tools" element={<PdfToolsPage />} />
               <Route path="/free-tools/pdf-tools/:slug" element={<PdfToolPage />} />
               <Route path="/free-tools/qr-tools" element={<QrToolsPage />} />

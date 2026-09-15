@@ -1,9 +1,10 @@
 import {
-  FiCopy, FiCrop, FiDroplet, FiFile, FiGrid, FiHash, FiImage,
+  FiCopy, FiCrop, FiDroplet, FiFile, FiFileText, FiGrid, FiHash, FiImage,
   FiLayers, FiRefreshCw, FiScissors, FiShuffle, FiTrash2,
 } from "react-icons/fi";
 
 export const pdfTools = [
+  { id: "pdf-to-word", slug: "pdf-to-word", name: "PDF إلى Word (OCR)", en: "PDF to Word (OCR)", description: "حوّل ملف PDF إلى مستند Word (.docx) قابل للتحرير مع دعم التعرف الضوئي OCR للعربية والإنجليزية.", icon: FiFileText, badge: "OCR عربي" },
   { id: "merge", slug: "merge-pdf", name: "دمج PDF", en: "Merge PDF", description: "ادمج عدة ملفات PDF بالترتيب الذي تختاره.", icon: FiLayers, mode: "multi" },
   { id: "split", slug: "split-pdf", name: "تقسيم PDF", en: "Split PDF", description: "استخرج نطاقات أو كل صفحة في ملف مستقل.", icon: FiScissors },
   { id: "organize", slug: "organize-pdf", name: "تنظيم PDF", en: "Organize PDF", description: "رتّب واحذف ودوّر الصفحات من لوحة مرئية.", icon: FiGrid },

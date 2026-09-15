@@ -1,14 +1,68 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { FiArrowLeft, FiCheck, FiDownload, FiFile, FiGrid, FiImage, FiSearch, FiTrash2, FiUploadCloud, FiX } from "react-icons/fi";
+import { FiArrowLeft, FiCheck, FiDownload, FiFile, FiGlobe, FiGrid, FiImage, FiSearch, FiTrash2, FiUploadCloud, FiX } from "react-icons/fi";
 import { pdfTools, toolBySlug } from "./pdfTools.jsx";
-import { downloadBlob, getPageThumbnails, imagesToPdf, merge, pdfToJpg, splitToZip, transformPdf } from "./pdfEngine.js";
+import { downloadBlob, getPageThumbnails, imagesToPdf, merge, pdfToDocx, pdfToJpg, splitToZip, transformPdf } from "./pdfEngine.js";
 import "./free-tools.css";
 
 const bytes = (n) => n > 1048576 ? `${(n/1048576).toFixed(1)} MB` : `${Math.ceil(n/1024)} KB`;
 
 export function FreeToolsPage() {
-  return <main className="ft-page"><section className="ft-hero"><span>مجاني · خاص · داخل متصفحك</span><h1>Free Tools</h1><p>أدوات عملية تعمل محليًا بدون رفع ملفاتك إلى خدمات خارجية.</p></section><section className="ft-categories"><Link to="/free-tools/pdf-tools"><div className="ft-category-icon"><FiFile /></div><div><small>{pdfTools.length} أداة</small><h2>PDF Tools</h2><p>معالجة ملفات PDF بالكامل داخل جهازك.</p></div><FiArrowLeft /></Link><Link to="/free-tools/qr-tools"><div className="ft-category-icon"><FiGrid /></div><div><small>4 أدوات</small><h2>QR Code</h2><p>إنشاء QR للرابط وواتساب وWi‑Fi وقراءته من الصور.</p></div><FiArrowLeft /></Link><Link to="/free-tools/image-tools"><div className="ft-category-icon"><FiImage /></div><div><small>6 أدوات</small><h2>أدوات الصور</h2><p>ضغط وتحويل وتغيير مقاس وقص وتنظيف وعلامة مائية.</p></div><FiArrowLeft /></Link></section></main>;
+  return (
+    <main className="ft-page">
+      <section className="ft-hero">
+        <span>مجاني · خاص · داخل متصفحك</span>
+        <h1>Free Tools</h1>
+        <p>أدوات عملية تعمل محليًا وبأحدث تقنيات الذكاء الاصطناعي دون رفع ملفاتك إلى خدمات خارجية.</p>
+      </section>
+      <section className="ft-categories">
+        <Link to="/free-tools/translation-tools">
+          <div className="ft-category-icon" style={{ background: "linear-gradient(135deg,#0a85ea,#00d2ff)", color: "#fff" }}>
+            <FiGlobe />
+          </div>
+          <div>
+            <small>3 أدوات ذكية</small>
+            <h2>أدوات الترجمة والذكاء الاصطناعي</h2>
+            <p>ترجمة نصوص فورية، ترجمة ملفات PDF ومستندات، ومعجم مصطلحات AI.</p>
+          </div>
+          <FiArrowLeft />
+        </Link>
+        <Link to="/free-tools/pdf-tools">
+          <div className="ft-category-icon">
+            <FiFile />
+          </div>
+          <div>
+            <small>{pdfTools.length} أداة</small>
+            <h2>PDF Tools</h2>
+            <p>معالجة وتحويل PDF إلى Word مع OCR عربي داخل جهازك.</p>
+          </div>
+          <FiArrowLeft />
+        </Link>
+        <Link to="/free-tools/qr-tools">
+          <div className="ft-category-icon">
+            <FiGrid />
+          </div>
+          <div>
+            <small>4 أدوات</small>
+            <h2>QR Code</h2>
+            <p>إنشاء QR للرابط وواتساب وWi‑Fi وقراءته من الصور.</p>
+          </div>
+          <FiArrowLeft />
+        </Link>
+        <Link to="/free-tools/image-tools">
+          <div className="ft-category-icon">
+            <FiImage />
+          </div>
+          <div>
+            <small>6 أدوات</small>
+            <h2>أدوات الصور</h2>
+            <p>ضغط وتحويل وتغيير مقاس وقص وتنظيف وعلامة مائية.</p>
+          </div>
+          <FiArrowLeft />
+        </Link>
+      </section>
+    </main>
+  );
 }
 
 export function PdfToolsPage() {
@@ -24,6 +78,7 @@ function Dropzone({ files, setFiles, images, multiple }) {
 
 function Options({tool,options,setOptions}){
  const set=(key,value)=>setOptions({...options,[key]:value});
+ if(tool.id==="pdf-to-word") return <div className="ft-options"><label>نمط التحويل <select value={options.mode||"auto"} onChange={e=>set("mode",e.target.value)}><option value="auto">ذكي تلقائي (نصوص مباشرة + OCR للصفحات المصورة)</option><option value="text">نص رقمي مباشر (فائق السرعة)</option><option value="ocr">التعرف الضوئي OCR (للكتب والملفات الممسوحة)</option></select></label>{(options.mode==="ocr"||!options.mode||options.mode==="auto")&&<label>لغة التعرف OCR <select value={options.ocrLang||"ara+eng"} onChange={e=>set("ocrLang",e.target.value)}><option value="ara+eng">العربية + الإنجليزية (شامل وموصى به)</option><option value="ara">العربية فقط</option><option value="eng">الإنجليزية فقط</option></select></label>}</div>;
  if(["extract","remove","duplicate","rotate","crop"].includes(tool.id)) return <div className="ft-options"><label>الصفحات <input value={options.ranges||""} onChange={e=>set("ranges",e.target.value)} placeholder="مثال: 1-3, 5, 8-10"/></label>{tool.id==="rotate"&&<label>زاوية التدوير <select value={options.angle||90} onChange={e=>set("angle",e.target.value)}><option>90</option><option>180</option><option>270</option></select></label>}{tool.id==="crop"&&<label>الهامش بالنقاط <input type="number" min="0" value={options.margin||20} onChange={e=>set("margin",e.target.value)}/></label>}</div>;
  if(tool.id==="split") return <div className="ft-options"><label className="check"><input type="checkbox" checked={!!options.eachPage} onChange={e=>set("eachPage",e.target.checked)}/> كل صفحة في ملف مستقل</label>{!options.eachPage&&<label>المجموعات (افصل بينها بـ ;) <input value={options.ranges||"1-3;4-6"} onChange={e=>set("ranges",e.target.value)} placeholder="1-3;4-6;7"/></label>}</div>;
  if(tool.id==="watermark") return <div className="ft-options"><label>نص العلامة <input value={options.text||"Elhawy AI"} onChange={e=>set("text",e.target.value)}/></label><label>حجم الخط <input type="number" value={options.fontSize||42} onChange={e=>set("fontSize",e.target.value)}/></label><label>الشفافية <input type="range" min=".1" max=".9" step=".1" value={options.opacity||.3} onChange={e=>set("opacity",e.target.value)}/></label></div>;
@@ -40,11 +95,11 @@ function Organizer({file,order,setOrder,rotations={},setRotations=()=>{},canRota
 }
 
 export function PdfToolPage(){
- const {slug}=useParams(),tool=toolBySlug(slug),[files,setFiles]=useState([]),[options,setOptions]=useState({}),[order,setOrder]=useState([]),[rotations,setRotations]=useState({}),[state,setState]=useState("idle"),[error,setError]=useState(""),[progress,setProgress]=useState(0),[result,setResult]=useState(null);
+ const {slug}=useParams(),tool=toolBySlug(slug),[files,setFiles]=useState([]),[options,setOptions]=useState({}),[order,setOrder]=useState([]),[rotations,setRotations]=useState({}),[state,setState]=useState("idle"),[error,setError]=useState(""),[progress,setProgress]=useState(0),[statusMsg,setStatusMsg]=useState(""),[result,setResult]=useState(null);
  useEffect(()=>{if(tool)document.title=`${tool.en} - Free PDF Tool | Elhawy AI`;return()=>{document.title="Elhawy AI"}},[tool]);
  if(!tool)return <main className="ft-page"><div className="ft-empty">الأداة غير موجودة.</div></main>;
  const many=tool.mode==="multi"||tool.mode==="images"; const organize=["organize","reorder"].includes(tool.id);
- const run=async()=>{if(!files.length)return setError("اختر ملفًا أولًا.");setState("processing");setError("");setProgress(8);try{let data,name="result.pdf",type="application/pdf";if(tool.id==="merge")data=await merge(files);else if(tool.id==="images-to-pdf")data=await imagesToPdf(files,options);else if(tool.id==="pdf-to-jpg"){data=await pdfToJpg(files[0],setProgress);name="pdf-images.zip";type="application/zip";}else if(tool.id==="split"){data=await splitToZip(files[0],options.ranges||"",options.eachPage,setProgress);name="split-pdf.zip";type="application/zip";}else data=await transformPdf(files[0],tool.id,{...options,order,rotations});setProgress(100);setResult({data,name,type});setState("done");}catch(e){setError(e.message||"تعذر معالجة الملف.");setState("idle");}};
- const reset=()=>{setFiles([]);setOptions({});setOrder([]);setRotations({});setResult(null);setState("idle");setProgress(0);setError("");};
- return <main className="ft-page ft-tool"><Link className="ft-back" to="/free-tools/pdf-tools"><FiArrowLeft/> كل أدوات PDF</Link><header><span><tool.icon/></span><div><small>{tool.en}</small><h1>{tool.name}</h1><p>{tool.description} تتم المعالجة على جهازك ولا يتم رفع الملف.</p></div></header>{state==="done"?<section className="ft-result"><span><FiCheck/></span><h2>الملف جاهز للتحميل</h2><p>اكتملت العملية بنجاح ولم يتم إرسال ملفك لأي خادم.</p><button onClick={()=>downloadBlob(result.data,result.name,result.type)}><FiDownload/> تحميل النتيجة</button><button className="secondary" onClick={reset}>بدء عملية جديدة</button></section>:<section className="ft-workspace"><Dropzone files={files} setFiles={setFiles} images={tool.mode==="images"} multiple={many}/>{files[0]&&organize&&<Organizer file={files[0]} order={order} setOrder={setOrder}/>}<Options tool={tool} options={options} setOptions={setOptions}/>{error&&<div className="ft-error" role="alert">{error}</div>}{state==="processing"?<div className="ft-progress"><div style={{width:`${progress}%`}}/><span>جارٍ المعالجة... {progress}%</span></div>:<button className="ft-run" disabled={!files.length||(organize&&!order.length)} onClick={run}>تنفيذ {tool.name}</button>}</section>}<aside className="ft-privacy"><b>خصوصية كاملة</b><p>كل العمليات تتم داخل متصفحك. لا نرفع ملفاتك ولا نخزنها.</p></aside></main>;
+ const run=async()=>{if(!files.length)return setError("اختر ملفًا أولًا.");setState("processing");setError("");setProgress(8);setStatusMsg("");try{let data,name="result.pdf",type="application/pdf";if(tool.id==="pdf-to-word"){const res=await pdfToDocx(files[0],options,(pct,msg)=>{setProgress(pct);if(msg)setStatusMsg(msg);});data=res.blob;name=`${files[0].name.replace(/\.[^/.]+$/,"")}.docx`;type="application/vnd.openxmlformats-officedocument.wordprocessingml.document";}else if(tool.id==="merge")data=await merge(files);else if(tool.id==="images-to-pdf")data=await imagesToPdf(files,options);else if(tool.id==="pdf-to-jpg"){data=await pdfToJpg(files[0],setProgress);name="pdf-images.zip";type="application/zip";}else if(tool.id==="split"){data=await splitToZip(files[0],options.ranges||"",options.eachPage,setProgress);name="split-pdf.zip";type="application/zip";}else data=await transformPdf(files[0],tool.id,{...options,order,rotations});setProgress(100);setResult({data,name,type});setState("done");}catch(e){setError(e.message||"تعذر معالجة الملف.");setState("idle");}};
+ const reset=()=>{setFiles([]);setOptions({});setOrder([]);setRotations({});setResult(null);setState("idle");setProgress(0);setStatusMsg("");setError("");};
+ return <main className="ft-page ft-tool"><Link className="ft-back" to="/free-tools/pdf-tools"><FiArrowLeft/> كل أدوات PDF</Link><header><span><tool.icon/></span><div><small>{tool.en}</small><h1>{tool.name}</h1><p>{tool.description} تتم المعالجة على جهازك ولا يتم رفع الملف.</p></div></header>{state==="done"?<section className="ft-result"><span><FiCheck/></span><h2>الملف جاهز للتحميل</h2><p>اكتملت العملية بنجاح ولم يتم إرسال ملفك لأي خادم.</p><button onClick={()=>downloadBlob(result.data,result.name,result.type)}><FiDownload/> تحميل النتيجة</button><button className="secondary" onClick={reset}>بدء عملية جديدة</button></section>:<section className="ft-workspace"><Dropzone files={files} setFiles={setFiles} images={tool.mode==="images"} multiple={many}/>{files[0]&&organize&&<Organizer file={files[0]} order={order} setOrder={setOrder}/>}<Options tool={tool} options={options} setOptions={setOptions}/>{error&&<div className="ft-error" role="alert">{error}</div>}{state==="processing"?<div className="ft-progress"><div style={{width:`${progress}%`}}/><span>{statusMsg||`جارٍ المعالجة... ${progress}%`}</span></div>:<button className="ft-run" disabled={!files.length||(organize&&!order.length)} onClick={run}>تنفيذ {tool.name}</button>}</section>}<aside className="ft-privacy"><b>خصوصية كاملة</b><p>كل العمليات تتم داخل متصفحك. لا نرفع ملفاتك ولا نخزنها.</p></aside></main>;
 }

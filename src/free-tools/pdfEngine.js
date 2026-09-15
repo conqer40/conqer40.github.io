@@ -2,6 +2,8 @@ import { PDFDocument, StandardFonts, degrees, rgb } from "pdf-lib";
 import JSZip from "jszip";
 import * as pdfjsLib from "pdfjs-dist";
 import workerUrl from "pdfjs-dist/build/pdf.worker.min.mjs?url";
+import { Document, Packer, Paragraph, TextRun, HeadingLevel, AlignmentType } from "docx";
+import { createWorker } from "tesseract.js";
 
 pdfjsLib.GlobalWorkerOptions.workerSrc = workerUrl;
 
@@ -109,3 +111,133 @@ export async function getPageThumbnails(file) {
   const pdf=await pdfjsLib.getDocument({data:await file.arrayBuffer()}).promise, pages=[];
   for(let i=1;i<=pdf.numPages;i++){const page=await pdf.getPage(i),v=page.getViewport({scale:.28}),c=document.createElement("canvas");c.width=v.width;c.height=v.height;await page.render({canvasContext:c.getContext("2d"),viewport:v}).promise;pages.push({index:i-1,url:c.toDataURL("image/jpeg",.72)});} return pages;
 }
+
+export async function pdfToDocx(file, options = {}, onProgress = () => {}) {
+  const ocrLang = options.ocrLang || "ara+eng";
+  const mode = options.mode || "auto";
+  const docData = await file.arrayBuffer();
+  const pdf = await pdfjsLib.getDocument({ data: docData }).promise;
+  const numPages = pdf.numPages;
+
+  let worker = null;
+  const getOcrWorker = async () => {
+    if (!worker) {
+      onProgress(10, "جارٍ تجهيز محرك التعرف الضوئي OCR (العربية والإنجليزية)...");
+      worker = await createWorker(ocrLang);
+    }
+    return worker;
+  };
+
+  const isArabic = (text) => /[\u0600-\u06FF]/.test(text);
+  const allExtractedPages = [];
+
+  for (let i = 1; i <= numPages; i++) {
+    const baseProgress = Math.round(((i - 1) / numPages) * 85);
+    onProgress(baseProgress + 5, `معالجة الصفحة ${i} من ${numPages}...`);
+    const page = await pdf.getPage(i);
+
+    let pageText = "";
+
+    if (mode !== "ocr") {
+      const textContent = await page.getTextContent();
+      const strings = textContent.items.map((it) => it.str).filter(Boolean);
+      pageText = strings.join(" ").replace(/\s+/g, " ").trim();
+    }
+
+    if (!pageText || pageText.length < 15 || mode === "ocr") {
+      onProgress(baseProgress + 10, `تشغيل التعرف الضوئي OCR على صفحة ${i}...`);
+      const viewport = page.getViewport({ scale: 2.0 });
+      const canvas = document.createElement("canvas");
+      canvas.width = viewport.width;
+      canvas.height = viewport.height;
+      await page.render({ canvasContext: canvas.getContext("2d"), viewport }).promise;
+
+      try {
+        const ocrWorker = await getOcrWorker();
+        const ret = await ocrWorker.recognize(canvas);
+        pageText = ret?.data?.text || "";
+      } catch (ocrErr) {
+        console.warn("OCR recognition error on page " + i, ocrErr);
+      }
+    }
+
+    allExtractedPages.push({ pageNumber: i, text: pageText || "[لم يتم العثور على نص]" });
+  }
+
+  if (worker) {
+    try {
+      await worker.terminate();
+    } catch (_) {}
+  }
+
+  onProgress(92, "جارٍ إنشاء مستند Microsoft Word (.docx)...");
+
+  const paragraphs = [];
+  paragraphs.push(
+    new Paragraph({
+      text: `مستند مستخرج: ${file.name.replace(/\.[^/.]+$/, "")}`,
+      heading: HeadingLevel.HEADING_1,
+      alignment: AlignmentType.RIGHT,
+      bidirectional: true,
+      spacing: { after: 200 },
+    })
+  );
+
+  allExtractedPages.forEach((p) => {
+    paragraphs.push(
+      new Paragraph({
+        text: `الصفحة ${p.pageNumber}`,
+        heading: HeadingLevel.HEADING_2,
+        alignment: AlignmentType.RIGHT,
+        bidirectional: true,
+        spacing: { before: 240, after: 120 },
+      })
+    );
+
+    const lines = p.text.split("\n").map((l) => l.trim()).filter(Boolean);
+    if (!lines.length) {
+      paragraphs.push(
+        new Paragraph({
+          text: "[صفحة بدون نصوص]",
+          alignment: AlignmentType.RIGHT,
+          bidirectional: true,
+        })
+      );
+    } else {
+      lines.forEach((line) => {
+        const arabic = isArabic(line);
+        paragraphs.push(
+          new Paragraph({
+            alignment: arabic ? AlignmentType.RIGHT : AlignmentType.LEFT,
+            bidirectional: arabic,
+            children: [
+              new TextRun({
+                text: line,
+                font: arabic ? "Traditional Arabic" : "Calibri",
+                size: 24,
+              }),
+            ],
+            spacing: { after: 100 },
+          })
+        );
+      });
+    }
+  });
+
+  const doc = new Document({
+    sections: [
+      {
+        properties: {},
+        children: paragraphs,
+      },
+    ],
+  });
+
+  const blob = await Packer.toBlob(doc);
+  onProgress(100, "اكتمل التحويل بنجاح!");
+  return {
+    blob,
+    text: allExtractedPages.map((p) => `--- صفحة ${p.pageNumber} ---\n${p.text}`).join("\n\n"),
+  };
+}
+
