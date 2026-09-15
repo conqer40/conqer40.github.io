@@ -107,3 +107,143 @@
   .trans-tab.pdf-word-cta{margin-inline-start:0;width:100%}
   .glossary-grid{grid-template-columns:1fr}
 }
+
+/* ===================================================
+   TAFQEET & EXCEL AI STUDIO STYLING
+   =================================================== */
+.tafqeet-hero{background:linear-gradient(135deg,#062314 0%,#094025 50%,#107c41 100%)}
+.excel-hero{background:linear-gradient(135deg,#072018 0%,#0e4b37 50%,#0f7b57 100%)}
+
+/* Tafqeet Controls */
+.tafqeet-workspace{margin-top:28px;display:flex;flex-direction:column;gap:26px}
+.tafqeet-controls-card{padding:28px;border-radius:24px;background:#fff;border:1px solid #dbe6ef;box-shadow:0 8px 30px rgba(7,26,60,.04);display:flex;flex-direction:column;gap:20px}
+.input-group-row{display:grid;grid-template-columns:1.5fr 1fr;gap:20px}
+.amount-input-box,.currency-select-box{display:flex;flex-direction:column;gap:8px}
+.amount-input-box label,.currency-select-box label{font-size:14px;font-weight:800;color:#334155}
+.input-with-icon{position:relative;display:flex;align-items:center}
+.amount-field{width:100%;padding:14px 20px 14px 50px;border-radius:14px;border:2px solid #cbd5e1;font-size:22px;font-weight:900;color:#0f172a;outline:0;transition:.2s}
+.amount-field:focus{border-color:#107c41;box-shadow:0 0 0 4px rgba(16,124,65,.15)}
+.curr-badge{position:absolute;left:16px;font-size:24px;pointer-events:none}
+.currency-dropdown{padding:14px 18px;border-radius:14px;border:2px solid #cbd5e1;font-size:15px;font-weight:800;color:#0f172a;outline:0;cursor:pointer;background:#f8fafc;height:100%}
+
+.quick-amounts-bar{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:13px;font-weight:700;color:#64748b}
+.quick-num-btn{padding:5px 12px;border-radius:8px;border:1px solid #e2e8f0;background:#f8fafc;color:#0f172a;font:inherit;font-size:12px;font-weight:800;cursor:pointer;transition:.2s}
+.quick-num-btn:hover{background:#e2e8f0;border-color:#cbd5e1}
+
+.tafqeet-options-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;padding-top:16px;border-top:1px solid #f1f5f9}
+.option-item{display:flex;align-items:center;gap:12px}
+.option-item label{font-size:13px;font-weight:800;color:#475569}
+.segmented-btns{display:inline-flex;border-radius:10px;background:#f1f5f9;padding:4px;gap:4px}
+.segmented-btns button{padding:6px 14px;border-radius:8px;border:0;background:transparent;color:#475569;font:inherit;font-size:12px;font-weight:700;cursor:pointer;transition:.2s}
+.segmented-btns button.active{background:#fff;color:#107c41;font-weight:900;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.option-checks{display:flex;align-items:center;gap:18px}
+.check-label{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:#475569;cursor:pointer}
+
+/* Tafqeet Results Grid */
+.tafqeet-results-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.tafqeet-card{display:flex;flex-direction:column;border-radius:24px;background:#fff;border:1px solid #dbe6ef;padding:26px;box-shadow:0 10px 32px rgba(7,26,60,.04);position:relative;overflow:hidden}
+.tafqeet-card.arabic{border-top:5px solid #107c41}
+.tafqeet-card.english{border-top:5px solid #0b5ed7}
+.tafqeet-card-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;gap:12px}
+.header-meta{display:flex;align-items:center;gap:10px}
+.lang-pill{display:inline-block;padding:4px 10px;border-radius:6px;background:#f1f5f9;font-size:11px;font-weight:800}
+.tafqeet-card h3{margin:0;font-size:17px;color:#0f172a}
+.header-actions{display:flex;align-items:center;gap:8px}
+.action-btn{display:inline-flex;align-items:center;gap:6px;padding:7px 12px;border-radius:10px;border:1px solid #e2e8f0;background:#fff;color:#475569;font:inherit;font-size:12px;font-weight:700;cursor:pointer;transition:.2s}
+.action-btn:hover{background:#f8fafc;color:#0f172a}
+.action-btn.copy.copied{background:#dcfce7;color:#166534;border-color:#bbf7d0}
+
+.tafqeet-text-display{padding:22px;border-radius:16px;background:#f8fafc;border:1px solid #f1f5f9;font-size:21px;font-weight:800;line-height:1.7;color:#0f172a;min-height:120px;display:flex;align-items:center}
+.tafqeet-text-display.arabic-text{color:#074e27;font-family:inherit}
+.tafqeet-text-display.english-text{color:#07357a;font-family:inherit}
+.tafqeet-card-footer{margin-top:14px;padding-top:12px;border-top:1px solid #f1f5f9}
+.tafqeet-card-footer small{color:#94a3b8;font-size:12px}
+
+/* Excel Batch Card */
+.excel-config-card{padding:26px;border-radius:20px;background:#fff;border:1px solid #dbe6ef;margin-top:20px}
+.excel-config-card h3{margin:0 0 16px;font-size:18px}
+.excel-config-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:20px}
+.excel-config-grid label{display:block;font-size:13px;font-weight:800;color:#475569;margin-bottom:8px}
+.excel-config-grid select{width:100%;padding:11px 14px;border-radius:10px;border:1px solid #cbd5e1;background:#f8fafc;font:inherit;font-weight:700;cursor:pointer}
+
+/* VBA Macro Display */
+.vba-code-box{border-radius:20px;background:#0d1829;border:1px solid #1e314b;overflow:hidden;margin-top:20px}
+.vba-code-header{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;border-bottom:1px solid #1e314b;background:#08111e;color:#94a3b8;font-size:13px;font-weight:800}
+.code-display{margin:0;padding:24px;color:#7dd3fc;font-family:Consolas,Monaco,monospace;font-size:14px;line-height:1.65;overflow-x:auto;max-height:420px}
+.vba-instructions{margin-top:24px;padding:24px 28px;border-radius:18px;background:#fff;border:1px solid #dbe6ef}
+.vba-instructions h3{margin:0 0 12px;font-size:17px;color:#0f172a}
+.vba-instructions ol{margin:0;padding-inline-start:22px;color:#475569;font-size:14px;line-height:1.9}
+
+/* Gemini API Key Bar */
+.api-key-bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;margin-top:22px;padding:14px 20px;border-radius:16px;background:#f8fafc;border:1px solid #e2e8f0}
+.api-key-status{display:flex;align-items:center;gap:10px;font-size:13px;color:#475569}
+.key-active{color:#10b981;font-size:18px}
+.key-inactive{color:#94a3b8;font-size:18px}
+.api-key-btn{padding:7px 14px;border-radius:10px;border:1px solid #cbd5e1;background:#fff;color:#0f172a;font:inherit;font-size:12px;font-weight:800;cursor:pointer;transition:.2s}
+.api-key-btn:hover{background:#f1f5f9;border-color:#94a3b8}
+
+/* Key Modal */
+.key-modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);backdrop-filter:blur(4px);z-index:999;display:grid;place-items:center;padding:20px}
+.key-modal{background:#fff;border-radius:24px;padding:32px;max-width:500px;width:100%;box-shadow:0 24px 60px rgba(0,0,0,.2);display:flex;flex-direction:column;gap:14px}
+.key-modal h3{margin:0;font-size:20px;color:#0f172a}
+.key-modal p{margin:0;color:#64748b;font-size:14px;line-height:1.7}
+.key-input{padding:13px 16px;border-radius:12px;border:2px solid #cbd5e1;font:inherit;font-size:14px;outline:0}
+.key-input:focus{border-color:#107c41}
+.modal-actions{display:flex;gap:10px;margin-top:8px}
+.save-btn{flex:1;padding:11px;border-radius:10px;border:0;background:#107c41;color:#fff;font:inherit;font-weight:800;cursor:pointer}
+.cancel-btn{padding:11px 20px;border-radius:10px;border:1px solid #cbd5e1;background:#f8fafc;font:inherit;font-weight:700;cursor:pointer}
+
+/* Excel Generator Workspace */
+.generator-input-card{padding:26px;border-radius:22px;background:#fff;border:1px solid #dbe6ef;margin-top:24px;display:flex;flex-direction:column;gap:14px}
+.generator-input-card label{font-size:14px;font-weight:800;color:#0f172a}
+.generator-input-card textarea{width:100%;padding:16px 20px;border-radius:14px;border:2px solid #cbd5e1;font:inherit;font-size:15px;line-height:1.7;outline:0;resize:vertical}
+.generator-input-card textarea:focus{border-color:#107c41}
+.preset-prompts-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:13px;font-weight:700;color:#64748b}
+.preset-btn{padding:6px 12px;border-radius:8px;border:1px solid #e2e8f0;background:#f8fafc;color:#0f172a;font:inherit;font-size:12px;font-weight:700;cursor:pointer;transition:.2s}
+.preset-btn:hover{background:#e2e8f0;border-color:#107c41}
+
+/* Excel Result Card */
+.excel-result-card{padding:28px;border-radius:22px;background:#fff;border:1px solid #dbe6ef;box-shadow:0 8px 30px rgba(7,26,60,.04);margin-top:20px;display:flex;flex-direction:column;gap:18px}
+.result-header{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.result-header h3{margin:0;font-size:19px;color:#0f172a}
+.source-tag{padding:4px 10px;border-radius:6px;background:#e0f2fe;color:#0369a1;font-size:11px;font-weight:800}
+.formula-box{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px;border-radius:14px;background:#0d1829;color:#38bdf8}
+.formula-box code{font-family:Consolas,Monaco,monospace;font-size:17px;font-weight:800}
+.copy-formula-btn{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:8px;border:0;background:#1e3857;color:#fff;font:inherit;font-size:12px;font-weight:800;cursor:pointer;transition:.2s}
+.copy-formula-btn:hover{background:#0b5ed7}
+.copy-formula-btn.copied{background:#16a34a}
+.explanation-section h4,.steps-section h4{margin:0 0 8px;font-size:15px;color:#0f172a}
+.explanation-section p{margin:0;color:#475569;font-size:14px;line-height:1.8}
+.steps-section ul{margin:0;padding-inline-start:20px;color:#475569;font-size:14px;line-height:1.8}
+
+/* Spreadsheet Viewer Table */
+.spreadsheet-preview-card{margin-top:24px;border-radius:22px;background:#fff;border:1px solid #dbe6ef;overflow:hidden;box-shadow:0 8px 30px rgba(7,26,60,.04)}
+.preview-top-bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding:16px 22px;border-bottom:1px solid #e2e8f0;background:#fafcff}
+.table-stats{display:flex;gap:14px;font-size:13px;font-weight:800;color:#64748b}
+.table-search-input{display:flex;align-items:center;gap:8px;padding:8px 14px;border-radius:10px;border:1px solid #cbd5e1;background:#fff;max-width:320px;width:100%}
+.table-search-input input{border:0;outline:0;width:100%;font:inherit;font-size:13px}
+.export-table-btn{display:inline-flex;align-items:center;gap:6px;padding:9px 16px;border-radius:10px;border:0;background:#107c41;color:#fff;font:inherit;font-size:13px;font-weight:800;cursor:pointer}
+.spreadsheet-table-wrapper{max-height:500px;overflow:auto}
+.excel-data-table{width:100%;border-collapse:collapse;font-size:13px}
+.excel-data-table th{background:#f1f5f9;padding:10px 14px;font-weight:800;color:#334155;border:1px solid #e2e8f0;position:sticky;top:0;z-index:1;text-align:right}
+.excel-data-table td{padding:10px 14px;border:1px solid #e2e8f0;color:#1e293b}
+.excel-data-table tr:hover{background:#f8fafc}
+.excel-data-table td.row-num{font-weight:800;color:#94a3b8;background:#fafcff;width:40px;text-align:center}
+
+.theme-dark .tafqeet-hero{background:linear-gradient(135deg,#04140b 0%,#082a18 50%,#095c2e 100%)}
+.theme-dark .excel-hero{background:linear-gradient(135deg,#041812 0%,#073525 50%,#0b563d 100%)}
+.theme-dark .tafqeet-controls-card,.theme-dark .tafqeet-card,.theme-dark .excel-config-card,.theme-dark .vba-instructions,.theme-dark .generator-input-card,.theme-dark .excel-result-card,.theme-dark .spreadsheet-preview-card,.theme-dark .key-modal{background:#0c1e33;border-color:#1e3857}
+.theme-dark .amount-field,.theme-dark .currency-dropdown,.theme-dark .generator-input-card textarea,.theme-dark .key-input{background:#081628;border-color:#1e3857;color:#fff}
+.theme-dark .tafqeet-text-display{background:#081628;border-color:#1e3857}
+.theme-dark .tafqeet-text-display.arabic-text{color:#4ade80}
+.theme-dark .tafqeet-text-display.english-text{color:#60a5fa}
+.theme-dark .api-key-bar,.theme-dark .preview-top-bar{background:#081628;border-color:#1e3857}
+.theme-dark .excel-data-table th{background:#0f2742;color:#94a3b8;border-color:#1e3857}
+.theme-dark .excel-data-table td{border-color:#1e3857;color:#e2e8f0}
+.theme-dark .excel-data-table tr:hover{background:#0f2742}
+
+@media(max-width:850px){
+  .input-group-row{grid-template-columns:1fr}
+  .tafqeet-results-grid{grid-template-columns:1fr}
+  .excel-config-grid{grid-template-columns:1fr}
+}

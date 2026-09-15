@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { FiArrowLeft, FiCheck, FiDownload, FiFile, FiGlobe, FiGrid, FiImage, FiSearch, FiTrash2, FiUploadCloud, FiX } from "react-icons/fi";
+import { FiArrowLeft, FiCheck, FiDollarSign, FiDownload, FiFile, FiGlobe, FiGrid, FiImage, FiSearch, FiTrash2, FiUploadCloud, FiX } from "react-icons/fi";
 import { pdfTools, toolBySlug } from "./pdfTools.jsx";
 import { downloadBlob, getPageThumbnails, imagesToPdf, merge, pdfToDocx, pdfToJpg, splitToZip, transformPdf } from "./pdfEngine.js";
 import "./free-tools.css";
@@ -16,6 +16,28 @@ export function FreeToolsPage() {
         <p>أدوات عملية تعمل محليًا وبأحدث تقنيات الذكاء الاصطناعي دون رفع ملفاتك إلى خدمات خارجية.</p>
       </section>
       <section className="ft-categories">
+        <Link to="/free-tools/tafqeet">
+          <div className="ft-category-icon" style={{ background: "linear-gradient(135deg,#107c41,#25d366)", color: "#fff" }}>
+            <FiDollarSign />
+          </div>
+          <div>
+            <small>عربي · إنجليزي · عملات</small>
+            <h2>محرك التفقيط المالي</h2>
+            <p>تحويل المبالغ والأرقام إلى حروف معتمدة للشيكات والفواتير وتفقيط ملفات Excel.</p>
+          </div>
+          <FiArrowLeft />
+        </Link>
+        <Link to="/free-tools/excel-tools">
+          <div className="ft-category-icon" style={{ background: "linear-gradient(135deg,#0e6251,#16a085)", color: "#fff" }}>
+            <FiGrid />
+          </div>
+          <div>
+            <small>Gemini AI · معادلات · جداول</small>
+            <h2>مساعد إكسيل الذكي (Excel AI)</h2>
+            <p>توليد وشرح دوال ومعادلات الإكسيل بـ Gemini، تصحيح الأخطاء، واستعراض الجداول.</p>
+          </div>
+          <FiArrowLeft />
+        </Link>
         <Link to="/free-tools/translation-tools">
           <div className="ft-category-icon" style={{ background: "linear-gradient(135deg,#0a85ea,#00d2ff)", color: "#fff" }}>
             <FiGlobe />
