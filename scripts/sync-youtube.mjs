@@ -216,6 +216,9 @@ async function sync() {
           }
         }
       });
+
+      // Strictly remove any empty playlist that has no videos
+      output.playlists = output.playlists.filter(pl => pl.videoIds && pl.videoIds.length > 0);
     }
   } catch (err) {
     console.warn('Warning: Could not fetch live RSS feed, fallback data preserved.', err.message);

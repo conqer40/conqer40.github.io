@@ -8,6 +8,7 @@ import {
   FiExternalLink,
   FiShare2,
   FiCheckCircle,
+  FiLayers,
 } from "react-icons/fi";
 import { FaYoutube, FaWhatsapp, FaFacebook } from "react-icons/fa";
 import { supabase, supabaseReady } from "./supabase.js";
@@ -81,6 +82,19 @@ export function useVideos() {
 export function VideoLessons() {
   const { categories, videos, channel } = useVideos();
 
+  // Filter out any playlist / category that has NO videos
+  const activeCategories = categories
+    .map((c) => {
+      const playlistVideos = videos.filter(
+        (v) =>
+          v.category_id === c.id ||
+          v.category_id === c.slug ||
+          (c.videoIds && c.videoIds.includes(v.videoId || v.id))
+      );
+      return { ...c, playlistVideos };
+    })
+    .filter((c) => c.playlistVideos.length > 0);
+
   return (
     <main className="page video-page">
       <section className="video-hero">
@@ -131,32 +145,51 @@ export function VideoLessons() {
         </div>
       </section>
 
-      {/* أقسام قوائم التشغيل */}
+      {/* أقسام قوائم التشغيل المعتمدة فقط التي تحتوي على فيديوهات */}
       <div className="video-playlists-container">
-        {categories.map((c) => {
-          const playlistVideos = videos.filter(
-            (v) =>
-              v.category_id === c.id ||
-              v.category_id === c.slug ||
-              (c.videoIds && c.videoIds.includes(v.videoId || v.id))
-          );
+        {activeCategories.length > 0 ? (
+          activeCategories.map((c) => {
+            const isYtPlaylist = c.id && c.id.startsWith("PL");
+            const ytPlaylistUrl = isYtPlaylist
+              ? `https://www.youtube.com/playlist?list=${c.id}`
+              : null;
 
-          return (
-            <section key={c.id || c.slug} className="playlist-section">
-              <div className="playlist-header">
-                <div className="playlist-header-left">
-                  <span>قائمة تشغيل</span>
-                  <h2>{c.name}</h2>
-                  <p>{c.description}</p>
-                </div>
-                <div className="playlist-count">
-                  {playlistVideos.length} {playlistVideos.length === 1 ? "فيديو" : "فيديوهات"}
-                </div>
-              </div>
+            return (
+              <section key={c.id || c.slug} className="playlist-showcase-card">
+                <div className="playlist-showcase-header">
+                  <div className="playlist-info-col">
+                    <div className="playlist-badge-row">
+                      <span className="playlist-pill-tag">
+                        <FiLayers /> مسار تعليمي
+                      </span>
+                      <span className="playlist-pill-count">
+                        {c.playlistVideos.length}{" "}
+                        {c.playlistVideos.length === 1
+                          ? "درس تعليمي متاح"
+                          : "دروس تعليمية متاحة"}
+                      </span>
+                    </div>
+                    <h2 className="playlist-showcase-title">{c.name}</h2>
+                    {c.description && (
+                      <p className="playlist-showcase-desc">{c.description}</p>
+                    )}
+                  </div>
 
-              {playlistVideos.length > 0 ? (
-                <div className="video-grid">
-                  {playlistVideos.map((v) => {
+                  {ytPlaylistUrl && (
+                    <a
+                      href={ytPlaylistUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="playlist-yt-button"
+                      title="فتح قائمة التشغيل على YouTube"
+                    >
+                      <FaYoutube /> فتح القائمة بالكامل على YouTube
+                    </a>
+                  )}
+                </div>
+
+                <div className="modern-video-grid">
+                  {c.playlistVideos.map((v, idx) => {
                     const vid = v.videoId || youtubeId(v.youtube_url) || v.id;
                     const thumb =
                       v.thumbnail ||
@@ -169,28 +202,60 @@ export function VideoLessons() {
                       <Link
                         key={v.id || v.slug}
                         to={`/videos/watch/${v.slug || v.id || vid}`}
-                        className="video-card"
+                        className="modern-video-card"
                       >
-                        <div className="video-card-thumb">
+                        <div className="modern-video-thumb-wrap">
                           {thumb ? (
-                            <img src={safeImage(thumb)} alt={v.title} loading="lazy" />
+                            <img
+                              src={safeImage(thumb)}
+                              alt={v.title}
+                              loading="lazy"
+                              className="modern-video-thumb-img"
+                            />
                           ) : (
-                            <FiVideo />
+                            <div className="thumb-placeholder">
+                              <FiVideo />
+                            </div>
                           )}
-                          <div className="play-badge">
-                            <FiPlay />
+                          <div className="thumb-gradient-overlay" />
+
+                          <div className="thumb-top-row">
+                            <span className="lesson-badge-pill">
+                              الدرس {String(idx + 1).padStart(2, "0")}
+                            </span>
                           </div>
-                          <span className="yt-tag">
-                            <FaYoutube /> YouTube
-                          </span>
+
+                          <div className="thumb-play-center">
+                            <div className="play-circle-btn">
+                              <FiPlay />
+                            </div>
+                          </div>
+
+                          <div className="thumb-bottom-row">
+                            <span className="yt-chip">
+                              <FaYoutube /> Elhawy AI
+                            </span>
+                          </div>
                         </div>
-                        <div className="video-card-body">
-                          <h3>{v.title}</h3>
-                          <p>{v.summary}</p>
-                          <div className="video-card-footer">
-                            <small>{c.name}</small>
-                            <span>
-                              مشاهدة الشرح <FiArrowLeft />
+
+                        <div className="modern-video-body">
+                          <div className="video-meta-pills">
+                            <span className="video-topic-badge">
+                              {c.name.split("|")[0].trim()}
+                            </span>
+                          </div>
+
+                          <h3 className="modern-video-title">{v.title}</h3>
+                          {v.summary && (
+                            <p className="modern-video-summary">{v.summary}</p>
+                          )}
+
+                          <div className="modern-video-footer">
+                            <span className="video-action-link">
+                              مشاهدة الشرح والملحقات <FiArrowLeft />
+                            </span>
+                            <span className="video-free-pill">
+                              <FiCheckCircle /> متاح مجاناً
                             </span>
                           </div>
                         </div>
@@ -198,16 +263,14 @@ export function VideoLessons() {
                     );
                   })}
                 </div>
-              ) : (
-                <div className="video-empty-card">
-                  <p>
-                    ⏳ <b>قريباً:</b> يتم تجهيز ورفع دروس هذا المسار على قناة Elhawy AI.
-                  </p>
-                </div>
-              )}
-            </section>
-          );
-        })}
+              </section>
+            );
+          })
+        ) : (
+          <div className="video-empty-card">
+            <p>⏳ جارٍ تجهيز ورفع الدروس على القناة، تابعونا قريباً.</p>
+          </div>
+        )}
       </div>
     </main>
   );
@@ -236,8 +299,8 @@ export function VideoCategory() {
       </section>
 
       {list.length > 0 ? (
-        <div className="video-grid">
-          {list.map((v) => {
+        <div className="modern-video-grid" style={{ marginTop: "28px" }}>
+          {list.map((v, idx) => {
             const vid = v.videoId || youtubeId(v.youtube_url) || v.id;
             const thumb =
               v.thumbnail ||
@@ -248,28 +311,60 @@ export function VideoCategory() {
               <Link
                 key={v.id || v.slug}
                 to={`/videos/watch/${v.slug || v.id || vid}`}
-                className="video-card"
+                className="modern-video-card"
               >
-                <div className="video-card-thumb">
+                <div className="modern-video-thumb-wrap">
                   {thumb ? (
-                    <img src={safeImage(thumb)} alt={v.title} loading="lazy" />
+                    <img
+                      src={safeImage(thumb)}
+                      alt={v.title}
+                      loading="lazy"
+                      className="modern-video-thumb-img"
+                    />
                   ) : (
-                    <FiVideo />
+                    <div className="thumb-placeholder">
+                      <FiVideo />
+                    </div>
                   )}
-                  <div className="play-badge">
-                    <FiPlay />
+                  <div className="thumb-gradient-overlay" />
+
+                  <div className="thumb-top-row">
+                    <span className="lesson-badge-pill">
+                      الدرس {String(idx + 1).padStart(2, "0")}
+                    </span>
                   </div>
-                  <span className="yt-tag">
-                    <FaYoutube /> YouTube
-                  </span>
+
+                  <div className="thumb-play-center">
+                    <div className="play-circle-btn">
+                      <FiPlay />
+                    </div>
+                  </div>
+
+                  <div className="thumb-bottom-row">
+                    <span className="yt-chip">
+                      <FaYoutube /> Elhawy AI
+                    </span>
+                  </div>
                 </div>
-                <div className="video-card-body">
-                  <h3>{v.title}</h3>
-                  <p>{v.summary}</p>
-                  <div className="video-card-footer">
-                    <small>{c?.name || "درس فيديو"}</small>
-                    <span>
-                      مشاهدة الشرح <FiArrowLeft />
+
+                <div className="modern-video-body">
+                  <div className="video-meta-pills">
+                    <span className="video-topic-badge">
+                      {c?.name?.split("|")[0]?.trim() || "درس تعليمي"}
+                    </span>
+                  </div>
+
+                  <h3 className="modern-video-title">{v.title}</h3>
+                  {v.summary && (
+                    <p className="modern-video-summary">{v.summary}</p>
+                  )}
+
+                  <div className="modern-video-footer">
+                    <span className="video-action-link">
+                      مشاهدة الشرح والملحقات <FiArrowLeft />
+                    </span>
+                    <span className="video-free-pill">
+                      <FiCheckCircle /> متاح مجاناً
                     </span>
                   </div>
                 </div>
