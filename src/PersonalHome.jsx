@@ -19,6 +19,7 @@ import {
   FiVideo,
   FiMessageCircle,
 } from "react-icons/fi";
+import { FaYoutube, FaWhatsapp } from "react-icons/fa";
 import { supabase, supabaseReady } from "./supabase.js";
 import { safeImage, youtubeId } from "./content-utils.js";
 import { featuredArticles } from "./featuredArticles.js";
@@ -152,6 +153,7 @@ export function PersonalHome({ lang }) {
           <HeroShortcut lang={lang} to="/articles" icon={<FiEdit3 />} ar="المقالات" en="Articles" arText="مقالات تعليمية مفيدة" enText="Useful learning articles" />
         </div>
       </section>
+      <HomeFeaturedVideo lang={lang} />
       <section className="editorial-section home-projects" id="featured-projects">
         <HomeSectionIntro kicker={lang === "ar" ? "أعمال عملية" : "REAL WORK"} title={c.projects} text={lang === "ar" ? "تطبيقات ومنصات أطورها لتحويل المعرفة والذكاء الاصطناعي إلى قيمة حقيقية." : "Products that turn knowledge and AI into real value."} to="/ai" link={lang === "ar" ? "عرض كل المشروعات" : "View projects"} />
         <div className="home-card-row projects-row">
@@ -175,6 +177,70 @@ export function PersonalHome({ lang }) {
     </main>
   );
 }
+
+function HomeFeaturedVideo({ lang }) {
+  const ar = lang === "ar";
+  return (
+    <section className="home-spotlight-video-section">
+      <div className="spotlight-video-wrapper">
+        <div className="spotlight-video-header">
+          <div className="spotlight-video-badge">
+            <span className="live-dot" />
+            <FaYoutube />
+            <b>{ar ? "فيديو القناة التعريفي الرسمي" : "Official Intro Video"}</b>
+          </div>
+          <div className="spotlight-actions">
+            <a
+              href="https://www.youtube.com/@ElhawyAI?sub_confirmation=1"
+              target="_blank"
+              rel="noreferrer"
+              className="spotlight-btn yt"
+            >
+              <FaYoutube /> {ar ? "اشترك في القناة" : "Subscribe"}
+            </a>
+            <a
+              href="https://www.whatsapp.com/channel/0029VbDJ5sYKrWQt6ehcOp3G"
+              target="_blank"
+              rel="noreferrer"
+              className="spotlight-btn wa"
+            >
+              <FaWhatsapp /> {ar ? "قناة الواتساب" : "WhatsApp"}
+            </a>
+          </div>
+        </div>
+
+        <div className="spotlight-player-frame">
+          <iframe
+            src="https://www.youtube.com/embed/VgFUjydXx1o?autoplay=1&mute=1&loop=1&playlist=VgFUjydXx1o&playsinline=1&controls=1&rel=0&modestbranding=1"
+            title="Elhawy AI – محمد الحاوي | برمجة وذكاء اصطناعي ببساطة"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        </div>
+
+        <div className="spotlight-video-footer">
+          <div>
+            <h3>
+              {ar
+                ? "Elhawy AI – محمد الحاوي | برمجة وذكاء اصطناعي ببساطة 🚀"
+                : "Elhawy AI – Programming & Artificial Intelligence Simply"}
+            </h3>
+            <p>
+              {ar
+                ? "أهلاً بيكم في قناة Elhawy AI – محمد الحاوي. هنا نتعلم البرمجة والذكاء الاصطناعي والتكنولوجيا بطريقة بسيطة وعملية، مع شروحات للثانوية ومحتوى يساعدك تفهم التكنولوجيا وتستخدمها صح."
+                : "Welcome to Elhawy AI channel. Here we learn programming, artificial intelligence and modern technology in a simple, practical way."}
+            </p>
+          </div>
+          <Link to="/videos/watch/VgFUjydXx1o" className="spotlight-explore-btn">
+            {ar ? "مشاهدة الشرح كاملاً والمرفقات" : "Watch Full Video & Attachments"}{" "}
+            <FiArrowLeft />
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function HeroShortcut({ lang, to, icon, ar, en, arText, enText }) {
   const content = <>{icon}<b>{lang === "ar" ? ar : en}</b><small>{lang === "ar" ? arText : enText}</small></>;
   return to.startsWith("#") ? <a href={to}>{content}</a> : <Link to={to}>{content}</Link>;
