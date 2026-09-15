@@ -38,8 +38,18 @@ function parseXmlAttributes(xml, tag, attr) {
   return match ? match[1].trim() : '';
 }
 
-function slugify(text) {
+function cleanArabicText(text) {
+  if (!text) return '';
   return text
+    .replace(/\uFFFD/g, 'م')
+    .replace(/#حمد/g, '#محمد')
+    .replace(/الذاء/g, 'الذكاء')
+    .replace(/الترانزستوات/g, 'الترانزستورات')
+    .replace(/تطورت/g, 'اتطورت');
+}
+
+function slugify(text) {
+  return cleanArabicText(text)
     .toLowerCase()
     .replace(/[^\u0621-\u064A\u0660-\u0669a-zA-Z0-9\s-]/g, '')
     .trim()
@@ -50,7 +60,7 @@ function slugify(text) {
 async function sync() {
   console.log(`Syncing YouTube data for ${CHANNEL_HANDLE} (${CHANNEL_ID})...`);
 
-  // Default initial structured dataset
+  // Default structured output
   const output = {
     channel: {
       id: CHANNEL_ID,
@@ -63,6 +73,14 @@ async function sync() {
       syncedAt: new Date().toISOString()
     },
     playlists: [
+      {
+        id: 'PLRAX9PFd3-Ew',
+        slug: 'secondary-ai-programming',
+        name: 'برمجة وذكاء اصطناعي ببساطة | الصف الثاني الثانوي – بكالوريا',
+        description: 'مسار تعليمي لشرح منهج ومفاهيم البرمجة والذكاء الاصطناعي وتكنولوجيا المعلومات لطلاب الثانوية العامة والبكالوريا بطريقة مبسطة وعملية.',
+        cover_url: 'https://img.youtube.com/vi/vSMvo7yM40A/maxresdefault.jpg',
+        videoIds: ['vSMvo7yM40A']
+      },
       {
         id: 'pl-intro',
         slug: 'channel-intro',
@@ -86,33 +104,42 @@ async function sync() {
         description: 'مسارات تعليمية في البرمجة وتطوير التطبيقات والويب بطرق مبسطة وعملية.',
         cover_url: 'https://img.youtube.com/vi/VgFUjydXx1o/hqdefault.jpg',
         videoIds: []
-      },
-      {
-        id: 'pl-secondary-education',
-        slug: 'secondary-education',
-        name: 'محتوى وتكنولوجيا الثانوية العامة',
-        description: 'شروحات مخصصة لطلاب الثانوية لمساعدتهم على فهم وتوظيف التكنولوجيا بذكاء.',
-        cover_url: 'https://img.youtube.com/vi/VgFUjydXx1o/hqdefault.jpg',
-        videoIds: []
       }
     ],
-    videos: [
-      {
-        id: 'VgFUjydXx1o',
-        slug: 'elhawy-ai-intro-launch',
-        videoId: 'VgFUjydXx1o',
-        youtube_url: 'https://www.youtube.com/watch?v=VgFUjydXx1o',
-        title: 'Elhawy AI – محمد الحاوي | برمجة وذكاء اصطناعي ببساطة 🚀',
-        summary: 'أهلاً بيكم في قناة Elhawy AI – محمد الحاوي. هنا هنتعلم البرمجة والذكاء الاصطناعي والتكنولوجيا بطريقة بسيطة وعملية، مع شروحات للثانوية ومحتوى يساعدك تفهم التكنولوجيا وتستخدمها صح.',
-        description: `أهلاً بيكم في قناة Elhawy AI – محمد الحاوي 🤖💻\n\nهنا هنتعلم البرمجة والذكاء الاصطناعي والتكنولوجيا بطريقة بسيطة وعملية، مع شروحات للثانوية ومحتوى يساعدك تفهم التكنولوجيا وتستخدمها صح.\n\n📚 شروحات تعليمية\n💻 برمجة\n🤖 ذكاء اصطناعي\n🧠 أدوات وتقنيات AI\n🎓 محتوى للثانوية\n🚀 تكنولوجيا ومهارات المستقبل\n\nاشترك في القناة وفعّل الجرس علشان يوصلك كل جديد.\n\nElhawy AI – محمد الحاوي\nنفهمها... ونستخدمها صح.\n\n#ElhawyAI #محمد_الحاوي #الذكاء_الاصطناعي #البرمجة #الثانوية_العامة #تكنولوجيا`,
-        thumbnail: 'https://img.youtube.com/vi/VgFUjydXx1o/maxresdefault.jpg',
-        publishedAt: '2026-09-15T10:30:31+00:00',
-        category_id: 'pl-intro',
-        category_name: 'مقدمة ودليل Elhawy AI'
-      }
-    ]
+    videos: []
   };
 
+  // 1. Scrape Playlists page if possible
+  try {
+    const plHtml = await fetchUrl(`https://www.youtube.com/${CHANNEL_HANDLE}/playlists`);
+    
+    // Look for playlists lockup items
+    const plMatches = [...plHtml.matchAll(/\/playlist\?list=([a-zA-Z0-9_-]+)/g)];
+    const uniqueLists = [...new Set(plMatches.map(m => m[1]))];
+    
+    // Find title from lockupMetadataViewModel
+    const titleMatches = [...plHtml.matchAll(/\"lockupMetadataViewModel\":\{\"title\":\{\"content\":\"([^\"]+)\"\}/g)];
+    
+    if (uniqueLists.length > 0 && titleMatches.length > 0) {
+      uniqueLists.forEach((listId, idx) => {
+        const foundTitle = titleMatches[idx] ? titleMatches[idx][1] : null;
+        if (foundTitle && !output.playlists.some(p => p.id === listId)) {
+          output.playlists.unshift({
+            id: listId,
+            slug: slugify(foundTitle),
+            name: foundTitle,
+            description: `قائمة تشغيل: ${foundTitle}`,
+            cover_url: 'https://img.youtube.com/vi/vSMvo7yM40A/maxresdefault.jpg',
+            videoIds: []
+          });
+        }
+      });
+    }
+  } catch (err) {
+    console.warn('Could not scrape playlists page, relying on structured lists', err.message);
+  }
+
+  // 2. Fetch RSS Feed for latest videos
   try {
     const rssUrl = `https://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`;
     const rss = await fetchUrl(rssUrl);
@@ -124,19 +151,18 @@ async function sync() {
     while ((match = entryRegex.exec(rss)) !== null) {
       const entryXml = match[1];
       const videoId = parseXmlField(entryXml, 'yt:videoId');
-      const title = parseXmlField(entryXml, 'title');
+      const rawTitle = parseXmlField(entryXml, 'title');
       const published = parseXmlField(entryXml, 'published');
-      const description = parseXmlField(entryXml, 'media:description');
+      const rawDescription = parseXmlField(entryXml, 'media:description');
       const thumbnail = parseXmlAttributes(entryXml, 'media:thumbnail', 'url') || `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
 
-      // Filter out shorts or irrelevant test videos if title is default date like 'April 5, 2023'
-      if (title.startsWith('April 5,') && !description) {
+      // Filter out shorts or irrelevant test videos
+      if (rawTitle.startsWith('April 5,') && !rawDescription) {
         continue;
       }
 
-      const cleanDescription = (description || '')
-        .replace(/\uFFFD/g, 'م')
-        .replace(/#حمد/g, '#محمد');
+      const title = cleanArabicText(rawTitle);
+      const cleanDescription = cleanArabicText(rawDescription);
 
       const lines = cleanDescription
         .split('\n')
@@ -144,8 +170,19 @@ async function sync() {
         .filter(l => l.length > 0 && !l.startsWith('#') && !l.startsWith('📚') && !l.startsWith('💻'));
 
       const summary = lines.slice(0, 2).join(' ') || title;
-
       const slug = slugify(title) || `video-${videoId}`;
+
+      // Determine category
+      let categoryId = 'pl-intro';
+      let categoryName = 'مقدمة ودليل Elhawy AI';
+
+      if (videoId === 'VgFUjydXx1o') {
+        categoryId = 'pl-intro';
+        categoryName = 'مقدمة ودليل Elhawy AI';
+      } else if (title.includes('ثانوي') || title.includes('الحصة') || title.includes('بكالوريا') || cleanDescription.includes('ثانوي')) {
+        categoryId = 'PLRAX9PFd3-Ew';
+        categoryName = 'برمجة وذكاء اصطناعي ببساطة | الصف الثاني الثانوي – بكالوريا';
+      }
 
       fetchedVideos.push({
         id: videoId,
@@ -157,20 +194,26 @@ async function sync() {
         description: cleanDescription || summary,
         thumbnail: thumbnail.replace('hqdefault.jpg', 'maxresdefault.jpg'),
         publishedAt: published,
-        category_id: 'pl-intro',
-        category_name: 'مقدمة ودليل Elhawy AI'
+        category_id: categoryId,
+        category_name: categoryName
       });
     }
 
     if (fetchedVideos.length > 0) {
-      // Merge with existing
-      fetchedVideos.forEach(fv => {
-        const idx = output.videos.findIndex(v => v.videoId === fv.videoId);
-        if (idx >= 0) {
-          output.videos[idx] = { ...output.videos[idx], ...fv };
-        } else {
-          output.videos.push(fv);
-          output.playlists[0].videoIds.push(fv.videoId);
+      output.videos = fetchedVideos;
+
+      // Update playlists videoIds
+      output.playlists.forEach(pl => {
+        pl.videoIds = output.videos
+          .filter(v => v.category_id === pl.id || v.category_id === pl.slug)
+          .map(v => v.videoId);
+
+        // Update cover if playlist has videos
+        if (pl.videoIds.length > 0) {
+          const firstVid = output.videos.find(v => v.videoId === pl.videoIds[0]);
+          if (firstVid) {
+            pl.cover_url = firstVid.thumbnail;
+          }
         }
       });
     }
@@ -185,7 +228,7 @@ async function sync() {
 
   const dest = path.join(outDir, 'youtube-videos.json');
   fs.writeFileSync(dest, JSON.stringify(output, null, 2), 'utf8');
-  console.log(`YouTube data saved successfully to ${dest}!`);
+  console.log(`YouTube data synced and saved successfully to ${dest}!`);
 }
 
 sync();
