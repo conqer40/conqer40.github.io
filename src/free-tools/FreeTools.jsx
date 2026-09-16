@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { FiArrowLeft, FiCheck, FiDollarSign, FiDownload, FiFile, FiGlobe, FiGrid, FiImage, FiSearch, FiTrash2, FiUploadCloud, FiX } from "react-icons/fi";
+import { FiArrowLeft, FiCheck, FiDollarSign, FiDownload, FiFile, FiGlobe, FiGrid, FiImage, FiSearch, FiShield, FiTrash2, FiUploadCloud, FiX } from "react-icons/fi";
 import { pdfTools, toolBySlug } from "./pdfTools.jsx";
 import { downloadBlob, getPageThumbnails, imagesToPdf, merge, pdfToDocx, pdfToJpg, splitToZip, transformPdf } from "./pdfEngine.js";
 import "./free-tools.css";

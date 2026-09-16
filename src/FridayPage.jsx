@@ -1,7 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import {
-  FiCpu,
   FiPhoneCall,
   FiMic,
   FiDatabase,
@@ -12,7 +10,6 @@ import {
   FiShield,
   FiCheck,
   FiTerminal,
-  FiCopy,
   FiArrowDown,
   FiSliders,
   FiActivity,
@@ -29,17 +26,12 @@ const shared = {
     lead: 'ليس مجرد شات بوت أو واجهة سحابية تقليدية، بل نظام تشغيل ذكاء اصطناعي سيادي متكامل صُمم ليكون العقل المدبر والمساعد الشخصي الشامل لإدارة الأعمال، الاتصالات الهاتفية الحية، الأبحاث، وأتمتة المهام اليومية بسرعة استثنائية وخصوصية تامة 100%.',
     exploreBtn: 'استكشف القدرات والركائز',
     slidesBtn: 'استعراض شرائح العرض (Slides)',
-    postBtn: 'صيغة بوست الإطلاق',
     archTitle: 'الركائز الهندسية للنظام',
     archSub: 'معمارية هجينة تجمع بين الخصوصية المحلية الكاملة والقوة السحابية الفائقة.',
     pillarsTitle: 'المميزات التنافسية الكبرى لنظام F.R.I.D.A.Y',
     pillarsSub: '7 منظومات متكاملة تنقل الذكاء الاصطناعي من مجرد دردشة إلى شريك تنفيذي على أرض الواقع.',
     slidesTitle: 'هيكل العرض التقديمي (Presentation Deck)',
-    slidesSub: 'خطة الشرائح التقديمية الجاهزة للعرض على المستثمرين ومجتمع التقنية (PowerPoint / Canva).',
-    postTitle: 'صيغة بوست الإطلاق الرسمي (Social Launch Post)',
-    postSub: 'صيغة جاهزة للنشر على منصات التواصل (LinkedIn / Facebook).',
-    copySuccess: 'تم نسخ النص بنجاح!',
-    copyBtn: 'نسخ النص بالكامل'
+    slidesSub: 'خطة الشرائح التقديمية الجاهزة للعرض على المستثمرين ومجتمع التقنية (PowerPoint / Canva).'
   },
   en: {
     tag: 'Autonomous Sovereign AI Operating System',
@@ -49,17 +41,12 @@ const shared = {
     lead: 'Not just another chatbot or wrapper. F.R.I.D.A.Y is an autonomous sovereign AI operating system engineered as an executive digital mastermind for business CRM, live telephony, deep research, and desktop automation with zero privacy compromise.',
     exploreBtn: 'Explore Capabilities',
     slidesBtn: 'Presentation Slides',
-    postBtn: 'Social Launch Post',
     archTitle: 'Engineering Pillars & Architecture',
     archSub: 'Hybrid offline-first architecture combined with massive cloud scaling.',
     pillarsTitle: 'F.R.I.D.A.Y Competitive Capabilities',
     pillarsSub: '7 integrated systems transforming AI into a tangible executive business partner.',
     slidesTitle: 'Presentation Deck Structure',
-    slidesSub: 'Slide-by-slide structure ready for investor pitch decks and technical presentations.',
-    postTitle: 'Official Launch Announcement',
-    postSub: 'Ready-to-publish launch copy for LinkedIn, Facebook, and tech communities.',
-    copySuccess: 'Copied to clipboard!',
-    copyBtn: 'Copy Full Text'
+    slidesSub: 'Slide-by-slide structure ready for investor pitch decks and technical presentations.'
   }
 };
 
@@ -366,45 +353,9 @@ const presentationSlides = [
   }
 ];
 
-const launchPostContent = `🚀 ليس مجرد شات بوت.. أهلاً بكم في الجيل الجديد من الذكاء الاصطناعي السيادي: مشروع F.R.I.D.A.Y AI ⚡🛡️
-
-دائماً كنت أرى أن الفارق بين "شات بوت عادي بيجاوب أسئلة" وبين "نظام تشغيل ذكاء اصطناعي حقيقي" هو القدرة على الفعل الواقعي والاتصال المباشر بالأعمال.
-
-على مدار الفترة الماضية، صممت وطوّرت نظام F.R.I.D.A.Y (المستوحى من أنظمة Stark ولكن بتطبيق عملي كامل على أرض الواقع):
-
-🧠 1. الذكاء والخصوصية السيادية (Hybrid Engine):
-النظام لا يعتمد فقط على الـ Cloud! بل يعمل بمحرك محلي 100% على كارت الشاشة بأحدث نماذج Qwen 2.5 Abliterated لحفظ أسرار العمل والخصوصية التامة، مع الربط بنماذج Gemini Pro و Claude للمهام الكبرى.
-
-📞 2. بدالة ومكالمات هاتفية حية (Tel-Agent Gateway):
-فرايدي تستطيع الرد وإجراء المكالمات الهاتفية، وإدارة المحادثات الصوتية بالعامية المصرية مع ميزة المقاطعة الحية (Barge-in) لو قاطعتها في الكلام بتسكت وتسمعك فوراً بدون أي تأخير!
-
-🎙️ 3. أصوات بشرية واستنساخ صوتي مخصص:
-مع محرك توليد صوتي عصبي متعدد الشخصيات، ودعم التبديل اللحظي بين وضع "فرايدي" الودود و "وضع ألترون" السينمائي الحاسم.
-
-🌾 4. ذكاء المبيعات وتجارة الأعلاف (GCC Feed CRM):
-شاشة متخصصة لإدارة توريدات خامات الأعلاف، تتبع شحنات الجمارك، ونظام نافذة والمطابقات المعملية.
-
-🌐 5. متصفح ذاتي مستقل (Autonomous Browser):
-تصفح تلقائي للويب، تجميع الداتا، وتلخيص المقالات المعقدة بدون ما تلمس الماوس.
-
-🛰️ 6. واجهة ثلاثية الأبعاد تفاعلية بالكامل:
-مجسم عقل وشبكة عصبية بـ 24,000 جزيء ضوئي ثلاثي الأبعاد ينبض مع نبرات الصوت والتفكير، وبدون أي بطء في النظام.
-
-الذكاء الاصطناعي لم يعد مجرد أداة لتوليد نصوص.. بل شريك تنفيذي يدير المكالمات، البيزنس، والبيانات.
-
-رأيكم إيه في فكرة دمج الذكاء الاصطناعي بالمكالمات وأتمتة البيزنس؟ 👇
-#AI #ArtificialIntelligence #Automation #CRM #Tech #MachineLearning #FRIDAY #Innovation #MohamedElhawy`;
-
 export function FridayPage({ lang }) {
   const c = shared[lang] || shared.ar;
   const [activeSlide, setActiveSlide] = useState(0);
-  const [copied, setCopied] = useState(false);
-
-  const handleCopyPost = () => {
-    navigator.clipboard.writeText(launchPostContent);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2500);
-  };
 
   return (
     <main className="jarvis-page friday-page">
@@ -461,20 +412,6 @@ export function FridayPage({ lang }) {
               fontWeight: 700
             }}>
               <FiSliders /> {c.slidesBtn}
-            </a>
-            <a href="#social-post" style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '8px',
-              padding: '12px 22px',
-              borderRadius: '10px',
-              background: 'rgba(245, 158, 11, 0.12)',
-              border: '1px solid rgba(245, 158, 11, 0.35)',
-              color: '#fbbf24',
-              textDecoration: 'none',
-              fontWeight: 700
-            }}>
-              <FiShare2 /> {c.postBtn}
             </a>
           </div>
         </div>
@@ -794,56 +731,6 @@ export function FridayPage({ lang }) {
               </button>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* SOCIAL LAUNCH POST SECTION */}
-      <section id="social-post" style={{
-        marginTop: '60px',
-        padding: '36px',
-        borderRadius: '24px',
-        background: '#fff',
-        border: '1px solid #dce8ef',
-        boxShadow: '0 10px 40px rgba(7, 26, 60, 0.05)'
-      }}>
-        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '16px', marginBottom: '20px' }}>
-          <div>
-            <span style={{ color: '#e11d48', fontWeight: 800, fontSize: '13px' }}>04 / SOCIAL LAUNCH POST</span>
-            <h2 style={{ fontSize: '26px', margin: '4px 0', color: '#0f172a' }}>{c.postTitle}</h2>
-            <p style={{ color: '#64748b', fontSize: '14px', margin: 0 }}>{c.postSub}</p>
-          </div>
-          <button
-            onClick={handleCopyPost}
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '8px',
-              padding: '11px 22px',
-              borderRadius: '12px',
-              border: 0,
-              background: copied ? '#10b981' : '#0284c7',
-              color: '#fff',
-              fontWeight: 800,
-              cursor: 'pointer',
-              boxShadow: '0 6px 18px rgba(2, 132, 199, 0.25)',
-              transition: '0.2s'
-            }}
-          >
-            {copied ? <FiCheck /> : <FiCopy />} {copied ? c.copySuccess : c.copyBtn}
-          </button>
-        </div>
-
-        <div style={{
-          padding: '24px',
-          borderRadius: '16px',
-          background: '#f8fafc',
-          border: '1px solid #e2e8f0',
-          whiteSpace: 'pre-line',
-          lineHeight: 1.85,
-          color: '#1e293b',
-          fontSize: '15px'
-        }}>
-          {launchPostContent}
         </div>
       </section>
 
