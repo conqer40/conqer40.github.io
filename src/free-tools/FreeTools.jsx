@@ -7,81 +7,273 @@ import "./free-tools.css";
 
 const bytes = (n) => n > 1048576 ? `${(n/1048576).toFixed(1)} MB` : `${Math.ceil(n/1024)} KB`;
 
+const TOOL_CATEGORIES = [
+  { id: "all", label: "جميع الأدوات" },
+  { id: "business", label: "💼 المالية وإكسيل" },
+  { id: "translation", label: "🌐 الترجمة والذكاء الاصطناعي" },
+  { id: "pdf", label: "📄 حزمة PDF والـ OCR" },
+  { id: "media", label: "🎨 الصور ورموز QR" },
+];
+
+const ALL_TOOLS = [
+  {
+    id: "tafqeet",
+    category: "business",
+    featured: true,
+    title: "محرك التفقيط المالي الذكي",
+    enTitle: "Tafqeet Financial Engine",
+    desc: "تحويل المبالغ المالية والأرقام إلى كلمات معتمدة للشيكات والفواتير باللغة العربية والإنجليزية، مع خيارات الإعراب (الرفع والنصب والجر)، دعم كافة العملات، تفقيط ملفات Excel كاملة، وتوفير كود ماكرو VBA جاهز للنسخ داخل الإكسيل.",
+    to: "/free-tools/tafqeet",
+    icon: FiDollarSign,
+    iconBg: "linear-gradient(135deg, #107c41, #22c55e)",
+    badge: "معتمد للشيكات والفواتير",
+    badgeColor: "#15803d",
+    badgeBg: "#f0fdf4",
+    tags: ["عربي + إنجليزي", "تفقيط ملفات Excel", "كود VBA Macro", "دعم جميع العملات"],
+    stats: "دقة لغوية 100%"
+  },
+  {
+    id: "excel-tools",
+    category: "business",
+    featured: true,
+    title: "مساعد إكسيل الذكي (Excel AI Studio)",
+    enTitle: "Gemini-Powered Excel Studio",
+    desc: "اكتب ما ترغب بحسابه باللغة العربية البسيطة، وسيقوم الذكاء الاصطناعي (Gemini AI) بتوليد صيغ ودوال الإكسيل المعقدة (XLOOKUP, SUMIFS, INDEX/MATCH) مع الشرح والخطوات، تشخيص وتصحيح أخطاء الدوال، وعارض جداول البيانات داخل المتصفح.",
+    to: "/free-tools/excel-tools",
+    icon: FiGrid,
+    iconBg: "linear-gradient(135deg, #0e6251, #14b8a6)",
+    badge: "مدعوم بـ Gemini AI",
+    badgeColor: "#0f766e",
+    badgeBg: "#f0fdfa",
+    tags: ["توليد صيغ ذكي", "تصحيح أخطاء الدوال", "عارض جداول Excel & CSV", "شرح الصيغ خطوة بخطوة"],
+    stats: "Gemini 1.5 Pro"
+  },
+  {
+    id: "pdf-to-word",
+    category: "pdf",
+    featured: true,
+    title: "تحويل PDF إلى Word مع التعرف الضوئي (OCR)",
+    enTitle: "PDF to Word with Arabic OCR",
+    desc: "تحويل مستندات وكتب PDF إلى مستندات Word (.docx) قابلة للتعديل بالكامل، مع دعم فائق للتعرف الضوئي على الحروف (OCR) للغة العربية والإنجليزية مباشرة داخل جهازك للكتب والمستندات المصورة دون رفع ملفاتك.",
+    to: "/free-tools/pdf-tools/pdf-to-word",
+    icon: FiFile,
+    iconBg: "linear-gradient(135deg, #b91c1c, #f43f5e)",
+    badge: "دعم OCR عربي أصلي",
+    badgeColor: "#be123c",
+    badgeBg: "#fff1f2",
+    tags: ["OCR عربي + إنجليزي", "تصدير Word DOCX", "خصوصية 100%", "تحويل الكتب المصورة"],
+    stats: "WebAssembly + Tesseract"
+  },
+  {
+    id: "translation-tools",
+    category: "translation",
+    featured: true,
+    title: "مركز الترجمة والذكاء الاصطناعي للمستندات",
+    enTitle: "AI Translation & Document Suite",
+    desc: "منظومة ترجمة متكاملة تشمل مترجماً فورياً متعدد اللغات مع نطق صوتي وتصدير مباشر لـ Word و Text، مترجم ملفات وكتب PDF كاملة مع الحفاظ على التنسيق وعرض مقارنة ثنائية، ومعجم مصطلحات الذكاء الاصطناعي والبرمجة.",
+    to: "/free-tools/translation-tools",
+    icon: FiGlobe,
+    iconBg: "linear-gradient(135deg, #0369a1, #38bdf8)",
+    badge: "3 أدوات ترجمة مدمجة",
+    badgeColor: "#0284c7",
+    badgeBg: "#f0f9ff",
+    tags: ["ترجمة PDF صفحة بصفحة", "مترجم نصوص فوري", "معجم مصطلحات AI", "نطق صوتي وتصدير"],
+    stats: "10+ لغات عالمية"
+  },
+  {
+    id: "pdf-tools",
+    category: "pdf",
+    featured: false,
+    title: "حزمة أدوات PDF المتكاملة (12 أداة)",
+    enTitle: "Complete PDF Utilities Suite",
+    desc: "دمج عدة ملفات PDF في ملف واحد، تقسيم واستخراج الصفحات، ضغط وتقليل الحجم، إضافة علامة مائية لحماية الملكية، ترقيم الصفحات، تحويل صور JPG/PNG إلى PDF، وتدوير الصفحات بسرعة وأمان تام.",
+    to: "/free-tools/pdf-tools",
+    icon: FiFile,
+    iconBg: "linear-gradient(135deg, #c2410c, #f97316)",
+    badge: "12 أداة مجانية",
+    badgeColor: "#c2410c",
+    badgeBg: "#fff7ed",
+    tags: ["دمج PDF", "تقسيم واستخراج", "ضغط وتقليل الحجم", "علامة مائية وترقيم"],
+    stats: "معالجة محلية 100%"
+  },
+  {
+    id: "qr-tools",
+    category: "media",
+    featured: false,
+    title: "استوديو رموز الـ QR Code الذكية",
+    enTitle: "Smart QR Code Studio",
+    desc: "توليد رموز QR مخصصة للروابط ومواقع الويب، محادثات الواتساب المباشرة، وشبكات الواي فاي (Wi-Fi)، بالإضافة إلى قارئ ومستخرج ذكي لأكواد الـ QR من الصور والمستندات.",
+    to: "/free-tools/qr-tools",
+    icon: FiGrid,
+    iconBg: "linear-gradient(135deg, #4338ca, #6366f1)",
+    badge: "إنشاء وقراءة فورية",
+    badgeColor: "#4338ca",
+    badgeBg: "#eef2ff",
+    tags: ["QR للروابط", "واتساب تلقائي", "Wi-Fi فوري", "قراءة من الصور"],
+    stats: "تنزيل PNG فائق الدقة"
+  },
+  {
+    id: "image-tools",
+    category: "media",
+    featured: false,
+    title: "استوديو الصور ومعالجة الوسائط",
+    enTitle: "Image Studio & Optimizer",
+    desc: "أدوات سريعة لمعالجة الصور: ضغط الحجم مع الحفاظ على الجودة، تغيير المقاسات والأبعاد بالبيكسل، تحويل الصيغ بين PNG و JPG و WEBP، قص الصور ووضع علامة مائية لحماية أعمالك.",
+    to: "/free-tools/image-tools",
+    icon: FiImage,
+    iconBg: "linear-gradient(135deg, #6d28d9, #a855f7)",
+    badge: "6 أدوات معالجة",
+    badgeColor: "#7e22ce",
+    badgeBg: "#faf5ff",
+    tags: ["ضغط الصور", "تغيير المقاسات", "تحويل PNG/JPG/WEBP", "علامة مائية"],
+    stats: "داخل متصفحك مباشرة"
+  }
+];
+
 export function FreeToolsPage() {
+  const [activeCategory, setActiveCategory] = useState("all");
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const filteredTools = useMemo(() => {
+    return ALL_TOOLS.filter((tool) => {
+      const matchCat = activeCategory === "all" || tool.category === activeCategory;
+      const q = searchQuery.trim().toLowerCase();
+      if (!q) return matchCat;
+      const matchSearch =
+        tool.title.toLowerCase().includes(q) ||
+        tool.enTitle.toLowerCase().includes(q) ||
+        tool.desc.toLowerCase().includes(q) ||
+        tool.tags.some((tag) => tag.toLowerCase().includes(q));
+      return matchCat && matchSearch;
+    });
+  }, [activeCategory, searchQuery]);
+
   return (
-    <main className="ft-page">
-      <section className="ft-hero">
-        <span>مجاني · خاص · داخل متصفحك</span>
-        <h1>Free Tools</h1>
-        <p>أدوات عملية تعمل محليًا وبأحدث تقنيات الذكاء الاصطناعي دون رفع ملفاتك إلى خدمات خارجية.</p>
+    <main className="ft-page ft-redesign-page">
+      {/* HERO SECTION */}
+      <section className="ft-hero-modern">
+        <div className="ft-hero-badge">
+          <span className="dot-pulse" />
+          <span>🔒 خصوصية وأمان 100% · معالجة محلية فائقة السرعة</span>
+        </div>
+        <h1>منصة الأدوات الذكية والمجانية</h1>
+        <p>
+          أدوات عملية متطورة لرواد الأعمال، الطلاب، المحاسبين، والمطورين؛ مدعومة بأحدث تقنيات الذكاء الاصطناعي وتعمل مباشرة داخل جهازك لحماية خصوصيتك التامة.
+        </p>
+
+        <div className="ft-stats-strip">
+          <div className="ft-stat-pill">
+            <b>+20</b>
+            <span>أداة متخصصة</span>
+          </div>
+          <div className="ft-stat-pill">
+            <b>100%</b>
+            <span>خصوصية محلية</span>
+          </div>
+          <div className="ft-stat-pill">
+            <b>Gemini AI</b>
+            <span>ذكاء اصطناعي مدمج</span>
+          </div>
+          <div className="ft-stat-pill">
+            <b>مجاني</b>
+            <span>بدون حدود أو تسجيل</span>
+          </div>
+        </div>
       </section>
-      <section className="ft-categories">
-        <Link to="/free-tools/tafqeet">
-          <div className="ft-category-icon" style={{ background: "linear-gradient(135deg,#107c41,#25d366)", color: "#fff" }}>
-            <FiDollarSign />
+
+      {/* SEARCH AND FILTER BAR */}
+      <section className="ft-filter-toolbar">
+        <div className="ft-search-box">
+          <FiSearch />
+          <input
+            type="text"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            placeholder="ابحث عن أداة (مثال: تفقيط، إكسيل، ترجمة، OCR، تحويل Word، QR، ضغط صور)..."
+          />
+          {searchQuery && (
+            <button className="clear-search" onClick={() => setSearchQuery("")}>
+              ✕
+            </button>
+          )}
+        </div>
+
+        <div className="ft-category-tabs">
+          {TOOL_CATEGORIES.map((cat) => (
+            <button
+              key={cat.id}
+              className={`ft-cat-tab ${activeCategory === cat.id ? "active" : ""}`}
+              onClick={() => setActiveCategory(cat.id)}
+            >
+              {cat.label}
+            </button>
+          ))}
+        </div>
+      </section>
+
+      {/* TOOLS GRID */}
+      <section className="ft-modern-grid">
+        {filteredTools.length > 0 ? (
+          filteredTools.map((tool) => (
+            <Link key={tool.id} to={tool.to} className={`ft-hub-card ${tool.featured ? "featured" : ""}`}>
+              <div className="card-top-header">
+                <div className="card-icon" style={{ background: tool.iconBg }}>
+                  <tool.icon />
+                </div>
+                <div className="card-badge" style={{ color: tool.badgeColor, background: tool.badgeBg }}>
+                  {tool.badge}
+                </div>
+              </div>
+
+              <div className="card-body">
+                <h3>{tool.title}</h3>
+                <small className="card-en-title">{tool.enTitle}</small>
+                <p>{tool.desc}</p>
+              </div>
+
+              <div className="card-tags">
+                {tool.tags.map((tag, idx) => (
+                  <span key={idx} className="tool-pill-tag">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              <div className="card-footer">
+                <span className="card-stat-label">
+                  <FiCheck /> {tool.stats}
+                </span>
+                <span className="card-open-btn">
+                  فتح الأداة <FiArrowLeft />
+                </span>
+              </div>
+            </Link>
+          ))
+        ) : (
+          <div className="ft-no-results">
+            <FiSearch />
+            <h3>لا توجد أدوات مطابقة لبحثك</h3>
+            <p>جرّب البحث بكلمات أخرى أو اختر فئة مختلفة من الشريط أعلاه.</p>
+            <button onClick={() => { setSearchQuery(""); setActiveCategory("all"); }}>
+              عرض جميع الأدوات
+            </button>
           </div>
-          <div>
-            <small>عربي · إنجليزي · عملات</small>
-            <h2>محرك التفقيط المالي</h2>
-            <p>تحويل المبالغ والأرقام إلى حروف معتمدة للشيكات والفواتير وتفقيط ملفات Excel.</p>
-          </div>
-          <FiArrowLeft />
-        </Link>
-        <Link to="/free-tools/excel-tools">
-          <div className="ft-category-icon" style={{ background: "linear-gradient(135deg,#0e6251,#16a085)", color: "#fff" }}>
-            <FiGrid />
-          </div>
-          <div>
-            <small>Gemini AI · معادلات · جداول</small>
-            <h2>مساعد إكسيل الذكي (Excel AI)</h2>
-            <p>توليد وشرح دوال ومعادلات الإكسيل بـ Gemini، تصحيح الأخطاء، واستعراض الجداول.</p>
-          </div>
-          <FiArrowLeft />
-        </Link>
-        <Link to="/free-tools/translation-tools">
-          <div className="ft-category-icon" style={{ background: "linear-gradient(135deg,#0a85ea,#00d2ff)", color: "#fff" }}>
-            <FiGlobe />
-          </div>
-          <div>
-            <small>3 أدوات ذكية</small>
-            <h2>أدوات الترجمة والذكاء الاصطناعي</h2>
-            <p>ترجمة نصوص فورية، ترجمة ملفات PDF ومستندات، ومعجم مصطلحات AI.</p>
-          </div>
-          <FiArrowLeft />
-        </Link>
-        <Link to="/free-tools/pdf-tools">
-          <div className="ft-category-icon">
-            <FiFile />
-          </div>
-          <div>
-            <small>{pdfTools.length} أداة</small>
-            <h2>PDF Tools</h2>
-            <p>معالجة وتحويل PDF إلى Word مع OCR عربي داخل جهازك.</p>
-          </div>
-          <FiArrowLeft />
-        </Link>
-        <Link to="/free-tools/qr-tools">
-          <div className="ft-category-icon">
-            <FiGrid />
-          </div>
-          <div>
-            <small>4 أدوات</small>
-            <h2>QR Code</h2>
-            <p>إنشاء QR للرابط وواتساب وWi‑Fi وقراءته من الصور.</p>
-          </div>
-          <FiArrowLeft />
-        </Link>
-        <Link to="/free-tools/image-tools">
-          <div className="ft-category-icon">
-            <FiImage />
-          </div>
-          <div>
-            <small>6 أدوات</small>
-            <h2>أدوات الصور</h2>
-            <p>ضغط وتحويل وتغيير مقاس وقص وتنظيف وعلامة مائية.</p>
-          </div>
-          <FiArrowLeft />
-        </Link>
+        )}
+      </section>
+
+      {/* PRIVACY & SECURITY GUARANTEE BANNER */}
+      <section className="ft-privacy-guarantee">
+        <div className="guarantee-icon">
+          <FiShield />
+        </div>
+        <div className="guarantee-content">
+          <h3>لماذا صممنا أدواتنا لتعمل داخل متصفحك بنسبة 100%؟</h3>
+          <p>
+            في عصر الذكاء الاصطناعي، خصوصية بياناتك المالية والشخصية هي خط أحمر. لذلك تم بناء جميع أدواتنا لتعمل بالكامل عبر تقنيات الحوسبة المتقدمة داخل المتصفح (WebAssembly و SheetJS و Tesseract OCR).
+            <br />
+            <strong>ملفاتك وبياناتك لا تغادر جهازك أبداً ولا يتم رفعها إلى أي خادم خارجي.</strong>
+          </p>
+        </div>
       </section>
     </main>
   );

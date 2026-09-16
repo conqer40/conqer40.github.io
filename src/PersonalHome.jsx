@@ -157,8 +157,9 @@ export function PersonalHome({ lang }) {
       <section className="editorial-section home-projects" id="featured-projects">
         <HomeSectionIntro kicker={lang === "ar" ? "أعمال عملية" : "REAL WORK"} title={c.projects} text={lang === "ar" ? "تطبيقات ومنصات أطورها لتحويل المعرفة والذكاء الاصطناعي إلى قيمة حقيقية." : "Products that turn knowledge and AI into real value."} to="/ai" link={lang === "ar" ? "عرض كل المشروعات" : "View projects"} />
         <div className="home-card-row projects-row">
-          <HomeMediaCard image="project-elhawy-ai.png" tag="ELHAWY AI" title={lang === "ar" ? "دليل أدوات الذكاء الاصطناعي" : "AI tools directory"} text={lang === "ar" ? "منصة فعلية لاستكشاف أدوات الذكاء الاصطناعي ومقارنتها حسب الاستخدام." : "Explore and compare AI tools by real use case."} to="/ai" />
+          <HomeMediaCard image="project-friday.png" tag={lang === "ar" ? "نظام سيادي" : "SOVEREIGN AI"} title="F.R.I.D.A.Y AI OS" text={lang === "ar" ? "نظام تشغيل ذكاء اصطناعي سيادي هجين للمكالمات الهاتفية، الخصوصية المحلية، وأتمتة الأعمال." : "Autonomous sovereign AI OS with telephony, local privacy, and business CRM."} to="/projects/friday" />
           <HomeMediaCard image="project-jarvis.png" tag={lang === "ar" ? "وكيل ذكي" : "AI AGENT"} title="Jarvis AI Agent" text={lang === "ar" ? "وكيل ينفذ المهام ويتحكم في الكمبيوتر ويتكامل مع النظارة الذكية." : "An agent that executes work and controls the computer."} to="/projects/jarvis" />
+          <HomeMediaCard image="project-elhawy-ai.png" tag="ELHAWY AI" title={lang === "ar" ? "دليل أدوات الذكاء الاصطناعي" : "AI tools directory"} text={lang === "ar" ? "منصة فعلية لاستكشاف أدوات الذكاء الاصطناعي ومقارنتها حسب الاستخدام." : "Explore and compare AI tools by real use case."} to="/ai" />
           <HomeMediaCard image="project-pdf-tools.png" tag="PDF TOOLS" title={lang === "ar" ? "أدوات PDF تعمل داخل المتصفح" : "In-browser PDF tools"} text={lang === "ar" ? "أدوات موجودة فعلًا للدمج والتقسيم والضغط والتحويل مع الحفاظ على الخصوصية." : "Real merge, split, compress and conversion tools."} to="/free-tools/pdf-tools" />
         </div>
       </section>
