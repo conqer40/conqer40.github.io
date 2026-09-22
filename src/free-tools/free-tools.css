@@ -675,3 +675,70 @@
   }
 }
 
+/* Stirling-PDF Suite Quick Launch Bar */
+.stirling-quick-bar {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.stirling-quick-bar small {
+  color: rgba(226, 232, 240, 0.75);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.stirling-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  max-width: 900px;
+}
+
+.stirling-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #f1f5f9;
+  font-size: 13.5px;
+  text-decoration: none;
+  backdrop-filter: blur(10px);
+  transition: all 0.22s ease;
+}
+
+.stirling-pill-btn span {
+  font-size: 16px;
+}
+
+.stirling-pill-btn b {
+  font-weight: 600;
+}
+
+.stirling-pill-btn:hover {
+  background: rgba(56, 189, 248, 0.18);
+  border-color: rgba(56, 189, 248, 0.5);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+}
+
+.ft-pdf-stirling-hub .ft-hub-card {
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+.ft-pdf-stirling-hub .ft-hub-card:hover {
+  transform: translateY(-4px);
+  border-color: #38bdf8;
+  box-shadow: 0 12px 30px -10px rgba(2, 132, 199, 0.15);
+}
+
+
