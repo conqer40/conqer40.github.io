@@ -305,7 +305,7 @@
     ScrollTrigger.refresh();
   };
   document.getElementById('lang').addEventListener('click', () => { Snd.click(); setLang(!ar); });
-  document.querySelectorAll('.dock-item, .pill, .svc, .ct, .vtile, .vfeat, .toolt, .skill, .cv-banner').forEach(el => el.addEventListener('mouseenter', () => Snd.tick()));
+  document.querySelectorAll('.dock-item, .pill, .svc, .ct, .vtile, .vfeat, .toolt, .skill, .cv-banner, .back-pill, .ftile').forEach(el => el.addEventListener('mouseenter', () => Snd.tick()));
   document.querySelectorAll('a, button').forEach(el => el.addEventListener('click', () => { if (el.id !== 'lang' && el.id !== 'snd') Snd.click(); }));
   const sndBtn = document.getElementById('snd');
   const paintSnd = () => sndBtn.classList.toggle('off', !Snd.on);
@@ -355,8 +355,25 @@
   const tiles = [...document.querySelectorAll('.dtile')];
   const starts = innerWidth <= 640 ? [[.08,.46,-8],[.92,.44,8],[.08,.58,6],[.92,.57,-6],[.08,.7,-6],[.92,.7,6],[.08,.82,8],[.92,.83,-8]] : [[.07,.17,-8],[.19,.1,6],[.81,.1,-6],[.93,.17,8],[.06,.8,6],[.18,.88,-8],[.82,.88,8],[.94,.8,-6]];
   const ts = () => innerWidth <= 640 ? 64 : 104;
-  const endTs = () => Math.min(ts() * .7, (document.querySelector('.tools').offsetWidth || 400) * .16);
-  const gridGap = () => Math.max(8, Math.min(16, ((document.querySelector('.tools').offsetWidth || 400) - 56 - 4 * endTs()) / 3));
+
+  const fanEl = document.getElementById('fan');
+  const toolsEl = document.querySelector('.tools');
+  const ftiles = tiles.map((t, i) => { const f = document.createElement('div'); f.className = 'ftile'; f.innerHTML = t.querySelector('.di').outerHTML; fanEl.appendChild(f); f.style.zIndex = i + 1; f.style.setProperty('--k', i); return f; });
+  const layoutFan = () => {
+    const W = toolsEl.offsetWidth || 420, sz = Math.min(W * .235, 118), spread = W * .52;
+    ftiles.forEach((f, i) => {
+      const u = i / (ftiles.length - 1);
+      f._rot = -24 + u * 40;
+      f.style.width = f.style.height = sz + 'px';
+      f.style.left = (W / 2 - sz / 2 + (u - .5) * spread) + 'px';
+      f.style.top = (30 + (1 - u) * sz * .34) + 'px';
+      f.style.transform = 'rotate(' + f._rot + 'deg)';
+    });
+  };
+  layoutFan();
+  ScrollTrigger.addEventListener('refreshInit', layoutFan);
+  const endTs = () => (ftiles[0] && ftiles[0].offsetWidth) || 80;
+  const toolsEnd = () => Math.max(420, lay(toolsEl).y - innerHeight * .5);
   const rel = (el) => { const a = el.getBoundingClientRect(), b = stage.getBoundingClientRect(); return { x: a.left - b.left, y: a.top - b.top, w: a.width, h: a.height }; };
   const lay = el => { let x = 0, y = 0, n = el; while (n && n !== stage) { x += n.offsetLeft; y += n.offsetTop; n = n.offsetParent; } return { x, y, w: el.offsetWidth, h: el.offsetHeight }; }; // ignores transforms of animating cards
   tiles.forEach((t, i) => {
@@ -367,17 +384,17 @@
       y: () => { const h = rel(card); return h.y + starts[i][1] * h.h - ts() / 2; },
       rotation: starts[i][2]
     }, {
-      x: () => { const tc = lay(document.querySelector('.tools')), sz = endTs(), g = gridGap(), gw = 4 * sz + 3 * g; return tc.x + (tc.w - gw) / 2 + (i % 4) * (sz + g); },
-      y: () => { const tc = lay(document.querySelector('.tools')), sz = endTs(), g = gridGap(); return tc.y + 26 + Math.floor(i / 4) * (sz + g); },
-      rotation: 0,
+      x: () => lay(ftiles[i]).x,
+      y: () => lay(ftiles[i]).y,
+      rotation: () => ftiles[i]._rot,
       width: () => endTs(), height: () => endTs(),
       ease: 'back.out(1.25)',
-      scrollTrigger: { trigger: stage, start: 'top top', end: () => '+=' + (heroDist() + i * 40), scrub: 1.1, invalidateOnRefresh: true }
+      scrollTrigger: { trigger: stage, start: 'top top', end: () => '+=' + (toolsEnd() + i * 26), scrub: 1, invalidateOnRefresh: true, onUpdate: self => { const done = self.progress > .985; if (done !== t._done) { t._done = done; t.style.visibility = done ? 'hidden' : 'visible'; ftiles[i].classList.toggle('on', done); } } }
     });
     if (!reduce) {
       gsap.to(di, { scale: 1 + gsap.utils.random(.03, .08), rotation: gsap.utils.random(-5, 5), duration: gsap.utils.random(2, 3.5), repeat: -1, yoyo: true, ease: 'sine.inOut' });
     }
-    ScrollTrigger.create({ trigger: stage, start: 'top top', end: () => '+=' + (heroDist() + i * 40), onUpdate: crossAt([{ k: 'l', at: .97 }], () => Snd.land(.5)) });
+    ScrollTrigger.create({ trigger: stage, start: 'top top', end: () => '+=' + (toolsEnd() + i * 26), onUpdate: crossAt([{ k: 'l', at: .97 }], () => Snd.land(.5)) });
     if (i % 3 === 0) ScrollTrigger.create({ trigger: stage, start: () => 'top top-=' + (i * 14), end: () => '+=60', onUpdate: crossAt([{ k: 'g', at: .5 }], () => Snd.whoosh()) });
     t._qx = gsap.quickTo(di, 'x', { duration: .9, ease: 'power3' });
     t._qy = gsap.quickTo(di, 'y', { duration: .9, ease: 'power3' });
@@ -419,6 +436,7 @@
     t.addEventListener('click', e => { e.stopPropagation(); tipFor === i ? closeTip() : openTip(i); });
     t.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); tipFor === i ? closeTip() : openTip(i); } });
   });
+  ftiles.forEach((f, i) => { f.setAttribute('tabindex', '0'); f.setAttribute('role', 'button'); f.setAttribute('aria-label', TOOLS[i].n); f.addEventListener('click', e => { e.stopPropagation(); tipFor === i ? closeTip() : openTip(i); }); f.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); tipFor === i ? closeTip() : openTip(i); } }); });
   document.addEventListener('click', e => { if (tipFor >= 0 && !tip.contains(e.target)) closeTip(); });
   addEventListener('keydown', e => { if (e.key === 'Escape') closeTip(); });
   ScrollTrigger.create({ start: 0, end: 'max', onUpdate: () => { if (tipFor >= 0) closeTip(); } });
@@ -523,7 +541,7 @@
     const cx = gsap.quickTo(cur, 'x', { duration: .45, ease: 'power3' }), cy = gsap.quickTo(cur, 'y', { duration: .45, ease: 'power3' });
     const dx = gsap.quickTo(dot, 'x', { duration: .08 }), dy = gsap.quickTo(dot, 'y', { duration: .08 });
     addEventListener('mousemove', e => { cx(e.clientX); cy(e.clientY); dx(e.clientX); dy(e.clientY); });
-    document.querySelectorAll('a,button,.dtile,.svc,.proj,.skill').forEach(el => {
+    document.querySelectorAll('a,button,.dtile,.ftile,.svc,.proj,.skill').forEach(el => {
       el.addEventListener('mouseenter', () => cur.classList.add('hov'));
       el.addEventListener('mouseleave', () => cur.classList.remove('hov'));
     });
