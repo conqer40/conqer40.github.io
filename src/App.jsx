@@ -872,6 +872,11 @@ function Developers() {
     </main>
   );
 }
+// /about is now the static portfolio at public/about/index.html; a client-side visit does a full page load to it
+function StaticPageRedirect({ to }) {
+  useEffect(() => { window.location.replace(to); }, [to]);
+  return null;
+}
 function About() {
   return (
     <main className="page about-page">
@@ -1050,7 +1055,7 @@ export function App() {
               <Route path="/articles/category/:categorySlug" element={<Articles />} />
               <Route path="/articles/:slug" element={<Article />} />
               <Route path="/developers" element={<Developers />} />
-              <Route path="/about" element={<ResumePage lang={lang} />} />
+              <Route path="/about" element={<StaticPageRedirect to="/about/" />} />
               <Route path="*" element={<Missing />} />
             </Routes>
             <Footer lang={lang} />
