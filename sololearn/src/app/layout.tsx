@@ -1,3 +1,4 @@
+import { asset } from "@/lib/asset";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Cairo } from "next/font/google";
@@ -23,7 +24,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
             <Link href="/" className="flex items-center gap-3 text-lg font-black">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/icon.png" alt="" className="h-9 w-9 rounded-xl" />
+              <img src={asset("/icon.png")} alt="" className="h-9 w-9 rounded-xl" />
               Solo Learn
             </Link>
             <div className="flex items-center gap-5 text-sm font-semibold">

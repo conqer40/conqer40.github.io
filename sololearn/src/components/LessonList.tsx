@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { storyCovers } from "@/data/covers";
+import { asset } from "@/lib/asset";
 
 import type { Lesson } from "@/data/types";
 import { loadProgress, type Progress } from "@/lib/progress";
@@ -30,7 +31,7 @@ export default function LessonList({ items }: Props) {
             {cover ? (
               // eslint-disable-next-line @next/next/no-img-element
               <img
-                src={`/stories/${lesson.id}.svg`}
+                src={asset(`/stories/${lesson.id}.svg`)}
                 alt=""
                 className="h-40 w-full border-b-2 border-ink object-cover"
                 style={{ backgroundColor: cover.bg }}

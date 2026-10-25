@@ -1,3 +1,4 @@
+import { asset } from "@/lib/asset";
 import Link from "next/link";
 import ExplainerSlider from "@/components/ExplainerSlider";
 import HeroBackground from "@/components/HeroBackground";
@@ -7,9 +8,9 @@ import { lessons } from "@/data/lessons";
 const totalSentences = lessons.reduce((sum, lesson) => sum + lesson.sentences.length, 0);
 
 const steps = [
-  { title: "اسمع", text: "الجملة بتتقال بصوت واضح قبل ما تكتبها.", img: "/sections/step-listen.webp" },
-  { title: "اكتب", text: "اكتب الحروف واحد واحد. الحرف الغلط مش بيتقبل، والصح بيكمّل.", img: "/sections/step-type.webp" },
-  { title: "شوف المعنى", text: "كل كلمة ليها معناها بالعربي وإنت بتكتب.", img: "/sections/step-meaning.webp" },
+  { title: "اسمع", text: "الجملة بتتقال بصوت واضح قبل ما تكتبها.", img: asset("/sections/step-listen.webp") },
+  { title: "اكتب", text: "اكتب الحروف واحد واحد. الحرف الغلط مش بيتقبل، والصح بيكمّل.", img: asset("/sections/step-type.webp") },
+  { title: "شوف المعنى", text: "كل كلمة ليها معناها بالعربي وإنت بتكتب.", img: asset("/sections/step-meaning.webp") },
   { title: "اتقدّم", text: "كل درس بيتسجل، ونسبة دقتك بتظهر، وتعدّي للي بعده.", img: null },
 ];
 
@@ -38,7 +39,7 @@ export default function Home() {
       <section className="relative isolate -mx-4 overflow-hidden rounded-[2rem] border-2 border-ink bg-ink px-6 py-20 text-card shadow-[8px_8px_0_0_var(--color-ink)] sm:-mx-0 sm:px-12 sm:py-28">
         <HeroBackground />
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/sections/hero.webp" alt="" aria-hidden="true" className="absolute inset-y-0 end-0 hidden h-full w-1/2 rounded-s-[2rem] object-cover md:block" />
+        <img src={asset("/sections/hero.webp")} alt="" aria-hidden="true" className="absolute inset-y-0 end-0 hidden h-full w-1/2 rounded-s-[2rem] object-cover md:block" />
         <div className="relative flex max-w-xl flex-col items-start gap-7">
           <Reveal>
             <span className="inline-flex items-center gap-2 rounded-full bg-card px-4 py-1.5 text-xs font-bold tracking-wide text-ink">
@@ -184,7 +185,7 @@ export default function Home() {
       <Reveal>
         <section className="relative isolate flex flex-col items-start gap-5 overflow-hidden rounded-[2rem] border-2 border-ink bg-ink p-10 text-card sm:p-16">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/sections/cta-bg.webp" alt="" aria-hidden="true" className="absolute inset-0 -z-10 h-full w-full object-cover opacity-70" />
+          <img src={asset("/sections/cta-bg.webp")} alt="" aria-hidden="true" className="absolute inset-0 -z-10 h-full w-full object-cover opacity-70" />
           <h2 className="text-3xl font-black sm:text-5xl">جاهز تبدأ؟</h2>
           <p className="max-w-xl text-lg text-card/80">أول درس بياخد دقايق قليلة. اختار مستواك وابدأ.</p>
           <Link

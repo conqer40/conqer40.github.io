@@ -1,5 +1,5 @@
 :HL["/sololearn/_next/static/chunks/3lm6tp1zo-36b.css","style"]
-:HL["/icon.png","image"]
+:HL["/sololearn/icon.png","image"]
 2:[["children",{"s":"__PAGE__","h":160}]]
 1:[["children",{"s":"/_not-found","h":96,"c":"$Q2"}]]
-0:{"b":"6AyJoSVjt0ULwZ0NXOqxU","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
+0:{"b":"otdf94G5qrqF6QbTSUnOc","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
