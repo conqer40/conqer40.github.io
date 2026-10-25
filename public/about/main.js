@@ -155,7 +155,7 @@
       ],
       tools: [['Next.js'], ['Supabase'], ['Vercel'], ['React Native'], ['AI-assisted content']],
       note: ['Lesson content is written with AI assistance and is being reviewed by hand.', 'محتوى الدروس مكتوب بمساعدة الذكاء الاصطناعي، والمراجعة البشرية مستمرة.'],
-      cta: ['https://sololearn-elhawy1.vercel.app', 'Visit Solo Learn', 'زيارة Solo Learn']
+      cta: ['https://www.elhawyai.com/sololearn/', 'Visit Solo Learn', 'زيارة Solo Learn']
     }
   ];
   const SLUGS = ['jarvis', 'friday', 'elhawy-ai', 'logistics', 'tiktok', 'sololearn'];
