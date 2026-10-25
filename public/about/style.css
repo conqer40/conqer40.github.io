@@ -738,3 +738,14 @@ body.ar .acad-photo figcaption{direction:rtl}
 body.ar .ct-a{right:auto;left:1rem}
 @media (max-width:1000px){.ct-grid{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:560px){.ct-grid{grid-template-columns:1fr}}
+
+/* free-tool tiles: icon chip + number */
+.toolt-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:.4rem}
+.toolt-ic{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:rgba(255,255,255,.08);color:#ff8a3d;transition:background .35s,color .35s,transform .45s cubic-bezier(.3,1.6,.5,1)}
+.toolt-ic svg{width:24px;height:24px}
+.toolt-ic.logo{background:#fff}
+.toolt-ic img{width:26px;height:26px;object-fit:contain}
+.toolt-ic.cta{background:rgba(255,255,255,.18);color:#fff}
+.toolt:hover .toolt-ic{transform:rotate(-8deg) scale(1.1)}
+.toolt:hover .toolt-ic:not(.logo):not(.cta){background:var(--accent);color:#fff}
+.toolt-cta .toolt-top .toolt-n{display:none}
