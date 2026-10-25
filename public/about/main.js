@@ -459,6 +459,11 @@
   /* folders: paper slides up on scroll; opens on hover (cover tilts, paper rises) */
   document.querySelectorAll('.folder').forEach(f => {
     const paper = f.querySelector('.folder-paper'), front = f.querySelector('.folder-front');
+    if (f.closest('.screens')) {
+      gsap.from(paper, { y: 46, opacity: 0, scale: .94, duration: 1.1, ease: 'expo.out', scrollTrigger: { trigger: f, start: 'top 88%' } });
+      if (!touch) { f.addEventListener('mouseenter', () => { Snd.open(); gsap.to(paper, { y: -8, scale: 1.025, duration: .6, ease: 'expo.out' }); }); f.addEventListener('mouseleave', () => gsap.to(paper, { y: 0, scale: 1, duration: .7, ease: 'expo.out' })); }
+      return;
+    }
     gsap.set(front, { transformOrigin: '50% 100%', transformPerspective: 900 });
     gsap.fromTo(paper, { y: 110 }, { y: 0, ease: 'none', scrollTrigger: { trigger: f, start: 'top 92%', end: 'top 45%', scrub: true } });
     if (touch) return;
@@ -535,16 +540,8 @@
   });
   gsap.from('.cta-big', { yPercent: 40, opacity: 0, duration: 1.4, ease: 'expo.out', scrollTrigger: { trigger: '#contact', start: 'top 55%' } });
 
-  /* cursor + magnetic */
+  /* magnetic buttons (native mouse cursor is used) */
   if (!touch) {
-    const cur = document.getElementById('cursor'), dot = document.getElementById('cursorDot');
-    const cx = gsap.quickTo(cur, 'x', { duration: .45, ease: 'power3' }), cy = gsap.quickTo(cur, 'y', { duration: .45, ease: 'power3' });
-    const dx = gsap.quickTo(dot, 'x', { duration: .08 }), dy = gsap.quickTo(dot, 'y', { duration: .08 });
-    addEventListener('mousemove', e => { cx(e.clientX); cy(e.clientY); dx(e.clientX); dy(e.clientY); });
-    document.querySelectorAll('a,button,.dtile,.ftile,.svc,.proj,.skill').forEach(el => {
-      el.addEventListener('mouseenter', () => cur.classList.add('hov'));
-      el.addEventListener('mouseleave', () => cur.classList.remove('hov'));
-    });
     document.querySelectorAll('.magnetic').forEach(m => {
       const mx = gsap.quickTo(m, 'x', { duration: .5, ease: 'power3' }), my = gsap.quickTo(m, 'y', { duration: .5, ease: 'power3' });
       m.addEventListener('mousemove', e => { const r = m.getBoundingClientRect(); mx((e.clientX - r.left - r.width / 2) * .35); my((e.clientY - r.top - r.height / 2) * .5); });

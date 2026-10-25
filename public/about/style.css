@@ -2,10 +2,10 @@
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:auto}
 html.lenis,html.lenis body{height:auto}
-body{font-family:var(--font);background:var(--bg);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased;cursor:none}
+body{font-family:var(--font);background:var(--bg);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased}
 body.ar{font-family:'Cairo',var(--font)}
-a{color:inherit;text-decoration:none;cursor:none}
-button{font:inherit;color:inherit;border:0;background:none;cursor:none}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 img{display:block;max-width:100%}
 .inv{filter:none}
 .dark .inv,.tile .inv,.pl .inv,.float-icons .inv{filter:invert(1)}
@@ -797,3 +797,23 @@ body.ar .fp-chat .out{border-bottom-right-radius:14px;border-bottom-left-radius:
 .back-pill:hover i{transform:rotate(45deg)}
 body.ar .back-pill{right:auto;left:14px;flex-direction:row-reverse}
 @media (max-width:980px){.bp-t{display:none}.back-pill{padding:.35rem}}
+
+/* ===== EXPERIMENT: folders as screens (remove class "screens" from .bento-grid to revert) ===== */
+.bento-grid.screens .folder{background:radial-gradient(120% 90% at 50% 0%,#14204a 0%,#0b1224 55%,#070c1a 100%);color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.08)}
+.bento-grid.screens .folder-tab{display:none}
+.bento-grid.screens .folder-paper{left:1.1rem;right:1.1rem;top:1.1rem;bottom:auto;height:60%;padding:0 .9rem .8rem;display:flex;flex-direction:column;justify-content:flex-start;gap:.55rem;border-radius:16px;background:#fff;color:#0b1430;overflow:hidden;box-shadow:0 0 0 5px #101935,0 0 0 6px rgba(255,255,255,.12),0 26px 50px -16px rgba(0,0,0,.65)}
+.scr-bar{display:none}
+.bento-grid.screens .scr-bar{display:flex;align-items:center;gap:.35rem;margin:0 -.9rem .1rem;padding:.5rem .8rem;background:#eef2fa;border-bottom:1px solid #e0e7f4}
+.scr-bar i{width:8px;height:8px;border-radius:50%;background:#ff5f57}
+.scr-bar i:nth-child(2){background:#febc2e}.scr-bar i:nth-child(3){background:#28c840}
+.scr-bar span{margin-inline-start:.5rem;flex:1;padding:.18rem .6rem;border-radius:99px;background:#fff;color:#6a7690;font-size:.6rem;font-weight:600;letter-spacing:.02em;box-shadow:inset 0 0 0 1px #e0e7f4}
+.bento-grid.screens .fp-head{padding-top:.1rem}
+.bento-grid.screens .folder-front{position:absolute;left:0;right:0;bottom:0;height:auto;padding:0 1.3rem 1.2rem;background:none;backdrop-filter:none;-webkit-backdrop-filter:none;box-shadow:none;border-radius:0;z-index:2;justify-content:flex-end}
+.bento-grid.screens .folder-front h3{color:#fff}
+.bento-grid.screens .folder-front p{color:#9fb0d6}
+/* little stand under every screen */
+.bento-grid.screens .folder::after{content:"";position:absolute;left:50%;top:calc(1.1rem + 60%);width:46%;height:10px;transform:translateX(-50%);border-radius:0 0 12px 12px;background:linear-gradient(#101935,#0b1224);box-shadow:0 8px 18px rgba(0,0,0,.4)}
+.bento-grid.screens .folder:hover{box-shadow:inset 0 0 0 1px rgba(255,106,0,.55)}
+.bento-grid.screens .fp-list li{background:#f1f4fb}
+
+a,button,.dtile,.ftile,.svc,.proj,.skill,.ct,.toolt,.vtile,.vfeat,.pf{cursor:pointer}
