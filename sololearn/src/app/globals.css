@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-cairo);
+
+  --color-page: #e8dfd1;
+  --color-card: #fffdf8;
+  --color-line: #d6ccb9;
+  --color-ink: #171c1e;
+  --color-ink-soft: #31383a;
+  --color-cyan: #1b9db5;
+  --color-cyan-dark: #147f94;
+  --color-orange: #f56a00;
+  --color-orange-dark: #d85c00;
+}
+
+body {
+  font-family: var(--font-cairo), sans-serif;
+}

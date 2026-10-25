@@ -1,4 +1,6 @@
 (() => {
+  // Safety net: if the intro animation never finishes, remove the black loader so the page and cursor work.
+  setTimeout(() => document.querySelector('.loader')?.remove(), 5000);
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const touch = matchMedia('(hover: none)').matches;
   gsap.registerPlugin(ScrollTrigger);
