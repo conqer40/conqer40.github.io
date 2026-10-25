@@ -138,10 +138,12 @@
       note: ['Concept only. No public release or working TikTok integration is claimed.', 'فكرة فقط. لا يُدّعى وجود إصدار منشور أو ربط فعلي مع تيك توك.']
     }
   ];
+  const SLUGS = ['jarvis', 'friday', 'elhawy-ai', 'logistics', 'tiktok'];
+  CASES.forEach((c, i) => { c.slug = SLUGS[i]; c.img = 'assets/work/' + SLUGS[i] + '.webp'; });
   const works = document.getElementById('works');
   works.innerHTML = CASES.map((c, i) => '<button type="button" class="card folder pf" data-case="' + i + '" aria-label="' + c.name + '">'
     + '<div class="folder-tab"></div>'
-    + '<div class="folder-paper"><div class="fp-head"><span data-ar="' + c.cat[1] + '">' + c.cat[0] + '</span><em class="st ' + c.tone + '" data-ar="' + c.status[1].split(' · ')[0] + '">' + c.status[0].split(' · ')[0] + '</em></div><div class="fp-body"></div></div>'
+    + '<div class="folder-paper"><div class="fp-head"><span data-ar="' + c.cat[1] + '">' + c.cat[0] + '</span><em class="st ' + c.tone + '" data-ar="' + c.status[1].split(' · ')[0] + '">' + c.status[0].split(' · ')[0] + '</em></div><div class="fp-body"><img src="' + c.img + '" alt="" loading="lazy" onload="this.parentNode.classList.add(\'has\')" onerror="this.remove()"></div></div>'
     + '<div class="folder-front"><h3' + (c.nameAr ? ' data-ar="' + c.nameAr + '"' : '') + '>' + c.name + '</h3><p data-ar="' + c.sub[1] + '">' + c.sub[0] + '</p>'
     + '<div class="pl">' + c.logos.map(l => '<img src="assets/logos/' + l + '" alt="">').join('') + '</div></div></button>').join('');
 
@@ -155,7 +157,7 @@
   const openCase = i => {
     const c = CASES[i], k = ar ? 1 : 0, T = ar ? ['السياق', 'نظرة عامة', 'أبرز الإمكانيات', 'الأدوات والمهارات', 'كيف يعمل', 'محاور القدرات'] : ['Context', 'Overview', 'Highlights', 'Tools & skills', 'How it works', 'Capability areas'];
     sheet.dir = ar ? 'rtl' : 'ltr';
-    caseBody.innerHTML = '<header class="case-hero"><span class="case-cat">' + c.cat[k] + '</span><h2>' + (k && c.nameAr ? c.nameAr : c.name) + '</h2>'
+    caseBody.innerHTML = '<header class="case-hero"><img class="case-cover" src="' + c.img + '" alt="" onerror="this.remove()"><span class="case-cat">' + c.cat[k] + '</span><h2>' + (k && c.nameAr ? c.nameAr : c.name) + '</h2>'
       + '<span class="case-status st ' + c.tone + '">' + c.status[k] + '</span><p>' + c.sub[k] + '</p></header>'
       + '<div class="case-cols"><section><small>' + T[0] + '</small><p>' + c.problem[k] + '</p></section><section><small>' + T[1] + '</small><p>' + c.overview[k] + '</p></section></div>'
       + '<section class="case-feats"><small>' + T[2] + '</small><div class="feat-grid">' + c.feats.map((f, n) => '<div class="feat"><b>0' + (n + 1) + '</b><p>' + f[k] + '</p></div>').join('') + '</div></section>'
@@ -459,6 +461,11 @@
   /* folders: paper slides up on scroll; opens on hover (cover tilts, paper rises) */
   document.querySelectorAll('.folder').forEach(f => {
     const paper = f.querySelector('.folder-paper'), front = f.querySelector('.folder-front');
+    if (f.classList.contains('pf')) {
+      gsap.from(f, { y: 70, opacity: 0, duration: 1.1, ease: 'expo.out', scrollTrigger: { trigger: f, start: 'top 90%' } });
+      if (!touch) f.addEventListener('mouseenter', () => Snd.open());
+      return;
+    }
     if (f.closest('.screens')) {
       gsap.from(paper, { y: 46, opacity: 0, scale: .94, duration: 1.1, ease: 'expo.out', scrollTrigger: { trigger: f, start: 'top 88%' } });
       if (!touch) { f.addEventListener('mouseenter', () => { Snd.open(); gsap.to(paper, { y: -8, scale: 1.025, duration: .6, ease: 'expo.out' }); }); f.addEventListener('mouseleave', () => gsap.to(paper, { y: 0, scale: 1, duration: .7, ease: 'expo.out' })); }
