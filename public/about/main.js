@@ -136,9 +136,27 @@
       feats: [['Automatic combat and zombie-wave progression', 'قتال تلقائي وتصاعد موجات الزومبي'], ['Gift-triggered unit spawning and power-ups', 'ظهور الوحدات والتعزيزات عند وصول الهدايا'], ['On-screen player names above units created by viewers', 'أسماء المشاهدين فوق الوحدات التي أنشأوها'], ['Smart camera framing focused on major battles and special attacks', 'كاميرا ذكية تركّز على المعارك الكبرى والهجمات الخاصة'], ['Modular concept for live-event integration, scoring and visual effects', 'فكرة معيارية لربط الأحداث المباشرة والنقاط والمؤثرات البصرية']],
       tools: [['JavaScript', 'javascript.svg'], ['Game systems'], ['Event-driven logic'], ['Live interaction'], ['Motion graphics']],
       note: ['Concept only. No public release or working TikTok integration is claimed.', 'فكرة فقط. لا يُدّعى وجود إصدار منشور أو ربط فعلي مع تيك توك.']
+    },
+    {
+      name: 'Solo Learn', nameAr: 'Solo Learn · علّم نفسك', logos: ['javascript.svg', 'claude.svg'],
+      cat: ['EdTech / Web & Mobile', 'تعليم / ويب وموبايل'], tone: 'st-live',
+      status: ['Live · Ongoing development', 'منشور · تطوير مستمر'],
+      sub: ['A free, Arabic-first platform for learning English on your own: listen, type letter by letter, and see the meaning instantly.', 'منصة مجانية وعربية أولاً لتعلم الإنجليزية بنفسك: اسمع، واكتب حرفاً بحرف، وشوف المعنى فوراً.'],
+      problem: ['Most learners memorize words but struggle to spell and use them. Passive apps do not force real practice.', 'معظم المتعلمين يحفظون الكلمات لكنهم يتعثرون في كتابتها واستخدامها. التطبيقات السلبية لا تجبرك على التدريب الفعلي.'],
+      overview: ['Solo Learn turns every sentence into a typing exercise: you hear it, type it letter by letter, and get instant feedback. Lessons are organised by level (A1, A2, B1) and include short stories you type sentence by sentence. The core experience is free, with optional accounts that sync progress across devices.', 'Solo Learn يحوّل كل جملة إلى تمرين كتابة: تسمعها، وتكتبها حرفاً بحرف، وتاخد تصحيحاً فورياً. الدروس مرتبة حسب المستوى (A1 وA2 وB1) وفيها قصص قصيرة تكتبها جملة بجملة. التجربة الأساسية مجانية، والحساب الاختياري بيحفظ تقدمك على كل أجهزتك.'],
+      feats: [
+        ['Letter-by-letter typing with instant feedback', 'كتابة حرف بحرف مع تصحيح فوري'],
+        ['Dictation mode: listen first, then write without seeing the text', 'وضع الإملاء: اسمع الأول، واكتب من غير ما تشوف النص'],
+        ['115+ lessons and stories across three levels', 'أكتر من 115 درس وقصة على ثلاث مستويات'],
+        ['Accounts with progress synced across devices', 'حسابات مع مزامنة التقدم على كل الأجهزة'],
+        ['Android app in development with daily reminders', 'تطبيق أندرويد قيد التطوير مع تذكير يومي']
+      ],
+      tools: [['Next.js'], ['Supabase'], ['Vercel'], ['React Native'], ['AI-assisted content']],
+      note: ['Lesson content is written with AI assistance and is being reviewed by hand.', 'محتوى الدروس مكتوب بمساعدة الذكاء الاصطناعي، والمراجعة البشرية مستمرة.'],
+      cta: ['https://sololearn-elhawy1.vercel.app', 'Visit Solo Learn', 'زيارة Solo Learn']
     }
   ];
-  const SLUGS = ['jarvis', 'friday', 'elhawy-ai', 'logistics', 'tiktok'];
+  const SLUGS = ['jarvis', 'friday', 'elhawy-ai', 'logistics', 'tiktok', 'sololearn'];
   CASES.forEach((c, i) => { c.slug = SLUGS[i]; c.img = 'assets/work/' + SLUGS[i] + '.webp'; });
   const works = document.getElementById('works');
   works.innerHTML = CASES.map((c, i) => '<button type="button" class="card folder pf" data-case="' + i + '" aria-label="' + c.name + '">'
