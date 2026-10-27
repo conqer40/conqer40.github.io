@@ -139,18 +139,33 @@ async function sync() {
     console.warn('Could not scrape playlists page, relying on structured lists', err.message);
   }
 
-  // 2. Fetch RSS Feed for latest videos
-  try {
-    const rssUrl = `https://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`;
-    const rss = await fetchUrl(rssUrl);
+  // 2. Fetch RSS feeds: the channel feed (latest uploads) and each playlist feed.
+  // A playlist feed lists that playlist's own videos, so older lessons are kept even
+  // when newer uploads push them out of the channel feed (which only holds ~15 entries).
+  const feeds = [
+    { url: `https://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`, playlistId: null },
+    ...output.playlists.map(pl => ({ url: `https://www.youtube.com/feeds/videos.xml?playlist_id=${pl.id}`, playlistId: pl.id }))
+  ];
+  const seen = new Set();
+  const fetchedVideos = [];
+
+  for (const feed of feeds) {
+    let rss;
+    try {
+      rss = await fetchUrl(feed.url);
+    } catch (err) {
+      console.warn(`Could not fetch ${feed.url}`, err.message);
+      continue;
+    }
 
     const entryRegex = /<entry>([\s\S]*?)<\/entry>/g;
     let match;
-    const fetchedVideos = [];
 
     while ((match = entryRegex.exec(rss)) !== null) {
       const entryXml = match[1];
       const videoId = parseXmlField(entryXml, 'yt:videoId');
+      if (!videoId || seen.has(videoId)) continue;
+      seen.add(videoId);
       const rawTitle = parseXmlField(entryXml, 'title');
       const published = parseXmlField(entryXml, 'published');
       const rawDescription = parseXmlField(entryXml, 'media:description');
@@ -184,6 +199,11 @@ async function sync() {
         categoryName = 'برمجة وذكاء اصطناعي ببساطة | الصف الثاني الثانوي – بكالوريا';
       }
 
+      if (feed.playlistId) {
+        categoryId = feed.playlistId;
+        categoryName = output.playlists.find(p => p.id === feed.playlistId).name;
+      }
+
       fetchedVideos.push({
         id: videoId,
         slug,
@@ -198,8 +218,9 @@ async function sync() {
         category_name: categoryName
       });
     }
+  }
 
-    if (fetchedVideos.length > 0) {
+  if (fetchedVideos.length > 0) {
       output.videos = fetchedVideos;
 
       // Update playlists videoIds
@@ -220,8 +241,15 @@ async function sync() {
       // Strictly remove any empty playlist that has no videos
       output.playlists = output.playlists.filter(pl => pl.videoIds && pl.videoIds.length > 0);
     }
-  } catch (err) {
-    console.warn('Warning: Could not fetch live RSS feed, fallback data preserved.', err.message);
+  // Never replace working data with an empty result (for example when YouTube is unreachable
+  // from the build machine). The page would then show the "coming soon" placeholder.
+  const existingFile = path.resolve(__dirname, '../src/data/youtube-videos.json');
+  if (output.videos.length === 0 && fs.existsSync(existingFile)) {
+    const previous = JSON.parse(fs.readFileSync(existingFile, 'utf8'));
+    if (previous.videos && previous.videos.length > 0) {
+      console.warn('No videos were fetched; keeping the previous youtube-videos.json.');
+      return;
+    }
   }
 
   const outDir = path.resolve(__dirname, '../src/data');

@@ -16,6 +16,10 @@ import { youtubeId, safeImage } from "./content-utils.js";
 import { ShareButtons } from "./ShareButtons.jsx";
 import youtubeData from "./data/youtube-videos.json";
 
+function publishedTime(v) {
+  return new Date(v.publishedAt || v.created_at || 0).getTime();
+}
+
 export function useVideos() {
   const [categories, setCategories] = useState(youtubeData.playlists || []);
   const [videos, setVideos] = useState(youtubeData.videos || []);
@@ -81,6 +85,9 @@ export function useVideos() {
 
 export function VideoLessons() {
   const { categories, videos, channel } = useVideos();
+  const [order, setOrder] = useState("newest");
+  const direction = order === "newest" ? -1 : 1;
+  const sortVideos = (list) => [...list].sort((a, b) => (publishedTime(a) - publishedTime(b)) * direction);
 
   // Filter out any playlist / category that has NO videos
   const activeCategories = categories
@@ -91,9 +98,17 @@ export function VideoLessons() {
           v.category_id === c.slug ||
           (c.videoIds && c.videoIds.includes(v.videoId || v.id))
       );
-      return { ...c, playlistVideos };
+      return { ...c, playlistVideos: sortVideos(playlistVideos) };
     })
     .filter((c) => c.playlistVideos.length > 0);
+
+  // If no playlist matches the synced videos, still show them in one group.
+  const groups =
+    activeCategories.length > 0
+      ? activeCategories
+      : videos.length > 0
+        ? [{ id: "all", slug: "all", name: "كل الفيديوهات", description: "", playlistVideos: sortVideos(videos) }]
+        : [];
 
   return (
     <main className="page video-page">
@@ -145,10 +160,35 @@ export function VideoLessons() {
         </div>
       </section>
 
+      <div className="video-sort-bar" style={{ display: "flex", gap: 8, margin: "0 0 24px", justifyContent: "flex-end" }}>
+        {[
+          { key: "newest", label: "الأحدث أولاً" },
+          { key: "oldest", label: "الأقدم أولاً" },
+        ].map((opt) => (
+          <button
+            key={opt.key}
+            type="button"
+            onClick={() => setOrder(opt.key)}
+            aria-pressed={order === opt.key}
+            style={{
+              padding: "8px 16px",
+              borderRadius: 999,
+              border: "1px solid currentColor",
+              background: order === opt.key ? "currentColor" : "transparent",
+              color: "inherit",
+              cursor: "pointer",
+              fontWeight: 700,
+            }}
+          >
+            <span style={{ color: order === opt.key ? "#fff" : "inherit" }}>{opt.label}</span>
+          </button>
+        ))}
+      </div>
+
       {/* أقسام قوائم التشغيل المعتمدة فقط التي تحتوي على فيديوهات */}
       <div className="video-playlists-container">
-        {activeCategories.length > 0 ? (
-          activeCategories.map((c) => {
+        {groups.length > 0 ? (
+          groups.map((c) => {
             const isYtPlaylist = c.id && c.id.startsWith("PL");
             const ytPlaylistUrl = isYtPlaylist
               ? `https://www.youtube.com/playlist?list=${c.id}`
