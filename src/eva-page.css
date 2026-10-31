@@ -70,3 +70,7 @@
 .eva-page .eva-poster-band .eva-install p { color: #d6defa !important; opacity: 1; font-size: 17px; }
 .eva-page .eva-poster-band .eva-install .eva-btn:not(.primary) { color: #ffffff; border-color: rgba(255, 255, 255, 0.55); background: rgba(255, 255, 255, 0.08); }
 .eva-page .eva-video { margin-top: 24px; }
+
+/* readable developer links on the light trust cards */
+.eva-page .jarvis-trust .eva-links a { color: #1d4ed8; opacity: 1; }
+.eva-page .jarvis-trust .eva-links a:hover { color: #0f2f9e; }
