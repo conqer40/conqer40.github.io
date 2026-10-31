@@ -13,6 +13,7 @@ const copy = {
   ar: {
     tag: 'مساعدتك الذكية في جيبك',
     title: 'إيفا AI',
+    nameNote: 'EVA اختصار Elhawy Voice Assistant (مساعد الحاوي الصوتي)، وتحمل اسم «إيفا» الروبوت اللطيف في كرتون WALL-E. (اضغط على الاسم لإعادة الحركة)',
     lead: 'مساعد ذكي بالعربية والإنجليزية على هاتفك: يجيب عن أي سؤال، يبحث في الإنترنت، يتحدث معك بالصوت، يقرأ ملفاتك وصورك، يرى بالكاميرا والشاشة، ويتحكم في تطبيقات هاتفك. يعمل بمفرده دون حاجة لكمبيوتر.',
     download: 'تحميل التطبيق (APK)',
     allReleases: 'كل الإصدارات',
@@ -43,6 +44,7 @@ const copy = {
   en: {
     tag: 'Your smart assistant in your pocket',
     title: 'Eva AI',
+    nameNote: 'EVA stands for Elhawy Voice Assistant, and shares its name with the lovable robot Eva from the animated film WALL-E. (Tap the name to replay the animation.)',
     lead: 'A smart Arabic and English assistant on your phone: it answers anything, searches the web, talks to you by voice, reads your files and pictures, sees through the camera and the screen, and controls your phone apps. It works on its own, no computer needed.',
     download: 'Download the app (APK)',
     allReleases: 'All releases',
@@ -205,6 +207,18 @@ function fmtDate(iso, lang) {
   }
 }
 
+function NameReveal() {
+  const [run, setRun] = useState(0);
+  return (
+    <h1 className="eva-name" key={run} dir="ltr" onClick={() => setRun((r) => r + 1)} title="Elhawy Voice Assistant" aria-label="EVA AI, Elhawy Voice Assistant">
+      <span className="w"><b>E</b><i>lhawy</i></span>
+      <span className="w"><b>V</b><i>oice</i></span>
+      <span className="w"><b>A</b><i>ssistant</i></span>
+      <span className="ai">AI</span>
+    </h1>
+  );
+}
+
 export function EvaPage({ lang }) {
   const c = copy[lang] || copy.ar;
   const [releases, setReleases] = useState(null);
@@ -229,7 +243,8 @@ export function EvaPage({ lang }) {
       <section className="jarvis-hero">
         <div className="jarvis-copy">
           <span>{c.tag}</span>
-          <h1>{c.title}</h1>
+          <NameReveal />
+          <p className="eva-name-note">{c.nameNote}</p>
           <p>{c.lead}</p>
           <div className="eva-actions">
             <a className="eva-btn primary" href={downloadUrl}><FiDownload /> {c.download}</a>
