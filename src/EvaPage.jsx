@@ -299,27 +299,6 @@ export function EvaPage({ lang }) {
         </div>
       </section>
 
-      <section className="jarvis-flow eva-updates" id="updates">
-        <header><span>03</span><h2>{c.updatesTitle}</h2><p>{c.updatesSub}</p></header>
-        <div className="eva-release-list">
-          {!releases && !failed && <p className="eva-note">{c.loading}</p>}
-          {failed && <p className="eva-note">{c.failed} <a href={RELEASES_PAGE}>{c.allReleases}</a></p>}
-          {releases && releases.map((r) => {
-            const a = (r.assets || []).find((x) => /\.apk$/i.test(x.name));
-            return (
-              <article key={r.id} className="eva-release">
-                <div className="eva-release-head">
-                  <b><FiRefreshCw /> {r.name || r.tag_name}</b>
-                  <small>{fmtDate(r.published_at, lang)}</small>
-                  {a && <a className="eva-btn small" href={a.browser_download_url}><FiDownload /> {c.dl}</a>}
-                </div>
-                {r.body && <p className="eva-release-notes"><strong>{c.notes}:</strong> {r.body}</p>}
-              </article>
-            );
-          })}
-        </div>
-      </section>
-
       <section className="jarvis-trust">
         <article><FiShield /><div><small>PRIVACY</small><h2>{c.trustTitle}</h2><p>{c.trustText}</p></div></article>
         <article><FiPhone /><div><small>DEVELOPER</small><h2>{c.devTitle}</h2><p>{c.devText}</p>
