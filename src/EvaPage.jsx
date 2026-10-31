@@ -32,6 +32,8 @@ const copy = {
     failed: 'تعذر تحميل قائمة التحديثات الآن. يمكنك رؤيتها في صفحة الإصدارات.',
     dl: 'تحميل',
     notes: 'ما الجديد',
+    videoTitle: 'شاهد إيفا في 45 ثانية',
+    videoSub: 'مميزات إيفا وطريقة التحميل والتفعيل في فيديو قصير بصوت إيفا.',
     installTitle: 'طريقة التثبيت',
     installText: 'بعد تحميل ملف APK افتحه على هاتفك. إن طلب أندرويد السماح بالتثبيت من هذا المصدر فوافق مرة واحدة. بعدها يخبرك التطبيق نفسه بالتحديثات الجديدة ويحمّلها لك بضغطة زر.',
     trustTitle: 'خصوصيتك وأمانك',
@@ -63,6 +65,8 @@ const copy = {
     failed: 'Could not load the updates list right now. You can see it on the releases page.',
     dl: 'Download',
     notes: "What's new",
+    videoTitle: 'Watch Eva in 45 seconds',
+    videoSub: 'Eva’s features, plus how to download and activate it, in a short video voiced by Eva.',
     installTitle: 'How to install',
     installText: 'Open the downloaded APK on your phone. If Android asks to allow installs from this source, allow it once. After that the app tells you about new versions and downloads them with one tap.',
     trustTitle: 'Your privacy and safety',
@@ -288,6 +292,13 @@ export function EvaPage({ lang }) {
               </div>
             </details>
           ))}
+        </div>
+      </section>
+
+      <section className="eva-video">
+        <header><h2>{c.videoTitle}</h2><p>{c.videoSub}</p></header>
+        <div className="eva-video-frame">
+          <video controls playsInline preload="metadata" poster="/eva/eva-intro-poster.jpg" src="/eva/eva-intro.mp4" aria-label={c.videoTitle} />
         </div>
       </section>
 
