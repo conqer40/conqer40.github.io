@@ -35,6 +35,8 @@ const copy = {
     videoTitle: 'شاهد إيفا في 45 ثانية',
     videoSub: 'مميزات إيفا وطريقة التحميل والتفعيل في فيديو قصير بصوت إيفا.',
     installTitle: 'طريقة التثبيت',
+    guideTitle: 'ظهرت رسالة حظر من Google؟ هذه طريقة التخطي',
+    guide: ['افتح ملف APK بعد تحميله، ووافق على «السماح بالتثبيت من هذا المصدر» مرة واحدة.', 'لو ظهرت رسالة Play Protect اضغط «تفاصيل أكثر» (More details) ثم «تثبيت على أي حال» (Install anyway). هذا طبيعي لأن إيفا تطبيق جديد غير منشور على المتجر.', 'لو ظهرت الرسالة بزر «حسنًا» فقط: افتح متجر Play ثم أيقونة حسابك ثم Play Protect ثم الإعدادات ⚙ وأوقف «فحص التطبيقات باستخدام Play Protect»، ثبّت إيفا، ثم أعد تشغيل الخيار.', 'بعد التثبيت افتح إيفا وسجّل حسابك، وانتظر تفعيل الأدمن.'],
     installText: 'بعد تحميل ملف APK افتحه على هاتفك. إن طلب أندرويد السماح بالتثبيت من هذا المصدر فوافق مرة واحدة. بعدها يخبرك التطبيق نفسه بالتحديثات الجديدة ويحمّلها لك بضغطة زر.',
     trustTitle: 'خصوصيتك وأمانك',
     trustText: 'مفاتيحك ومحادثاتك على هاتفك فقط. لا ترسل إيفا رسالة ولا تؤكد عملية دفع ولا تكتب كلمة مرور دون إذنك، وأي رسالة واتساب تُجهَّز وتضغط أنت إرسال.',
@@ -68,6 +70,8 @@ const copy = {
     videoTitle: 'Watch Eva in 45 seconds',
     videoSub: 'Eva’s features, plus how to download and activate it, in a short video voiced by Eva.',
     installTitle: 'How to install',
+    guideTitle: 'Google showed a block message? Here is how to get past it',
+    guide: ['Open the APK after it downloads and allow “install from this source” once.', 'If Play Protect warns you, tap “More details” and then “Install anyway”. This is normal because Eva is a new app that is not on the store.', 'If the message only has an “OK” button: open the Play Store, tap your profile icon, then Play Protect, then Settings ⚙, turn off “Scan apps with Play Protect”, install Eva, then turn it back on.', 'After installing, open Eva, register, and wait for the admin to activate you.'],
     installText: 'Open the downloaded APK on your phone. If Android asks to allow installs from this source, allow it once. After that the app tells you about new versions and downloads them with one tap.',
     trustTitle: 'Your privacy and safety',
     trustText: 'Your keys and chats stay on your phone. Eva never sends a message, confirms a payment or types a password without your approval, and any WhatsApp message is prepared for you to press send.',
@@ -241,7 +245,7 @@ export function EvaPage({ lang }) {
   }, [lang]);
 
   const latest = releases && releases[0];
-  const apk = latest && (latest.assets || []).find((a) => /\.apk$/i.test(a.name));
+  const apk = latest && (latest.assets || []).find((a) => /^Eva-AI-\d[\d.]*\.apk$/i.test(a.name));
   const downloadUrl = apk ? apk.browser_download_url : LATEST_PAGE;
 
   return (
@@ -308,6 +312,10 @@ export function EvaPage({ lang }) {
           <h2>{c.installTitle}</h2>
           <p>{c.installText}</p>
           <a className="eva-btn primary" href={downloadUrl}><FiDownload /> {c.download}</a>
+          <details className="eva-guide">
+            <summary>{c.guideTitle}</summary>
+            <ol>{c.guide.map((g) => <li key={g}>{g}</li>)}</ol>
+          </details>
           <a className="eva-btn" href={RELEASES_PAGE} target="_blank" rel="noreferrer">{c.allReleases} <FiExternalLink /></a>
         </div>
       </section>
