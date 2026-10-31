@@ -107,6 +107,17 @@
       note: ['Presented as a project concept with a pitch deck. Capabilities are described as designed, not as a released product.', 'مقدَّم كفكرة مشروع مع عرض تقديمي. الإمكانيات موصوفة كتصميم وليست كمنتج منشور.']
     },
     {
+      name: 'EVA AI', logos: ['whatsapp.svg', 'openai.svg'],
+      cat: ['Android App / AI Assistant', 'تطبيق أندرويد / مساعد ذكي'], tone: 'st-live',
+      status: ['Live app · Updated on GitHub', 'تطبيق منشور · يتحدث عبر GitHub'],
+      sub: ['A standalone Android AI assistant: chat, web search, voice calls, file and image analysis, camera and screen vision, and phone control.', 'مساعد ذكاء اصطناعي مستقل على أندرويد: محادثة وبحث في الإنترنت ومكالمات صوتية وتحليل ملفات وصور ورؤية بالكاميرا والشاشة والتحكم في الهاتف.'],
+      overview: ['Eva AI lives on the phone and needs no computer. Users create an account, activate it through the admin, and the app receives their own keys automatically. It talks in Arabic and English, searches the web, reads files, creates Word documents and images, and can open apps and play songs.', 'إيفا تعيش على الهاتف ولا تحتاج كمبيوتر. ينشئ المستخدم حسابًا ويفعّله عبر الإدارة فتصل مفاتيحه للتطبيق تلقائيًا. تتحدث بالعربية والإنجليزية وتبحث في الإنترنت وتقرأ الملفات وتنشئ مستندات Word وصورًا وتفتح التطبيقات وتشغّل الأغاني.'],
+      problem: ['Most assistants are tied to a computer or a single service. The goal was one friendly assistant in the pocket that works on its own, speaks naturally, and stays under the owner\'s control.', 'أغلب المساعدات مرتبطة بكمبيوتر أو بخدمة واحدة. الهدف مساعد ودود في الجيب يعمل بمفرده ويتحدث بشكل طبيعي ويبقى تحت تحكم صاحبه.'],
+      feats: [['Chat on any topic with web search for fresh facts', 'محادثة في أي موضوع مع بحث في الإنترنت للمعلومات الحديثة'], ['Voice calls with written transcript, moving logo and a floating icon over other apps', 'مكالمات صوتية بحوار مكتوب وشعار متحرك وأيقونة عائمة فوق التطبيقات'], ['Reads files and images, creates Word files and AI pictures', 'تقرأ الملفات والصور وتنشئ ملفات Word وصورًا بالذكاء الاصطناعي'], ['Camera and screen vision with live scene commentary', 'رؤية بالكاميرا والشاشة مع تعليق حي على المشهد'], ['Phone control: open apps, play songs, WhatsApp and dialer', 'التحكم في الهاتف: فتح التطبيقات وتشغيل الأغاني وواتساب والاتصال'], ['Accounts, admin dashboard, notifications and automatic updates from GitHub', 'حسابات ولوحة إدارة وإشعارات وتحديثات تلقائية من GitHub']],
+      tools: [['Android (Kotlin / Compose)'], ['Gemini'], ['Groq'], ['Cloudflare Workers + D1'], ['GitHub Releases', 'github.svg']],
+      note: ['Available now as an Android APK. Download it and read the full feature list on the Eva page.', 'متاح الآن كملف APK للأندرويد. حمّله واقرأ قائمة المميزات الكاملة في صفحة إيفا.']
+    },
+    {
       name: 'ELHAWY AI', logos: ['wordpress.svg', 'figma.svg'],
       cat: ['Brand / Web / Education', 'علامة / ويب / تعليم'], tone: 'st-live',
       status: ['Live brand · Ongoing', 'علامة منشورة · مستمرة'],
@@ -158,7 +169,7 @@
       cta: ['https://www.elhawyai.com/sololearn/', 'Visit Solo Learn', 'زيارة Solo Learn']
     }
   ];
-  const SLUGS = ['jarvis', 'friday', 'elhawy-ai', 'logistics', 'tiktok', 'sololearn'];
+  const SLUGS = ['jarvis', 'friday', 'eva', 'elhawy-ai', 'logistics', 'tiktok', 'sololearn'];
   CASES.forEach((c, i) => { c.slug = SLUGS[i]; c.img = 'assets/work/' + SLUGS[i] + '.webp'; });
   const works = document.getElementById('works');
   works.innerHTML = CASES.map((c, i) => '<button type="button" class="card folder pf" data-case="' + i + '" aria-label="' + c.name + '">'
