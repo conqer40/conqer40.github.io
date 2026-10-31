@@ -266,6 +266,7 @@ window.openUser = id => {
       <div><b style="font-size:18px">${esc(u.name)}</b><div class="small mut mono">${esc(u.phone)}</div></div>
       <button class="x" onclick="closeModal()">✕</button></header>
     <div class="small mut" style="margin-bottom:14px"><span class="badge2 s-${u.status}">${STATUS[u.status]}</span> • سُجّل ${fmtDate(u.created_at)} • آخر ظهور: ${ago(u.last_seen)}${u.requested_at ? " • طلب التفعيل " + ago(u.requested_at) : ""}</div>
+    <div id="insights" class="card" style="margin-bottom:14px;padding:14px"><div class="small mut">جاري تحميل تحليل المستخدم…</div></div>
     <div class="row">
       <div class="keyrow"><label>مفتاح Gemini</label><input class="mono" id="mg" value="${esc(u.gemini_key)}" placeholder="AIza..."><button onclick="cp('mg')">نسخ</button></div>
       <div class="keyrow"><label>مفتاح Groq</label><input class="mono" id="mq" value="${esc(u.groq_key)}" placeholder="gsk_..."><button onclick="cp('mq')">نسخ</button></div>
@@ -283,7 +284,25 @@ window.openUser = id => {
       <button class="btn-bad" style="margin-inline-start:auto" onclick="delUser('${u.id}','${esc(u.name)}')">حذف</button>
     </div></div></div>`;
   $("#ov").onclick = e => { if (e.target.id === "ov") closeModal(); };
+  loadInsights(u.id);
 };
+const TYPE_L = { call: "مكالمات صوتية", chat: "رسائل محادثة", reminder: "تذكيرات", file: "ملفات", quota: "تنبيهات حد المفتاح" };
+async function loadInsights(id) {
+  const box = $("#insights"); if (!box) return;
+  try {
+    const d = await api(`/api/admin/users/${id}/insights`);
+    if (!$("#insights")) return;
+    const days = dayList(14), max = Math.max(1, ...days.map(x => (d.per_day.find(p => p.d === x) || { c: 0 }).c));
+    const cnt = t => (d.counts.find(c => c.type === t) || { c: 0 }).c;
+    const total = d.counts.reduce((a, c) => a + c.c, 0);
+    box.innerHTML = `<b>📊 تحليل الاستخدام (آخر 30 يومًا)</b>
+      <div class="grid g4" style="margin:10px 0">${["call", "chat", "reminder", "quota"].map(t => `<div style="background:#0a1229;border-radius:12px;padding:8px 10px"><div style="font-size:20px;font-weight:800">${cnt(t)}</div><div class="small mut">${TYPE_L[t]}</div></div>`).join("")}</div>
+      <div style="display:flex;align-items:flex-end;gap:3px;height:44px">${days.map(x => { const c = (d.per_day.find(p => p.d === x) || { c: 0 }).c; return `<div title="${x}: ${c}" style="flex:1;height:${Math.max(4, c / max * 100)}%;background:linear-gradient(#5b8cff,#8b5cf6);border-radius:3px;opacity:${c ? 1 : .25}"></div>`; }).join("")}</div>
+      <div class="small mut" style="margin:4px 0 10px">إجمالي الأحداث: ${total}${total ? "" : " • لم يستخدم التطبيق بعد"}</div>
+      ${d.consent ? `<b>🗂 ملخصات مواضيع حديثة</b>${d.summaries.length ? d.summaries.map(s => `<div class="nitem"><div>${esc(s.text)}</div><div class="small mut">${esc(s.topics || "")} • ${fmtDate(s.ts)}</div></div>`).join("") : `<div class="small mut" style="margin-top:6px">وافق المستخدم، لكن لم تصل ملخصات بعد (تُرسل مرة كل 12 ساعة تقريبًا عند وجود نشاط).</div>`}`
+        : `<div class="small" style="color:var(--warn)">🔒 لم يوافق هذا المستخدم على مشاركة ملخصات المواضيع، فلا تظهر لك. أنت ترى فقط أرقام الاستخدام.</div>`}`;
+  } catch (e) { if ($("#insights")) $("#insights").innerHTML = `<div class="small mut">تعذر تحميل التحليل.</div>`; }
+}
 window.closeModal = () => { $("#modalRoot").innerHTML = ""; };
 window.cp = id => { navigator.clipboard.writeText($("#" + id).value); toast("تم النسخ"); };
 window.saveUser = async (id, status) => {

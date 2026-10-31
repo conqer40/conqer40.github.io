@@ -95,7 +95,7 @@ const groups = {
       ['تناديك باسمك', 'تتذكر اسمك من حسابك وتخاطبك به بلطف.'],
       ['مواساة عند الضغط النفسي', 'إن شعرت أنك مضغوط أو حزين تتحول لنبرة حنونة هادئة تحتويك أولًا قبل أي نصيحة.'],
       ['سجل محادثات محفوظ', 'محادثاتك ومكالماتك الصوتية تُحفظ على هاتفك مع بحث وحذف، ووضع فاتح وغامق.'],
-      ['تذكيرات ومنبهات', 'قل «ذكّريني بعد ساعة» أو «نبّهيني الساعة 7» فتضبطها إيفا وتنبّهك بإشعار بصوت المنبه، حتى لو التطبيق مغلق.'],
+      ['تذكيرات ومنبهات ومواعيد', 'قل «ذكّريني بعد ساعة» أو «نبّهيني الساعة 7» فتضبطها إيفا وتنبّهك بصوت المنبه حتى لو التطبيق مغلق، وتنبّهك بمواعيد تقويم الهاتف قبلها بنصف ساعة.'],
       ['ذاكرة طويلة', 'تتذكر إيفا اسمك وشغلك وما تحب وتستخدمه في الحوارات القادمة. ما تحفظه محفوظ على هاتفك وتراه وتحذف منه أو توقفه من الإعدادات، ولا تحفظ كلمات مرور أو بيانات دفع.'],
     ]],
     ['المكالمات الصوتية', 'تحدّث مع إيفا بصوتها مباشرة وتابع الحوار مكتوبًا.', FiMic, [
@@ -122,7 +122,7 @@ const groups = {
     ]],
     ['الحساب والإشعارات والتحديثات', 'منظومة كاملة خلف التطبيق.', FiBell, [
       ['حساب وتفعيل من الإدارة', 'تسجيل بالاسم والهاتف وكلمة المرور، وزر تفعيل الحساب يجهز رسالة واتساب للإدارة، وتصلك المفاتيح تلقائيًا بعد التفعيل.'],
-      ['إشعارات الإدارة وإيفا', 'رسائل من الإدارة (نص أو رابط أو فيديو أو صورة)، وإشعار من إيفا عندما يكتمل ردها أو ملفها أو صورتها وأنت في تطبيق آخر، في صندوق إشعارات داخل التطبيق.'],
+      ['إشعارات الإدارة وإيفا', 'رسائل من الإدارة (نص أو رابط أو فيديو أو صورة)، وإشعار من إيفا عندما يكتمل ردها أو ملفها أو صورتها، بصوت «إيفا» المميز وتظهر على شاشة القفل، مع أيقونة جرس بعدّاد في الصفحة الرئيسية وصندوق إشعارات داخل التطبيق.'],
       ['أدوات إضافية (50 أداة)', 'كل أدوات elhawyai.com المجانية داخل التطبيق: تفقيط، مساعد إكسيل، ترجمة المستندات، 36 أداة PDF، رموز QR، وأدوات الصور، مع اختيار الملفات وحفظ الناتج في التنزيلات.'],
       ['تحديثات تلقائية', 'يخبرك التطبيق بكل إصدار جديد وتحمّله بزر واحد، مع زر لفحص التحديثات يدويًا.'],
       ['مشاركة التطبيق', 'شارك رابط التحميل أو أرسل ملف التطبيق نفسه كـ APK.'],
@@ -146,7 +146,7 @@ const groups = {
       ['Calls you by name', 'Remembers your name from your account and addresses you warmly.'],
       ['Comfort when you are stressed', 'If you sound stressed or sad she softens her voice and comforts you before any advice.'],
       ['Saved chat history', 'Chats and voice calls are stored on your phone with search and delete, plus light and dark modes.'],
-      ['Reminders and alarms', 'Say "remind me in an hour" or "wake me at 7" and Eva sets it and alerts you with an alarm-style notification, even when the app is closed.'],
+      ['Reminders, alarms and appointments', 'Say "remind me in an hour" or "wake me at 7" and Eva alerts you with an alarm-style sound even when the app is closed, and warns you half an hour before calendar appointments.'],
       ['Long-term memory', 'Eva remembers your name, work and preferences and uses them in later chats. It stays on your phone; you can view, delete or switch it off in Settings, and passwords or payment data are never saved.'],
     ]],
     ['Voice calls', 'Talk to Eva live and follow the conversation in writing.', FiMic, [
@@ -173,7 +173,7 @@ const groups = {
     ]],
     ['Account, notifications & updates', 'A full system behind the app.', FiBell, [
       ['Account and admin activation', 'Sign up with name, phone and password; Activate account prepares a WhatsApp message to the admin and your keys arrive automatically.'],
-      ['Admin and Eva notifications', 'Messages from the admin (text, link, video or image), and notices from Eva when her reply, file or picture finishes while you are elsewhere, in an in-app inbox.'],
+      ['Admin and Eva notifications', 'Messages from the admin (text, link, video or image) and notices from Eva when her reply, file or picture finishes, with Eva's own sound on the lock screen, a bell with an unread count on the home screen, and an in-app inbox.'],
       ['Extra tools (50 tools)', 'Every free tool of elhawyai.com inside the app: Tafqeet, Excel assistant, document translation, 36 PDF tools, QR codes and image tools, with file picking and saving to Downloads.'],
       ['Automatic updates', 'The app tells you about every new version and downloads it with one tap, plus a manual update check button.'],
       ['Share the app', 'Share the download link or send the app itself as an APK file.'],
