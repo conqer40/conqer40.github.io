@@ -109,7 +109,6 @@ h3{margin:0 0 12px;font-size:16px}
 </style>
 </head>
 <body>
-<script>window.EVA_API="https://eva-platform.conqer40.workers.dev";</script>
 
 <div id="login">
   <div class="login-card">
@@ -131,6 +130,7 @@ h3{margin:0 0 12px;font-size:16px}
       <button data-v="overview" class="on"><span class="ic">📊</span>نظرة عامة</button>
       <button data-v="users"><span class="ic">👥</span>المستخدمون<span class="badge hide" id="pendBadge">0</span></button>
       <button data-v="reports"><span class="ic">📈</span>التقارير<span class="badge hide" id="qBadge">0</span></button>
+      <button data-v="keys"><span class="ic">🔑</span>المفاتيح<span class="badge hide" id="keyBadge">0</span></button>
       <button data-v="notices"><span class="ic">🔔</span>الإشعارات</button>
       <button data-v="updates"><span class="ic">🚀</span>التحديثات</button>
       <button data-v="settings"><span class="ic">⚙️</span>الإعدادات</button>
@@ -144,10 +144,11 @@ h3{margin:0 0 12px;font-size:16px}
 <div id="modalRoot"></div>
 <div id="toasts"></div>
 
+<script>window.EVA_API="https://eva-platform.conqer40.workers.dev";</script>
 <script>
 const API = window.EVA_API || "";
 let PW = sessionStorage.getItem("eva_pw") || "";
-let USERS = [], NOTICES = [], SETTINGS = {}, STATS = null;
+let USERS = [], NOTICES = [], SETTINGS = {}, STATS = null, POOL = [], poolShowUsed = false;
 let view = "overview", filter = "all", query = "";
 let composer = { kind: "text", target: "all", title: "", body: "", url: "" };
 
@@ -183,8 +184,9 @@ async function start() {
   await loadAll(); show("overview");
 }
 async function loadAll() {
-  const [u, n, s, st] = await Promise.all([api("/api/admin/users"), api("/api/admin/notifications"), api("/api/admin/settings"), api("/api/admin/stats")]);
-  USERS = u.users; NOTICES = n.notifications; SETTINGS = s; STATS = st;
+  const [u, n, s, st, pl] = await Promise.all([api("/api/admin/users"), api("/api/admin/notifications"), api("/api/admin/settings"), api("/api/admin/stats"), api("/api/admin/pool")]);
+  USERS = u.users; NOTICES = n.notifications; SETTINGS = s; STATS = st; POOL = pl.keys;
+  const free = POOL.filter(k => !k.used).length; $("#keyBadge").textContent = free; $("#keyBadge").classList.toggle("hide", !free);
   const q = new Set((st.quota_alerts || []).map(x => x.uid)).size; $("#qBadge").textContent = q; $("#qBadge").classList.toggle("hide", !q);
   const pend = USERS.filter(x => x.status === "pending" && x.requested_at).length;
   $("#pendBadge").textContent = pend; $("#pendBadge").classList.toggle("hide", !pend);
@@ -193,10 +195,63 @@ document.getElementById("nav").onclick = e => { const b = e.target.closest("butt
 function show(v) {
   view = v;
   document.querySelectorAll("#nav button").forEach(b => b.classList.toggle("on", b.dataset.v === v));
-  ({ overview: rOverview, users: rUsers, reports: rReports, notices: rNotices, updates: rUpdates, settings: rSettings })[v]();
+  ({ overview: rOverview, users: rUsers, reports: rReports, keys: rKeys, notices: rNotices, updates: rUpdates, settings: rSettings })[v]();
   window.scrollTo(0, 0);
 }
 const head = (title, sub, extra = "") => `<div class="top"><div><h2>${title}</h2><div class="sub">${sub}</div></div><div style="margin-inline-start:auto;display:flex;gap:8px">${extra}</div></div>`;
+
+
+/* ---------- ready-made API keys ---------- */
+const maskKey = k => k.length > 14 ? k.slice(0, 6) + "••••••••" + k.slice(-4) : "••••";
+async function copyText(t) {
+  try { await navigator.clipboard.writeText(t); return true; }
+  catch { const a = document.createElement("textarea"); a.value = t; a.style.position = "fixed"; a.style.opacity = "0"; document.body.appendChild(a); a.select(); const ok = document.execCommand("copy"); a.remove(); return ok; }
+}
+async function poolRefresh() { POOL = (await api("/api/admin/pool")).keys; const free = POOL.filter(k => !k.used).length; $("#keyBadge").textContent = free; $("#keyBadge").classList.toggle("hide", !free); rKeys(); }
+async function poolCopy(id) {
+  const k = POOL.find(x => x.id === id); if (!k) return;
+  const ok = await copyText(k.api_key);
+  if (!ok) return toast("تعذر النسخ، انسخ يدويًا", "bad");
+  try { await api("/api/admin/pool/" + id + "/use", { method: "POST", body: JSON.stringify({}) }); await poolRefresh(); toast("تم النسخ ووُضعت علامة «مستخدم» ✔"); } catch (e) { toast(e.message, "bad"); }
+}
+async function poolNext(provider) {
+  const k = POOL.find(x => x.provider === provider && !x.used);
+  if (!k) return toast("لا يوجد مفتاح متاح، أضف مفاتيح جديدة", "bad");
+  await poolCopy(k.id);
+}
+async function poolReset(id) { await api("/api/admin/pool/" + id + "/reset", { method: "POST", body: "{}" }); await poolRefresh(); toast("أُعيد المفتاح لقائمة المتاح"); }
+async function poolDelete(id) { if (!confirm("حذف هذا المفتاح نهائيًا من القائمة؟")) return; await api("/api/admin/pool/" + id, { method: "DELETE" }); await poolRefresh(); toast("تم الحذف"); }
+async function poolAdd(provider) {
+  const ta = $("#pk-" + provider), label = $("#pl-" + provider);
+  try { const r = await api("/api/admin/pool", { method: "POST", body: JSON.stringify({ provider, keys: ta.value, label: label.value }) }); toast(`أُضيف ${r.added} مفتاح` + (r.duplicates ? ` (${r.duplicates} مكرر تم تجاهله)` : "")); ta.value = ""; await poolRefresh(); }
+  catch (e) { toast(e.message, "bad"); }
+}
+function rKeys() {
+  const col = (provider, title, ic) => {
+    const all = POOL.filter(k => k.provider === provider);
+    const free = all.filter(k => !k.used).length;
+    const rows = all.filter(k => poolShowUsed || !k.used);
+    return `<div class="card">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px"><b style="font-size:17px">${ic} ${title}</b>
+        <span class="small mut">متاح ${free} • مستخدم ${all.length - free}</span>
+        <button class="btn-acc" style="margin-inline-start:auto" onclick="poolNext('${provider}')">نسخ التالي المتاح</button></div>
+      <div style="display:grid;gap:8px;margin-bottom:12px">
+        ${rows.length ? rows.map(k => `<div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:${k.used ? "rgba(239,68,68,.07)" : "rgba(34,197,94,.07)"}">
+          <span class="mono small" style="flex:1;min-width:150px">${esc(maskKey(k.api_key))}</span>
+          ${k.label ? `<span class="small mut">${esc(k.label)}</span>` : ""}
+          <span class="small" style="color:${k.used ? "var(--bad)" : "var(--ok)"}">${k.used ? "مستخدم • " + ago(k.used_at) : "متاح"}</span>
+          <button class="btn-acc" style="padding:6px 12px" onclick="poolCopy(${k.id})">${k.used ? "نسخ مرة أخرى" : "نسخ"}</button>
+          ${k.used ? `<button class="btn-ghost" style="padding:6px 10px" onclick="poolReset(${k.id})">إرجاع</button>` : ""}
+          <button class="btn-ghost" style="padding:6px 10px;color:var(--bad)" onclick="poolDelete(${k.id})">حذف</button></div>`).join("") : `<div class="mut small">${all.length ? "كل المفاتيح مستخدمة. أضف مفاتيح جديدة أو اعرض المستخدمة." : "لا توجد مفاتيح بعد."}</div>`}
+      </div>
+      <label>إضافة مفاتيح (مفتاح في كل سطر)</label>
+      <textarea id="pk-${provider}" rows="3" class="mono" placeholder="الصق المفاتيح هنا"></textarea>
+      <div style="display:flex;gap:8px;margin-top:8px"><input id="pl-${provider}" placeholder="ملاحظة (اختياري) مثل: حساب أحمد"><button class="btn-ok" onclick="poolAdd('${provider}')">إضافة</button></div>
+    </div>`;
+  };
+  $("#main").innerHTML = head("المفاتيح الجاهزة", "سجّل مفاتيح Gemini وGroq مسبقًا، وبمجرد نسخ أي مفتاح يُعلَّم تلقائيًا أنه استُخدم", `<label class="small" style="display:flex;align-items:center;gap:6px;margin:0"><input type="checkbox" style="width:auto" ${poolShowUsed ? "checked" : ""} onchange="poolShowUsed=this.checked;rKeys()"> عرض المستخدمة</label>`) +
+    `<div class="grid g2">${col("gemini", "مفاتيح Gemini", "✨")}${col("groq", "مفاتيح Groq", "⚡")}</div>`;
+}
 
 /* ---------- overview ---------- */
 function rOverview() {
