@@ -173,7 +173,7 @@ const groups = {
     ]],
     ['Account, notifications & updates', 'A full system behind the app.', FiBell, [
       ['Account and admin activation', 'Sign up with name, phone and password; Activate account prepares a WhatsApp message to the admin and your keys arrive automatically.'],
-      ['Admin and Eva notifications', 'Messages from the admin (text, link, video or image) and notices from Eva when her reply, file or picture finishes, with Eva's own sound on the lock screen, a bell with an unread count on the home screen, and an in-app inbox.'],
+      ['Admin and Eva notifications', 'Messages from the admin (text, link, video or image) and notices from Eva when her reply, file or picture finishes, with the Eva sound on the lock screen, a bell with an unread count on the home screen, and an in-app inbox.'],
       ['Extra tools (50 tools)', 'Every free tool of elhawyai.com inside the app: Tafqeet, Excel assistant, document translation, 36 PDF tools, QR codes and image tools, with file picking and saving to Downloads.'],
       ['Automatic updates', 'The app tells you about every new version and downloads it with one tap, plus a manual update check button.'],
       ['Share the app', 'Share the download link or send the app itself as an APK file.'],
