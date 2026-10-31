@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>لوحة تحكم إيفا</title>
+<style>
+:root{
+  --bg:#070b17;--bg2:#0b1224;--card:#101a33;--card2:#142042;--line:#22305a;--text:#e9efff;--mut:#8fa1cf;
+  --acc:#5b8cff;--acc2:#8b5cf6;--ok:#22c55e;--warn:#f59e0b;--bad:#ef4444;--r:18px;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+a{color:inherit;text-decoration:none}
+html,body{margin:0;height:100%}
+body{background:radial-gradient(1200px 600px at 100% -10%,#1a2a66 0%,transparent 60%),radial-gradient(900px 500px at -10% 110%,#2a1a5e 0%,transparent 55%),var(--bg);
+  color:var(--text);font:15px/1.65 "Segoe UI",Tahoma,system-ui,sans-serif}
+button,input,textarea,select{font:inherit;color:inherit}
+input,textarea,select{width:100%;background:#0a1229;border:1px solid var(--line);border-radius:12px;padding:10px 12px;outline:none;transition:.15s}
+input:focus,textarea:focus,select:focus{border-color:var(--acc);box-shadow:0 0 0 3px rgba(91,140,255,.18)}
+label{display:block;color:var(--mut);font-size:12.5px;margin:0 2px 5px}
+button{cursor:pointer;border:0;border-radius:12px;padding:9px 16px;background:#1a2750;transition:.15s}
+button:hover{filter:brightness(1.15)}button:active{transform:scale(.97)}
+.btn-acc{background:linear-gradient(135deg,var(--acc),var(--acc2));color:#fff;font-weight:600;box-shadow:0 8px 22px rgba(91,140,255,.28)}
+.btn-ok{background:var(--ok);color:#04210f;font-weight:700}.btn-bad{background:var(--bad);color:#fff}.btn-ghost{background:transparent;border:1px solid var(--line)}
+.hide{display:none!important}.mut{color:var(--mut)}.small{font-size:12.5px}.mono{font-family:Consolas,monospace;direction:ltr;text-align:left}
+
+/* login */
+#login{min-height:100%;display:grid;place-items:center;padding:20px}
+.login-card{width:100%;max-width:390px;background:linear-gradient(160deg,var(--card),var(--bg2));border:1px solid var(--line);border-radius:26px;padding:30px;text-align:center;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.logo{width:68px;height:68px;border-radius:22px;margin:0 auto 14px;display:grid;place-items:center;font-size:30px;background:linear-gradient(135deg,var(--acc),var(--acc2));box-shadow:0 14px 40px rgba(91,140,255,.4)}
+.login-card h1{margin:0 0 4px;font-size:22px}.login-card p{margin:0 0 20px;color:var(--mut)}
+
+/* shell */
+#app{display:grid;grid-template-columns:250px 1fr;min-height:100%}
+aside{position:sticky;top:0;height:100vh;padding:18px 14px;border-inline-start:1px solid var(--line);background:rgba(8,13,28,.7);backdrop-filter:blur(10px);display:flex;flex-direction:column;gap:6px}
+.brand{display:flex;align-items:center;gap:10px;padding:6px 8px 16px}
+.brand .logo{width:42px;height:42px;font-size:20px;border-radius:14px;margin:0}
+.brand b{display:block;font-size:16px}.brand small{color:var(--mut)}
+nav{display:flex;flex-direction:column;gap:4px}
+nav button{display:flex;align-items:center;gap:11px;width:100%;text-align:right;background:transparent;padding:11px 12px;color:var(--mut)}
+nav button .ic{font-size:18px;width:24px;text-align:center}
+nav button.on{background:linear-gradient(135deg,rgba(91,140,255,.22),rgba(139,92,246,.18));color:#fff;box-shadow:inset 0 0 0 1px rgba(91,140,255,.35)}
+nav .badge{margin-inline-start:auto;background:var(--warn);color:#2a1a00;border-radius:99px;padding:0 8px;font-size:12px;font-weight:700}
+.sp{flex:1}
+main{padding:26px 28px 40px;max-width:1180px;width:100%}
+.top{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+.top h2{margin:0;font-size:24px}.top .sub{color:var(--mut)}
+.card{background:linear-gradient(160deg,var(--card),var(--bg2));border:1px solid var(--line);border-radius:var(--r);padding:18px}
+.grid{display:grid;gap:14px}.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}.g5{grid-template-columns:repeat(5,1fr)}
+.stat{display:flex;flex-direction:column;gap:2px;position:relative;overflow:hidden}
+.stat .n{font-size:32px;font-weight:800;line-height:1.1}.stat .l{color:var(--mut);font-size:13px}
+.stat::after{content:"";position:absolute;inset-inline-end:-26px;top:-26px;width:90px;height:90px;border-radius:50%;background:var(--c,var(--acc));opacity:.16}
+h3{margin:0 0 12px;font-size:16px}
+
+/* users */
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:14px}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{background:#0d1733;border:1px solid var(--line);color:var(--mut);padding:6px 13px;border-radius:99px;font-size:13px}
+.chip.on{background:var(--acc);border-color:var(--acc);color:#fff}
+.ulist{display:grid;gap:10px}
+.urow{display:grid;grid-template-columns:46px 1.3fr 1fr 1fr auto;gap:12px;align-items:center;padding:12px 14px;background:linear-gradient(160deg,var(--card),var(--bg2));border:1px solid var(--line);border-radius:16px;cursor:pointer;transition:.15s}
+.urow:hover{border-color:var(--acc);transform:translateY(-1px)}
+.av{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-weight:800;background:linear-gradient(135deg,var(--acc),var(--acc2));color:#fff}
+.badge2{display:inline-block;padding:2px 11px;border-radius:99px;font-size:12px;font-weight:600}
+.s-pending{background:#3a2d0a;color:var(--warn)}.s-active{background:#0c3320;color:var(--ok)}.s-blocked{background:#3b1212;color:var(--bad)}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-inline-end:5px}
+.req{color:var(--warn);font-size:12px}
+.empty{padding:44px 10px;text-align:center;color:var(--mut)}
+
+/* modal */
+.overlay{position:fixed;inset:0;background:rgba(2,5,15,.7);backdrop-filter:blur(4px);display:grid;place-items:center;padding:16px;z-index:50}
+.modal{width:100%;max-width:560px;max-height:92vh;overflow:auto;background:linear-gradient(160deg,var(--card2),var(--bg2));border:1px solid var(--line);border-radius:24px;padding:22px;box-shadow:0 40px 100px rgba(0,0,0,.6)}
+.modal header{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.x{margin-inline-start:auto;background:#1a2750;width:36px;height:36px;padding:0;border-radius:50%}
+.row{display:grid;gap:12px}.two{grid-template-columns:1fr 1fr}
+.keyrow{position:relative}.keyrow button{position:absolute;inset-inline-start:6px;top:27px;padding:5px 10px;font-size:12px}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+
+/* seg + preview */
+.seg{display:flex;gap:6px;flex-wrap:wrap}
+.seg button{background:#0d1733;border:1px solid var(--line);color:var(--mut);padding:8px 14px}
+.seg button.on{background:var(--acc);border-color:var(--acc);color:#fff}
+.phone{background:#0a0f20;border:1px solid var(--line);border-radius:22px;padding:14px;max-width:340px}
+.notif{background:#1b2547;border-radius:16px;padding:12px 14px}
+.notif .t{font-weight:700}.notif .b{color:#cdd8ff;margin-top:2px}
+.notif .go{display:inline-block;margin-top:9px;background:var(--acc);color:#fff;border-radius:99px;padding:5px 14px;font-size:13px}
+.nitem{padding:12px 0;border-top:1px solid var(--line)}.nitem:first-child{border-top:0}
+
+/* toast */
+#toasts{position:fixed;bottom:22px;inset-inline-start:50%;transform:translateX(50%);display:grid;gap:8px;z-index:99}
+.toast{background:#17224a;border:1px solid var(--line);border-radius:14px;padding:11px 18px;box-shadow:0 14px 40px rgba(0,0,0,.45);animation:up .25s}
+.toast.ok{border-color:var(--ok)}.toast.err{border-color:var(--bad)}
+@keyframes up{from{opacity:0;transform:translateY(10px)}to{opacity:1}}
+.sk{height:64px;border-radius:16px;background:linear-gradient(90deg,#0f1a38,#16244d,#0f1a38);background-size:200% 100%;animation:sh 1.2s infinite}
+@keyframes sh{to{background-position:-200% 0}}
+
+@media(max-width:900px){
+  #app{grid-template-columns:1fr}
+  aside{position:fixed;inset:auto 0 0 0;top:auto;height:auto;flex-direction:row;padding:6px;border:0;border-top:1px solid var(--line);z-index:40;background:rgba(7,11,23,.95)}
+  .brand,.sp,.logout{display:none}
+  nav{flex-direction:row;width:100%;justify-content:space-around}
+  nav button{flex-direction:column;gap:2px;font-size:11px;padding:6px 4px;text-align:center;width:auto}
+  nav .badge{position:absolute;margin:0;transform:translate(14px,-4px)}
+  main{padding:18px 14px 96px}
+  .g4,.g5{grid-template-columns:1fr 1fr}.g3,.g2,.two{grid-template-columns:1fr}
+  .urow{grid-template-columns:44px 1fr auto}.urow .c3,.urow .c4{display:none}
+}
+</style>
+</head>
+<body>
+<script>window.EVA_API="https://eva-platform.conqer40.workers.dev";</script>
+
+<div id="login">
+  <div class="login-card">
+    <div class="logo">🤖</div>
+    <h1>لوحة تحكم إيفا</h1>
+    <p>أدخل كلمة مرور الإدارة للمتابعة</p>
+    <div class="row">
+      <input id="pw" type="password" placeholder="كلمة مرور الإدارة" autocomplete="current-password">
+      <button class="btn-acc" id="loginBtn">دخول</button>
+      <div id="lerr" class="small" style="color:var(--bad)"></div>
+    </div>
+  </div>
+</div>
+
+<div id="app" class="hide">
+  <aside>
+    <div class="brand"><div class="logo">🤖</div><div><b>إيفا AI</b><small>لوحة الإدارة</small></div></div>
+    <nav id="nav">
+      <button data-v="overview" class="on"><span class="ic">📊</span>نظرة عامة</button>
+      <button data-v="users"><span class="ic">👥</span>المستخدمون<span class="badge hide" id="pendBadge">0</span></button>
+      <button data-v="notices"><span class="ic">🔔</span>الإشعارات</button>
+      <button data-v="updates"><span class="ic">🚀</span>التحديثات</button>
+      <button data-v="settings"><span class="ic">⚙️</span>الإعدادات</button>
+    </nav>
+    <div class="sp"></div>
+    <button class="btn-ghost logout" id="logout">تسجيل الخروج</button>
+  </aside>
+  <main id="main"></main>
+</div>
+
+<div id="modalRoot"></div>
+<div id="toasts"></div>
+
+<script>
+const API = window.EVA_API || "";
+let PW = sessionStorage.getItem("eva_pw") || "";
+let USERS = [], NOTICES = [], SETTINGS = {};
+let view = "overview", filter = "all", query = "";
+let composer = { kind: "text", target: "all", title: "", body: "", url: "" };
+
+const $ = (s, r = document) => r.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const fmtDate = iso => iso ? new Date(iso).toLocaleString("ar-EG", { dateStyle: "medium", timeStyle: "short" }) : "—";
+const ago = iso => { if (!iso) return "لم يظهر بعد"; const m = Math.round((Date.now() - new Date(iso)) / 60000); if (m < 2) return "الآن"; if (m < 60) return `منذ ${m} دقيقة`; if (m < 1440) return `منذ ${Math.round(m / 60)} ساعة`; return `منذ ${Math.round(m / 1440)} يوم`; };
+const STATUS = { pending: "بانتظار التفعيل", active: "مفعّل", blocked: "موقوف" };
+
+async function api(path, opt = {}) {
+  const r = await fetch(API + path, { ...opt, headers: { "content-type": "application/json", "x-admin-password": PW, ...(opt.headers || {}) } });
+  const d = await r.json().catch(() => ({}));
+  if (!r.ok) throw new Error(d.error || "حدث خطأ");
+  return d;
+}
+function toast(msg, type = "ok") {
+  const t = document.createElement("div"); t.className = "toast " + type; t.textContent = msg;
+  $("#toasts").appendChild(t); setTimeout(() => t.remove(), 3200);
+}
+
+/* ---------- login ---------- */
+async function enter() {
+  PW = $("#pw").value; $("#lerr").textContent = "";
+  try { await api("/api/admin/users"); sessionStorage.setItem("eva_pw", PW); start(); }
+  catch (e) { $("#lerr").textContent = e.message; }
+}
+$("#loginBtn").onclick = enter; $("#pw").onkeydown = e => { if (e.key === "Enter") enter(); };
+$("#logout").onclick = () => { sessionStorage.removeItem("eva_pw"); location.reload(); };
+
+async function start() {
+  $("#login").classList.add("hide"); $("#app").classList.remove("hide");
+  $("#main").innerHTML = `<div class="grid"><div class="sk"></div><div class="sk"></div><div class="sk"></div></div>`;
+  await loadAll(); show("overview");
+}
+async function loadAll() {
+  const [u, n, s] = await Promise.all([api("/api/admin/users"), api("/api/admin/notifications"), api("/api/admin/settings")]);
+  USERS = u.users; NOTICES = n.notifications; SETTINGS = s;
+  const pend = USERS.filter(x => x.status === "pending" && x.requested_at).length;
+  $("#pendBadge").textContent = pend; $("#pendBadge").classList.toggle("hide", !pend);
+}
+document.getElementById("nav").onclick = e => { const b = e.target.closest("button[data-v]"); if (b) show(b.dataset.v); };
+function show(v) {
+  view = v;
+  document.querySelectorAll("#nav button").forEach(b => b.classList.toggle("on", b.dataset.v === v));
+  ({ overview: rOverview, users: rUsers, notices: rNotices, updates: rUpdates, settings: rSettings })[v]();
+  window.scrollTo(0, 0);
+}
+const head = (title, sub, extra = "") => `<div class="top"><div><h2>${title}</h2><div class="sub">${sub}</div></div><div style="margin-inline-start:auto;display:flex;gap:8px">${extra}</div></div>`;
+
+/* ---------- overview ---------- */
+function rOverview() {
+  const c = s => USERS.filter(u => u.status === s).length;
+  const reqs = USERS.filter(u => u.status === "pending" && u.requested_at);
+  const withKeys = USERS.filter(u => u.gemini_key && u.groq_key).length;
+  const recent = [...USERS].filter(u => u.last_seen).sort((a, b) => b.last_seen.localeCompare(a.last_seen)).slice(0, 5);
+  const det = SETTINGS.detected || {};
+  $("#main").innerHTML = head("نظرة عامة", "ملخص سريع لكل ما يحدث في إيفا", `<button class="btn-ghost" onclick="refresh()">تحديث</button>`) + `
+  <div class="grid g5" style="margin-bottom:14px">
+    <div class="card stat" style="--c:var(--acc)"><span class="n">${USERS.length}</span><span class="l">إجمالي المستخدمين</span></div>
+    <div class="card stat" style="--c:var(--warn)"><span class="n">${c("pending")}</span><span class="l">بانتظار التفعيل</span></div>
+    <div class="card stat" style="--c:var(--ok)"><span class="n">${c("active")}</span><span class="l">مفعّلون</span></div>
+    <div class="card stat" style="--c:var(--bad)"><span class="n">${c("blocked")}</span><span class="l">موقوفون</span></div>
+    <div class="card stat" style="--c:var(--acc2)"><span class="n">${withKeys}</span><span class="l">لديهم مفاتيح</span></div>
+  </div>
+  <div class="grid g2">
+    <div class="card"><h3>🔥 طلبات التفعيل الجديدة</h3>${reqs.length ? reqs.map(u => `
+      <div class="nitem" style="display:flex;align-items:center;gap:10px"><div class="av">${esc(u.name[0] || "?")}</div>
+      <div style="flex:1"><b>${esc(u.name)}</b><div class="small mut mono">${esc(u.phone)}</div></div>
+      <button class="btn-acc" onclick="openUser('${u.id}')">فتح</button></div>`).join("") : `<div class="empty">لا توجد طلبات جديدة 🎉</div>`}</div>
+    <div class="card"><h3>🟢 آخر نشاط</h3>${recent.length ? recent.map(u => `
+      <div class="nitem" style="display:flex;align-items:center;gap:10px"><div class="av">${esc(u.name[0] || "?")}</div>
+      <div style="flex:1"><b>${esc(u.name)}</b><div class="small mut">${ago(u.last_seen)}</div></div><span class="badge2 s-${u.status}">${STATUS[u.status]}</span></div>`).join("") : `<div class="empty">لا يوجد نشاط بعد.</div>`}</div>
+    <div class="card"><h3>🚀 آخر إصدار للتطبيق</h3>${det.version ? `
+      <div style="font-size:28px;font-weight:800">${esc(det.version)}</div>
+      <div class="small mut" style="margin:4px 0 12px">المصدر: ${esc(det.source)}</div>
+      ${det.apk_url ? `<a href="${esc(det.apk_url)}" target="_blank"><button class="btn-acc">تحميل ملف APK</button></a>` : `<span class="mut">لا يوجد ملف APK في هذا الإصدار</span>`}` : `<div class="empty">لم يُنشر إصدار بعد. اربط مستودع GitHub من قسم التحديثات.</div>`}</div>
+    <div class="card"><h3>🔔 آخر الإشعارات</h3>${NOTICES.slice(0, 4).map(n => `<div class="nitem"><b>${esc(n.title)}</b><div class="small mut">${esc(n.body).slice(0, 80)}</div></div>`).join("") || `<div class="empty">لم تُرسل إشعارات بعد.</div>`}
+      <div style="margin-top:10px"><button class="btn-ghost" onclick="show('notices')">إرسال إشعار جديد</button></div></div>
+  </div>`;
+}
+window.refresh = async () => { try { await loadAll(); show(view); toast("تم التحديث"); } catch (e) { toast(e.message, "err"); } };
+
+/* ---------- users ---------- */
+function rUsers() {
+  $("#main").innerHTML = head("المستخدمون", "إدارة الحسابات والمفاتيح", `<button class="btn-ghost" onclick="exportCsv()">تصدير CSV</button>`) + `
+  <div class="toolbar"><input id="q" placeholder="🔍 ابحث بالاسم أو الرقم" style="max-width:320px" value="${esc(query)}">
+    <div class="chips" id="chips">${[["all", "الكل"], ["req", "طلبوا التفعيل"], ["pending", "بانتظار"], ["active", "مفعّل"], ["blocked", "موقوف"]].map(([k, l]) => `<button class="chip ${filter === k ? "on" : ""}" data-f="${k}">${l}</button>`).join("")}</div></div>
+  <div class="ulist" id="ulist"></div>`;
+  $("#q").oninput = e => { query = e.target.value; drawUsers(); };
+  $("#chips").onclick = e => { const b = e.target.closest("[data-f]"); if (b) { filter = b.dataset.f; rUsers(); } };
+  drawUsers();
+}
+function drawUsers() {
+  const q = query.trim().toLowerCase();
+  const list = USERS.filter(u => (filter === "all" || (filter === "req" ? (u.status === "pending" && u.requested_at) : u.status === filter)) &&
+    (!q || u.name.toLowerCase().includes(q) || u.phone.includes(q)));
+  $("#ulist").innerHTML = list.length ? list.map(u => `
+    <div class="urow" onclick="openUser('${u.id}')"><div class="av">${esc(u.name[0] || "?")}</div>
+      <div><b>${esc(u.name)}</b><div class="small mut mono">${esc(u.phone)}</div></div>
+      <div class="c3"><span class="badge2 s-${u.status}">${STATUS[u.status]}</span>${u.requested_at && u.status === "pending" ? `<div class="req">● طلب التفعيل</div>` : ""}</div>
+      <div class="c4 small mut"><span class="dot" style="background:${u.gemini_key ? "var(--ok)" : "var(--bad)"}"></span>Gemini <span class="dot" style="background:${u.groq_key ? "var(--ok)" : "var(--bad)"};margin-inline-start:8px"></span>Groq<div>${ago(u.last_seen)}</div></div>
+      <div style="color:var(--mut)">‹</div></div>`).join("") : `<div class="empty card">لا يوجد مستخدمون مطابقون.</div>`;
+}
+window.exportCsv = () => {
+  const rows = [["الاسم", "الهاتف", "الحالة", "طلب التفعيل", "تاريخ التسجيل", "آخر ظهور"], ...USERS.map(u => [u.name, u.phone, STATUS[u.status], u.requested_at ? "نعم" : "لا", u.created_at, u.last_seen || ""])];
+  const csv = "﻿" + rows.map(r => r.map(c => `"${String(c).replace(/"/g, '""')}"`).join(",")).join("\n");
+  const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([csv], { type: "text/csv" })); a.download = "eva-users.csv"; a.click();
+};
+
+window.openUser = id => {
+  const u = USERS.find(x => x.id === id); if (!u) return;
+  const wa = `https://wa.me/${u.phone}?text=${encodeURIComponent(`أهلًا ${u.name}، معك إدارة إيفا AI.`)}`;
+  $("#modalRoot").innerHTML = `<div class="overlay" id="ov"><div class="modal">
+    <header><div class="av" style="width:52px;height:52px;font-size:20px">${esc(u.name[0] || "?")}</div>
+      <div><b style="font-size:18px">${esc(u.name)}</b><div class="small mut mono">${esc(u.phone)}</div></div>
+      <button class="x" onclick="closeModal()">✕</button></header>
+    <div class="small mut" style="margin-bottom:14px"><span class="badge2 s-${u.status}">${STATUS[u.status]}</span> • سُجّل ${fmtDate(u.created_at)} • آخر ظهور: ${ago(u.last_seen)}${u.requested_at ? " • طلب التفعيل " + ago(u.requested_at) : ""}</div>
+    <div class="row">
+      <div class="keyrow"><label>مفتاح Gemini</label><input class="mono" id="mg" value="${esc(u.gemini_key)}" placeholder="AIza..."><button onclick="cp('mg')">نسخ</button></div>
+      <div class="keyrow"><label>مفتاح Groq</label><input class="mono" id="mq" value="${esc(u.groq_key)}" placeholder="gsk_..."><button onclick="cp('mq')">نسخ</button></div>
+      <div><label>ملاحظة خاصة بك (لا تظهر للمستخدم)</label><textarea id="mn" rows="2">${esc(u.note)}</textarea></div>
+    </div>
+    <div class="actions" style="margin-top:14px">
+      <button class="btn-ok" onclick="saveUser('${u.id}','active')">حفظ وتفعيل</button>
+      <button class="btn-acc" onclick="saveUser('${u.id}',null)">حفظ</button>
+      ${u.status === "blocked" ? "" : `<button onclick="saveUser('${u.id}','blocked')">إيقاف</button>`}
+      ${u.status !== "pending" ? `<button onclick="saveUser('${u.id}','pending')">إعادة للانتظار</button>` : ""}
+    </div>
+    <div class="actions" style="margin-top:12px;padding-top:12px;border-top:1px solid var(--line)">
+      <a href="${wa}" target="_blank"><button class="btn-ghost">💬 واتساب</button></a>
+      <button class="btn-ghost" onclick="resetPw('${u.id}')">🔑 كلمة مرور جديدة</button>
+      <button class="btn-bad" style="margin-inline-start:auto" onclick="delUser('${u.id}','${esc(u.name)}')">حذف</button>
+    </div></div></div>`;
+  $("#ov").onclick = e => { if (e.target.id === "ov") closeModal(); };
+};
+window.closeModal = () => { $("#modalRoot").innerHTML = ""; };
+window.cp = id => { navigator.clipboard.writeText($("#" + id).value); toast("تم النسخ"); };
+window.saveUser = async (id, status) => {
+  const body = { gemini_key: $("#mg").value, groq_key: $("#mq").value, note: $("#mn").value };
+  if (status) body.status = status;
+  try { await api("/api/admin/users/" + id, { method: "POST", body: JSON.stringify(body) }); toast(status === "active" ? "تم التفعيل ✔" : "تم الحفظ ✔"); await loadAll(); closeModal(); show(view); }
+  catch (e) { toast(e.message, "err"); }
+};
+window.delUser = async (id, name) => { if (!confirm(`حذف ${name} نهائيًا؟`)) return; try { await api("/api/admin/users/" + id, { method: "DELETE" }); toast("تم الحذف"); await loadAll(); closeModal(); show(view); } catch (e) { toast(e.message, "err"); } };
+window.resetPw = async id => {
+  const p = prompt("اكتب كلمة المرور الجديدة للمستخدم (6 أحرف على الأقل):"); if (!p) return;
+  try { await api(`/api/admin/users/${id}/password`, { method: "POST", body: JSON.stringify({ password: p }) }); toast("تم تغيير كلمة المرور ✔"); } catch (e) { toast(e.message, "err"); }
+};
+
+/* ---------- notifications ---------- */
+const KINDS = [["text", "📝 نص"], ["link", "🔗 رابط"], ["video", "▶️ فيديو"], ["image", "🖼 صورة"]];
+function rNotices() {
+  $("#main").innerHTML = head("الإشعارات", "أرسل رسالة أو رابطًا أو فيديو لكل المستخدمين أو لمستخدم واحد") + `
+  <div class="grid g2">
+    <div class="card"><h3>إشعار جديد</h3><div class="row">
+      <div><label>النوع</label><div class="seg" id="seg">${KINDS.map(([k, l]) => `<button data-k="${k}" class="${composer.kind === k ? "on" : ""}">${l}</button>`).join("")}</div></div>
+      <div><label>المرسل إليه</label><select id="ntarget"><option value="all">كل المستخدمين</option>${USERS.map(u => `<option value="${u.id}" ${composer.target === u.id ? "selected" : ""}>${esc(u.name)} (${esc(u.phone)})</option>`).join("")}</select></div>
+      <div><label>العنوان</label><input id="ntitle" maxlength="80" value="${esc(composer.title)}" placeholder="مثال: ميزة جديدة في إيفا"></div>
+      <div><label>النص</label><textarea id="nbody" rows="3" maxlength="500" placeholder="اكتب الرسالة…">${esc(composer.body)}</textarea></div>
+      <div id="urlbox" class="${composer.kind === "text" ? "hide" : ""}"><label>${composer.kind === "video" ? "رابط الفيديو (يوتيوب أو غيره)" : composer.kind === "image" ? "رابط الصورة" : "الرابط"}</label><input id="nurl" class="mono" value="${esc(composer.url)}" placeholder="https://..."></div>
+      <button class="btn-acc" id="sendN">إرسال الإشعار 🚀</button></div></div>
+    <div><div class="card" style="margin-bottom:14px"><h3>معاينة على الهاتف</h3><div class="phone"><div class="small mut" style="margin-bottom:6px">🔔 رسالة من الإدارة</div>
+      <div class="notif"><div class="t" id="pt"></div><div class="b" id="pb"></div><div class="go ${composer.kind === "text" ? "hide" : ""}" id="pg"></div></div></div></div>
+    <div class="card"><h3>الإشعارات المُرسلة</h3>${NOTICES.length ? NOTICES.map(n => `<div class="nitem" style="display:flex;gap:10px;align-items:flex-start"><div style="flex:1"><b>${esc(n.title)}</b> <span class="badge2" style="background:#1a2750">${({ text: "نص", link: "رابط", video: "فيديو", image: "صورة" })[n.kind] || "نص"}</span>
+      <div class="small mut">${esc(n.body).slice(0, 110)}</div><div class="small mut">${n.target === "all" ? "للكل" : "لمستخدم محدد"} • ${fmtDate(n.created_at)}</div>${n.url ? `<div class="small mono"><a style="color:var(--acc)" target="_blank" href="${esc(n.url)}">${esc(n.url).slice(0, 48)}</a></div>` : ""}</div>
+      <button class="btn-ghost" onclick="delNotice(${n.id})">حذف</button></div>`).join("") : `<div class="empty">لم تُرسل إشعارات بعد.</div>`}</div></div></div>`;
+  const prev = () => {
+    composer.title = $("#ntitle").value; composer.body = $("#nbody").value; composer.url = ($("#nurl") || {}).value || ""; composer.target = $("#ntarget").value;
+    $("#pt").textContent = composer.title || "عنوان الإشعار"; $("#pb").textContent = composer.body || "نص الإشعار سيظهر هنا";
+    $("#pg").textContent = composer.kind === "video" ? "▶ شاهد الفيديو" : composer.kind === "image" ? "🖼 عرض الصورة" : "🔗 افتح الرابط";
+  };
+  ["ntitle", "nbody", "nurl", "ntarget"].forEach(i => $("#" + i) && ($("#" + i).oninput = prev));
+  $("#seg").onclick = e => { const b = e.target.closest("[data-k]"); if (b) { prev(); composer.kind = b.dataset.k; rNotices(); } };
+  $("#sendN").onclick = async () => {
+    prev();
+    try { await api("/api/admin/notify", { method: "POST", body: JSON.stringify({ title: composer.title, body: composer.body, target: composer.target, kind: composer.kind, url: composer.url }) });
+      toast("تم إرسال الإشعار ✔"); composer = { kind: "text", target: "all", title: "", body: "", url: "" }; await loadAll(); rNotices(); }
+    catch (e) { toast(e.message, "err"); }
+  };
+  prev();
+}
+window.delNotice = async id => { await api("/api/admin/notifications/" + id, { method: "DELETE" }); toast("تم الحذف"); await loadAll(); rNotices(); };
+
+/* ---------- updates ---------- */
+function rUpdates() {
+  const d = SETTINGS.detected || {};
+  $("#main").innerHTML = head("التحديثات", "كيف يصل الإصدار الجديد للمستخدمين") + `
+  <div class="grid g2">
+    <div class="card"><h3>🔗 ربط GitHub</h3><div class="row">
+      <div class="small mut">انشر Release في المستودع (وسم مثل v1.2.0 ومعه ملف APK). التطبيق يفحص تلقائيًا ويُظهر إشعار «تحديث جديد» لكل مستخدم.</div>
+      <div><label>المستودع (owner/repo)</label><input id="repo" class="mono" value="${esc(SETTINGS.github_repo)}"></div>
+      <div class="actions"><button class="btn-acc" onclick="saveUpd()">حفظ</button>${SETTINGS.github_repo ? `<a target="_blank" href="https://github.com/${esc(SETTINGS.github_repo)}/releases"><button class="btn-ghost">فتح صفحة الإصدارات</button></a>` : ""}</div></div></div>
+    <div class="card"><h3>📦 الإصدار الذي يراه المستخدمون الآن</h3>${d.version ? `<div style="font-size:30px;font-weight:800">${esc(d.version)}</div>
+      <div class="small mut" style="margin:4px 0 10px">المصدر: ${esc(d.source)}</div><div class="small" style="white-space:pre-line;margin-bottom:12px">${esc(d.notes || "")}</div>
+      ${d.apk_url ? `<a target="_blank" href="${esc(d.apk_url)}"><button class="btn-acc">اختبار رابط التحميل</button></a>` : `<span style="color:var(--warn)">⚠ هذا الإصدار بلا ملف APK</span>`}` : `<div class="empty">لا يوجد إصدار.</div>`}</div>
+    <div class="card" style="grid-column:1/-1"><h3>✍️ إصدار يدوي (اختياري)</h3><div class="small mut" style="margin-bottom:10px">لو كتبت إصدارًا ورابطًا هنا فسيُستخدم بدل GitHub. اتركهما فارغين للعودة إلى GitHub.</div>
+      <div class="row two"><div><label>رقم الإصدار</label><input id="ver" class="mono" value="${esc(SETTINGS.latest_version)}" placeholder="1.2.0"></div><div><label>رابط ملف APK</label><input id="apk" class="mono" value="${esc(SETTINGS.apk_url)}" placeholder="https://..."></div></div>
+      <div style="margin-top:12px"><label>ملاحظات التحديث</label><textarea id="notes" rows="3">${esc(SETTINGS.notes)}</textarea></div>
+      <div class="actions" style="margin-top:12px"><button class="btn-acc" onclick="saveUpd()">حفظ</button></div></div></div>`;
+}
+window.saveUpd = async () => {
+  try { await api("/api/admin/settings", { method: "POST", body: JSON.stringify({ github_repo: $("#repo").value, latest_version: $("#ver").value, apk_url: $("#apk").value, notes: $("#notes").value }) }); toast("تم الحفظ ✔"); await loadAll(); rUpdates(); }
+  catch (e) { toast(e.message, "err"); }
+};
+
+/* ---------- settings ---------- */
+function rSettings() {
+  $("#main").innerHTML = head("الإعدادات", "بيانات المنصة") + `
+  <div class="grid g2">
+    <div class="card"><h3>💬 واتساب الإدارة</h3><div class="row"><div class="small mut">الرقم اللي بتتفتح عليه رسالة «تفعيل الحساب» من التطبيق (بصيغة دولية بدون +).</div>
+      <input id="wa" class="mono" value="${esc(SETTINGS.whatsapp)}"><div class="actions"><button class="btn-acc" onclick="saveWa()">حفظ</button></div></div></div>
+    <div class="card"><h3>🔐 كلمة مرور الإدارة</h3><div class="small mut" style="line-height:2">لأمانك لا تُغيَّر من هذه الصفحة. لتغييرها شغّل في PowerShell:</div>
+      <div class="mono small" style="background:#0a1229;border:1px solid var(--line);border-radius:12px;padding:10px;margin-top:8px">npx.cmd wrangler secret put ADMIN_PASSWORD</div></div>
+    <div class="card"><h3>🌐 روابط مفيدة</h3><div class="row small"><a style="color:var(--acc)" target="_blank" href="https://www.elhawyai.com/projects/eva">صفحة إيفا على الموقع</a><a style="color:var(--acc)" target="_blank" href="https://github.com/${esc(SETTINGS.github_repo || "conqer40/eva-android")}/releases">إصدارات التطبيق على GitHub</a></div></div>
+    <div class="card"><h3>ℹ️ نصائح</h3><div class="small mut" style="line-height:2">• لا تفعّل مستخدمًا قبل إضافة المفتاحين.<br>• عند إيقاف حساب يختفي مفتاحه من تطبيقه عند أول فتح.<br>• المفاتيح تُخزَّن في قاعدة البيانات لتُسلَّم للتطبيق، فاحمِ كلمة مرور الإدارة.</div></div>
+  </div>`;
+}
+window.saveWa = async () => { try { await api("/api/admin/settings", { method: "POST", body: JSON.stringify({ whatsapp: $("#wa").value }) }); toast("تم الحفظ ✔"); await loadAll(); } catch (e) { toast(e.message, "err"); } };
+
+/* auto sign-in when a password is remembered for this tab */
+if (PW) api("/api/admin/users").then(start).catch(() => sessionStorage.removeItem("eva_pw"));
+</script>
+</body>
+</html>
