@@ -150,7 +150,7 @@ const API = window.EVA_API || "";
 let PW = sessionStorage.getItem("eva_pw") || "";
 let USERS = [], NOTICES = [], SETTINGS = {}, STATS = null, POOL = [], poolShowUsed = false;
 let view = "overview", filter = "all", query = "";
-let composer = { kind: "text", target: "all", title: "", body: "", url: "" };
+let composer = { kind: "text", target: "all", title: "", body: "", url: "", when: "", users: [] };
 
 const $ = (s, r = document) => r.querySelector(s);
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -408,7 +408,15 @@ function rNotices() {
   <div class="grid g2">
     <div class="card"><h3>إشعار جديد</h3><div class="row">
       <div><label>النوع</label><div class="seg" id="seg">${KINDS.map(([k, l]) => `<button data-k="${k}" class="${composer.kind === k ? "on" : ""}">${l}</button>`).join("")}</div></div>
-      <div><label>المرسل إليه</label><select id="ntarget"><option value="all">كل المستخدمين</option>${USERS.map(u => `<option value="${u.id}" ${composer.target === u.id ? "selected" : ""}>${esc(u.name)} (${esc(u.phone)})</option>`).join("")}</select></div>
+      <div><label>المرسل إليه</label><select id="ntarget">
+        <option value="all" ${composer.target === "all" ? "selected" : ""}>كل المستخدمين</option>
+        <option value="group:active" ${composer.target === "group:active" ? "selected" : ""}>المفعّلون فقط</option>
+        <option value="group:pending" ${composer.target === "group:pending" ? "selected" : ""}>بانتظار التفعيل فقط</option>
+        <option value="group:blocked" ${composer.target === "group:blocked" ? "selected" : ""}>الموقوفون فقط</option>
+        <option value="users" ${composer.target === "users" ? "selected" : ""}>مستخدمون محددون…</option>
+        <optgroup label="مستخدم واحد">${USERS.map(u => `<option value="${u.id}" ${composer.target === u.id ? "selected" : ""}>${esc(u.name)} (${esc(u.phone)})</option>`).join("")}</optgroup></select></div>
+      <div id="usersbox" class="${composer.target === "users" ? "" : "hide"}"><label>اختر المستخدمين (حتى 12)</label><div style="display:grid;gap:4px;max-height:150px;overflow:auto;border:1px solid var(--line);border-radius:12px;padding:8px">${USERS.map(u => `<label style="display:flex;gap:8px;align-items:center;margin:0;color:var(--text)"><input type="checkbox" style="width:auto" class="nusr" value="${u.id}" ${composer.users.includes(u.id) ? "checked" : ""}>${esc(u.name)} <span class="mut small">${esc(u.phone)}</span></label>`).join("")}</div></div>
+      <div><label>وقت الإرسال</label><div style="display:flex;gap:8px;align-items:center"><select id="nmode" style="max-width:130px"><option value="now" ${composer.when ? "" : "selected"}>الآن</option><option value="later" ${composer.when ? "selected" : ""}>جدولة</option></select><input id="nwhen" type="datetime-local" class="${composer.when ? "" : "hide"}" value="${esc(composer.when)}"></div></div>
       <div><label>العنوان</label><input id="ntitle" maxlength="80" value="${esc(composer.title)}" placeholder="مثال: ميزة جديدة في إيفا"></div>
       <div><label>النص</label><textarea id="nbody" rows="3" maxlength="500" placeholder="اكتب الرسالة…">${esc(composer.body)}</textarea></div>
       <div id="urlbox" class="${composer.kind === "text" ? "hide" : ""}"><label>${composer.kind === "video" ? "رابط الفيديو (يوتيوب أو غيره)" : composer.kind === "image" ? "رابط الصورة" : "الرابط"}</label><input id="nurl" class="mono" value="${esc(composer.url)}" placeholder="https://..."></div>
@@ -416,19 +424,27 @@ function rNotices() {
     <div><div class="card" style="margin-bottom:14px"><h3>معاينة على الهاتف</h3><div class="phone"><div class="small mut" style="margin-bottom:6px">🔔 رسالة من الإدارة</div>
       <div class="notif"><div class="t" id="pt"></div><div class="b" id="pb"></div><div class="go ${composer.kind === "text" ? "hide" : ""}" id="pg"></div></div></div></div>
     <div class="card"><h3>الإشعارات المُرسلة</h3>${NOTICES.length ? NOTICES.map(n => `<div class="nitem" style="display:flex;gap:10px;align-items:flex-start"><div style="flex:1"><b>${esc(n.title)}</b> <span class="badge2" style="background:#1a2750">${({ text: "نص", link: "رابط", video: "فيديو", image: "صورة" })[n.kind] || "نص"}</span>
-      <div class="small mut">${esc(n.body).slice(0, 110)}</div><div class="small mut">${n.target === "all" ? "للكل" : "لمستخدم محدد"} • ${fmtDate(n.created_at)}</div>${n.url ? `<div class="small mono"><a style="color:var(--acc)" target="_blank" href="${esc(n.url)}">${esc(n.url).slice(0, 48)}</a></div>` : ""}</div>
+      <div class="small mut">${esc(n.body).slice(0, 110)}</div><div class="small mut">${({ all: "للكل", "group:active": "للمفعّلين", "group:pending": "لمن بانتظار التفعيل", "group:blocked": "للموقوفين" })[n.target] || (String(n.target).startsWith("users:") ? "لمستخدمين محددين" : "لمستخدم محدد")} • ${n.publish_at ? `<b style="color:var(--warn)">⏰ مجدول: ${fmtDate(n.publish_at)}</b>` : fmtDate(n.created_at)}</div>${n.url ? `<div class="small mono"><a style="color:var(--acc)" target="_blank" href="${esc(n.url)}">${esc(n.url).slice(0, 48)}</a></div>` : ""}</div>
       <button class="btn-ghost" onclick="delNotice(${n.id})">حذف</button></div>`).join("") : `<div class="empty">لم تُرسل إشعارات بعد.</div>`}</div></div></div>`;
   const prev = () => {
+    composer.users = [...document.querySelectorAll(".nusr:checked")].map(x => x.value);
+    composer.when = $("#nmode").value === "later" ? ($("#nwhen").value || "") : "";
+    $("#nwhen").classList.toggle("hide", $("#nmode").value !== "later");
+    $("#usersbox").classList.toggle("hide", $("#ntarget").value !== "users");
     composer.title = $("#ntitle").value; composer.body = $("#nbody").value; composer.url = ($("#nurl") || {}).value || ""; composer.target = $("#ntarget").value;
     $("#pt").textContent = composer.title || "عنوان الإشعار"; $("#pb").textContent = composer.body || "نص الإشعار سيظهر هنا";
     $("#pg").textContent = composer.kind === "video" ? "▶ شاهد الفيديو" : composer.kind === "image" ? "🖼 عرض الصورة" : "🔗 افتح الرابط";
   };
-  ["ntitle", "nbody", "nurl", "ntarget"].forEach(i => $("#" + i) && ($("#" + i).oninput = prev));
+  ["ntitle", "nbody", "nurl", "ntarget", "nmode", "nwhen"].forEach(i => $("#" + i) && ($("#" + i).oninput = prev));
+  document.querySelectorAll(".nusr").forEach(x => x.onchange = prev);
   $("#seg").onclick = e => { const b = e.target.closest("[data-k]"); if (b) { prev(); composer.kind = b.dataset.k; rNotices(); } };
   $("#sendN").onclick = async () => {
     prev();
-    try { await api("/api/admin/notify", { method: "POST", body: JSON.stringify({ title: composer.title, body: composer.body, target: composer.target, kind: composer.kind, url: composer.url }) });
-      toast("تم إرسال الإشعار ✔"); composer = { kind: "text", target: "all", title: "", body: "", url: "" }; await loadAll(); rNotices(); }
+    const mode = $("#nmode").value;
+    if (mode === "later" && !composer.when) return toast("اختر وقت الإرسال", "err");
+    const target = composer.target === "users" ? "users:" + composer.users.join(",") : composer.target;
+    try { const r = await api("/api/admin/notify", { method: "POST", body: JSON.stringify({ title: composer.title, body: composer.body, target, kind: composer.kind, url: composer.url, publish_at: mode === "later" ? new Date(composer.when).toISOString() : null }) });
+      toast(r.scheduled ? "تمت الجدولة ✔" : "تم إرسال الإشعار ✔"); composer = { kind: "text", target: "all", title: "", body: "", url: "", when: "", users: [] }; await loadAll(); rNotices(); }
     catch (e) { toast(e.message, "err"); }
   };
   prev();
