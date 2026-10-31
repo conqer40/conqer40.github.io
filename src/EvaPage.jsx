@@ -98,6 +98,7 @@ const groups = {
       ['مواساة عند الضغط النفسي', 'إن شعرت أنك مضغوط أو حزين تتحول لنبرة حنونة هادئة تحتويك أولًا قبل أي نصيحة.'],
       ['سجل محادثات محفوظ', 'محادثاتك ومكالماتك الصوتية تُحفظ على هاتفك مع بحث وحذف، ووضع فاتح وغامق.'],
       ['تذكيرات ومنبهات ومواعيد', 'قل «ذكّريني بعد ساعة» أو «نبّهيني الساعة 7» فتضبطها إيفا وتنبّهك بصوت المنبه حتى لو التطبيق مغلق، وتنبّهك بمواعيد تقويم الهاتف قبلها بنصف ساعة.'],
+      ['صحتي ومزاجي', 'تتابع إيفا مزاجك وشربك للماء وحالتك الصحية (حتى الأمراض المزمنة) وتسجل قياسات الضغط والسكر والوزن وتذكّرك بمواعيد دوائك. تصلك نصيحة صحية وتذكير بالماء كل ساعة بإشعار، وكلها على هاتفك فقط. إيفا ليست طبيبًا ولا تشخّص.'],
       ['ذاكرة طويلة', 'تتذكر إيفا اسمك وشغلك وما تحب وتستخدمه في الحوارات القادمة. ما تحفظه محفوظ على هاتفك وتراه وتحذف منه أو توقفه من الإعدادات، ولا تحفظ كلمات مرور أو بيانات دفع.'],
     ]],
     ['المكالمات الصوتية', 'تحدّث مع إيفا بصوتها مباشرة وتابع الحوار مكتوبًا.', FiMic, [
@@ -149,6 +150,7 @@ const groups = {
       ['Comfort when you are stressed', 'If you sound stressed or sad she softens her voice and comforts you before any advice.'],
       ['Saved chat history', 'Chats and voice calls are stored on your phone with search and delete, plus light and dark modes.'],
       ['Reminders, alarms and appointments', 'Say "remind me in an hour" or "wake me at 7" and Eva alerts you with an alarm-style sound even when the app is closed, and warns you half an hour before calendar appointments.'],
+      ['My health and mood', 'Eva follows your mood, water, and health (including chronic conditions), logs blood pressure, sugar and weight, and reminds you of your medicine. A health tip and water reminder arrive every hour as a notification, all kept on your phone. Eva is not a doctor and does not diagnose.'],
       ['Long-term memory', 'Eva remembers your name, work and preferences and uses them in later chats. It stays on your phone; you can view, delete or switch it off in Settings, and passwords or payment data are never saved.'],
     ]],
     ['Voice calls', 'Talk to Eva live and follow the conversation in writing.', FiMic, [
