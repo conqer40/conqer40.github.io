@@ -1,0 +1,39 @@
+/* Eva page: extra pieces on top of the shared .jarvis-* page styles */
+.eva-page .eva-actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 22px 0 10px; }
+.eva-page .eva-btn {
+  display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; border-radius: 999px;
+  border: 1px solid rgba(99, 120, 255, 0.45); background: transparent; color: inherit; font-weight: 700; text-decoration: none; cursor: pointer;
+}
+.eva-page .eva-btn.primary { background: linear-gradient(135deg, #2563eb, #7c3aed); border-color: transparent; color: #fff; box-shadow: 0 10px 30px rgba(79, 70, 229, 0.35); }
+.eva-page .eva-btn.small { padding: 7px 14px; font-size: 13px; margin-inline-start: auto; }
+.eva-page .eva-meta { display: block; opacity: 0.7; margin-top: 6px; }
+.eva-page .eva-hero-art { display: grid; place-items: center; min-height: 320px; position: relative; }
+.eva-page .eva-hero-art::before {
+  content: ""; position: absolute; width: 78%; aspect-ratio: 1; border-radius: 50%;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.32), rgba(56, 189, 248, 0.12) 55%, transparent 70%); filter: blur(8px);
+}
+.eva-page .eva-hero-art img { position: relative; width: min(340px, 78%); height: auto; animation: eva-float 5s ease-in-out infinite; }
+@keyframes eva-float { 0%, 100% { transform: translateY(-6px); } 50% { transform: translateY(8px); } }
+.eva-page .eva-poster-band {
+  display: grid; grid-template-columns: minmax(220px, 360px) 1fr; gap: 32px; align-items: center;
+  margin: 56px auto; padding: 24px; max-width: 1100px; border-radius: 28px;
+  background: linear-gradient(145deg, #0b1230, #162055); color: #fff;
+}
+.eva-page .eva-poster-band img { width: 100%; border-radius: 20px; display: block; }
+.eva-page .eva-install h2 { margin: 0 0 10px; }
+.eva-page .eva-install p { line-height: 1.9; opacity: 0.85; margin-bottom: 18px; }
+.eva-page .eva-install .eva-btn { margin-inline-end: 10px; margin-bottom: 10px; color: #fff; }
+.eva-page .eva-updates .eva-release-list { display: grid; gap: 14px; }
+.eva-page .eva-release { padding: 16px 18px; border-radius: 18px; border: 1px solid rgba(100, 116, 139, 0.3); background: rgba(255, 255, 255, 0.04); }
+.eva-page .eva-release-head { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.eva-page .eva-release-notes { margin: 10px 0 0; line-height: 1.9; white-space: pre-line; opacity: 0.88; }
+.eva-page .eva-note { opacity: 0.8; }
+.eva-page .eva-links { display: flex; flex-wrap: wrap; gap: 10px 18px; margin-top: 12px; }
+.eva-page .eva-links a { font-weight: 700; text-decoration: underline; }
+@media (max-width: 760px) {
+  .eva-page .eva-poster-band { grid-template-columns: 1fr; margin-inline: 12px; }
+  .eva-page .eva-hero-art { min-height: 240px; }
+}
+
+/* readable secondary buttons on the light hero */
+.eva-page .jarvis-hero .eva-btn:not(.primary) { color: #0f172a; border-color: #94a3b8; background: rgba(255, 255, 255, 0.6); }

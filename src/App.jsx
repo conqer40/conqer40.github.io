@@ -48,6 +48,7 @@ import { PersonalHome } from "./PersonalHome.jsx";
 import { ResumePage } from "./ResumePage.jsx";
 import { JarvisPage } from "./JarvisPage.jsx";
 import { FridayPage } from "./FridayPage.jsx";
+import { EvaPage } from "./EvaPage.jsx";
 import { LibraryCategory, LibraryItem, LibraryPage } from "./LibraryV2.jsx";
 import { VideoCategory, VideoLesson, VideoLessons } from "./VideoLessons.jsx";
 import { LibraryAdmin } from "./LibraryAdmin.jsx";
@@ -1022,6 +1023,11 @@ export function App() {
                 path="/projects/friday"
                 element={<FridayPage lang={lang} />}
               />
+              <Route
+                path="/projects/eva"
+                element={<EvaPage lang={lang} />}
+              />
+              <Route path="/eva" element={<Navigate to="/projects/eva" replace />} />
               <Route path="/ai" element={<Home />} />
               <Route path="/tools" element={<Tools />} />
               <Route path="/categories" element={<Categories />} />
