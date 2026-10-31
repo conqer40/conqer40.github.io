@@ -130,6 +130,7 @@ h3{margin:0 0 12px;font-size:16px}
     <nav id="nav">
       <button data-v="overview" class="on"><span class="ic">📊</span>نظرة عامة</button>
       <button data-v="users"><span class="ic">👥</span>المستخدمون<span class="badge hide" id="pendBadge">0</span></button>
+      <button data-v="reports"><span class="ic">📈</span>التقارير<span class="badge hide" id="qBadge">0</span></button>
       <button data-v="notices"><span class="ic">🔔</span>الإشعارات</button>
       <button data-v="updates"><span class="ic">🚀</span>التحديثات</button>
       <button data-v="settings"><span class="ic">⚙️</span>الإعدادات</button>
@@ -146,7 +147,7 @@ h3{margin:0 0 12px;font-size:16px}
 <script>
 const API = window.EVA_API || "";
 let PW = sessionStorage.getItem("eva_pw") || "";
-let USERS = [], NOTICES = [], SETTINGS = {};
+let USERS = [], NOTICES = [], SETTINGS = {}, STATS = null;
 let view = "overview", filter = "all", query = "";
 let composer = { kind: "text", target: "all", title: "", body: "", url: "" };
 
@@ -182,8 +183,9 @@ async function start() {
   await loadAll(); show("overview");
 }
 async function loadAll() {
-  const [u, n, s] = await Promise.all([api("/api/admin/users"), api("/api/admin/notifications"), api("/api/admin/settings")]);
-  USERS = u.users; NOTICES = n.notifications; SETTINGS = s;
+  const [u, n, s, st] = await Promise.all([api("/api/admin/users"), api("/api/admin/notifications"), api("/api/admin/settings"), api("/api/admin/stats")]);
+  USERS = u.users; NOTICES = n.notifications; SETTINGS = s; STATS = st;
+  const q = new Set((st.quota_alerts || []).map(x => x.uid)).size; $("#qBadge").textContent = q; $("#qBadge").classList.toggle("hide", !q);
   const pend = USERS.filter(x => x.status === "pending" && x.requested_at).length;
   $("#pendBadge").textContent = pend; $("#pendBadge").classList.toggle("hide", !pend);
 }
@@ -191,7 +193,7 @@ document.getElementById("nav").onclick = e => { const b = e.target.closest("butt
 function show(v) {
   view = v;
   document.querySelectorAll("#nav button").forEach(b => b.classList.toggle("on", b.dataset.v === v));
-  ({ overview: rOverview, users: rUsers, notices: rNotices, updates: rUpdates, settings: rSettings })[v]();
+  ({ overview: rOverview, users: rUsers, reports: rReports, notices: rNotices, updates: rUpdates, settings: rSettings })[v]();
   window.scrollTo(0, 0);
 }
 const head = (title, sub, extra = "") => `<div class="top"><div><h2>${title}</h2><div class="sub">${sub}</div></div><div style="margin-inline-start:auto;display:flex;gap:8px">${extra}</div></div>`;
@@ -295,6 +297,35 @@ window.resetPw = async id => {
   const p = prompt("اكتب كلمة المرور الجديدة للمستخدم (6 أحرف على الأقل):"); if (!p) return;
   try { await api(`/api/admin/users/${id}/password`, { method: "POST", body: JSON.stringify({ password: p }) }); toast("تم تغيير كلمة المرور ✔"); } catch (e) { toast(e.message, "err"); }
 };
+
+/* ---------- reports ---------- */
+function dayList(n) { return Array.from({ length: n }, (_, i) => new Date(Date.now() - (n - 1 - i) * 86400000).toISOString().slice(0, 10)); }
+function bars(title, color, series) {
+  const max = Math.max(1, ...series.map(s => s.v));
+  return `<div class="card"><h3>${title} <span class="mut small">(آخر 14 يومًا • المجموع ${series.reduce((a, s) => a + s.v, 0)})</span></h3>
+  <div style="display:flex;align-items:flex-end;gap:5px;height:130px">${series.map(s => `<div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%" title="${s.d}: ${s.v}">
+    <span class="small mut" style="font-size:10px">${s.v || ""}</span><div style="width:100%;max-width:26px;height:${Math.max(3, s.v / max * 100)}%;background:linear-gradient(${color},rgba(139,92,246,.6));border-radius:6px 6px 2px 2px;opacity:${s.v ? 1 : .25}"></div></div>`).join("")}</div>
+  <div style="display:flex;gap:5px;margin-top:6px">${series.map(s => `<span class="small mut" style="flex:1;text-align:center;font-size:9.5px">${s.d.slice(8)}</span>`).join("")}</div></div>`;
+}
+function rReports() {
+  const st = STATS || { registrations: [], events: [], top_callers: [], quota_alerts: [], totals: [] };
+  const days = dayList(st.days || 14);
+  const by = type => days.map(d => ({ d, v: (st.events.find(e => e.d === d && e.type === type) || { c: 0 }).c }));
+  const regs = days.map(d => ({ d, v: (st.registrations.find(r => r.d === d) || { c: 0 }).c }));
+  const tot = t => (st.totals.find(x => x.type === t) || { c: 0 }).c;
+  const qa = st.quota_alerts || [];
+  $("#main").innerHTML = head("التقارير", "نشاط المستخدمين والتنبيهات", `<button class="btn-ghost" onclick="refresh()">تحديث</button>`) + `
+  <div class="grid g4" style="margin-bottom:14px">
+    <div class="card stat" style="--c:var(--acc)"><span class="n">${USERS.length}</span><span class="l">إجمالي المسجلين</span></div>
+    <div class="card stat" style="--c:var(--acc2)"><span class="n">${tot("call")}</span><span class="l">مكالمات صوتية</span></div>
+    <div class="card stat" style="--c:var(--ok)"><span class="n">${tot("chat")}</span><span class="l">رسائل محادثة</span></div>
+    <div class="card stat" style="--c:var(--warn)"><span class="n">${tot("reminder")}</span><span class="l">تذكيرات</span></div>
+  </div>
+  <div class="grid g2" style="margin-bottom:14px">${bars("التسجيلات اليومية", "#5b8cff", regs)}${bars("المكالمات الصوتية", "#8b5cf6", by("call"))}${bars("رسائل المحادثة", "#22c55e", by("chat"))}
+    <div class="card"><h3>🏆 الأكثر استخدامًا للمكالمات</h3>${st.top_callers.length ? st.top_callers.map((t, i) => `<div class="nitem" style="display:flex;gap:10px;align-items:center"><b style="width:22px">${i + 1}</b><div style="flex:1">${esc(t.name)}<div class="small mut mono">${esc(t.phone)}</div></div><span class="badge2 s-active">${t.c} مكالمة</span></div>`).join("") : `<div class="empty">لا توجد بيانات بعد.</div>`}</div></div>
+  <div class="card"><h3>⚠️ تنبيهات انتهاء الحصة (آخر 3 أيام)</h3>${qa.length ? qa.map(q => `<div class="nitem" style="display:flex;gap:10px;align-items:center"><div style="flex:1"><b>${esc(q.name)}</b> <span class="small mut mono">${esc(q.phone)}</span>
+    <div class="small" style="color:var(--warn)">وصل المفتاح (${esc(q.detail || "?")}) للحد المسموح • ${ago(q.ts)}</div></div><button class="btn-acc" onclick="openUser('${q.uid}')">تغيير المفتاح</button></div>`).join("") : `<div class="empty">لا توجد تنبيهات 🎉 كل المفاتيح تعمل.</div>`}</div>`;
+}
 
 /* ---------- notifications ---------- */
 const KINDS = [["text", "📝 نص"], ["link", "🔗 رابط"], ["video", "▶️ فيديو"], ["image", "🖼 صورة"]];
