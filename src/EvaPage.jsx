@@ -266,6 +266,13 @@ export function EvaPage({ lang }) {
         </div>
       </section>
 
+      <section className="eva-video">
+        <header><h2>{c.videoTitle}</h2><p>{c.videoSub}</p></header>
+        <div className="eva-video-frame">
+          <video controls playsInline preload="metadata" poster="/eva/eva-intro-poster.jpg" src="/eva/eva-intro.mp4" aria-label={c.videoTitle} />
+        </div>
+      </section>
+
       <section className="jarvis-flow">
         <header><span>01</span><h2>{c.howTitle}</h2></header>
         <div>
@@ -292,13 +299,6 @@ export function EvaPage({ lang }) {
               </div>
             </details>
           ))}
-        </div>
-      </section>
-
-      <section className="eva-video">
-        <header><h2>{c.videoTitle}</h2><p>{c.videoSub}</p></header>
-        <div className="eva-video-frame">
-          <video controls playsInline preload="metadata" poster="/eva/eva-intro-poster.jpg" src="/eva/eva-intro.mp4" aria-label={c.videoTitle} />
         </div>
       </section>
 
