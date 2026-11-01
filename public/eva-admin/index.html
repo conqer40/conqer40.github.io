@@ -148,7 +148,7 @@ h3{margin:0 0 12px;font-size:16px}
 <script>
 const API = window.EVA_API || "";
 let PW = sessionStorage.getItem("eva_pw") || "";
-let USERS = [], NOTICES = [], SETTINGS = {}, STATS = null, POOL = [], poolShowUsed = false;
+let USERS = [], NOTICES = [], SETTINGS = {}, STATS = null, POOL = [], poolShowUsed = false, POOLINFO = { stock: { gemini: 0, groq: 0 }, auto_activate: true, waiting: 0 };
 let view = "overview", filter = "all", query = "";
 let composer = { kind: "text", target: "all", title: "", body: "", url: "", when: "", users: [] };
 
@@ -185,8 +185,8 @@ async function start() {
 }
 async function loadAll() {
   const [u, n, s, st, pl] = await Promise.all([api("/api/admin/users"), api("/api/admin/notifications"), api("/api/admin/settings"), api("/api/admin/stats"), api("/api/admin/pool")]);
-  USERS = u.users; NOTICES = n.notifications; SETTINGS = s; STATS = st; POOL = pl.keys;
-  const free = POOL.filter(k => !k.used).length; $("#keyBadge").textContent = free; $("#keyBadge").classList.toggle("hide", !free);
+  USERS = u.users; NOTICES = n.notifications; SETTINGS = s; STATS = st; POOL = pl.keys; POOLINFO = pl;
+  const low = Math.min(pl.stock.gemini, pl.stock.groq); $("#keyBadge").textContent = pl.waiting ? "⚠" + pl.waiting : low; $("#keyBadge").classList.toggle("hide", !pl.waiting && low > 3);
   const q = new Set((st.quota_alerts || []).map(x => x.uid)).size; $("#qBadge").textContent = q; $("#qBadge").classList.toggle("hide", !q);
   const pend = USERS.filter(x => x.status === "pending" && x.requested_at).length;
   $("#pendBadge").textContent = pend; $("#pendBadge").classList.toggle("hide", !pend);
@@ -207,7 +207,9 @@ async function copyText(t) {
   try { await navigator.clipboard.writeText(t); return true; }
   catch { const a = document.createElement("textarea"); a.value = t; a.style.position = "fixed"; a.style.opacity = "0"; document.body.appendChild(a); a.select(); const ok = document.execCommand("copy"); a.remove(); return ok; }
 }
-async function poolRefresh() { POOL = (await api("/api/admin/pool")).keys; const free = POOL.filter(k => !k.used).length; $("#keyBadge").textContent = free; $("#keyBadge").classList.toggle("hide", !free); rKeys(); }
+async function poolRefresh() { const pl = await api("/api/admin/pool"); POOL = pl.keys; POOLINFO = pl; const low = Math.min(pl.stock.gemini, pl.stock.groq); $("#keyBadge").textContent = pl.waiting ? "⚠" + pl.waiting : low; $("#keyBadge").classList.toggle("hide", !pl.waiting && low > 3); await loadUsersQuiet(); rKeys(); }
+async function loadUsersQuiet() { try { USERS = (await api("/api/admin/users")).users; } catch {} }
+async function setAuto(on) { await api("/api/admin/settings", { method: "POST", body: JSON.stringify({ auto_activate: on ? "1" : "0" }) }); SETTINGS.auto_activate = on ? "1" : "0"; POOLINFO.auto_activate = on; toast(on ? "التفعيل التلقائي مفعّل" : "التفعيل التلقائي متوقف"); rKeys(); }
 async function poolCopy(id) {
   const k = POOL.find(x => x.id === id); if (!k) return;
   const ok = await copyText(k.api_key);
@@ -223,22 +225,23 @@ async function poolReset(id) { await api("/api/admin/pool/" + id + "/reset", { m
 async function poolDelete(id) { if (!confirm("حذف هذا المفتاح نهائيًا من القائمة؟")) return; await api("/api/admin/pool/" + id, { method: "DELETE" }); await poolRefresh(); toast("تم الحذف"); }
 async function poolAdd(provider) {
   const ta = $("#pk-" + provider), label = $("#pl-" + provider);
-  try { const r = await api("/api/admin/pool", { method: "POST", body: JSON.stringify({ provider, keys: ta.value, label: label.value }) }); toast(`أُضيف ${r.added} مفتاح` + (r.duplicates ? ` (${r.duplicates} مكرر تم تجاهله)` : "")); ta.value = ""; await poolRefresh(); }
+  try { const r = await api("/api/admin/pool", { method: "POST", body: JSON.stringify({ provider, keys: ta.value, label: label.value, pool: ($("#pp-" + provider) || {}).value || "users" }) }); toast(`أُضيف ${r.added} مفتاح` + (r.duplicates ? ` (${r.duplicates} مكرر تم تجاهله)` : "") + (r.activated ? ` • فُعّل ${r.activated} مستخدم تلقائيًا` : "")); ta.value = ""; await poolRefresh(); }
   catch (e) { toast(e.message, "bad"); }
 }
 function rKeys() {
   const col = (provider, title, ic) => {
     const all = POOL.filter(k => k.provider === provider);
     const free = all.filter(k => !k.used).length;
+    const auto = POOLINFO.stock[provider] || 0;
     const rows = all.filter(k => poolShowUsed || !k.used);
     return `<div class="card">
       <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px"><b style="font-size:17px">${ic} ${title}</b>
-        <span class="small mut">متاح ${free} • مستخدم ${all.length - free}</span>
+        <span class="small mut">متاح ${free} • مستخدم ${all.length - free} • <b style="color:${auto > 3 ? "var(--ok)" : "var(--bad)"}">للتفعيل التلقائي: ${auto}</b></span>
         <button class="btn-acc" style="margin-inline-start:auto" onclick="poolNext('${provider}')">نسخ التالي المتاح</button></div>
       <div style="display:grid;gap:8px;margin-bottom:12px">
         ${rows.length ? rows.map(k => `<div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:${k.used ? "rgba(239,68,68,.07)" : "rgba(34,197,94,.07)"}">
           <span class="mono small" style="flex:1;min-width:150px">${esc(maskKey(k.api_key))}</span>
-          ${k.label ? `<span class="small mut">${esc(k.label)}</span>` : ""}
+          ${k.pool === "system" ? `<span class="badge2" style="background:#3b2a66">نظام</span>` : ""}${k.label ? `<span class="small mut">${esc(k.label)}</span>` : ""}
           <span class="small" style="color:${k.used ? "var(--bad)" : "var(--ok)"}">${k.used ? "مستخدم • " + ago(k.used_at) : "متاح"}</span>
           <button class="btn-acc" style="padding:6px 12px" onclick="poolCopy(${k.id})">${k.used ? "نسخ مرة أخرى" : "نسخ"}</button>
           ${k.used ? `<button class="btn-ghost" style="padding:6px 10px" onclick="poolReset(${k.id})">إرجاع</button>` : ""}
@@ -246,11 +249,16 @@ function rKeys() {
       </div>
       <label>إضافة مفاتيح (مفتاح في كل سطر)</label>
       <textarea id="pk-${provider}" rows="3" class="mono" placeholder="الصق المفاتيح هنا"></textarea>
-      <div style="display:flex;gap:8px;margin-top:8px"><input id="pl-${provider}" placeholder="ملاحظة (اختياري) مثل: حساب أحمد"><button class="btn-ok" onclick="poolAdd('${provider}')">إضافة</button></div>
+      <div style="display:flex;gap:8px;margin-top:8px;flex-wrap:wrap"><select id="pp-${provider}" style="max-width:230px"><option value="users">للمستخدمين (تفعيل تلقائي)</option><option value="system">للنظام (محجوز، لا يُوزَّع)</option></select><input id="pl-${provider}" placeholder="ملاحظة (اختياري)" style="flex:1;min-width:120px"><button class="btn-ok" onclick="poolAdd('${provider}')">إضافة</button></div>
     </div>`;
   };
-  $("#main").innerHTML = head("المفاتيح الجاهزة", "سجّل مفاتيح Gemini وGroq مسبقًا، وبمجرد نسخ أي مفتاح يُعلَّم تلقائيًا أنه استُخدم", `<label class="small" style="display:flex;align-items:center;gap:6px;margin:0"><input type="checkbox" style="width:auto" ${poolShowUsed ? "checked" : ""} onchange="poolShowUsed=this.checked;rKeys()"> عرض المستخدمة</label>`) +
-    `<div class="grid g2">${col("gemini", "مفاتيح Gemini", "✨")}${col("groq", "مفاتيح Groq", "⚡")}</div>`;
+  const st = POOLINFO.stock, exhausted = st.gemini < 1 || st.groq < 1;
+  $("#main").innerHTML = head("المفاتيح الجاهزة", "المفاتيح المسجّلة «للمستخدمين» تُوزَّع تلقائيًا: كل مستخدم جديد يأخذ مفتاح Gemini ومفتاح Groq ويُفعَّل حسابه، ثم يُحذف المفتاحان من القائمة فلا يتكرران. مفاتيح «النظام» محجوزة ولا تُعطى لأحد.", `<label class="small" style="display:flex;align-items:center;gap:6px;margin:0"><input type="checkbox" style="width:auto" ${poolShowUsed ? "checked" : ""} onchange="poolShowUsed=this.checked;rKeys()"> عرض المستخدمة</label>`) +
+    `<div class="card" style="margin-bottom:14px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;border-color:${exhausted ? "var(--bad)" : "var(--line)"}">
+      <label style="display:flex;align-items:center;gap:8px;margin:0;color:var(--text)"><input type="checkbox" style="width:auto" ${POOLINFO.auto_activate ? "checked" : ""} onchange="setAuto(this.checked)"> التفعيل التلقائي للمستخدمين</label>
+      <span class="small mut">متاح للتوزيع: Gemini ${st.gemini} • Groq ${st.groq}</span>
+      ${POOLINFO.waiting ? `<b style="color:var(--bad)">⚠ ${POOLINFO.waiting} مستخدم ينتظر مفاتيح${exhausted ? " (المخزون خلص: أضف مفاتيح)" : ""}</b>` : exhausted ? `<b style="color:var(--warn)">المخزون خلص، المستخدمون الجدد سيرسلون لك واتساب</b>` : ""}</div>
+    <div class="grid g2">${col("gemini", "مفاتيح Gemini", "✨")}${col("groq", "مفاتيح Groq", "⚡")}</div>`;
 }
 
 /* ---------- overview ---------- */
